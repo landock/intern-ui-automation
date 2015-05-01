@@ -1,4 +1,4 @@
-# Front-End UI Automation using Intern
+#Front-End UI Automation using Intern#
 
 ## To setup locally
 1. Make sure to use Node v0.10.x.
@@ -9,19 +9,33 @@
       
     
 3. Download selenium-standalone-2.43.1.jar
-4. Download selenium-standalone-2.45.0.jar
+4. Download selenium-standalone-2.45.x.jar
 
+
+###Selenium-Standalone v2.43.1###
+
+    https://selenium-release.storage.googleapis.com/index.html?path=2.43/
+    
+    
+###Selenium-Standalone v2.45.0###
+
+
+    http://www.seleniumhq.org/download/
+    
+    
 ### Setup Chrome locally
 1. Download ChromeDriver
 4. (optional) export selenium-standalone & ChromeDriver to your PATH.
 5. Otherwise, use an explicit command.
 
 ### Setup Firefox locally
-ZERO configuration required, other than specifying in the intern.js configuration file the correct environment 
+Specify the environment 
 
 
-{ browser: 'firefox' }
+      { browser: 'firefox' }
 
+
+Then make sure that you are running selenium-standalone-2.45.x.jar, if you are running the latest Firefox.
 
 ### Setup Safari locally
 In order to run Safari tests locally, please make sure you have the extension downloaded.
@@ -30,7 +44,8 @@ In order to run Safari tests locally, please make sure you have the extension do
       https://github.com/SeleniumHQ/selenium/wiki/SafariDriver
       
       
-Then, in the intern.js configuration file, set the environments to only { browser: 'safari' } without a specified version.
+- Then, in the intern.js configuration file, set the environments to only { browser: 'safari' } without a specified version.
+- Lastly, make sure that you are running selenium-standalone-2.43.1.jar before you run grunt.
 
 ## To setup on SauceLabs
 Little configuration is needed. Inside the intern.js configuration file, make sure the 

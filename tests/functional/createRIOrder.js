@@ -33,8 +33,7 @@ define('checkout',
                     doctorPage = new Doctor(this.remote);
                     paymentInfoPage = new PaymentInfo(this.remote);
                     inputEl = new Input(this.remote);
-                    customer = generator.getRandomCustomer();
-
+                    customer = generator.getExistingCustomer(0);
                 },
                 'test add product': {
                     setup: function(){
@@ -44,6 +43,7 @@ define('checkout',
                             .findByCssSelector('.fsrCloseBtn')
                             .click();
                     },
+                    // For now, eye power MUST be -0.50
                     'set left eye power': function(){
                         return productPage
                             .enterPower('-0.50', "left")
@@ -114,48 +114,69 @@ define('checkout',
                                 assert.include(txt, 'Address Information');
                             });
                     },
-                    'fill out address shipping form': function(){
+                    'click sign in btn': function(){
                         return addressPage
-                            .fillShippingForm(customer);
+                            .signIn();
                     },
-                    'continue to doctor': function(){
+                    'enter email': function(){
                         return addressPage
-                            .continueToDoctor()
-                            .then(function(header){
-                                assert.include(header, 'Eye Doctor');
+                            .enterEmail(customer.email)
+                            .then(function(val){
+                                assert.strictEqual(val, customer.email);
                             });
                     },
-                    'enter doctor name': function(){
-                        return doctorPage
-                            .enterDoctor(customer.doctor);
+                    'enter pass': function(){
+                      return addressPage
+                          .enterPass(customer.password)
+                          .then(function(val){
+                             assert.strictEqual(val, customer.password)
+                          });
                     },
-                    'select doctor state': function(){
-                        return doctorPage
-                            .selectState(customer.doctor_state);
-                    },
-                    'continue to review': function(){
-                        return doctorPage
-                            .continueToReview()
+                    'submit form': function(){
+                        return addressPage
+                            .submitModalForm()
                             .then(function(header){
-                                // need to implement
+                               assert.strictEqual(header, 'Please review and place your order below');
                             });
-                    },
-                    'click first doctor from result': function(){
-                        return doctorPage
-                            .clickFirstDocResult();
-                    },
-                    'enter cc': function(){
-                        return paymentInfoPage
-                            .inputCreditCard(customer.creditCard);
-                    },
-                    'enter name for cc': function(){
-                        return paymentInfoPage
-                            .inputName(customer);
-                    },
-                    'place order': function(){
-                        return paymentInfoPage
-                            .placeOrder();
                     }
+                    //'continue to doctor': function(){
+                    //    return addressPage
+                    //        .continueToDoctor()
+                    //        .then(function(header){
+                    //            assert.include(header, 'Eye Doctor');
+                    //        });
+                    //},
+                    //'enter doctor name': function(){
+                    //    return doctorPage
+                    //        .enterDoctor(customer.doctor);
+                    //},
+                    //'select doctor state': function(){
+                    //    return doctorPage
+                    //        .selectState(customer.doctor_state);
+                    //},
+                    //'continue to review': function(){
+                    //    return doctorPage
+                    //        .continueToReview()
+                    //        .then(function(header){
+                    //            // need to implement
+                    //        });
+                    //},
+                    //'click first doctor from result': function(){
+                    //    return doctorPage
+                    //        .clickFirstDocResult();
+                    //},
+                    //'enter cc': function(){
+                    //    return paymentInfoPage
+                    //        .inputCreditCard(customer.creditCard);
+                    //},
+                    //'enter name for cc': function(){
+                    //    return paymentInfoPage
+                    //        .inputName(customer);
+                    //},
+                    //'place order': function(){
+                    //    return paymentInfoPage
+                    //        .placeOrder();
+                    //}
                 }
             }
         });

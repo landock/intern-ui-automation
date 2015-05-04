@@ -23,9 +23,27 @@ define([
                         doctor_state: chance.state()
                     }
         }
-        //,
-        //'getExistingCustomer': function(id){
-        //
-        //}
+        ,
+        'getExistingCustomer': function(index){
+            var personList = [
+                {
+                    firstName: 'Test',
+                    lastName: 'TestAcct',
+                    email: 'seleniumtest_awe12345@1800contacts.com',
+                    shipping_address1: '111 Techtock WY',
+                    shipping_address2: 'l33t',
+                    shipping_city: 'Silicon Valley',
+                    shipping_zip: '12345',
+                    shipping_phone: '(123) 456-7890',
+                    shipping_state: 'CA',
+                    password: 'password',
+                    password_confirm: 'password',
+                    creditCard: '4111111111111111',
+                    doctor: 'John Smith',
+                    doctor_state: 'CO'
+                }
+            ];
+            return personList[index];
+        }
     }
 });

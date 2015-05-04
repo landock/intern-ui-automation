@@ -16,6 +16,7 @@ define([
 	
 	Product.prototype = {
 			constructor: Product,
+        //  NEEDS TO BE MODULARIZED
 			'enterPower': function(value, eyes){
 				var selector = isPositive(value) ? 'pp-positive' : 'pp-negative';
 				var id = '#dwfrm_lensproduct_rightEye_contactsPower-wrapper';

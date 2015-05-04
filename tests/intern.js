@@ -56,6 +56,6 @@ define({
 	//	packages: [ { name: 'app', location: 'tests/app' } ]
 	//},
 
-	functionalSuites: [ 'tests/functional/createNIOrder' ],
+	functionalSuites: [ 'tests/functional/createRIOrder' ],
 	excludeInstrumentation: /^(?:tests|node_modules)\//
 });

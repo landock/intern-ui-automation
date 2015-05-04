@@ -2,6 +2,7 @@ define('checkout',
     [
         'intern!object',
         'intern/chai!assert',
+        'intern/chai!expect',
         './pages/home',
         './pages/product',
         './pages/cart',
@@ -11,7 +12,7 @@ define('checkout',
         './pages/paymentInfo',
         '../utility/generator',
         '../config'
-    ], function (registerSuite, assert, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
+    ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
         registerSuite(function(){
             var homePage;
             var productPage;
@@ -136,16 +137,27 @@ define('checkout',
                         return addressPage
                             .submitModalForm()
                             .then(function(header){
-                               assert.strictEqual(header, 'Please review and place your order below');
+
+                                expect(header).to.be.ok;
+                                if(header === 'Find Test TestAcct\'s Eye Doctor'){
+                                    that.findByCssSelector('.btn-orange')
+                                        .click()
+                                        .sleep(3000)
+                                        .end();
+                                }
+                                //assert.strictEqual(header, 'Find Test TestAcct\'s Eye Doctor');
+                            });
+                    },
+                    'place order': function(){
+                        return paymentInfoPage
+                            .placeOrder()
+                            .sleep(6000)
+                            .findByCssSelector('.thankyou-msg')
+                            .getVisibleText()
+                            .then(function(txt){
+                               assert.strictEqual(txt, 'Thank you for your order');
                             });
                     }
-                    //'continue to doctor': function(){
-                    //    return addressPage
-                    //        .continueToDoctor()
-                    //        .then(function(header){
-                    //            assert.include(header, 'Eye Doctor');
-                    //        });
-                    //},
                     //'enter doctor name': function(){
                     //    return doctorPage
                     //        .enterDoctor(customer.doctor);

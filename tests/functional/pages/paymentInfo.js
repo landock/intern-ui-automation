@@ -20,9 +20,10 @@ define([
         'placeOrder': function(){
             return this.remote
                 .sleep(3000)
-                .findByXpath('//*[@id="order-information"]/div[1]/div[3]/div/div[2]/div/a[1]')
+                .findByCssSelector('#page-checkout > div > div.row.col-4 > div.col.span-3.tablet-portrait-full-width.checkout-toggle > div.row.order-summary > div > div:nth-child(2) > div.col.span-2.align-right.hidden-phone.last > a.btn.btn-orange.btn-trigger-order.submit-cc')
                 .click()
-                .sleep(3000);
+                .sleep(3000)
+                .end();
         }
     };
     return PaymentInfo;

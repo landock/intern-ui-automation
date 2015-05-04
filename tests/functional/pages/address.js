@@ -60,7 +60,7 @@ define([
                 .click()
                 .sleep(5000)
                 .end()
-                .findByCssSelector('.row.tab-header.hidden-phone > h2')
+                .findByCssSelector('.tab-header h2')
                 .getVisibleText()
                 .then(function(header){
                     return header;

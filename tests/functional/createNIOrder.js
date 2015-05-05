@@ -45,11 +45,11 @@ define('checkout',
 	        	 	.click();
     			},
     			'set left eye power': function(){
-	        	 		return productPage
-	        			.enterPower('-0.50', "left")
-	    				.then(function(txt){
-	    					assert.strictEqual(txt, "-0.50");
-	        			});
+                    return productPage
+                    .enterPower('-0.50', "left")
+                    .then(function(txt){
+                        assert.strictEqual(txt, "-0.50");
+                    });
     			},
     			'set right eye power': function(){
         	 		return productPage

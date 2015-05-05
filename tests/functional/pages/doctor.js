@@ -17,10 +17,10 @@ define([
         constructor: Doctor,
         'enterDoctor': function (name) {
             return Input
-                .enterInput('dwfrm_doctor_doctorName', name);
+                .enterInput('#dwfrm_doctor_doctorName', name);
         },
         'enterCity': function(){
-
+            // optionally needs implemented
         },
         'selectState': function(stateAbbr){
             return Dropdown

@@ -13,6 +13,14 @@ define([
 	function isPositive(value){
 		return (value.indexOf('+') >= 0);
 	}
+
+    function uploadPicture(){
+        return productPage
+            .uploadPicture()
+            .then(function(foundPic){
+                assert.strictEqual(foundPic, true);
+            });
+    }
 	
 	Product.prototype = {
 			constructor: Product,
@@ -86,7 +94,7 @@ define([
         'uploadPicture': function(){
             return this.remote
                 .findById('cameraInput')
-                .type('/1800contacts-logo.jpg')
+                .type('/Users/CNyugen/dev/dw1800contacts_ui_tests/1800contacts-logo.jpg')
                 .sleep(20000)
                 .end()
                 .findByCssSelector('.prescription-uploaded .rx-image-thumbnail > img')

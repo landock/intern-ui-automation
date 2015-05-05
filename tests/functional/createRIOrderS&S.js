@@ -44,7 +44,7 @@ define('checkout',
                             .findByCssSelector('.fsrCloseBtn')
                             .click();
                     },
-                     //For now, eye power MUST be -0.50
+                    // For now, eye power MUST be -0.50
                     'set left eye power': function(){
                         return productPage
                             .enterPower('-0.50', "left")
@@ -89,7 +89,7 @@ define('checkout',
                     },
                     'enter input for first name': function(){
                         return inputEl
-                            .enterInput("#patient-first", customer.firstName)
+                            .enterInput('#patient-first', customer.firstName)
                             .then(function(txt){
                                 assert.strictEqual(txt, customer.firstName);
                             });
@@ -107,57 +107,57 @@ define('checkout',
                             .then(function(txt){
                                 assert.strictEqual(txt, config.URL + '/cart');
                             });
+                    },
+                    'continue to address': function(){
+                        return cartPage
+                            .continueToAddress()
+                            .then(function(txt){
+                                assert.include(txt, 'Address Information');
+                            });
+                    },
+                    'click sign in btn': function(){
+                        return addressPage
+                            .signIn();
+                    },
+                    'enter email': function(){
+                        return addressPage
+                            .enterEmail(customer.email)
+                            .then(function(val){
+                                assert.strictEqual(val, customer.email);
+                            });
+                    },
+                    'enter pass': function(){
+                      return addressPage
+                          .enterPass(customer.password)
+                          .then(function(val){
+                             assert.strictEqual(val, customer.password)
+                          });
+                    },
+                    'submit form': function(){
+                        return addressPage
+                            .submitModalForm()
+                            .then(function(header){
+
+                                expect(header).to.be.ok;
+                                if(header === 'Find Test TestAcct\'s Eye Doctor'){
+                                    that.findByCssSelector('.btn-orange')
+                                        .click()
+                                        .sleep(3000)
+                                        .end();
+                                }
+                                //assert.strictEqual(header, 'Find Test TestAcct\'s Eye Doctor');
+                            });
+                    },
+                    'place order': function(){
+                        return paymentInfoPage
+                            .placeOrder()
+                            .sleep(6000)
+                            .findByCssSelector('.thankyou-msg')
+                            .getVisibleText()
+                            .then(function(txt){
+                               assert.strictEqual(txt, 'Thank you for your order');
+                            });
                     }
-                    //'continue to address': function(){
-                    //    return cartPage
-                    //        .continueToAddress()
-                    //        .then(function(txt){
-                    //            assert.include(txt, 'Address Information');
-                    //        });
-                    //},
-                    //'click sign in btn': function(){
-                    //    return addressPage
-                    //        .signIn();
-                    //},
-                    //'enter email': function(){
-                    //    return addressPage
-                    //        .enterEmail(customer.email)
-                    //        .then(function(val){
-                    //            assert.strictEqual(val, customer.email);
-                    //        });
-                    //},
-                    //'enter pass': function(){
-                    //  return addressPage
-                    //      .enterPass(customer.password)
-                    //      .then(function(val){
-                    //         assert.strictEqual(val, customer.password)
-                    //      });
-                    //},
-                    //'submit form': function(){
-                    //    return addressPage
-                    //        .submitModalForm()
-                    //        .then(function(header){
-                    //
-                    //            expect(header).to.be.ok;
-                    //            if(header === 'Find Test TestAcct\'s Eye Doctor'){
-                    //                that.findByCssSelector('.btn-orange')
-                    //                    .click()
-                    //                    .sleep(3000)
-                    //                    .end();
-                    //            }
-                    //            //assert.strictEqual(header, 'Find Test TestAcct\'s Eye Doctor');
-                    //        });
-                    //},
-                    //'place order': function(){
-                    //    return paymentInfoPage
-                    //        .placeOrder()
-                    //        .sleep(6000)
-                    //        .findByCssSelector('.thankyou-msg')
-                    //        .getVisibleText()
-                    //        .then(function(txt){
-                    //           assert.strictEqual(txt, 'Thank you for your order');
-                    //        });
-                    //}
                     //'enter doctor name': function(){
                     //    return doctorPage
                     //        .enterDoctor(customer.doctor);

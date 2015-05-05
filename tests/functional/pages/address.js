@@ -48,11 +48,11 @@ define([
                 .sleep(6000);
         },
         'enterEmail': function(email){
-            return Input.enterInput('email-address-modal', email);
+            return Input.enterInput('#email-address-modal', email);
 
         },
         'enterPass': function(pass){
-            return Input.enterInput('loginPassword', pass);
+            return Input.enterInput('#loginPassword', pass);
         },
         'submitModalForm': function(){
             return this.remote

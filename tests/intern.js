@@ -27,27 +27,31 @@ define({
 //	{ browserName: 'iphone', version: '8.2', deviceName:'iPhone Simulator', platform: 'OS X 10.10' }
 
 	//bronwsssstak
+
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'8'},
-//	{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'9'},
-//	{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'10'}
+	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'9'},
+	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'10'},
+    //{os: 'WINDOWS', os_version: '7', browser: 'Firefox'},
+    //{os: 'OS X', os_version: 'Yosemite', browser: 'Chrome'},
+    //{os: 'OS X', os_version: 'Yosemite', browser: 'Firefox', browser_version:'31'}
 	],
 
 	maxConcurrency: 10,
 	tunnel: 'NullTunnel',
     //tunnel: 'SauceLabsTunnel',
-	//tunnel: 'BrowserStackTunnel',
+    //tunnel: 'BrowserStackTunnel',
     //
-	//tunnelOptions:{
-	//	username: 'asdfghjklzxcvbnm',
-	//	accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
+    //tunnelOptions:{
+		//username: 'asdfghjklzxcvbnm',
+		//accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
 		
 		//username: 'landock1',
 		//accessKey: 'hFEKxA8iqZZiYBzcoqxF'
 		
 		//apiKey: 'f8fee03b7866cb6e138f649412edb8bd',
 		//apiSecret: '66a8df5eb1320edbc40eb0c219d51950'
-
-	//},
+    //
+    //},
 
 	// Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
 	// can be used here
@@ -56,6 +60,6 @@ define({
 	//	packages: [ { name: 'app', location: 'tests/app' } ]
 	//},
 
-	functionalSuites: [ 'tests/functional/createRIOrder' ],
+	functionalSuites: [ 'tests/functional/createSubmit&SkipOrder' ],
 	excludeInstrumentation: /^(?:tests|node_modules)\//
 });

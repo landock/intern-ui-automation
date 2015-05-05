@@ -82,7 +82,18 @@ define([
 					.then(function(isChecked){
 						return isChecked === "checked";
 					});
-			}
+			},
+        'uploadPicture': function(){
+            return this.remote
+                .findById('cameraInput')
+                .type('/1800contacts-logo.jpg')
+                .sleep(20000)
+                .end()
+                .findByCssSelector('.prescription-uploaded .rx-image-thumbnail > img')
+                .then(function(ele){
+                    return ele ? true : false;
+                });
+        }
 	};	      
 	return Product;
 });

@@ -88,14 +88,14 @@ define('checkout',
                 },
                 'enter input for first name': function(){
 	    			return inputEl
-	    			.enterInput('patient-first', customer.firstName)
+	    			.enterInput('#patient-first', customer.firstName)
 	    			.then(function(txt){
 	    				assert.strictEqual(txt, customer.firstName);
 	    			});
                 },
                 'enter input for last name': function(){
 	    			return inputEl
-	    			.enterInput('patient-last', customer.lastName)
+	    			.enterInput('#patient-last', customer.lastName)
 	    			.then(function(txt){
 	    				assert.strictEqual(txt, customer.lastName);
 	    			});

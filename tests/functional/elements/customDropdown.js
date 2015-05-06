@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
 	
 	function customDropdown(remote){
 		this.remote = remote;

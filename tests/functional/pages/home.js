@@ -13,9 +13,11 @@ define(['../../config'],
 	        	 .setFindTimeout(10000)
 	        	 .findByCssSelector('#primary-nav div ul>li.brand')
 	        	     .moveMouseTo()
-	        	 .findByLinkText('Acuvue')
+	        	 .findByLinkText('Air Optix')
 	        	     .moveMouseTo()
-	        	 .findByXpath('//*[@id="primary-nav"]/div/ul/li[1]/ul/li[2]/ul/li[1]/a')
+                    .end()
+                .findAllByCssSelector('li.link.flyout')
+	        	 .findByLinkText('\nAir Optix Aqua\n')
 	        	     .click()
 	        	     .getCurrentUrl()
 	        	     .then(function(name){

@@ -13,14 +13,14 @@ define('checkout',
         '../utility/generator',
         '../config'
     ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
-        registerSuite(function(){
+        registerSuite('Create RI Order', function(){
             var homePage;
             var productPage;
             var cartPage;
             var addressPage;
             var doctorPage;
             var paymentInfoPage;
-            var inputEl;
+            var input;
             var that;
             var customer;
             return {
@@ -33,16 +33,21 @@ define('checkout',
                     addressPage = new Address(this.remote);
                     doctorPage = new Doctor(this.remote);
                     paymentInfoPage = new PaymentInfo(this.remote);
-                    inputEl = new Input(this.remote);
+                    input = new Input(this.remote);
                     customer = generator.getExistingCustomer(config.existingId);
                 },
                 'test add product': {
                     setup: function(){
-                        return that
-                            .get(config.URL + '/lens/acuvue-oasys-24')
-                            .sleep(3000)
-                            .findByCssSelector('.fsrCloseBtn')
-                            .click();
+                    return that
+                        .clearCookies()
+                        .get(config.URL + '/lens/acuvue-oasys-24')
+                        .sleep(3000)
+                        .findByCssSelector('.fsrCloseBtn')
+                        .then(function(val){
+                            return val.click();
+                        }, function(err){
+                            return;
+                        });
                     },
                      //For now, eye power MUST be -0.50
                     'set left eye power': function(){
@@ -88,14 +93,14 @@ define('checkout',
                             });
                     },
                     'enter input for first name': function(){
-                        return inputEl
+                        return input
                             .enterInput("#patient-first", customer.firstName)
                             .then(function(txt){
                                 assert.strictEqual(txt, customer.firstName);
                             });
                     },
                     'enter input for last name': function(){
-                        return inputEl
+                        return input
                             .enterInput('#patient-last', customer.lastName)
                             .then(function(txt){
                                 assert.strictEqual(txt, customer.lastName);

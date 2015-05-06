@@ -5,14 +5,14 @@ define({
 //	proxyPort: 9000,
 //	proxyUrl: 'http://localhost:9000/',
 	capabilities: {
-		'selenium-version': '2.45.0',
-		'browserstack.debug': true
+		'selenium-version': '2.45.0'
+		//'browserstack.debug': true
 		
 	},
 
 	environments: [
 	//{ browserName: 'firefox' }
-	//{ browserName: 'chrome'}
+	{ browserName: 'chrome'}
      //   {browserName: 'safari'},
 //SAuscelnaovs
 //	{ browserName: 'internet explorer', version: '8', platform: 'Windows XP' }
@@ -31,24 +31,24 @@ define({
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'8'},
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'9'},
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'10'},
-    //{os: 'WINDOWS', os_version: '7', browser: 'Firefox'}
+    //{os: 'WINDOWS', os_version: '7', browser: 'Firefox', browser_version:'35'}
     //{os: 'OS X', os_version: 'Yosemite', browser: 'Chrome'}
-    {os: 'OS X', os_version: 'Yosemite', browser: 'Firefox', browser_version:'31'}
+    //{os: 'OS X', os_version: 'Yosemite', browser: 'Firefox', browser_version:'31'}
 	],
 
 	maxConcurrency: 10,
-	//tunnel: 'NullTunnel',
+	tunnel: 'NullTunnel',
     //tunnel: 'SauceLabsTunnel',
-    tunnel: 'BrowserStackTunnel',
-    //
-    tunnelOptions:{
+    //tunnel: 'BrowserStackTunnel',
+    ////
+    //tunnelOptions:{
 		//username: 'asdfghjklzxcvbnm',
 		//accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
 		
-		username: 'landock1',
-		accessKey: 'hFEKxA8iqZZiYBzcoqxF'
+		//username: 'landock1',
+		//accessKey: 'hFEKxA8iqZZiYBzcoqxF'
 
-    },
+    //},
 
 	// Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
 	// can be used here
@@ -57,6 +57,6 @@ define({
 	//	packages: [ { name: 'app', location: 'tests/app' } ]
 	//},
 
-	functionalSuites: [ 'tests/functional/createNIOrder' ],
+	functionalSuites: ['tests/functional/createRIOrder'],
 	excludeInstrumentation: /^(?:tests|node_modules)\//
 });

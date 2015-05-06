@@ -4,26 +4,26 @@ define([
     ],
     function (Input, Dropdown) {
 
-    var Input;
-    var Dropdown;
+    var input;
+    var dropdown;
 
     function Doctor(remote){
         this.remote = remote;
-        Input = new Input(this.remote);
-        Dropdown = new Dropdown(this.remote);
+        input = new Input(this.remote);
+        dropdown = new Dropdown(this.remote);
     }
 
     Doctor.prototype = {
         constructor: Doctor,
         'enterDoctor': function (name) {
-            return Input
+            return input
                 .enterInput('#dwfrm_doctor_doctorName', name);
         },
         'enterCity': function(){
             // optionally needs implemented
         },
         'selectState': function(stateAbbr){
-            return Dropdown
+            return dropdown
                 .selectByHTMLValue('dwfrm_doctor_states_stateUS', '//*[@id="search-by-name"]/div/div[3]/div/div/div', stateAbbr)
                 .findByXpath('//*[@id="search-by-name"]/div/div[3]/div/div/div')
                 .getAttribute('data-select-value')

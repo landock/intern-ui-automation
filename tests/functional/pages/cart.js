@@ -12,7 +12,7 @@ define(function (require) {
                 .click()
                 .end()
                 .sleep(3000)
-                .findByCssSelector('#page-checkout > div > div.row.tab-header.no-border > h2')
+                .findByCssSelector('.tab-header > h2')
                 .getVisibleText()
                 .then(function(txt){
                     return txt;

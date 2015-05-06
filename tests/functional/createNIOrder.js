@@ -19,7 +19,7 @@ define('checkout',
     	var addressPage;
         var doctorPage;
         var paymentInfoPage;
-        var inputEl;
+        var input;
     	var that;
         var customer;
     	return {
@@ -32,17 +32,22 @@ define('checkout',
     			addressPage = new Address(this.remote);
                 doctorPage = new Doctor(this.remote);
                 paymentInfoPage = new PaymentInfo(this.remote);
-                inputEl = new Input(this.remote);
+                input = new Input(this.remote);
                 customer = generator.getRandomCustomer();
 
     		},
     		'test add product': {
     			setup: function(){
     				return that
-    				.get(config.URL + '/lens/acuvue-oasys-24')
-        			.sleep(3000)
-        			.findByCssSelector('.fsrCloseBtn')
-	        	 	.click();
+                        .clearCookies()
+                        .get(config.URL + '/lens/acuvue-oasys-24')
+                        .sleep(3000)
+                        .findByCssSelector('.fsrCloseBtn')
+                        .then(function(val){
+                            return val.click();
+                        }, function(err){
+                            return;
+                        });
     			},
     			'set left eye power': function(){
                     return productPage
@@ -87,14 +92,14 @@ define('checkout',
 					});
                 },
                 'enter input for first name': function(){
-	    			return inputEl
+	    			return input
 	    			.enterInput('#patient-first', customer.firstName)
 	    			.then(function(txt){
 	    				assert.strictEqual(txt, customer.firstName);
 	    			});
                 },
                 'enter input for last name': function(){
-	    			return inputEl
+	    			return input
 	    			.enterInput('#patient-last', customer.lastName)
 	    			.then(function(txt){
 	    				assert.strictEqual(txt, customer.lastName);

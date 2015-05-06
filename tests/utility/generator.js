@@ -19,7 +19,7 @@ define([
                         password: 'password',
                         password_confirm: 'password',
                         creditCard: chance.cc(),
-                        doctor: chance.name(),
+                        doctor: 'John Smith',
                         doctor_state: chance.state()
                     }
         }

@@ -5,8 +5,8 @@ define({
 //	proxyPort: 9000,
 //	proxyUrl: 'http://localhost:9000/',
 	capabilities: {
-		'selenium-version': '2.45.0'
-		//'browserstack.debug': true
+		'selenium-version': '2.45.0',
+		'browserstack.debug': true
 		
 	},
 
@@ -20,7 +20,7 @@ define({
 //	{ browserName: 'internet explorer', version: '10', platform: 'Windows 8' }
 //	{ browserName: 'internet explorer', version: '9', platform: 'Windows 7' }
 //	{ browserName: 'firefox', version: '36', platform: ['Windows 7', 'OS X 10.10'] }
-	{ browserName: 'chrome', version: '41', platform: [ 'OS X 10.10' ] }
+//	{ browserName: 'chrome', version: '41', platform: [ 'OS X 10.10' ] }
 //	{ browserName: 'safari', version: '7', platform: 'OS X 10.9' },
 //	{ browserName: 'safari', version: '8', platform: 'OS X 10.10' }
 //	{ browserName: 'android', version: '4.3', deviceName:'Samsung Galaxy S4 Emulator', platform: 'Linux' }
@@ -31,22 +31,22 @@ define({
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'8'},
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'9'},
 	//{os: 'WINDOWS', os_version: '7', browser: 'IE', browser_version:'10'},
-    //{os: 'WINDOWS', os_version: '7', browser: 'Firefox', browser_version:'35'}
+    //{os: 'WINDOWS', os_version: '7', browser: 'Firefox'}
     //{os: 'OS X', os_version: 'Yosemite', browser: 'Chrome'}
-    //{os: 'OS X', os_version: 'Yosemite', browser: 'Firefox', browser_version:'31'}
+    {os: 'OS X', os_version: 'Yosemite', browser: 'Firefox', browser_version:'31'}
 	],
 
 	maxConcurrency: 10,
 	//tunnel: 'NullTunnel',
-    tunnel: 'SauceLabsTunnel',
-    //tunnel: 'BrowserStackTunnel',
+    //tunnel: 'SauceLabsTunnel',
+    tunnel: 'BrowserStackTunnel',
     //
     tunnelOptions:{
-		username: 'asdfghjklzxcvbnm',
-		accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
+		//username: 'asdfghjklzxcvbnm',
+		//accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
 		
-		//username: 'landock1',
-		//accessKey: 'hFEKxA8iqZZiYBzcoqxF'
+		username: 'landock1',
+		accessKey: 'hFEKxA8iqZZiYBzcoqxF'
 
     },
 

@@ -34,7 +34,7 @@ define('checkout',
                     doctorPage = new Doctor(this.remote);
                     paymentInfoPage = new PaymentInfo(this.remote);
                     inputEl = new Input(this.remote);
-                    customer = generator.getExistingCustomer(0);
+                    customer = generator.getExistingCustomer(config.existingId);
                 },
                 'test add product': {
                     setup: function(){

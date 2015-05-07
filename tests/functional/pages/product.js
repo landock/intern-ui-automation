@@ -1,8 +1,9 @@
 define([
         'node_modules/intern/node_modules/dojo/promise/Promise',
-        '../elements/customDropdown'
+        '../elements/customDropdown',
+        '../../config'
         ],
-	function (Promise, Dropdown) {
+	function (Promise, Dropdown, config) {
 
         var dropdown;
 	function Product(remote){
@@ -92,7 +93,7 @@ define([
         'uploadPicture': function(){
             return this.remote
                 .findById('cameraInput')
-                .type('/Users/CNyugen/dev/dw1800contacts_ui_tests/1800contacts-logo.jpg')
+                .type(config.absPicPath)
                 .end()
                 .setFindTimeout(25000)
                 .findByCssSelector('.prescription-uploaded .rx-image-thumbnail > img')

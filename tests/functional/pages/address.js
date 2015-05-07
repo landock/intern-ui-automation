@@ -35,21 +35,16 @@ define([
         },
         'continueToDoctor': function(){
             return this.remote
+            .setFindTimeout(25000)
             .findByCssSelector('.btn-orange')
                 .click()
-                .end()
-            .setFindTimeout(25000)
-            .findByCssSelector('#page-checkout .doctor-header-row.alpha > div > h2')
-                .getVisibleText()
-            .then(function(txt){
-                return txt;
-            });
+                .end();
         },
         'signIn': function(){
             return this.remote
                 .findByCssSelector('a[data-modal-id="modal-sign-in"]')
-                .click()
-                .end();
+                    .click()
+                    .end();
         },
         'enterEmail': function(email){
             return input.enterInput('#email-address-modal', email);
@@ -61,8 +56,8 @@ define([
         'submitModalForm': function(){
             return this.remote
                 .findById('dwfrm_login_login')
-                .click()
-                .end()
+                    .click()
+                    .end()
                 .setFindTimeout(25000)
                 .findByCssSelector('.tab-header h2')
                 .getVisibleText()

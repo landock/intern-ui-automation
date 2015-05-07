@@ -19,10 +19,9 @@ define([
         },
         'placeOrder': function(){
             return this.remote
-                .sleep(3000)
+                .setFindTimeout(25000)
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
-                .sleep(3000)
                 .end();
         }
     };

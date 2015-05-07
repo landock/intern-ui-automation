@@ -69,11 +69,9 @@ define([
 			'continueSubmit': function(){
 				return this.remote
                 .setFindTimeout(3000)
-                //.findByCssSelector('.prod-details-specs.submit-and-skip')
-                //    .submit()
                 .findById('submitAndSkipContinue')
                     .click()
-                .sleep(3000)
+                .setExecuteAsyncTimeout(25000)
                 .getCurrentUrl()
                 .then(function(val){
                     return val;
@@ -95,8 +93,8 @@ define([
             return this.remote
                 .findById('cameraInput')
                 .type('/Users/CNyugen/dev/dw1800contacts_ui_tests/1800contacts-logo.jpg')
-                .sleep(20000)
                 .end()
+                .setFindTimeout(25000)
                 .findByCssSelector('.prescription-uploaded .rx-image-thumbnail > img')
                 .then(function(ele){
                     return ele ? true : false;

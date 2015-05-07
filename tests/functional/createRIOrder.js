@@ -1,4 +1,4 @@
-define('checkout',
+define('Create RI Order',
     [
         'intern!object',
         'intern/chai!assert',
@@ -13,7 +13,7 @@ define('checkout',
         '../utility/generator',
         '../config'
     ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
-        registerSuite('Create RI Order', function(){
+        registerSuite(function(){
             var homePage;
             var productPage;
             var cartPage;
@@ -36,12 +36,12 @@ define('checkout',
                     input = new Input(this.remote);
                     customer = generator.getExistingCustomer(config.existingId);
                 },
-                'test add product': {
+                'Create RI Order': {
                     setup: function(){
                     return that
                         .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
-                        .sleep(3000)
+                        .setFindTimeout(25000)
                         .findByCssSelector('.fsrCloseBtn')
                         .then(function(val){
                             return val.click();

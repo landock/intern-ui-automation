@@ -11,8 +11,25 @@ define('checkout',
         './pages/doctor',
         './pages/paymentInfo',
         '../utility/generator',
-        '../config'
-    ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
+        '../config',
+        'intern/dojo/node!leadfoot/helpers/pollUntil'
+    ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, pollUntil) {
+
+        function visibleByQSA(selector, timeout) {
+            timeout = timeout || 10000;
+
+            return pollUntil(function (selector) {
+                /* global document */
+                var match = document.querySelectorAll(selector);
+
+                if (match.length > 1) {
+                    throw new Error('Multiple elements matched. Make a more precise selector');
+                }
+
+                return match[0] && match[0].offsetWidth > 0 ? true : null;
+            }, [ selector ], timeout);
+        }
+
         registerSuite(function(){
             var homePage;
             var productPage;
@@ -34,20 +51,26 @@ define('checkout',
                     doctorPage = new Doctor(this.remote);
                     paymentInfoPage = new PaymentInfo(this.remote);
                     input = new Input(this.remote);
-                    customer = generator.getExistingCustomer(0);
+                    customer = generator.getRandomCustomer();
                 },
-                'test add product': {
+                'Create NI Submit&Skip Order': {
                     setup: function(){
-                        return that
-                            .clearCookies()
-                            .get(config.URL + '/lens/acuvue-oasys-24')
-                            .sleep(3000)
-                            .findByCssSelector('.fsrCloseBtn')
-                            .then(function(val){
-                                return val.click();
-                            }, function(err){
-                                return;
-                            });
+
+                        //var x =
+
+                       return that
+                           .clearCookies()
+                           .get(config.URL + '/lens/acuvue-oasys-24')
+                           .findByCssSelector('.fsrCloseBtn')
+                           .then(visibleByQSA('.fsrCloseBtn', 20000))
+                           .setFindTimeout(14000)
+                           .findByCssSelector('.fsrCloseBtngit status')
+                           .then(function(val){
+                               return val.click();
+                           }, function(err){
+                               return;
+                           });
+
                     },
                     'upload picture': function(){
                       return productPage
@@ -84,47 +107,15 @@ define('checkout',
                                 assert.include(txt, 'Address Information');
                             });
                     },
-                    'click sign in btn': function(){
+                    'fill out address shipping form': function(){
                         return addressPage
-                            .signIn();
+                            .fillShippingForm(customer);
                     },
-                    'enter email': function(){
+                    'continue to doctor': function(){
                         return addressPage
-                            .enterEmail(customer.email)
-                            .then(function(val){
-                                assert.strictEqual(val, customer.email);
-                            });
-                    },
-                    'enter pass': function(){
-                        return addressPage
-                            .enterPass(customer.password)
-                            .then(function(val){
-                                assert.strictEqual(val, customer.password)
-                            });
-                    },
-                    'submit form': function(){
-                        return addressPage
-                            .submitModalForm()
+                            .continueToDoctor()
                             .then(function(header){
-
-                                expect(header).to.be.ok;
-                                if(header === 'Find Test TestAcct\'s Eye Doctor'){
-                                    that.findByCssSelector('.btn-orange')
-                                        .click()
-                                        .sleep(3000)
-                                        .end();
-                                }
-                                //assert.strictEqual(header, 'Find Test TestAcct\'s Eye Doctor');
-                            });
-                    },
-                    'place order': function(){
-                        return paymentInfoPage
-                            .placeOrder()
-                            .sleep(6000)
-                            .findByCssSelector('.thankyou-msg')
-                            .getVisibleText()
-                            .then(function(txt){
-                                assert.strictEqual(txt, 'Thank you for your order');
+                                assert.include(header, 'Eye Doctor');
                             });
                     },
                     'enter doctor name': function(){

@@ -20,7 +20,7 @@ define([
                         password_confirm: 'password',
                         creditCard: chance.cc(),
                         doctor: 'John Smith',
-                        doctor_state: chance.state()
+                        doctor_state: 'UT'
                     }
         }
         ,

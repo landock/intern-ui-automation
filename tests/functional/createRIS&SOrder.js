@@ -34,14 +34,14 @@ define('checkout',
                     doctorPage = new Doctor(this.remote);
                     paymentInfoPage = new PaymentInfo(this.remote);
                     input = new Input(this.remote);
-                    customer = generator.getRandomCustomer();
+                    customer = generator.getExistingCustomer(config.existingId);
                 },
-                'test add product': {
+                'Create RI Submit&Skip Order': {
                     setup: function(){
                         return that
                             .clearCookies()
                             .get(config.URL + '/lens/acuvue-oasys-24')
-                            .sleep(3000)
+                            .setFindTimeout(25000)
                             .findByCssSelector('.fsrCloseBtn')
                             .then(function(val){
                                 return val.click();

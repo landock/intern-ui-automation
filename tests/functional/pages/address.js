@@ -38,7 +38,7 @@ define([
             .findByCssSelector('.btn-orange')
                 .click()
                 .end()
-                .sleep(3000)
+            .setFindTimeout(25000)
             .findByCssSelector('#page-checkout .doctor-header-row.alpha > div > h2')
                 .getVisibleText()
             .then(function(txt){
@@ -49,7 +49,7 @@ define([
             return this.remote
                 .findByCssSelector('a[data-modal-id="modal-sign-in"]')
                 .click()
-                .sleep(6000);
+                .end();
         },
         'enterEmail': function(email){
             return input.enterInput('#email-address-modal', email);
@@ -62,8 +62,8 @@ define([
             return this.remote
                 .findById('dwfrm_login_login')
                 .click()
-                .sleep(5000)
                 .end()
+                .setFindTimeout(25000)
                 .findByCssSelector('.tab-header h2')
                 .getVisibleText()
                 .then(function(header){

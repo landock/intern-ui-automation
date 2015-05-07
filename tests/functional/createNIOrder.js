@@ -10,8 +10,10 @@ define('checkout',
     './pages/doctor',
     './pages/paymentInfo',
     '../utility/generator',
-    '../config'
-], function (registerSuite, assert, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
+    '../config',
+    'intern/dojo/node!leadfoot/helpers/pollUntil'
+], function (registerSuite, assert, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, pollUntil) {
+
     registerSuite(function(){
     	var homePage;
     	var productPage;
@@ -36,12 +38,12 @@ define('checkout',
                 customer = generator.getRandomCustomer();
 
     		},
-    		'test add product': {
+    		'Create NI Order': {
     			setup: function(){
     				return that
                         .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
-                        .sleep(3000)
+                        .setFindTimeout(25000)
                         .findByCssSelector('.fsrCloseBtn')
                         .then(function(val){
                             return val.click();

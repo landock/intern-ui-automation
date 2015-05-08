@@ -39,7 +39,7 @@ define([
         },
         'clickFirstDocResult': function(){
             return this.remote
-                .setFindTimeout(25000)
+                .sleep(2000)
                 .findByCssSelector('.col.span-2.last > p > a')
                 .click()
                 .end();

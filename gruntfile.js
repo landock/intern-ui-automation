@@ -16,5 +16,6 @@
         grunt.loadNpmTasks('intern');
 
         grunt.registerTask('test', [ 'intern' ]);
+        grunt.registerTask('default', [ 'intern' ]);
     };
 }());

@@ -3,6 +3,7 @@ define('Create RI Order',
         'intern!object',
         'intern/chai!assert',
         'intern/chai!expect',
+        'intern/dojo/node!leadfoot/helpers/pollUntil',
         './pages/home',
         './pages/product',
         './pages/cart',
@@ -11,8 +12,9 @@ define('Create RI Order',
         './pages/doctor',
         './pages/paymentInfo',
         '../utility/generator',
-        '../config'
-    ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config) {
+        '../config',
+        '../utility/functionalTestUtils'
+    ], function (registerSuite, assert, expect, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils) {
         registerSuite(function(){
             var homePage;
             var productPage;
@@ -42,7 +44,7 @@ define('Create RI Order',
                         .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
                         .setFindTimeout(25000)
-                        .findByCssSelector('.fsrCloseBtn')
+                        .then(pollUntil(utils.elementVisibleByClass(), ['fsrCloseBtn'], 10000, 500))
                         .then(function(val){
                             return val.click();
                         }, function(err){

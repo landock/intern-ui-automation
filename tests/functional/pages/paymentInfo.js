@@ -1,9 +1,7 @@
-define([
-        '../elements/input'
-    ],
-    function (Input) {
+define([ '../elements/input' ],
+function (Input) {
 
-        var input;
+    var input;
     function PaymentInfo(remote){
         this.remote = remote;
         input = new Input(remote);
@@ -15,11 +13,10 @@ define([
             return input.enterInput('#dwfrm_billing_paymentMethods_creditCard_number', cc);
         },
         'inputName': function(customer){
-           return input.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
+            return input.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
         },
         'placeOrder': function(){
             return this.remote
-                .setFindTimeout(25000)
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
                 .end();

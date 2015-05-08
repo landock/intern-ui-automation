@@ -2,6 +2,7 @@ define('checkout', [
         'intern!object',
         'intern/chai!assert',
         'intern/chai!expect',
+        'intern/dojo/node!leadfoot/helpers/pollUntil',
         './pages/home',
         './pages/product',
         './pages/cart',
@@ -12,26 +13,7 @@ define('checkout', [
         '../utility/generator',
         '../utility/functionalTestUtils',
         '../config',
-        'intern/dojo/node!leadfoot/helpers/pollUntil'
-    ], function (registerSuite, assert, expect, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator,  utils, config, pollUntil) {
-
-    //        function visibleByQSA(selector, timeout) {
-    //            timeout = timeout || 10000;
-    //
-    //            console.log('POLLING');
-    //            return pollUntil(function (selector) {
-    //                /* global document */
-    //                var match = document.querySelectorAll(selector);
-    //                
-    //
-    //                console.log('POLLING2');
-    //                if (match.length > 1) {
-    //                    throw new Error('Multiple elements matched. Make a more precise selector');
-    //                }
-    //
-    //                return match[0] && match[0].offsetWidth > 0 ? true : null;
-    //            }, [ selector ], timeout);
-    //        }
+], function (registerSuite, assert, expect, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator,  utils, config ) {
 
     registerSuite(function () {
         var homePage;
@@ -44,9 +26,9 @@ define('checkout', [
         var that;
         var customer;
         return {
+            name: 'Create NI Submit and Skip Order',
             setup: function () {
                 that = this.remote;
-
                 homePage = new Home(this.remote);
                 productPage = new Product(this.remote);
                 cartPage = new Cart(this.remote);
@@ -57,12 +39,10 @@ define('checkout', [
                 customer = generator.getRandomCustomer();
             },
             'Create NI Submit&Skip Order': {
-
                 setup: function () {
-
                     return that
-                        .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
+                        .clearCookies()
                         .setFindTimeout(14000)
                         .then(pollUntil(utils.elementVisibleByClass(), ['fsrCloseBtn'], 10000, 500))
                         .then(function (val) {
@@ -70,7 +50,6 @@ define('checkout', [
                         }, function (err) {
                             return;
                         });
-
                 },
                 'upload picture': function () {
                     return productPage
@@ -128,6 +107,6 @@ define('checkout', [
                         .placeOrder();
                 }
             }
-        }
+        };
     });
 });

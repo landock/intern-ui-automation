@@ -11,7 +11,6 @@ define(function (require) {
                 .findByName('dwfrm_cart_checkoutCart')
                 .click()
                 .end()
-                .setFindTimeout(25000)
                 .findByCssSelector('.tab-header > h2')
                 .getVisibleText()
                 .then(function(txt){

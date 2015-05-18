@@ -44,7 +44,7 @@ define('Create RI Order',
                         .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
                         .setFindTimeout(25000)
-                        .then(pollUntil(utils.elementVisibleByClass(), ['fsrCloseBtn'], 10000, 500))
+                        .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 10000, 500))
                         .then(function(val){
                             return val.click();
                         }, function(err){

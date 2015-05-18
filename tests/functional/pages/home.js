@@ -22,6 +22,22 @@ function (config) {
                 .then(function(name){
                     return name;
                 });
+        },
+        'signInFlyout': function(customer){
+            return this.remote
+                .findByCssSelector('a[data-flyout-id="flyout-sign-in"]')
+                .click()
+                .findByCssSelector('#email-address-modal')
+                .type(customer.email)
+                .findByCssSelector('#loginPassword')
+                .type(customer.password)
+                .findByCssSelector('#dwfrm_login_login')
+                .click()
+                .getByCssSelector('.html-slot-container h1')
+                .getVisibleText()
+                .then(function(text){
+                    return text;
+                });
         }
     };	      
     return Home;

@@ -8,6 +8,7 @@ define(function () {
         constructor: customDropdown,
         'selectByHTMLValue': function(id, xpath, text){
             return this.remote
+                .setFindTimeout(10000)
                 .findByXpath(xpath)
                 .click()
                 .end()

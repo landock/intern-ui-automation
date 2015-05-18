@@ -1,9 +1,10 @@
 define([
         'node_modules/intern/node_modules/dojo/promise/Promise',
         '../elements/customDropdown',
-        '../../config'
+        '../../config',
+        'require'
 ],
-function (Promise, Dropdown, config) {
+function (Promise, Dropdown, config, require) {
 
     var dropdown;
     function Product(remote){
@@ -93,27 +94,16 @@ function (Promise, Dropdown, config) {
 
             return this.remote
                 .findById('cameraInput')
-                .type('./../../../1800contacts-logo.jpg.zip')
-                .then(function(err, data){
+                .type(require.toUrl('./../../../1800contacts-logo.jpg.zip'), function(err, data){
                     if(err){
-                        console.log('NOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!!!!!!!!');
+                        console.log('NOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!!!!!!!! 2');
                         console.log(err);
                     }
                     else{
-                        console.log('SUCCESSFULLYK POSTED!!!!!!!!!!!!!!!!! ****************************');
+                        console.log('SUCCESSFULLYK POSTED!!!!!!!!!!!!!!!!! **************************** 2');
                         console.log(data);
                     }
                 });
-                //.end()
-                //.fileUpload('/Users/CNyugen/dev/dw1800contacts_ui_tests/1800contacts-logo.jpg.zip',
-                //.fileUpload('')
-                //function(data){
-                //    console.log('MADE IT BACK TO ORIGINAL METHOD CALL....');
-                //    console.log(data);
-                //    return data;
-                //});
-                //.type(filepath)
-
             }
         }
     //};

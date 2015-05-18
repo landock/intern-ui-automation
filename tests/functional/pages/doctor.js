@@ -17,7 +17,8 @@ define([
         constructor: Doctor,
         'enterDoctor': function (name) {
             return input
-                .enterInput('#dwfrm_doctor_doctorName', name);
+                //.enterInput('#dwfrm_doctor_doctorName', name);
+                .enterNonPlaceholderInput('#dwfrm_doctor_doctorName', name);
         },
         'enterCity': function(){
             // optionally needs implemented

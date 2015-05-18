@@ -42,10 +42,11 @@ define({
     //},
 
     functionalSuites: [
-        //'tests/functional/createNIOrder',
+        'tests/functional/createNIOrder'
         //'tests/functional/createRIOrder'
-         'tests/functional/createNIS&SOrder'
+        // 'tests/functional/createNIS&SOrder'
         // 'tests/functional/createRIS&SOrder'
+        //'tests/functional/RI_Reorder_OnePrescript'
     ],
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

@@ -117,7 +117,11 @@ define('Create RI Order',
                     },
                     'continue to address': function(){
                         return cartPage
-                            .continueToAddress()
+                            .continue();
+                    },
+                    'check address': function(){
+                        return addressPage
+                            .checkAddress()
                             .then(function(txt){
                                 assert.include(txt, 'Address Information');
                             });

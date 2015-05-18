@@ -72,10 +72,9 @@ function (Promise, Dropdown, config, require) {
             return this.remote
                 .findById('submitAndSkipContinue')
                 .click()
-                .setExecuteAsyncTimeout(25000)
                 .getCurrentUrl()
-                .then(function(val){
-                    return val;
+                .then(function(url){
+                    return url;
                 });
         },
         'isEyeChecked': function(eye, remote){

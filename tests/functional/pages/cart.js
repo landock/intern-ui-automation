@@ -6,16 +6,11 @@ define(function (require) {
 
     Cart.prototype = {
         constructor: Cart,
-        'continueToAddress': function () {
+        'continue': function () {
             return this.remote
-                .findByName('dwfrm_cart_checkoutCart')
+                .findByCssSelector('button[name="dwfrm_cart_checkoutCart"]')
                 .click()
-                .end()
-                .findByCssSelector('.tab-header > h2')
-                .getVisibleText()
-                .then(function(txt){
-                    return txt;
-                });
+                .end();
         }
     };
     return Cart;

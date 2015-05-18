@@ -65,6 +65,14 @@ define([
         },
         'submitOrder': function(){
             return this.remote;
+        },
+        'checkAddress': function(){
+            return this.remote
+                .findByCssSelector('.tab-header > h2')
+                .getVisibleText()
+                .then(function(txt){
+                    return txt;
+                });
         }
 
     };	      

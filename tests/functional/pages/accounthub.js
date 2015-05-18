@@ -1,3 +1,31 @@
-/**
- * Created by CNyugen on 5/18/15.
- */
+define([
+        '../../config',
+        'intern/dojo/node!leadfoot/helpers/pollUntil',
+        '../../utility/functionalTestUtils'],
+
+    function (config, pollUntil, utils) {
+        function AccountHub(remote){
+            this.remote = remote;
+        }
+
+        AccountHub.prototype = {
+            constructor: AccountHub,
+            'checkRecentOrderChkBox': function(){
+                return this.remote
+                    .findByCssSelector('.recent-pres-header')
+                    .click();
+            },
+            'clickReorderThisRx': function(){
+                return this.remote
+                    .findByCssSelector('#btn-reorder-rx')
+                    .click()
+                    .then(pollUntil(utils.elementVisibleByClass, ['cart-wrapper'], 60000))
+                    .then(function(ele){
+                        return true;
+                    }, function(error){
+                        return false;
+                    });
+            }
+        };
+        return AccountHub;
+    });

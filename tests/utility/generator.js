@@ -29,15 +29,15 @@ define([
                 {
                     firstName: 'Test',
                     lastName: 'TestAcct',
-                    email: 'seleniumtest_awe12345@1800contacts.com',
+                    email: 'testing@testing.com',
                     shipping_address1: '111 Techtock WY',
                     shipping_address2: 'l33t',
                     shipping_city: 'Silicon Valley',
                     shipping_zip: '90210',
                     shipping_phone: '(123) 456-7890',
                     shipping_state: 'CA',
-                    password: 'password',
-                    password_confirm: 'password',
+                    password: 'testing',
+                    password_confirm: 'testing',
                     creditCard: '4111111111111111',
                     doctor: 'John Smith',
                     doctor_state: 'CO'

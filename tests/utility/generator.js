@@ -21,9 +21,8 @@ define([
                         creditCard: chance.cc(),
                         doctor: 'John Smith',
                         doctor_state: 'UT'
-                    }
-        }
-        ,
+                    };
+        },
         'getExistingCustomer': function(index){
             var personList = [
                 {
@@ -45,5 +44,5 @@ define([
             ];
             return personList[index];
         }
-    }
+    };
 });

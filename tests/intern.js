@@ -42,8 +42,8 @@ define({
     //},
 
     functionalSuites: [
-        //'tests/functional/createNIOrder',
-        'tests/functional/createRIOrder'
+         'tests/functional/createNIOrder'
+        // 'tests/functional/createRIOrder'
         // 'tests/functional/createNIS&SOrder'   BROKEN
         // 'tests/functional/createRIS&SOrder'   BROKEN
         //'tests/functional/RI_Reorder_OnePrescript'

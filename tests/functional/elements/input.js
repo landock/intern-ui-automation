@@ -17,6 +17,15 @@ define(function () {
                 .then(function(text){
                     return text;
                 });
+        },
+        'enterNonPlaceholderInput': function(id, text){
+            return this.remote
+                .findByCssSelector(id)
+                .type(text)
+                .getProperty('value')
+                .then(function(text){
+                    return text;
+                });
         }
     };
     return Input;

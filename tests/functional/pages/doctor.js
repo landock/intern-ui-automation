@@ -1,8 +1,10 @@
 define([
         '../elements/input',
+        'intern/dojo/node!leadfoot/helpers/pollUntil',
+        '../../utility/functionalTestUtils',
         '../elements/customDropdown'
     ],
-    function (Input, Dropdown) {
+    function (Input, pollUntil, utils, Dropdown) {
 
     var input;
     var dropdown;
@@ -17,7 +19,10 @@ define([
         constructor: Doctor,
         'enterDoctor': function (name) {
             return input
-                .enterInput('#dwfrm_doctor_doctorName', name);
+                .enterNonPlaceholderInput('#dwfrm_doctor_doctorName', name)
+                .then(function(val){
+                    return val;
+                });
                 //.enterNonPlaceholderInput('#dwfrm_doctor_doctorName', name);
         },
         'enterCity': function(){
@@ -36,7 +41,13 @@ define([
             return this.remote
                 .findByXpath('//*[@id="search-by-name"]/div/a')
                 .click()
-                .end();
+                .then(pollUntil(utils.elementVisibleByClass, ['search-doctor-results'], 10000, 700))
+                .then(function (val) {
+                    return val.click();
+                }, function (err) {
+                    return;
+                });
+
         },
         'clickFirstDocResult': function(){
             return this.remote

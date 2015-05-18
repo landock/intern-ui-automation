@@ -141,7 +141,10 @@ define('checkout',
                         },
                         'enter doctor name': function(){
                             return doctorPage
-                                .enterDoctor(customer.doctor);
+                                .enterDoctor(customer.doctor)
+                                .then(function(name){
+                                    assert.strictEqual(name, customer.doctor);
+                                });
                         },
                         'select doctor state': function(){
                             return doctorPage

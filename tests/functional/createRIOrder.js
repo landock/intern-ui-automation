@@ -166,6 +166,7 @@ define('Create RI Order',
                         return doctorPage
                             .clickFirstDocResult();
                     },
+                    // CHECK THAT THE PLACE ORDER IS FUNCTIONINGIN AND NOT TIMEING OUT
                     'place order': function(){
                         return paymentInfoPage
                             .placeOrder()

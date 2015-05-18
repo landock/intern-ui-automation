@@ -148,16 +148,23 @@ define('Create RI Order',
                         return addressPage
                             .submitModalForm()
                             .then(function(header){
-
                                 expect(header).to.be.ok;
                                 if(header === 'Find Test TestAcct\'s Eye Doctor'){
                                     that.findByCssSelector('.btn-orange')
                                         .click()
-                                        .sleep(3000)
-                                        .end();
+                                        .then(pollUntil(utils.elementVisibleByClass, ['search-doctor-results'], 60000))
+                                        .then(function(ele){
+                                            return true;
+                                        }, function(error){
+                                            return false;
+                                        });
                                 }
                                 //assert.strictEqual(header, 'Find Test TestAcct\'s Eye Doctor');
                             });
+                    },
+                    'select eye doctor': function(){
+                        return doctorPage
+                            .clickFirstDocResult();
                     },
                     'place order': function(){
                         return paymentInfoPage
@@ -170,6 +177,6 @@ define('Create RI Order',
                             });
                     }
                 }
-            }
+            };
         });
     });

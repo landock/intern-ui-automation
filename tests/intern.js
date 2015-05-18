@@ -30,8 +30,8 @@ define({
     //tunnel: 'SauceLabsTunnel',
 
     //tunnelOptions:{
-    //username: 'asdfghjklzxcvbnm',
-    //accessKey: '67f299a9-a3dc-4868-b17b-c7f51029af08'
+    //username: 'courtneythuy',
+    //accessKey: 'e2b29397-f308-459c-be59-c8f95e683ec8'
     //},
 
     // Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
@@ -42,11 +42,11 @@ define({
     //},
 
     functionalSuites: [
-        //'tests/functional/createNIOrder'
-        //'tests/functional/createRIOrder'
-        // 'tests/functional/createNIS&SOrder'
-        // 'tests/functional/createRIS&SOrder'
-        'tests/functional/RI_Reorder_OnePrescript'
+        //'tests/functional/createNIOrder',
+        'tests/functional/createRIOrder'
+        // 'tests/functional/createNIS&SOrder'   BROKEN
+        // 'tests/functional/createRIS&SOrder'   BROKEN
+        //'tests/functional/RI_Reorder_OnePrescript'
     ],
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

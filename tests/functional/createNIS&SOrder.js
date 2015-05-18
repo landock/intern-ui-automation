@@ -43,7 +43,7 @@ define('checkout', [
                     return that
                         .get(config.URL + '/lens/acuvue-oasys-24')
                         .clearCookies()
-                        .setFindTimeout(14000)
+                        //.setFindTimeout(14000)
                         //.then(pollUntil('return document.getElementsByClass("fsrCloseBtn")[0];', 20000, 700))
                         .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 700))
                         .then(function (val) {

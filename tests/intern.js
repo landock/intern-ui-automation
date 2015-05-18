@@ -10,7 +10,7 @@ define({
 
     environments: [
     // { browserName: 'firefox' }
-    { browserName: 'chrome' }
+    //{ browserName: 'chrome' }
     //{ browserName: 'safari' },
 
     //	{ browserName: 'internet explorer', version: '8', platform: 'Windows XP' }
@@ -18,7 +18,7 @@ define({
     //	{ browserName: 'internet explorer', version: '10', platform: 'Windows 8' }
     //	{ browserName: 'internet explorer', version: '9', platform: 'Windows 7' }
     //	{ browserName: 'firefox', version: '36', platform: ['Windows 7', 'OS X 10.10'] }
-    //	{ browserName: 'chrome', version: '41', platform: [ 'OS X 10.10' ] }
+    	{ browserName: 'chrome', version: '41', platform: [ 'OS X 10.10' ] }
     //	{ browserName: 'safari', version: '7', platform: 'OS X 10.9' },
     //	{ browserName: 'safari', version: '8', platform: 'OS X 10.10' }
     //	{ browserName: 'android', version: '4.3', deviceName:'Samsung Galaxy S4 Emulator', platform: 'Linux' }
@@ -26,13 +26,13 @@ define({
     ],
 
     maxConcurrency: 1,
-    tunnel: 'NullTunnel',
-    //tunnel: 'SauceLabsTunnel',
+    //tunnel: 'NullTunnel',
+    tunnel: 'SauceLabsTunnel',
 
-    //tunnelOptions:{
-    //username: 'courtneythuy',
-    //accessKey: 'e2b29397-f308-459c-be59-c8f95e683ec8'
-    //},
+    tunnelOptions:{
+    username: 'courtneythuy',
+    accessKey: 'e2b29397-f308-459c-be59-c8f95e683ec8'
+    },
 
     // Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
     // can be used here
@@ -42,11 +42,11 @@ define({
     //},
 
     functionalSuites: [
-         'tests/functional/createNIOrder'
-        // 'tests/functional/createRIOrder'
+         'tests/functional/createNIOrder',
+         'tests/functional/createRIOrder',
         // 'tests/functional/createNIS&SOrder'   BROKEN
         // 'tests/functional/createRIS&SOrder'   BROKEN
-        //'tests/functional/RI_Reorder_OnePrescript'
+        'tests/functional/RI_Reorder_OnePrescript'
     ],
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

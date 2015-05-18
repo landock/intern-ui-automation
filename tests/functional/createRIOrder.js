@@ -43,8 +43,8 @@ define('Create RI Order',
                     return that
                         .clearCookies()
                         .get(config.URL + '/lens/acuvue-oasys-24')
-                        .setFindTimeout(25000)
-                        .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 10000, 500))
+                        //.setFindTimeout(25000)
+                        .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
                         .then(function(val){
                             return val.click();
                         }, function(err){
@@ -169,7 +169,6 @@ define('Create RI Order',
                     'place order': function(){
                         return paymentInfoPage
                             .placeOrder()
-                            .sleep(6000)
                             .findByCssSelector('.thankyou-msg')
                             .getVisibleText()
                             .then(function(txt){

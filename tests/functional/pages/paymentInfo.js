@@ -1,5 +1,8 @@
-define([ '../elements/input' ],
-function (Input) {
+define([ '../elements/input',
+    'intern/dojo/node!leadfoot/helpers/pollUntil',
+    '../../utility/functionalTestUtils'
+    ],
+function (Input, pollUntil, utils) {
 
     var input;
     function PaymentInfo(remote){
@@ -19,7 +22,12 @@ function (Input) {
             return this.remote
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
-                .end();
+                .then(pollUntil(utils.elementVisibleByClass, ['thankyou-msg'], 10000, 700))
+                .then(function (val) {
+                    return val.click();
+                }, function (err) {
+                    return;
+                });
         }
     };
     return PaymentInfo;

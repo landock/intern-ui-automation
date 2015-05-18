@@ -47,7 +47,7 @@ define('Create RI Order',
                             .clearCookies()
                             .get(config.URL + '/home/index')
                             //.setFindTimeout(25000)
-                            .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 10000, 500))
+                            .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
                             .then(function(val){
                                 return val.click();
                             }, function(err){
@@ -62,7 +62,6 @@ define('Create RI Order',
                         return homePage
                             .checkReorder()
                             .then(function(url){
-                                console.log(JSON.stringify(url));
                                 //assert.include(url, 'isReorderCart=true'); // this should be working, but there is a bug for it.
                                 assert.include(url, 'cart');
                             });

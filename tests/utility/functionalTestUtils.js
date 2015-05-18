@@ -1,13 +1,15 @@
 define({
     elementVisibleByClass: function (elem) {
-        return function (elem) {
+        //return function (elem) {
+            console.log('elementVisibleByClass AM CALLED');
             var el = document ? document.getElementsByClassName(elem) : [];
             if (!el || el.length === 0) {
                 return null;
             }
             el = el[0];
+            console.log('RETURN SHOULD BE ========== ' + (el.offsetWidth > 0 && el.offsetHeight > 0));
             return (el.offsetWidth > 0 && el.offsetHeight > 0) ? el : null;
-        };
+        //};
     },
     elementVisibleBySelector: function (selector) {
         return function (selector) {

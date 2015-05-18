@@ -90,15 +90,32 @@ function (Promise, Dropdown, config) {
                 });
         },
         'uploadPicture': function(){
+
             return this.remote
                 .findById('cameraInput')
-                .type(config.absPicPath)
-                .end()
-                .findByCssSelector('.prescription-uploaded .rx-image-thumbnail > img')
-                .then(function(ele){
-                    return ele ? true : false;
+                .type('./../../../1800contacts-logo.jpg.zip')
+                .then(function(err, data){
+                    if(err){
+                        console.log('NOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!!!!!!!!');
+                        console.log(err);
+                    }
+                    else{
+                        console.log('SUCCESSFULLYK POSTED!!!!!!!!!!!!!!!!! ****************************');
+                        console.log(data);
+                    }
                 });
+                //.end()
+                //.fileUpload('/Users/CNyugen/dev/dw1800contacts_ui_tests/1800contacts-logo.jpg.zip',
+                //.fileUpload('')
+                //function(data){
+                //    console.log('MADE IT BACK TO ORIGINAL METHOD CALL....');
+                //    console.log(data);
+                //    return data;
+                //});
+                //.type(filepath)
+
+            }
         }
-    };	      
+    //};
     return Product;
 });

@@ -42,9 +42,9 @@ define({
     //},
 
     functionalSuites: [
-        'tests/functional/createNIOrder',
-        'tests/functional/createRIOrder'
-        // 'tests/functional/createNIS&SOrder',
+        //'tests/functional/createNIOrder',
+        //'tests/functional/createRIOrder'
+         'tests/functional/createNIS&SOrder'
         // 'tests/functional/createRIS&SOrder'
     ],
     excludeInstrumentation: /^(?:tests|node_modules)\//

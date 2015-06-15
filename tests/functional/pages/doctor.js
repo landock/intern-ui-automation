@@ -10,9 +10,11 @@ define([
     var dropdown;
 
     function Doctor(remote){
+        var that = this;
         this.remote = remote;
         input = new Input(this.remote);
         dropdown = new Dropdown(this.remote);
+                console.dir(that);
     }
 
     Doctor.prototype = {
@@ -52,8 +54,8 @@ define([
         'clickFirstDocResult': function(){
             return this.remote
                 .findByCssSelector('.col.span-2.last > p > a')
-                .click()
-                .end();
+                .click();
+            
         }
     };
     return Doctor;

@@ -22,7 +22,7 @@ function (Input, pollUntil, utils) {
             return this.remote
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
-                .then(pollUntil(utils.elementVisibleByClass, ['thankyou-msg'], 10000, 700))
+                .then(pollUntil(utils.elementVisibleByClass, ['thankyou-msg'], 30000, 700))
                 .then(function (val) {
                     return val.click();
                 }, function (err) {

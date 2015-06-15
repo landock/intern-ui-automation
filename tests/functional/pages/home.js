@@ -28,7 +28,6 @@ function (config,pollUntil, utils) {
         },
         'signInFlyout': function(customer){
             return this.remote
-                .setFindTimeout(10000)
                 .findByCssSelector('a[data-flyout-id="flyout-sign-in"]')
                 .click()
                 .end()
@@ -42,16 +41,15 @@ function (config,pollUntil, utils) {
                 .click()
                 .end()
                 .sleep(5000);
-                //.setFindTimeout(10000)
         },
         'checkReorder': function(){
             var self = this.remote;
             return this.remote
                 .getCurrentUrl()
-                .then(pollUntil(utils.elementVisibleByClass, ['page-content'], 60000))
+                .then(pollUntil(utils.elementVisibleByClass, ['page-content'], 30000, 500))
 
                 .then(function(ele){
-                    console.log('FOUND ELE?');
+                    console.log('checkReorder: FOUND ELE?');
                     return self
                         .getCurrentUrl();
                 }, function(error){
@@ -62,13 +60,14 @@ function (config,pollUntil, utils) {
         'hoverMyAccount': function(){
             return this.remote
                 .findByCssSelector('#logged-in-state > p > a')
-                .moveMouseTo();
+                .moveMouseTo()
+                .sleep(3000);
         },
         'navigateToDashboard': function(){
             return this.remote
-                .findByCssSelector('#sub-menu li:first-child')
+                .findByCssSelector('#sub-menu li:first-child a')
                 .click()
-                .then(pollUntil(utils.elementVisibleByClass, ['account-tabs'], 60000))
+                .then(pollUntil(utils.elementVisibleByClass, ['account-tabs'], 30000, 500))
                 .then(function(ele){
                     return true;
                 }, function(error){

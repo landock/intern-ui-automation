@@ -43,8 +43,7 @@ define('checkout',
                             return that
                                 .clearCookies()
                                 .get(config.URL + '/lens/acuvue-oasys-24')
-                                //.setFindTimeout(25000)
-                                //.clearCookies()
+                                .setFindTimeout(10000)
                                 .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
                                 .then(function(val){
                                     return val.click();
@@ -127,7 +126,7 @@ define('checkout',
                         'place order': function(){
                             return paymentInfoPage
                                 .placeOrder()
-                                .sleep(6000)
+                                .sleep(3000)
                                 .findByCssSelector('.thankyou-msg')
                                 .getVisibleText()
                                 .then(function(txt){

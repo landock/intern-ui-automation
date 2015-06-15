@@ -1,10 +1,5 @@
-define([
-        'node_modules/intern/node_modules/dojo/promise/Promise',
-        '../elements/customDropdown',
-        '../../config',
-        'require'
-],
-function (Promise, Dropdown, config, require) {
+define([ '../elements/customDropdown', '../../config' ],
+function (Dropdown, config, require) {
 
     var dropdown;
     function Product(remote){

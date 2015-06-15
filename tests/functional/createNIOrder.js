@@ -12,9 +12,8 @@ define('checkout',
         './pages/paymentInfo',
         '../utility/generator',
         '../config',
-        '../utility/functionalTestUtils',
-        'intern/dojo/node!leadfoot/helpers/pollUntil'
-        ], function (registerSuite, assert, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils, pollUntil) {
+        '../utility/functionalTestUtils'
+        ], function (registerSuite, assert, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils ) {
 
             registerSuite(function(){
                 var homePage;
@@ -24,12 +23,12 @@ define('checkout',
                 var doctorPage;
                 var paymentInfoPage;
                 var input;
-                var that;
+                var command;
                 var customer;
                 return {
                     name: 'Create NI Order',
                     setup: function(){
-                        that = this.remote;
+                        command = this.remote;
                         homePage = new Home(this.remote);
                         productPage = new Product(this.remote);
                         cartPage = new Cart(this.remote);
@@ -38,86 +37,57 @@ define('checkout',
                         paymentInfoPage = new PaymentInfo(this.remote);
                         input = new Input(this.remote);
                         customer = generator.getRandomCustomer();
+                        return command 
+                            .get(config.URL + '/lens/acuvue-oasys-24')
+                            .clearCookies()
+                            .setFindTimeout(30000);
+                            // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 60000, 500))
+                            // .then(function (val) {
+                            //     val.click();
+                            // }, function (err) {
+                            //     return command;
+                            // });
                     },
-                    'Create NI Order': {
-                        setup: function(){
-                            return that
-                                .get(config.URL + '/lens/acuvue-oasys-24')
-                                .clearCookies()
-                                .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
-                                .then(function (val) {
-                                    val.click();
-                                }, function (err) {
-                                    throw new Error(err);
-                                });
-                        },
-                        teardown: function() {
-                            return that
-                                .get(config.URL + '/lens/acuvue-oasys-24')
-                                .clearCookies()
-                        },
+                    teardown: function() {
+                        return command
+                            .get(config.URL);
+                    },
+                    'Set prescription info': {
                         'set left eye power': function(){
                             return productPage
-                                .enterPower('-0.50', "left")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "-0.50");
-                                });
+                                .enterPower('-0.50', "left");
                         },
                         'set right eye power': function(){
                             return productPage
-                                .enterPower('-0.50', "right")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "-0.50");
-                                });
+                                .enterPower('-0.50', "right");
                         },
                         'enter BC for left eye': function(){
                             return productPage
-                                .enterBCSelect("left", "8.4")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "8.4");
-                                });
+                                .enterBCSelect("left", "8.4");
                         },
                         'enter BC for right eye': function(){
                             return productPage
-                                .enterBCSelect("right", "8.8")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "8.8");
-                                });
+                                .enterBCSelect("right", "8.8");
                         },
                         'enter boxes for left eye': function(){
                             return productPage
-                                .enterBoxesSelect("left", "1")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "1");
-                                });
+                                .enterBoxesSelect("left", "1");
                         },
                         'enter boxes for right eye': function(){
                             return productPage
-                                .enterBoxesSelect("right", "1")
-                                .then(function(txt){
-                                    assert.strictEqual(txt, "1");
-                                });
+                                .enterBoxesSelect("right", "1");
                         },
                         'enter input for first name': function(){
                             return input
-                                .enterInput('#patient-first', customer.firstName)
-                                .then(function(txt){
-                                    assert.strictEqual(txt, customer.firstName);
-                                });
+                                .enterInput('#patient-first', customer.firstName);
                         },
                         'enter input for last name': function(){
                             return input
-                                .enterInput('#patient-last', customer.lastName)
-                                .then(function(txt){
-                                    assert.strictEqual(txt, customer.lastName);
-                                });
+                                .enterInput('#patient-last', customer.lastName);
                         },
                         'continue to cart': function(){
                             return productPage
-                                .continueSubmit()
-                                .then(function(url){
-                                    assert.strictEqual(url, config.URL + '/cart');
-                                });
+                                .continueSubmit();
                         },
                         'continue to address': function(){
                             return cartPage
@@ -125,25 +95,22 @@ define('checkout',
                         },
                         'check address': function(){
                             return addressPage
-                                .checkAddress()
-                                .then(function(txt){
-                                    assert.include(txt, 'Address Information');
-                                });
-                        },
-                        'fill out address shipping form': function(){
-                            return addressPage
-                                .fillShippingForm(customer);
-                        },
+                                .checkAddress();
+                        }
+
+                    },
+                    'fill out address shipping form': function(){
+                        return addressPage
+                            .fillShippingForm(customer);
+                    },
+                    'Fill out doctor info': {
                         'continue to doctor': function(){
                             return addressPage
                                 .continueToDoctor();
                         },
                         'enter doctor name': function(){
                             return doctorPage
-                                .enterDoctor(customer.doctor)
-                                .then(function(name){
-                                    assert.strictEqual(name, customer.doctor);
-                                });
+                                .enterDoctor(customer.doctor);
                         },
                         'select doctor state': function(){
                             return doctorPage
@@ -151,15 +118,14 @@ define('checkout',
                         },
                         'continue to review': function(){
                             return doctorPage
-                                .continueToReview()
-                                .then(function(header){
-                                    // need to implement
-                                });
+                                .continueToReview();
                         },
                         'click first doctor from result': function(){
                             return doctorPage
                                 .clickFirstDocResult();
-                        },
+                        }
+                    },
+                    'Place order': {
                         'enter cc': function(){
                             return paymentInfoPage
                                 .inputCreditCard(customer.creditCard);

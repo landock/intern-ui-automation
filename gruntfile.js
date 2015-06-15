@@ -7,7 +7,8 @@
             		options: {
             			runType: 'runner',
             			config: 'tests/intern.js',
-            			reporters: ['console'/*, 'pretty'*/]
+            			reporters: ['Console']
+            			// reporters: ['Pretty']
             		}
             	}
             }

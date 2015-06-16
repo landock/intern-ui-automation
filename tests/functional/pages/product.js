@@ -1,22 +1,13 @@
 define([ '../elements/customDropdown', '../../config' ],
 function (Dropdown, config, require) {
 
-    var dropdown;
     function Product(remote){
         this.remote = remote;
-        dropdown = new Dropdown(this.remote);
+        this.dropdown = new Dropdown(this.remote);
     }
 
     function isPositive(value){
         return (value.indexOf('+') >= 0);
-    }
-
-    function uploadPicture(){
-        return productPage
-            .uploadPicture()
-            .then(function(foundPic){
-                assert.strictEqual(foundPic, true);
-            });
     }
 
     Product.prototype = {
@@ -51,7 +42,7 @@ function (Dropdown, config, require) {
                 xPath = '//*[@id="manualEntryContainer"]/div/div[2]/div[3]/div';
                 id="dwfrm_lensproduct_leftEye_baseCurve";
             }
-            return dropdown.selectByHTMLValue(id, xPath, value);
+            return this.dropdown.selectByHTMLValue(id, xPath, value);
         },
         'enterBoxesSelect': function(eye, value){
             var xPath = '//*[@id="manualEntryContainer"]/div/div[1]/div[5]/div';
@@ -61,7 +52,7 @@ function (Dropdown, config, require) {
                 xPath='//*[@id="manualEntryContainer"]/div/div[2]/div[5]/div';
                 id="left-boxes-manual";
             }
-            return dropdown.selectByHTMLValue(id, xPath, value);
+            return this.dropdown.selectByHTMLValue(id, xPath, value);
         },
         'continueSubmit': function(){
             return this.remote

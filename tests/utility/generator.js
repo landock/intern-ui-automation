@@ -28,7 +28,7 @@ define([
                 {
                     firstName: 'Test',
                     lastName: 'TestAcct',
-                    email: 'measley@1800contacts.com',
+                    email: 'measley-test@test.com',
                     shipping_address1: '111 Techtock WY',
                     shipping_address2: 'l33t',
                     shipping_city: 'Silicon Valley',

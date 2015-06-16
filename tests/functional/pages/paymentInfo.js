@@ -4,19 +4,18 @@ define([ '../elements/input',
     ],
 function (Input, pollUntil, utils) {
 
-    var input;
     function PaymentInfo(remote){
         this.remote = remote;
-        input = new Input(remote);
+        this.input = new Input(this.remote);
     }
 
     PaymentInfo.prototype = {
         constructor: PaymentInfo,
         'inputCreditCard': function (cc) {
-            return input.enterInput('#dwfrm_billing_paymentMethods_creditCard_number', cc);
+            return this.input.enterInput('#dwfrm_billing_paymentMethods_creditCard_number', cc);
         },
         'inputName': function(customer){
-            return input.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
+            return this.input.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
         },
         'placeOrder': function(){
             return this.remote

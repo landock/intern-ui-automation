@@ -9,8 +9,8 @@ define({
     // },
 
     environments: [
-        { browserName: 'firefox' },
-        { browserName: 'chrome' }
+        { browserName: 'firefox', platform: ['WINDOWS', 'MAC'] }
+        // { browserName: 'chrome', platform: ['WINDOWS', 'MAC']  }
         // { browserName: 'phantomjs' },
         // { browserName: 'safari' },
 
@@ -26,7 +26,7 @@ define({
     // { browserName: 'iphone', version: '8.2', deviceName:'iPhone Simulator', platform: 'OS X 10.10' }
     ],
 
-    maxConcurrency: 10,
+    maxConcurrency: Infinity,
     tunnel: 'NullTunnel',
     // tunnel: 'SauceLabsTunnel',
 
@@ -43,8 +43,8 @@ define({
     //},
 
     functionalSuites: [
-         'tests/functional/createNIOrder'
-         // 'tests/functional/createRIOrder'
+        // 'tests/functional/createNIOrder',
+        'tests/functional/createRIOrder'
         // 'tests/functional/createNIS&SOrder'   BROKEN
         // 'tests/functional/createRIS&SOrder'   BROKEN
         // 'tests/functional/RI_Reorder_OnePrescript'

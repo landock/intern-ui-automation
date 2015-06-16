@@ -29,26 +29,25 @@ define('Create RI Order',
                     name: 'Create RI Order',
                     setup: function(){
                         command = this.remote;
-
-                        homePage = new Home(this.remote);
-                        productPage = new Product(this.remote);
-                        cartPage = new Cart(this.remote);
-                        addressPage = new Address(this.remote);
-                        doctorPage = new Doctor(this.remote);
-                        paymentInfoPage = new PaymentInfo(this.remote);
-                        input = new Input(this.remote);
+                        homePage = new Home(command);
+                        productPage = new Product(command);
+                        cartPage = new Cart(command);
+                        addressPage = new Address(command);
+                        doctorPage = new Doctor(command);
+                        paymentInfoPage = new PaymentInfo(command);
+                        input = new Input(command);
                         customer = generator.getExistingCustomer(config.existingId);
 
                         return command
-                            .clearCookies()
                             .get(config.URL + '/lens/acuvue-oasys-24')
-                            .setFindTimeout(60000)
-                            .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 60000, 500))
-                            .then(function(val){
-                                return val.click();
-                            }, function(err){
-                                return;
-                            });
+                            .clearCookies()
+                            .setFindTimeout(60000);
+                        // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 60000, 500))
+                        // .then(function(val){
+                        //     return val.click();
+                        // }, function(err){
+                        //     return;
+                        // });
                     },
                     'Fill out prescription info': {
                         //For now, eye power MUST be -0.50
@@ -173,6 +172,7 @@ define('Create RI Order',
                     'place order': function(){
                         return paymentInfoPage
                             .placeOrder()
+                            .sleep(3000)
                             .findByCssSelector('.thankyou-msg')
                             .getVisibleText()
                             .then(function(txt){

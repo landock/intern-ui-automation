@@ -29,13 +29,13 @@ define('checkout',
                     name: 'Create NI Order',
                     setup: function(){
                         command = this.remote;
-                        homePage = new Home(this.remote);
-                        productPage = new Product(this.remote);
-                        cartPage = new Cart(this.remote);
-                        addressPage = new Address(this.remote);
-                        doctorPage = new Doctor(this.remote);
-                        paymentInfoPage = new PaymentInfo(this.remote);
-                        input = new Input(this.remote);
+                        homePage = new Home(command);
+                        productPage = new Product(command);
+                        cartPage = new Cart(command);
+                        addressPage = new Address(command);
+                        doctorPage = new Doctor(command);
+                        paymentInfoPage = new PaymentInfo(command);
+                        input = new Input(command);
                         customer = generator.getRandomCustomer();
                         return command 
                             .get(config.URL + '/lens/acuvue-oasys-24')

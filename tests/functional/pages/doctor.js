@@ -39,18 +39,23 @@ define([
             return this.remote
                 .findByXpath('//*[@id="search-by-name"]/div/a')
                 .click()
+                .end()
                 .then(pollUntil(utils.elementVisibleByClass, ['search-doctor-results'], 10000, 700))
                 .then(function (val) {
                     return val.click();
                 }, function (err) {
                     return;
-                });
+               });
 
         },
         'clickFirstDocResult': function(){
             return this.remote
                 .findByCssSelector('.col.span-2.last > p > a')
-                .click();
+                .click()
+                .end()
+                ;
+
+
             
         }
     };

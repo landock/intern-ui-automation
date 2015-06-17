@@ -42,77 +42,71 @@ define('checkout', [
                 setup: function () {
                     return that
                         .get(config.URL + '/lens/acuvue-oasys-24')
-                        .clearCookies()
+                        .clearCookies();
                         //.setFindTimeout(14000)
                         //.then(pollUntil('return document.getElementsByClass("fsrCloseBtn")[0];', 20000, 700))
-                        .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 700))
-                        .then(function (val) {
-                            return val.click();
-                        }, function (err) {
-                            return;
-                        });
+                        // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 700))
+                        // .then(function (val) {
+                            // return val.click();
+                        // }, function (err) {
+                            // return;
+                        // });
                 },
                 'upload picture': function () {
-                    // Get the session id
-                    // import the request object
-                    // and upload the zip fr3fly43v3r123
-                    // ile directly
-                    // get absolute path
-                    // PROFIT
                     return productPage
                         .uploadPicture()
                         .then(function (foundPic) {
                             assert.strictEqual(foundPic, true);
                         });
+                },
+                'enter input for first name': function () {
+                    return input
+                        .enterInput('#patient-first', customer.firstName)
+                        .then(function (txt) {
+                            assert.strictEqual(txt, customer.firstName);
+                        });
+                },
+                'enter input for last name': function () {
+                    return input
+                        .enterInput('#patient-last', customer.lastName)
+                        .then(function (txt) {
+                            assert.strictEqual(txt, customer.lastName);
+                        });
+                },
+                'continue to cart': function () {
+                    return productPage
+                        .continueSubmit()
+                        .then(function (txt) {
+                            assert.strictEqual(txt, config.URL + '/cart');
+                        });
+                },
+                'continue to address': function () {
+                    return cartPage
+                        .continueToAddress()
+                        .then(function (txt) {
+                            assert.include(txt, 'Address Information');
+                        });
+                },
+                'fill out address shipping form': function () {
+                    return addressPage
+                        .fillShippingForm(customer);
+                },
+                'continue to paymentInfo': function () {
+                    return addressPage
+                        .continueToDoctor(); // needs to be renamed
+                },
+                'enter cc': function () {
+                    return paymentInfoPage
+                        .inputCreditCard(customer.creditCard);
+                },
+                'enter name for cc': function () {
+                    return paymentInfoPage
+                        .inputName(customer);
+                },
+                'place order': function () {
+                    return paymentInfoPage
+                        .placeOrder();
                 }
-                //'enter input for first name': function () {
-                //    return input
-                //        .enterInput('#patient-first', customer.firstName)
-                //        .then(function (txt) {
-                //            assert.strictEqual(txt, customer.firstName);
-                //        });
-                //},
-                //'enter input for last name': function () {
-                //    return input
-                //        .enterInput('#patient-last', customer.lastName)
-                //        .then(function (txt) {
-                //            assert.strictEqual(txt, customer.lastName);
-                //        });
-                //},
-                //'continue to cart': function () {
-                //    return productPage
-                //        .continueSubmit()
-                //        .then(function (txt) {
-                //            assert.strictEqual(txt, config.URL + '/cart');
-                //        });
-                //},
-                //'continue to address': function () {
-                //    return cartPage
-                //        .continueToAddress()
-                //        .then(function (txt) {
-                //            assert.include(txt, 'Address Information');
-                //        });
-                //},
-                //'fill out address shipping form': function () {
-                //    return addressPage
-                //        .fillShippingForm(customer);
-                //},
-                //'continue to paymentInfo': function () {
-                //    return addressPage
-                //        .continueToDoctor(); // needs to be renamed
-                //},
-                //'enter cc': function () {
-                //    return paymentInfoPage
-                //        .inputCreditCard(customer.creditCard);
-                //},
-                //'enter name for cc': function () {
-                //    return paymentInfoPage
-                //        .inputName(customer);
-                //},
-                //'place order': function () {
-                //    return paymentInfoPage
-                //        .placeOrder();
-                //}
             }
         };
     });

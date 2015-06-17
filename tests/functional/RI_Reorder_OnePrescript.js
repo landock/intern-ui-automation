@@ -46,13 +46,13 @@ define('Create RI Order',
 
                         return that
                             .clearCookies()
-                            .get(config.URL + '/home/index')
-                            .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
-                            .then(function(val){
-                                return val.click();
-                            }, function(err){
-                                return that;
-                            });
+                            .get(config.URL + '/home/index');
+                            // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
+                            // .then(function(val){
+                            //     return val.click();
+                            // }, function(err){
+                                // return that;
+                            // });
                     },
                     'sign in using flyout': function(){
                         return homePage

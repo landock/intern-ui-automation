@@ -1,17 +1,4 @@
-define('checkout',
-        [
-        'intern!object',
-        'intern/chai!assert',
-        'intern/dojo/node!leadfoot/helpers/pollUntil',
-        './pages/home',
-        './pages/product',
-        './pages/cart',
-        './elements/input',
-        './pages/address',
-        './pages/doctor',
-        './pages/paymentInfo',
-        '../utility/generator',
-        '../config',
+define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!leadfoot/helpers/pollUntil', './pages/home', './pages/product', './pages/cart', './elements/input', './pages/address', './pages/doctor', './pages/paymentInfo', '../utility/generator', '../config',
         '../utility/functionalTestUtils'
         ], function (registerSuite, assert, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils ) {
 
@@ -128,7 +115,12 @@ define('checkout',
                     'Place order': {
                         'enter cc': function(){
                             return paymentInfoPage
-                                .inputCreditCard(customer.creditCard);
+                                .inputCreditCard(customer.creditCard)
+                                .then(function(number) {
+                                    assert.isNumber(number, 'cc number input');
+                                }, function(err) {
+                                    throw err;
+                                });
                         },
                         'enter name for cc': function(){
                             return paymentInfoPage

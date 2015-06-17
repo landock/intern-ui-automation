@@ -3,6 +3,13 @@ define([
     ],
     function(Chance){
     var chance = new Chance();
+    var creditCardTypes = [
+        {type: 'Mastercard'},
+        {type: 'Visa'},
+        {type: 'American Express'},
+        {type: 'Discover Card'}
+    ];
+    var randomCreditCardType = chance.pick( creditCardTypes ); 
 
     return{
         'getRandomCustomer': function() {
@@ -18,8 +25,8 @@ define([
                         shipping_state: 'UT',
                         password: 'password',
                         password_confirm: 'password',
-                        creditCard: chance.cc(),
-                        doctor: 'John Smith',
+                        creditCard: chance.cc( randomCreditCardType ),
+                        doctor: 'Test',
                         doctor_state: 'UT'
                     };
         },

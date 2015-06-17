@@ -12,15 +12,19 @@ function (Input, pollUntil, utils) {
     PaymentInfo.prototype = {
         constructor: PaymentInfo,
         'inputCreditCard': function (cc) {
-            return this.input.enterInput('#dwfrm_billing_paymentMethods_creditCard_number', cc);
+            return this.input
+                .enterNonPlaceholderInput('#dwfrm_billing_paymentMethods_creditCard_number', cc);
         },
         'inputName': function(customer){
-            return this.input.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
+            return this.input
+                .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.firstName + ' ' + customer.lastName);
         },
         'placeOrder': function(){
             return this.remote
+                .sleep(4000)
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
+                .end()
                 .then(pollUntil(utils.elementVisibleByClass, ['thankyou-msg'], 30000, 700))
                 .then(function (val) {
                     return val.click();

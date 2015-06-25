@@ -10,21 +10,19 @@ define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!le
                 var doctorPage;
                 var paymentInfoPage;
                 var input;
-                var command;
                 var customer;
                 return {
                     name: 'Create NI Order',
                     setup: function(){
-                        command = this.remote;
-                        homePage = new Home(command);
-                        productPage = new Product(command);
-                        cartPage = new Cart(command);
-                        addressPage = new Address(command);
-                        doctorPage = new Doctor(command);
-                        paymentInfoPage = new PaymentInfo(command);
-                        input = new Input(command);
+                        homePage = new Home(this.remote);
+                        productPage = new Product(this.remote);
+                        cartPage = new Cart(this.remote);
+                        addressPage = new Address(this.remote);
+                        doctorPage = new Doctor(this.remote);
+                        paymentInfoPage = new PaymentInfo(this.remote);
+                        input = new Input(this.remote);
                         customer = generator.getRandomCustomer();
-                        return command 
+                        return this.remote
                             .get(config.URL + '/lens/acuvue-oasys-24')
                             .clearCookies()
                             .setFindTimeout(30000);
@@ -36,7 +34,7 @@ define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!le
                             // });
                     },
                     teardown: function() {
-                        return command
+                        return this.remote
                             .get(config.URL);
                     },
                     'Set prescription info': {
@@ -106,10 +104,6 @@ define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!le
                         'continue to review': function(){
                             return doctorPage
                                 .continueToReview();
-                        },
-                        'click first doctor from result': function(){
-                            return doctorPage
-                                .clickFirstDocResult();
                         }
                     },
                     'Place order': {
@@ -117,7 +111,7 @@ define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!le
                             return paymentInfoPage
                                 .inputCreditCard(customer.creditCard)
                                 .then(function(number) {
-                                    assert.isNumber(number, 'cc number input');
+                                    assert.equal(number, customer.creditCard, 'cc number input');
                                 }, function(err) {
                                     throw err;
                                 });

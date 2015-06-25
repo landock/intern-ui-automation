@@ -1,6 +1,4 @@
-define([
-        '../../node_modules/chance/chance'
-    ],
+define([ '../../node_modules/chance/chance' ],
     function(Chance){
     var chance = new Chance();
     var creditCardTypes = [
@@ -9,7 +7,7 @@ define([
         {type: 'American Express'},
         {type: 'Discover Card'}
     ];
-    var randomCreditCardType = chance.pick( creditCardTypes ); 
+    var randomCreditCardType = chance.pick( creditCardTypes );
 
     return{
         'getRandomCustomer': function() {
@@ -43,10 +41,9 @@ define([
                     shipping_phone: '(123) 456-7890',
                     shipping_state: 'CA',
                     password: '123456',
-                    password_confirm: '123456',
                     creditCard: '4111111111111111',
                     doctor: 'John Smith',
-                    doctor_state: 'CO'
+                    doctor_state: 'UT'
                 }
             ];
             return personList[index];

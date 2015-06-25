@@ -4,7 +4,7 @@ define(function () {
         this.remote = remote;
     }
 
-    customDropdown.prototype = { 
+    customDropdown.prototype = {
         constructor: customDropdown,
         'selectByHTMLValue': function(id, xpath, text){
             return this.remote
@@ -20,6 +20,6 @@ define(function () {
                     return val;
                 });
         }
-    };	      
+    };
     return customDropdown;
 });

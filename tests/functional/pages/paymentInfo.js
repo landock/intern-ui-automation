@@ -21,7 +21,6 @@ function (Input, pollUntil, utils) {
         },
         'placeOrder': function(){
             return this.remote
-                .sleep(4000)
                 .findByCssSelector('.hidden-phone.last .submit-cc')
                 .click()
                 .end()

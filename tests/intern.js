@@ -10,9 +10,9 @@ define({
     },
 
     environments: [
-        { browserName: 'firefox'}
-        //{ browserName: 'internet explorer'}
-        //{ browserName: 'chrome'}
+        { browserName: 'firefox'},
+        { browserName: 'internet explorer'},
+        { browserName: 'chrome'}
         // { browserName: 'firefox', platform: ['WINDOWS', 'MAC']  }
         // { browserName: 'phantomjs'}
         // { browserName: 'safari' },
@@ -48,7 +48,7 @@ define({
     functionalSuites: [
         //'tests/functional/createNIOrder'
             //'tests/functional/createRIOrder'
-            'tests/functional/login'
+            'tests/functional/homepageSignInButtonCanBeClicked'
             // 'tests/functional/createNIS&SOrder'
             // 'tests/functional/createRIS&SOrder'   BROKEN
             //'tests/functional/RI_Reorder_OnePrescript'

@@ -48,7 +48,10 @@ define({
     functionalSuites: [
         //'tests/functional/createNIOrder'
             //'tests/functional/createRIOrder'
-            'tests/functional/homepageSignInButtonCanBeClicked'
+            //'tests/functional/homepageSignInButtonCanBeClicked'
+            //'tests/functional/login'
+            'tests/functional/fillOutEyeInfo',
+            //'tests/functional/signInFromCart.js'
             // 'tests/functional/createNIS&SOrder'
             // 'tests/functional/createRIS&SOrder'   BROKEN
             //'tests/functional/RI_Reorder_OnePrescript'

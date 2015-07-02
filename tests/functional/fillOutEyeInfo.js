@@ -1,7 +1,7 @@
 define(function(require) {
 
     var tdd = require('intern!tdd');
-    var assert require('intern/chai!assert');
+    var assert = require('intern/chai!assert');
     var pollUntil = require('intern/dojo/node!leadfoot/helpers/pollUntil');
     var generator = require('../utility/generator');
     var config = require('../config');
@@ -13,7 +13,7 @@ define(function(require) {
     tdd.suite('Fill out prescription info', function() {
         var customer, input, productPage;
 
-        tdd.setup(function() {
+        tdd.before(function() {
             customer = generator.getExistingCustomer(config.existingId);
             input = new Input(this.remote);
             productPage = new Product(this.remote);

@@ -3,6 +3,7 @@ define([
     '../config',
     'intern/chai!assert'
 ],
+
 function (registerSuite, config, assert) {
     registerSuite(function(){
         return {
@@ -21,7 +22,8 @@ function (registerSuite, config, assert) {
                 .getAttribute('class')
                 .then(function(className){
                     assert.include(className, 'flyout-link-on', 'login flyout visible');
-                });
+                })
+                .click();
             },
             'click primary sign in button': function() {
                 return this.remote

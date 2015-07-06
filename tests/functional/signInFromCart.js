@@ -5,18 +5,19 @@ define([
     './elements/input',
     'intern/chai!assert'
 ],
-function (registerSuite, config, assert) {
+function (registerSuite, config, generator, input, assert) {
     registerSuite(function(){
         var customer;
+        var inputComponent;
         return {
             name: 'customer can log in from cart',
             setup: function() {
                 customer = generator.getExistingCustomer(config.existingId);
+                inputComponent = new input(this.remote);
                 return this.remote
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
-                .get(config.URL);
             },
             'click contine button from cart': function() {
                 return this.remote
@@ -29,27 +30,23 @@ function (registerSuite, config, assert) {
                 .click();
             },
             'fill out email field': function(){
-                return input
+                return inputComponent
                 .enterInput('#email-address-modal', customer.email);
             },
             'fill out password field':  function(){
-                return input
+                return inputComponent
                 .enterInput('#loginPassword', customer.password);
             },
-            'submit form': function() {
-                console.log(this);
+            'submit form': function() {  
                 return this.remote
                 .findById('dwfrm_login_login')
                 .click()
                 .end()
-                //TODO: assert or verify that sign in was successful
-                .findByCssSelector('#dwfrm_dashboarditems h3')
-                .getVisibleText()
-                .then(function(txt) {
-                    console.log(txt);
-                    assert.include(txt, 'dashboard', 'dashboard page has loaded');
+                .getCurrentUrl()
+                .then(function(url){
+                    assert.include(url, 'cart');
                 });
-            },
+            }
         }
     });
 });

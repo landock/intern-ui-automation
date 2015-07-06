@@ -40,7 +40,7 @@ function (config,pollUntil, utils) {
                 .findByCssSelector('#dwfrm_login_login')
                 .click()
                 .end()
-                .sleep(5000);
+                .sleep(15000);
         },
         'checkReorder': function(){
             var self = this.remote;

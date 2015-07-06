@@ -28,6 +28,7 @@ define([ '../../node_modules/chance/chance' ],
                         doctor_state: 'UT'
                     };
         },
+
         'getExistingCustomer': function(index){
             var personList = [
                 {
@@ -41,6 +42,21 @@ define([ '../../node_modules/chance/chance' ],
                     shipping_phone: '(123) 456-7890',
                     shipping_state: 'CA',
                     password: '123456',
+                    creditCard: '4111111111111111',
+                    doctor: 'John Smith',
+                    doctor_state: 'UT'
+                },
+                {
+                    firstName: 'Test',
+                    lastName: 'TestAcct',
+                    email: 'seleniumtest_awe12345@1800contacts.com',
+                    shipping_address1: '111 Techtock WY',
+                    shipping_address2: 'l33t',
+                    shipping_city: 'Silicon Valley',
+                    shipping_zip: '90210',
+                    shipping_phone: '(123) 456-7890',
+                    shipping_state: 'CA',
+                    password: 'password',
                     creditCard: '4111111111111111',
                     doctor: 'John Smith',
                     doctor_state: 'UT'

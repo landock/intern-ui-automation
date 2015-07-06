@@ -1,104 +1,102 @@
-define(function(require) {
+define([
+    'intern!object',
+    '../config',
+    'intern/chai!assert',
+    '../utility/generator',
+    './elements/input',
+    './pages/product'
+],
 
-    var tdd = require('intern!tdd');
-    var assert = require('intern/chai!assert');
-    var pollUntil = require('intern/dojo/node!leadfoot/helpers/pollUntil');
-    var generator = require('../utility/generator');
-    var config = require('../config');
-    var utils  = require('../utility/functionalTestUtils');
-    var Input = require('./elements/input');
-    var Promise = require('../../../node_modules/intern/node_modules/dojo/Promise');
-    var Product = require('./pages/product');
+function (registerSuite, config, assert, generator, Input, Product) {
 
-    tdd.suite('Fill out prescription info', function() {
+    registerSuite(function(){
         var customer, input, productPage;
+        return {
+            name: 'Fill out prescription info',
+            setup: function(){
+                customer = generator.getExistingCustomer(config.existingId);
+                input = new Input(this.remote);
+                productPage = new Product(this.remote);
+				return this.remote
+                    .setTimeout('script', 60000)
+                    .setTimeout('page load', 60000)
+                    .setFindTimeout(50000)
+                    .get(config.URL + '/lens/acuvue-oasys-24')
+                    .clearCookies()
+            },
 
-        tdd.before(function() {
-            customer = generator.getExistingCustomer(config.existingId);
-            input = new Input(this.remote);
-            productPage = new Product(this.remote);
-        });
+            'set left eye power': function(){
+                return productPage
+                .enterPower('-0.50', "left")
+                .then(function(txt){
+                    assert.strictEqual(txt, "-0.50");
+                });
+            },
 
-        tdd.test('set left eye power', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterPower('-0.50', "left")
-            .then(function(txt){
-                assert.strictEqual(txt, "-0.50");
-            });
-        });
+            //For now, eye power MUST be -0.50
+            'set right eye power': function(){
+                return productPage
+                .enterPower('-0.50', "right")
+                .then(function(txt){
+                    assert.strictEqual(txt, "-0.50");
+                });
+            },
 
-        //For now, eye power MUST be -0.50
-        tdd.test('set right eye power', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterPower('-0.50', "right")
-            .then(function(txt){
-                assert.strictEqual(txt, "-0.50");
-            });
-        });
+            'enter BC for left eye': function(){
+                return productPage
+                .enterBCSelect("left", "8.4")
+                .then(function(txt){
+                    assert.strictEqual(txt, "8.4");
+                });
+            },
 
-        tdd.test('enter BC for left eye', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterBCSelect("left", "8.4")
-            .then(function(txt){
-                assert.strictEqual(txt, "8.4");
-            });
-        });
+            'enter BC for right eye': function(){
+                return productPage
+                .enterBCSelect("right", "8.8")
+                .then(function(txt){
+                    assert.strictEqual(txt, "8.8");
+                });
+            },
 
-        tdd.test('enter BC for right eye', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterBCSelect("right", "8.8")
-            .then(function(txt){
-                assert.strictEqual(txt, "8.8");
-            });
-        });
+            'enter boxes for left eye': function(){
+                return productPage
+                .enterBoxesSelect("left", "1")
+                .then(function(txt){
+                    assert.strictEqual(txt, "1");
+                });
+            },
 
-        tdd.test('enter boxes for left eye', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterBoxesSelect("left", "1")
-            .then(function(txt){
-                assert.strictEqual(txt, "1");
-            });
-        });
+            'enter boxes for right eye': function(){
+                return productPage
+                .enterBoxesSelect("right", "1")
+                .then(function(txt){
+                    assert.strictEqual(txt, "1");
+                });
+            },
 
-        tdd.test('enter boxes for right eye', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .enterBoxesSelect("right", "1")
-            .then(function(txt){
-                assert.strictEqual(txt, "1");
-            });
-        });
+            'enter input for first name': function(){
+                return input
+                .enterInput("#patient-first", customer.firstName)
+                .then(function(txt){
+                    assert.strictEqual(txt, customer.firstName);
+                });
+            },
 
-        tdd.test('enter input for first name', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return input
-            .enterInput("#patient-first", customer.firstName)
-            .then(function(txt){
-                assert.strictEqual(txt, customer.firstName);
-            });
-        });
+            'enter input for last name': function(){
+                return input
+                .enterInput('#patient-last', customer.lastName)
+                .then(function(txt){
+                    assert.strictEqual(txt, customer.lastName);
+                });
+            },
 
-        tdd.test('enter input for last name', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return input
-            .enterInput('#patient-last', customer.lastName)
-            .then(function(txt){
-                assert.strictEqual(txt, customer.lastName);
-            });
-        });
-
-        tdd.test('continue to cart', function(){
-            goToCartPageTests && this.skip('Product in cart');
-            return productPage
-            .continueSubmit()
-            .then(function(txt){
-                assert.strictEqual(txt, config.URL + '/cart');
-            });
-        });
+            'continue to cart': function(){
+                return productPage
+                .continueSubmit()
+                .then(function(txt){
+                    assert.strictEqual(txt, config.URL + '/cart');
+                });
+            }
+        };
     });
 });

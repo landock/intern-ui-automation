@@ -1,9 +1,11 @@
-define([ '../elements/customDropdown', '../../config' ],
-       function (Dropdown, config, require) {
+define([ '../elements/customDropdown', '../../config', '../elements/input', '../../utility/generator' ],
+       function (Dropdown, config, input, generator, require) {
 
            function Product(remote){
                this.remote = remote;
                this.dropdown = new Dropdown(this.remote);
+               this.inputComponent = new input(this.remote);
+               this.customer = generator.getExistingCustomer(config.existingId);
            }
 
            function isPositive(value){
@@ -22,7 +24,7 @@ define([ '../elements/customDropdown', '../../config' ],
                        xPath = '//*[@id="manualEntryContainer"]/div/div[2]/div[2]/div[1]';
                        id='#dwfrm_lensproduct_leftEye_contactsPower-wrapper';
                    }
-
+                   
                    return this.remote
                    .findByXpath(xPath)
                    .click()
@@ -86,8 +88,64 @@ define([ '../elements/customDropdown', '../../config' ],
                    .then(function(ele){
                        return ele ? true : false;
                    });
+               },
+               'setLeftEyePower': function(){
+                   return this.enterPower('-0.50', "left")
+               },
+               'setRightEyePower': function(){
+                   return this.enterPower('-0.50', "right")
+               },
+               'setBCLeftEye': function(){
+                   return this.enterBCSelect("left", "8.4")
+               },
+               'setBCRightEye': function(){
+                   return this.enterBCSelect("right", "8.8")
+               },
+               'setBoxesLeftEye': function(){
+                   return this.enterBoxesSelect("left", "1")
+               },
+               'setBoxesRightEye': function(){
+                   return this.enterBoxesSelect("right", "1")
+               },
+               'enterFirstname': function(){
+                   return this.inputComponent
+                       .enterInput("#patient-first", this.customer.firstName)
+               },
+               'enterLastname': function(){
+                   return this.inputComponent
+                       .enterInput('#patient-last', this.customer.lastName)
+               },
+               'toCart': function(){
+                   return this.continueSubmit()
+               },
+               'fillOutEyeInfo' : function(){
+                   var self = this;   
+                   return this.setLeftEyePower()
+                   .then(function(){
+                        return self.setRightEyePower()
+                        .then(function(){
+                            return self.setBCLeftEye()
+                            .then(function(){
+                                return self.setBCRightEye()
+                                .then(function(){
+                                    return self.setBoxesLeftEye()
+                                    .then(function(){
+                                        return self.setBoxesRightEye()
+                                        .then(function(){
+                                            return self.enterFirstname()
+                                            .then(function(){
+                                                return self.enterLastname()
+                                                .then(function(){
+                                                    return self.toCart();
+                                                })
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                   });
                }
            };
-
            return Product;
        });

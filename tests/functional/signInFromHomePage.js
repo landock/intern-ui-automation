@@ -42,7 +42,7 @@ function (registerSuite, assert, generator, config, Input) {
 			},
 
 			'submit login form' : function() {
-				console.log(this);
+				// console.log(this);
 				return this.remote
 				.findById('dwfrm_login_login')
 				.click()

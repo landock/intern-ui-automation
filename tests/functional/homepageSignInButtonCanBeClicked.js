@@ -13,7 +13,8 @@ function (registerSuite, config, assert) {
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
-                .get(config.URL);
+                .get(config.URL)
+                .clearCookies();
             },
             'click header sign in button': function() {
                 return this.remote

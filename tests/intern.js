@@ -46,13 +46,14 @@ define({
     //},
 
     functionalSuites: [
-        //'tests/functional/createNIOrder'
-            //'tests/functional/createRIOrder'
-            // 'tests/functional/homepageSignInButtonCanBeClicked',
-            'tests/functional/signInFromHomePage'
-            // 'tests/functional/createNIS&SOrder'
-            // 'tests/functional/createRIS&SOrder'   BROKEN
-            //'tests/functional/RI_Reorder_OnePrescript'
+        //'tests/functional/testHeaderLoginAndLogout'
+        'tests/functional/createNIOrder'
+        //'tests/functional/createRIOrder'
+        // 'tests/functional/homepageSignInButtonCanBeClicked',
+        // 'tests/functional/signInFromHomePage'
+        // 'tests/functional/createNIS&SOrder'
+        // 'tests/functional/createRIS&SOrder'   BROKEN
+        //'tests/functional/RI_Reorder_OnePrescript'
     ],
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

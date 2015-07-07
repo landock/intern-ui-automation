@@ -23,12 +23,10 @@ define('checkout', [
         var doctorPage;
         var paymentInfoPage;
         var input;
-        var that;
         var customer;
         return {
             name: 'Create NI Submit and Skip Order',
             setup: function () {
-                that = this.remote;
                 homePage = new Home(this.remote);
                 productPage = new Product(this.remote);
                 cartPage = new Cart(this.remote);
@@ -40,7 +38,7 @@ define('checkout', [
             },
             'Create NI Submit&Skip Order': {
                 setup: function () {
-                    return that
+                    return this.remote
                         .get(config.URL + '/lens/acuvue-oasys-24')
                         .clearCookies();
                         //.setFindTimeout(14000)

@@ -22,16 +22,11 @@ define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!le
                         paymentInfoPage = new PaymentInfo(this.remote);
                         input = new Input(this.remote);
                         customer = generator.getRandomCustomer();
+                        console.log(customer);
                         return this.remote
                             .get(config.URL + '/lens/acuvue-oasys-24')
                             .clearCookies()
                             .setFindTimeout(30000);
-                            // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 60000, 500))
-                            // .then(function (val) {
-                            //     val.click();
-                            // }, function (err) {
-                            //     return command;
-                            // });
                     },
                     teardown: function() {
                         return this.remote

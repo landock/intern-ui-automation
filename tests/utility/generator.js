@@ -28,6 +28,7 @@ define([ '../../node_modules/chance/chance' ],
                         doctor_state: 'UT'
                     };
         },
+
         'getExistingCustomer': function(index){
             var personList = [
                 {
@@ -41,6 +42,51 @@ define([ '../../node_modules/chance/chance' ],
                     shipping_phone: '(123) 456-7890',
                     shipping_state: 'CA',
                     password: '123456',
+                    creditCard: '4111111111111111',
+                    doctor: 'John Smith',
+                    doctor_state: 'UT'
+                },
+                {
+                    firstName: 'Test',
+                    lastName: 'TestAcct',
+                    email: 'seleniumtest_d6cd7f9e@1800contacts.com',
+                    shipping_address1: '111 Techtock WY',
+                    shipping_address2: 'l33t',
+                    shipping_city: 'Silicon Valley',
+                    shipping_zip: '90210',
+                    shipping_phone: '(123) 456-7890',
+                    shipping_state: 'CA',
+                    password: 'password',
+                    creditCard: '4111111111111111',
+                    doctor: 'John Smith',
+                    doctor_state: 'UT'
+                },
+                {
+                    firstName: 'Test',
+                    lastName: 'TestAcct',
+                    email: 'seleniumtest_7ebfde31@1800contacts.com',
+                    shipping_address1: '111 Techtock WY',
+                    shipping_address2: 'l33t',
+                    shipping_city: 'Silicon Valley',
+                    shipping_zip: '90210',
+                    shipping_phone: '(123) 456-7890',
+                    shipping_state: 'CA',
+                    password: 'password',
+                    creditCard: '4111111111111111',
+                    doctor: 'John Smith',
+                    doctor_state: 'UT'
+                },
+                {
+                    firstName: 'Test',
+                    lastName: 'TestAcct',
+                    email: 'seleniumtest_30019b7d@1800contacts.com',
+                    shipping_address1: '111 Techtock WY',
+                    shipping_address2: 'l33t',
+                    shipping_city: 'Silicon Valley',
+                    shipping_zip: '90210',
+                    shipping_phone: '(123) 456-7890',
+                    shipping_state: 'CA',
+                    password: 'password',
                     creditCard: '4111111111111111',
                     doctor: 'John Smith',
                     doctor_state: 'UT'

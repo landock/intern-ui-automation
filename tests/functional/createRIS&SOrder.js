@@ -52,6 +52,7 @@ define('checkout',
                         'upload picture': function(){
                             return productPage
                                 .uploadPicture()
+                                // 
                                 .then(function(foundPic){
                                     assert.strictEqual(foundPic, true);
                                 });

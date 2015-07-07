@@ -25,14 +25,12 @@ define('Create RI Order',
                 var paymentInfoPage;
                 var accountHub;
                 var input;
-                var that;
                 var customer;
                 return {
                     name: 'RI Order using Account Hub',
 
                     setup: function(){
 
-                        that = this.remote;
 
                         homePage = new Home(this.remote);
                         productPage = new Product(this.remote);
@@ -44,15 +42,9 @@ define('Create RI Order',
                         input = new Input(this.remote);
                         customer = generator.getExistingCustomer(config.existingId);
 
-                        return that
+                        return this.remote
                             .clearCookies()
                             .get(config.URL + '/home/index');
-                            // .then(pollUntil(utils.elementVisibleByClass, ['fsrCloseBtn'], 20000, 500))
-                            // .then(function(val){
-                            //     return val.click();
-                            // }, function(err){
-                                // return that;
-                            // });
                     },
                     'sign in using flyout': function(){
                         return homePage

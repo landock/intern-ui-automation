@@ -46,8 +46,8 @@ define({
     //},
 
     functionalSuites: [
-        'tests/functional/testHeaderLoginAndLogout'
-        //'tests/functional/createNIOrder'
+        //'tests/functional/testHeaderLoginAndLogout'
+        'tests/functional/createNIOrder'
         //'tests/functional/createRIOrder'
         // 'tests/functional/homepageSignInButtonCanBeClicked',
         // 'tests/functional/signInFromHomePage'

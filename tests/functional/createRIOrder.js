@@ -40,7 +40,6 @@ define('Create RI Order',
                        customer = generator.getExistingCustomer(config.existingId);
 
                        return this.remote
-                       //.get(config.URL + '/lens/acuvue-oasys-24')
                        .clearCookies()
                        .setTimeout('script', 60000)
                        .setTimeout('page load', 120000)
@@ -175,7 +174,7 @@ define('Create RI Order',
                            }
                        });
                    },
-                   // CHECK command THE PLACE ORDER IS FUNCTIONINGIN AND NOT TIMEING OUT
+                   // CHECK command THE PLACE ORDER IS FUNCTIONING AND NOT TIMING OUT
                    'place order': function(){
                        return paymentInfoPage
                        .placeOrder();

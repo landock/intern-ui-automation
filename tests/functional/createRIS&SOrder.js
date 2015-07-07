@@ -23,11 +23,9 @@ define('checkout',
                 var doctorPage;
                 var paymentInfoPage;
                 var input;
-                var that;
                 var customer;
                 return {
                     setup: function(){
-                        that = this.remote;
 
                         homePage = new Home(this.remote);
                         productPage = new Product(this.remote);
@@ -40,7 +38,7 @@ define('checkout',
                     },
                     'Create RI Submit&Skip Order': {
                         setup: function(){
-                            return that
+                            return this.remote
                                 .clearCookies()
                                 .get(config.URL + '/lens/acuvue-oasys-24')
                                 .setFindTimeout(10000)
@@ -115,7 +113,7 @@ define('checkout',
 
                                     expect(header).to.be.ok;
                                     if(header === 'Find Test TestAcct\'s Eye Doctor'){
-                                        that.findByCssSelector('.btn-orange')
+                                        this.remote.findByCssSelector('.btn-orange')
                                             .click()
                                             .sleep(3000)
                                             .end();

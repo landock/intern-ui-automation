@@ -11,12 +11,13 @@ define('Create RI Order',
            './pages/address',
            './pages/doctor',
            './pages/paymentInfo',
+           './pages/accountPage',
            '../utility/generator',
            '../config',
            '../utility/functionalTestUtils',
            '../../../node_modules/intern/node_modules/dojo/Promise'
        ],
-       function (registerSuite, assert, expect, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils, Promise) {
+       function (registerSuite, assert, expect, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, AccountPage, generator, config, utils, Promise) {
            registerSuite(function(){
                var homePage;
                var productPage;
@@ -24,6 +25,7 @@ define('Create RI Order',
                var addressPage;
                var doctorPage;
                var paymentInfoPage;
+               var accountPage;
                var input;
                var customer;
                var goToCartPageTests;
@@ -36,6 +38,7 @@ define('Create RI Order',
                        addressPage = new Address(this.remote);
                        doctorPage = new Doctor(this.remote);
                        paymentInfoPage = new PaymentInfo(this.remote);
+                       accountPage = new AccountPage(this.remote);
                        input = new Input(this.remote);
                        customer = generator.getExistingCustomer(config.existingId);
 
@@ -46,36 +49,46 @@ define('Create RI Order',
                        .setFindTimeout(40000);
                    },
                    'Sign into Account': {
+
                        setup: function() {
                            return this.remote
                                 .get(config.URL + '/account');
                        },
-                       'fill out form': function(){
-                           var thatRemote = this.remote;
-                           return Promise.all([
-                               input.enterInput('#email-address', customer.email),
-                               input.enterInput('#dwfrm_login_password', customer.password)
-                           ])
-                           .then(function() {
-                               return thatRemote
-                               .findById('dwfrm_login_login')
-                               .click()
-                               .end()
-                               .then(pollUntil(function() {
-                                   var isCartPage = null;
-                                   return isCartPage = $('.a41-sub-steps .active').length === 1  ? 'true' : 'false';
-                               }, 20000, 500))
-                               .then(function(isCartPage) {
-                                   console.log(isCartPage);
-                                   if (isCartPage === 'true') {
-                                       goToCartPageTests = true;
-                                   }
-                               });
-                           });
+
+                       'login': function() {
+                            return accountPage.login(customer);
                        }
+
+                       // 'fill out form': function(){
+                       //     var thatRemote = this.remote;
+                       //     return Promise.all([
+                       //         input.enterInput('#email-address', customer.email),
+                       //         input.enterInput('#dwfrm_login_password', customer.password)
+                       //     ])
+                       //     .then(function() {
+                       //         return thatRemote
+                       //         .findById('dwfrm_login_login')
+                       //         .click()
+                       //         .end()
+                       //         .then(pollUntil(function() {
+                       //             var isCartPage = null;
+                       //             return isCartPage = $('.a41-sub-steps .active').length === 1  ? 'true' : 'false';
+                       //         }, 20000, 500))
+                       //         .then(function(isCartPage) {
+                       //             console.log(isCartPage);
+                       //             if (isCartPage === 'true') {
+                       //                 goToCartPageTests = true;
+                       //             }
+                       //         });
+                       //     });
+                       // }
                    },
 
                    'Fill out prescription info': {
+                       'setup' : function() {
+                            return this.remote
+                                .get(config.URL + '/lens/acuvue-oasys-24');
+                       },
                        //For now, eye power MUST be -0.50
                        'set left eye power': function(){
                            goToCartPageTests && this.skip('Product in cart');

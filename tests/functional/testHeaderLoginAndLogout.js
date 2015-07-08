@@ -1,16 +1,19 @@
 define([
 	'intern!object',
 	'./pages/header',
-	'../config'
+	'../config',
+	'../utility/generator'
 ],
 
-function (registerSuite, Header, config) {
+function (registerSuite, Header, config, generator) {
 	registerSuite(function () {
 		var header;
+		var customer;
 		return {
 			name: 'test header login',
 			setup: function() {
 				header = new Header(this.remote);
+				customer = generator.getExistingCustomer(config.existingId);
 				return this.remote
 				.clearCookies()
 				.setTimeout('script', 60000)
@@ -20,7 +23,7 @@ function (registerSuite, Header, config) {
 			},
 
 			'test login' : function() {
-				return header.login();
+				return header.login(customer);
 			},
 
 			'test logout' : function() {

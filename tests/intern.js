@@ -6,13 +6,18 @@ define({
     proxyUrl: 'http://localhost:9000/',
     defaultTimeout: 1200000,
     capabilities: {
+        emulator:false,
+'chromeOptions': {
+    'androidPackage': 'com.android.chrome',
+  }
         // 'selenium-version': '2.43.0'
     },
 
     environments: [
-        { browserName: 'firefox'}
-        // { browserName: 'internet explorer'},
-        // { browserName: 'chrome'}
+        //{ browserName: 'firefox'}
+        { browserName: 'android'}
+        //{ browserName: 'internet explorer'},
+        //{ browserName: 'chrome'}
         // { browserName: 'firefox', platform: ['WINDOWS', 'MAC']  }
         // { browserName: 'phantomjs'}
         // { browserName: 'safari' },
@@ -46,12 +51,12 @@ define({
     //},
 
     functionalSuites: [
-        'tests/functional/testHeaderLoginAndLogout'
-        // 'tests/functional/createNIOrder',
-        // 'tests/functional/createRIOrder'
+        //'tests/functional/testHeaderLoginAndLogout'
+        'tests/functional/createNIOrder'
+        //'tests/functional/createRIOrder'
         // 'tests/functional/homepageSignInButtonCanBeClicked',
         // 'tests/functional/signInFromHomePage'
-        // 'tests/functional/createNIS&SOrder'
+         //'tests/functional/createNIS&SOrder'
         // 'tests/functional/createRIS&SOrder'   BROKEN
         //'tests/functional/RI_Reorder_OnePrescript'
     ],

@@ -7,17 +7,17 @@ define({
     defaultTimeout: 1200000,
     capabilities: {
         emulator:false,
-'chromeOptions': {
-    'androidPackage': 'com.android.chrome',
-  }
+// 'chromeOptions': {
+//     'androidPackage': 'com.android.chrome',
+//   }
         // 'selenium-version': '2.43.0'
     },
 
     environments: [
         //{ browserName: 'firefox'}
-        { browserName: 'android'}
+        // { browserName: 'android'}
         //{ browserName: 'internet explorer'},
-        //{ browserName: 'chrome'}
+        { browserName: 'chrome'}
         // { browserName: 'firefox', platform: ['WINDOWS', 'MAC']  }
         // { browserName: 'phantomjs'}
         // { browserName: 'safari' },
@@ -52,7 +52,8 @@ define({
 
     functionalSuites: [
         //'tests/functional/testHeaderLoginAndLogout'
-        'tests/functional/createNIOrder'
+        //'tests/functional/createNIOrder'
+        'tests/functional/customCommandTest'
         //'tests/functional/createRIOrder'
         // 'tests/functional/homepageSignInButtonCanBeClicked',
         // 'tests/functional/signInFromHomePage'

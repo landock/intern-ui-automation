@@ -24,18 +24,22 @@ function (registerSuite, assert, generator, config, Input, BaseCommand) {
 				input = new Input(this.remote);
                 command = new BaseCommand(this.remote);
 				return this.remote
+				.clearCookies()
 				.setTimeout('script', 60000)
 				.setTimeout('page load', 60000)
 				.setFindTimeout(50000)
 				.get(config.URL);
 			},
 
-			'click in-line sign in button' : function() {
+			'test custom command login' : function() {
 				return command
-				.clickSignIn()
-			}
+				.login(customer);
+			},
 
-			
+			'test custom command logout' : function() {
+				return command
+				.logout();
+			}
 		};
 	});
 });

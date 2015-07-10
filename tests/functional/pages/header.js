@@ -10,6 +10,7 @@ function () {
 
 	Header.prototype = {
 		constructor: Header,
+
 		'login' : function (customer) {
 			//ASSERT LOGGED OUT?
 			return this.remote
@@ -35,7 +36,15 @@ function () {
 			.click()
 			.end()
 			.findById('logged-out-state');
-		}
+		},
+
+		'goToAccount' : function() {
+			return this.remote
+			.findByCssSelector('a[title="My Account"]')
+			.click()
+			.end()
+			.findByClassName('account-tabs')
+		 }
 	};
 	return Header;
 });

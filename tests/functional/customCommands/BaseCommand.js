@@ -10,16 +10,27 @@ function BaseCommand() {
     _Command.apply(this, arguments);
 }
 
-
 proto.constructor = BaseCommand;
-proto.clickSignIn = function () {
+proto.setDropdown = function (id, value) {
     return new this.constructor(this, function () {
         return this.parent
-            .findByCssSelector('a[data-inline-id="inline-sign-in"]')
-            .click();
+            .execute(function(id, value){
+                var elem = $(id);
+                if(id.contains("Power")){
+                    elem.parent().siblings().find('li a[data-value="'+value+'"]').click()
+                }
+                else{
+                    elem.val(value).change()
+                }
+            },[id, value])
      });
 };
     
 return BaseCommand;
 
 });
+
+
+//$('#dwfrm_lensproduct_rightEye_contactsPower').parent().siblings().find('li a[data-value="-2.00"]').click()
+
+//$('#dwfrm_lensproduct_rightEye_baseCurve').val('8.8').change()

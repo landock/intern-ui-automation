@@ -27,12 +27,15 @@ function (registerSuite, assert, generator, config, Input, BaseCommand) {
 				.setTimeout('script', 60000)
 				.setTimeout('page load', 60000)
 				.setFindTimeout(50000)
-				.get(config.URL);
+				.get(config.URL + '/lens/acuvue-oasys-24');
 			},
 
-			'click in-line sign in button' : function() {
+			'open custom menu' : function() {
 				return command
-				.clickSignIn()
+				.setDropdown('#dwfrm_lensproduct_rightEye_contactsPower', '-2.00')
+                .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower', '-2.00')
+                .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve', '8.8')
+                .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve', '8.4')
 			}
 
 			

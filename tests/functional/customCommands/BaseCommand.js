@@ -28,6 +28,8 @@ proto.login = function (customer) {
             .click()
             .end()
             .findById('logged-in-state');
+    });
+};
 
 proto.logout = function() {
 	return new this.constructor(this, function() {

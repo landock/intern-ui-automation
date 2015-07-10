@@ -20,7 +20,16 @@ function(BaseCommand){
                 .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve','8.4')
                 .enterInput('#patient-first', 'Testy')
                 .enterInput('#patient-last', 'Test')
+                .continueSubmit()
          });
+    };
+    
+    proto.continueSubmit = function() {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('submitAndSkipContinue')
+            .click()
+        });
     };
     
     return ProductCommand;

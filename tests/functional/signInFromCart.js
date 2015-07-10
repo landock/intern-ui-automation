@@ -4,29 +4,30 @@ define([
     '../utility/generator',
     './elements/input',
     'intern/chai!assert',
-    './pages/product'
+    './customCommands/ProductCommand'
 ],
-function (registerSuite, config, generator, input, assert, product) {
+function (registerSuite, config, generator, input, assert, command) {
     registerSuite(function(){
         var customer;
         var inputComponent;
-        var productPage;
+        var productCmd;
         return {
             name: 'customer can log in from cart',
             setup: function() {
                 customer = generator.getExistingCustomer(config.existingId);
                 inputComponent = new input(this.remote);
-                productPage = new product(this.remote);
+                productCmd = new command(this.remote);
                 return this.remote
+                .clearCookies()
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
                 .get(config.URL + '/lens/acuvue-oasys-24')
             },
             'fill out eye info': function(){
-                return productPage.fillOutEyeInfo();
+                return productCmd.fillInfo();
             },
-            'click contine button from cart': function() {
+            'click continue button from cart': function() {
                 return this.remote
                 .findByCssSelector('button[name="dwfrm_cart_checkoutCart"]')
                 .click();

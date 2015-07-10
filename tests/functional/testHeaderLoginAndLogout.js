@@ -9,6 +9,7 @@ function (registerSuite, Header, config, generator) {
 	registerSuite(function () {
 		var header;
 		var customer;
+		
 		return {
 			name: 'test header login',
 			setup: function() {

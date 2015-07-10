@@ -28,8 +28,6 @@ proto.login = function (customer) {
             .click()
             .end()
             .findById('logged-in-state');
-     });
-};
 
 proto.logout = function() {
 	return new this.constructor(this, function() {
@@ -50,6 +48,22 @@ proto.logout = function() {
         .end();
  	});
  };
+        
+proto.setDropdown = function (id, value) {
+    return new this.constructor(this, function () {
+        return this.parent
+            .execute(function(id, value){
+                var elem = $(id);
+                if(id.contains("Power")){
+                    elem.parent().siblings().find('li a[data-value="'+value+'"]').click()
+                }
+                else{
+                    elem.val(value).change()
+                }
+            },[id, value])
+
+     });
+};
     
 return BaseCommand;
 });

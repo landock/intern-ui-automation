@@ -65,6 +65,14 @@ function (_Command) {
 
          });
     };
+    
+    proto.findAndClick = function(id) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findById(id)
+            .click();
+        });
+     };
 
     return BaseCommand;
 });

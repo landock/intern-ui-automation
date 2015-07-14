@@ -3,26 +3,13 @@ define([
 ],
 
 function(BaseCommand){
-    var proto = ProductCommand.prototype = Object.create(BaseCommand.prototype, {});
+    var proto = HomeCommand.prototype = Object.create(BaseCommand.prototype, {});
     
     function HomeCommand() {
 	   BaseCommand.apply(this, arguments);
     }
     
     proto.constructor = HomeCommand;
-    
-    /*proto.fillInfo = function () {
-        return new this.constructor(this, function () {
-            return this.parent
-                .setDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
-                .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
-                .setDropdown('#dwfrm_lensproduct_rightEye_baseCurve','8.8')
-                .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve','8.4')
-                .enterInput('#patient-first', 'Testy')
-                .enterInput('#patient-last', 'Test')
-                .findAndClick('#submitAndSkipContinue')
-         });
-    };*/
     
      proto.navigateToAcuvueOasys24 = function () {
         return new this.constructor(this, function () {
@@ -83,8 +70,5 @@ function(BaseCommand){
          });
     };
     
-    return ProductCommand;
+    return HomeCommand;
 });
-
-
-// 'button[name="dwfrm_cart_checkoutCart"]'

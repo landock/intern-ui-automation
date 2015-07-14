@@ -2,7 +2,7 @@ define([
     'intern!object',
     '../utility/generator',
     '../config',
-    './customCommands/addressCommand'
+    './customCommands/AddressCommand'
 ],
 function (registerSuite, generator, config, AddressCommand) {
     registerSuite(function(){

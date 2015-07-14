@@ -20,9 +20,12 @@ function(BaseCommand){
                 .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve','8.4')
                 .enterInput('#patient-first', 'Testy')
                 .enterInput('#patient-last', 'Test')
-                .findAndClick('submitAndSkipContinue')
+                .findAndClick('#submitAndSkipContinue')
          });
     };
     
     return ProductCommand;
 });
+
+
+// 'button[name="dwfrm_cart_checkoutCart"]'

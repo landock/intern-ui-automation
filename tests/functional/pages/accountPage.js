@@ -14,6 +14,7 @@ define([
 			'login' : function(customer) {
 				return this.remote
 				.findByCssSelector('#email-address')
+				.clearValue()
 				.type(customer.email)
 				.end()
 				.findByCssSelector('#dwfrm_login_password')

@@ -69,8 +69,20 @@ function (_Command) {
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
-            .findByCssSelector(id)
+            .findDisplayedByCssSelector(id)
             .click();
+        });
+     };
+
+     proto.clearForm = function(formId) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findAllByCssSelector(formId + ' input[type="text"],' + formId + ' input[type="tel"]')
+            .then(function(inputs) {
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].clearValue();
+                }
+            });
         });
      };
 

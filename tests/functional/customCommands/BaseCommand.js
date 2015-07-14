@@ -43,9 +43,9 @@ function (_Command) {
      proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
-            .execute(function(id2, txt, selector){
-                $(id2).removeClass(selector).val(txt).trigger('change');
-            }, [id, text, 'placeholder'])
+            .execute(function(id2, txt){
+                $(id2).removeClass('placeholder').val(txt).trigger('change');
+            }, [id, text])
             .end();
         });
      };
@@ -69,7 +69,7 @@ function (_Command) {
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
-            .findById(id)
+            .findByCssSelector(id)
             .click();
         });
      };

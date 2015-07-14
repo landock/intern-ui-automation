@@ -1,61 +1,51 @@
 define([
 	'intern!object',
-	'../utility/generator',
-	'../config',
-	'./customCommands/BaseCommand'
+	'../../utility/generator',
+	'../../config',
+	'../customCommands/BaseCommand'
 ],
 
-function (registerSuite, generator, config, BaseCommand) 
-{
-	registerSuite (function()
-	{
+function (registerSuite, generator, config, BaseCommand) {
+	registerSuite (function() {
 		var customer;
 		var baseCommand;
 
-		return 
-		{
+		return {
 			name: 'Sign In',
 
-			setup : function()
-			{
+			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
 				baseCommand = new BaseCommand(this.remote);
 
-				return this.remote
+				return baseCommand
 				.clearCookies()
 				.setTimeout('script', 60000)
-				.setTimeout('page load' 60000)
+				.setTimeout('page load', 60000)
 				.setFindTimeout(50000)
 				.get(config.URL);
 			},
 
-			'login from main button' : function() 
-			{
+			'login from main button': function() {
 				return baseCommand.login(customer);
 			},
 
-			'logout' : function()
-			{
+			'logout first time': function() {
 				return baseCommand.navLogout();
 			},
 
-			'login from navigation bar' : function()
-			{
+			'login from navigation bar': function() {
 				return baseCommand.navLogin(customer);
 			},
 
-			'logout' : function()
-			{
+			'logout again': function() {
 				return baseCommand.navLogout();
 			},
 
-			'login from cart in navigation bar' : function()
-			{
+			'login from cart in navigation bar': function() {
 				return baseCommand.navLoginCart(customer);
 			},
 
-			'logout' : function()
-			{
+			'logout last time': function() {
 				return baseCommand.navLogout();
 			}
 		};

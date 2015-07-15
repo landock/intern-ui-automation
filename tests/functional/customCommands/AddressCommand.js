@@ -14,7 +14,6 @@ function(BaseCommand) {
 
 	proto.fillAddressForm = function(customer) {
 		return new this.constructor(this, function() {
-			console.log(customer);
 			return this.parent
 			.clearForm('#edit-address-form')
 			.sleep(1000)
@@ -25,7 +24,7 @@ function(BaseCommand) {
 			.enterInput('#dwfrm_profile_address_zip', customer.shipping_zip)
 			.enterInput('#dwfrm_profile_address_phone', customer.shipping_phone)
 			.enterInput('#dwfrm_profile_address_firstname', customer.firstName)
-			.enterInput('#dwfrm_profile_address_lastname', customer.lastName)
+			.enterInput('#dwfrm_profile_address_lastname', customer.lastName);
 		});
 	};
 

@@ -2,13 +2,15 @@ define([
 	'intern!object',
 	'../../utility/generator',
 	'../../config',
-	'../customCommands/BaseCommand'
+	'../customCommands/BaseCommand',
+	'../customCommands/HomeCommand'
 ],
 
-function (registerSuite, generator, config, BaseCommand) {
+function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 	registerSuite (function() {
 		var customer;
 		var baseCommand;
+		var homeCommand;
 
 		return {
 			name: 'Sign In',
@@ -16,6 +18,7 @@ function (registerSuite, generator, config, BaseCommand) {
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
 				baseCommand = new BaseCommand(this.remote);
+				homeCommand = new HomeCommand(this.remote);
 
 				return baseCommand
 				.clearCookies()
@@ -26,28 +29,28 @@ function (registerSuite, generator, config, BaseCommand) {
 			},
 
 			'login from main button': function() {
-				return baseCommand.login(customer);
+				return homeCommand.loginFromHome(customer);
 			},
 
 			'logout first time': function() {
-				return baseCommand.navLogout();
-			},
-
-			'login from navigation bar': function() {
-				return baseCommand.navLogin(customer);
-			},
-
-			'logout again': function() {
-				return baseCommand.navLogout();
-			},
-
-			'login from cart in navigation bar': function() {
-				return baseCommand.navLoginCart(customer);
-			},
-
-			'logout last time': function() {
-				return baseCommand.navLogout();
+				return baseCommand.mobileLogout();
 			}
+
+			// 'login from navigation bar': function() {
+			// 	return baseCommand.navLogin(customer);
+			// },
+
+			// 'logout again': function() {
+			// 	return baseCommand.navLogout();
+			// },
+
+			// 'login from cart in navigation bar': function() {
+			// 	return baseCommand.navLoginCart(customer);
+			// },
+
+			// 'logout last time': function() {
+			// 	return baseCommand.navLogout();
+			// }
 		};
 	});
 });

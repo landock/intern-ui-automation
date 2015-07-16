@@ -14,80 +14,41 @@ function (_Command) {
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
-                .findByCssSelector('a[data-flyout-id="flyout-sign-in"]')
-                .click()
-                .end()
-                .findByCssSelector('#email-address-modal')
-                .type(customer.email)
-                .end()
-                .findByCssSelector('#loginPassword')
-                .type(customer.password)
-                .end()
-                .findByCssSelector('#dwfrm_login_login')
-                .click()
-                .end()
-                .findById('logged-in-state');
+                .findAndClick('a[data-flyout-id="flyout-sign-in"]')
+                .enterInput('#email-address-modal', customer.email)
+                .enterInput('#loginPassword', customer.password)
+                .findAndClick('#dwfrm_login_login');
+                .findById('#logged-in-state');
         });
     };
-
-    // proto.navLogin = function (customer) {
-    //     return new this.constructor(this, function() {
-    //         return this.parent
-    //             .findById('icon-mobile-menu')
-    //             .click()
-    //             .end()
-    //             .findById('btn-ajax-sign-in')
-    //             .click()
-    //             .end()
-    //             .findByCssSelector('#email-address-modal')
-    //             .type(customer.email)
-    //             .end()
-    //             .findByCssSelector('#loginPassword')
-    //             .type(customer.password)
-    //             .end()
-    //             .findByCssSelector('#dwfrm_login_login')
-    //             .click()
-    //             .end()
-    //             .findById('logged-in-state');
-    //     });
-    // };
-
-    // proto.navLoginCart = function (customer) {
-    //     return new this.constructor(this, function() {
-    //         return this.parent
-    //         .findByXpath('//*[@id="utility"]/li/p/a')
-    //         .click()
-    //         .end()
-    //         .findById('dwfrm_login_username_d0dghfrvhxrv')
-    //         .clearValue()
-    //         .type(customer.email)
-    //         .end()
-    //         .findById('#dwfrm_login_password')
-    //         .type(customer.password)
-    //         .end()
-    //         .findByCssSelector('#dwfrm_login_login')
-    //         .click()
-    //         .end()
-    //         .findById('logged-in-state');
-    //     });
-    // };
 
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .findByCssSelector('a[title="Logout"]')
-            .click()
-            .end()
+            .findAndClick('a[title="Logout"]')
             .findById('logged-out-state');
+        });
+    };
+
+    proto.mobileLogin = function(customer) {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findAndClick('#icon-mobile-menu')
+            .findAndClick('#btn-ajax-sign-in')
+            .enterInput('#email-address-modal', customer.email)
+            .enterInput('#loginPassword', customer.password)
+            .findAndClick('#dwfrm_login_login');
+            // would like to 'assert' success with findById like in loginFromHeader()
+            // #logged-in-state exists but seems to only be findable if the mobile menu is open
         });
     };
 
     proto.mobileLogout = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .findAndClick('#dw-sf-control-close-button')
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
+            // same as above except want to findById with #logged-out-state
         });
     };
 
@@ -97,19 +58,6 @@ function (_Command) {
             .get(url);
         });
     };
-
-    // proto.navLogout = function() {
-    //     return new this.constructor(this, function() {
-    //         return this.parent
-    //         .findById('icon-mobile-menu')
-    //         .click()
-    //         .end()
-    //         .findByXpath('//*[@id="wrapper"]/div[2]/div/ul/li[3]/a')
-    //         .click()
-    //         .end()
-    //         .findById('logged-out-state');
-    //      });
-    // };
 
      proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {

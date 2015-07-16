@@ -23,8 +23,8 @@ function(BaseCommand) {
 			.enterInput('#dwfrm_profile_address_city',  customer.shipping_city)
 			.enterInput('#dwfrm_profile_address_zip', customer.shipping_zip)
 			.enterInput('#dwfrm_profile_address_phone', customer.shipping_phone)
-			.enterInput('#dwfrm_profile_address_firstname', customer.firstName)
-			.enterInput('#dwfrm_profile_address_lastname', customer.lastName);
+			.enterInput('#dwfrm_profile_address_firstname', customer.first_name)
+			.enterInput('#dwfrm_profile_address_lastname', customer.last_name);
 		});
 	};
 

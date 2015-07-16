@@ -2,18 +2,18 @@ define([
     'intern!object',
     '../utility/generator',
     '../config',
-    './customCommands/AddressCommand'
+    './customCommands/AllCommands'
 ],
-function (registerSuite, generator, config, AddressCommand) {
+function (registerSuite, generator, config, AllCommands) {
     registerSuite(function(){
         var customer;
-        var addressCommand;
+        var command;
 
         return {
             name: 'Edit Address',
             setup: function(){
                 customer = generator.getExistingCustomer(config.existingId);
-                addressCommand = new AddressCommand(this.remote);
+                command = new AllCommands(this.remote);
 
                 return this.remote
                 .clearCookies()
@@ -24,26 +24,24 @@ function (registerSuite, generator, config, AddressCommand) {
             },
 
             'login' : function() {
-                return addressCommand.login(customer);
+                return command.loginFromHeader(customer);
             },
 
             'navigate to account page' : function() {
-                return addressCommand.findAndClick('a[title="My Account"]');
+                return command.findAndClick('a[title="My Account"]');
             },
 
             'navigate to account page address tab' : function() {
-                return addressCommand.findAndClick('a[href$="1800contacts/address-list"]');
+                return command.findAndClick('div.tab:nth-child(3) > a:nth-child(1)');
             },
 
             'click address edit' : function() {
-                return addressCommand.findAndClick('a[href*="Address-Edit"]');
+                return command.findAndClick('a[href*="Address-Edit"]');
             },
 
             'fill out address form' : function() {
-                return addressCommand.fillAddressForm(customer)
-                .sleep(5000);
+                return command.fillAddressForm(customer);
             }
-
         };
     });
 });

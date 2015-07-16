@@ -26,6 +26,3 @@ function(BaseCommand){
     
     return ProductCommand;
 });
-
-
-// 'button[name="dwfrm_cart_checkoutCart"]'

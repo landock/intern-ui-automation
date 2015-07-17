@@ -3,17 +3,17 @@ define([
     '../config',
     '../utility/generator',
     'intern/chai!assert',
-    './customCommands/ProductCommand'
+    './customCommands/AllCommands'
 ],
-function (registerSuite, config, generator, assert, command) {
+function (registerSuite, config, generator, assert, Command) {
     registerSuite(function(){
         var customer;
-        var productCmd;
+        var command;
         return {
             name: 'customer can log in from cart',
             setup: function() {
                 customer = generator.getExistingCustomer(config.existingId);
-                productCmd = new command(this.remote);
+                command = new Command(this.remote);
                 return this.remote
                 .clearCookies()
                 .setTimeout('script', 60000)
@@ -22,26 +22,26 @@ function (registerSuite, config, generator, assert, command) {
                 .get(config.URL + '/lens/acuvue-oasys-24')
             },
             'fill out eye info': function(){
-                return productCmd.fillInfo();
+                return command.fillInfo();
             },
             'click continue button from cart': function() {
-                return productCmd
+                return command
                 .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
             'click on returning customer sign in button': function() {
-                return productCmd
+                return command
                 .findAndClick('a[data-modal-id="modal-sign-in"]');
             },
             'fill out email field': function(){
-                return productCmd
+                return command
                 .enterInput('#email-address-modal', customer.email);
             },
             'fill out password field':  function(){
-                return productCmd
+                return command
                 .enterInput('#loginPassword', customer.password);
             },
             'submit form': function() {  
-                return productCmd
+                return command
                 .findAndClick('#dwfrm_login_login')
                 .end()
                 .getCurrentUrl()

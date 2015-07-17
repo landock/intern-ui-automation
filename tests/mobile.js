@@ -29,11 +29,18 @@ define({
     //	packages: [ { name: 'app', location: 'tests/app' } ]
     //},
     suites: null,
+<<<<<<< HEAD
     
     functionalSuites: [ 
         'tests/functional/signIn'
         //'tests/functional/addressEditingTest'
     ],
 
+=======
+    functionalSuites: [
+
+        'tests/functional/mobile/signIn'
+    ],
+>>>>>>> 033f93d058a660144bbf9640a7a1e79430fa96f6
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

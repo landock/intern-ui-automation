@@ -102,8 +102,8 @@ define([ '../../node_modules/chance/chance' ],
                     password: 'P@ssw0rd'
                 },
                 'googleplus':{
-                    email: 'hopethisevenworks@gmail.com',
-                    password: 'Hujihuji'
+                    email: 'awan@1800contacts.com',
+                    password: 'contactsdev'
                 }
             }
             return logins[service]

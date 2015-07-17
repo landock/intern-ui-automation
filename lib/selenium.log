@@ -1,0 +1,9 @@
+13:31:50.310 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching a standalone Selenium Server
+13:31:50.372 INFO [1] org.openqa.selenium.server.SeleniumServer - Writing debug logs to selenium.log
+13:31:50.372 INFO [1] org.openqa.selenium.server.SeleniumServer - Java: Oracle Corporation 24.79-b02
+13:31:50.372 INFO [1] org.openqa.selenium.server.SeleniumServer - OS: Windows 8.1 6.3 amd64
+13:31:50.372 INFO [1] org.openqa.selenium.server.SeleniumServer - v2.46.0, with Core v2.46.0. Built from revision 87c69e2
+13:31:50.419 INFO [1] org.openqa.selenium.remote.server.DefaultDriverProvider - Driver class not found: com.opera.core.systems.OperaDriver
+13:31:50.419 INFO [1] org.openqa.selenium.remote.server.DefaultDriverFactory - Driver provider com.opera.core.systems.OperaDriver is not registered
+13:31:50.513 INFO [1] org.openqa.selenium.server.SeleniumServer - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+13:31:50.513 INFO [1] org.openqa.grid.selenium.GridLauncher - Selenium Server is up and running

@@ -41,7 +41,7 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 				return baseCommand.navLogin(customer);
 			},
 
-			'logout': function() {
+			'logout1': function() {
 				return baseCommand.navLogout();
 			},
 
@@ -49,7 +49,7 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 				return baseCommand.navLoginCart(customer);
 			},
 
-			'logout': function() {
+			'logout2': function() {
 				return homeCommand.loginFromHome(customer);
 			},
 

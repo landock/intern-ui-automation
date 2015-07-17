@@ -16,16 +16,6 @@
                 }
             },
             intern:{
-<<<<<<< HEAD
-            	someReleaseTarget: {
-            		options: {
-            			runType: 'runner',
-            			config: 'tests/mobile.js',
-            			reporters: ['Console']
-            			// reporters: ['Pretty']
-            		}
-            	}
-=======
                 someReleaseTarget: {
                     options: {
                         runType: 'runner',
@@ -42,7 +32,6 @@
                         // reporters: ['Pretty']
                     }
                 }
->>>>>>> 033f93d058a660144bbf9640a7a1e79430fa96f6
             }
         });
         grunt.loadNpmTasks('grunt-shell');
@@ -53,7 +42,7 @@
         grunt.registerTask('test', [ 'run:selenium', 'intern', 'stop:selenium' ]);
         grunt.registerTask('mobile', [ 'run:selenium', 'intern:mobile', 'stop:selenium' ]);
         grunt.registerTask('selenium', [ 'shell:selenium']);
-        grunt.registerTask('default', ['selenium_start', 'intern', 'selenium_stop' ]);
+        grunt.registerTask('default', ['selenium_start', 'intern:someReleaseTarget', 'selenium_stop' ]);
         grunt.registerTask('sauce', ['intern']);
     };
 }());

@@ -5,14 +5,19 @@ define([
 	'./customCommands/BaseCommand'
 ],
 
-function (registerSuite, generator, config, BaseCommand) {
-	registerSuite (function() {
+function (registerSuite, generator, config, BaseCommand) 
+{
+	registerSuite (function()
+	{
 		var customer;
 		var baseCommand;
 
-		return {
+		return 
+		{
 			name: 'Sign In',
-			setup: function() {
+
+			setup : function() 
+			{
 				customer = generator.getExistingCustomer(config.existingId);
 				baseCommand = new BaseCommand(this.remote);
 
@@ -24,27 +29,33 @@ function (registerSuite, generator, config, BaseCommand) {
 				.get(config.URL);
 			},
 
-			'login from main button': function() {
+			'login from main button': function() 
+			{
 				return baseCommand.login(customer);
 			},
 
-			'logout': function() {
+			'logout': function()
+			{
 				return baseCommand.navLogout();
 			},
 
-			'login from navigation bar': function() {
+			'login from navigation bar': function()
+			{
 				return baseCommand.navLogin(customer);
 			},
 
-			'logout': function() {
+			'logout': function()
+			{
 				return baseCommand.navLogout();
 			},
 
-			'login from cart in navigation bar': function() {
+			'login from cart in navigation bar': function()
+			{
 				return baseCommand.navLoginCart(customer);
 			},
 
-			'logout': function() {
+			'logout': function()
+			{
 				return baseCommand.navLogout();
 			}
 		};

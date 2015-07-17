@@ -16,7 +16,7 @@
             	someReleaseTarget: {
             		options: {
             			runType: 'runner',
-            			config: 'tests/intern.js',
+            			config: 'tests/mobile.js',
             			reporters: ['Console']
             			// reporters: ['Pretty']
             		}

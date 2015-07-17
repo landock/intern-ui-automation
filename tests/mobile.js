@@ -29,6 +29,11 @@ define({
     //	packages: [ { name: 'app', location: 'tests/app' } ]
     //},
     suites: null,
-    functionalSuites: [ ],
+    
+    functionalSuites: [ 
+        'tests/functional/signIn'
+        //'tests/functional/addressEditingTest'
+    ],
+
     excludeInstrumentation: /^(?:tests|node_modules)\//
 });

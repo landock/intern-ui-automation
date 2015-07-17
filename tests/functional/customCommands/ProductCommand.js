@@ -14,6 +14,7 @@ function(BaseCommand){
     proto.fillInfo = function () {
         return new this.constructor(this, function () {
             return this.parent
+                .sleep(500) // Chrome needs a bit of time before click events will work
                 .setDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
                 .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
                 .setDropdown('#dwfrm_lensproduct_rightEye_baseCurve','8.8')

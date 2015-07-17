@@ -6,11 +6,8 @@ define([
 	'../customCommands/HomeCommand'
 ],
 
-<<<<<<< HEAD
-function (registerSuite, generator, config, BaseCommand) {
-=======
 function (registerSuite, generator, config, BaseCommand, HomeCommand) {
->>>>>>> 033f93d058a660144bbf9640a7a1e79430fa96f6
+	
 	registerSuite (function() {
 		var customer;
 		var baseCommand;
@@ -18,10 +15,7 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 
 		return {
 			name: 'Sign In',
-<<<<<<< HEAD
-=======
 
->>>>>>> 033f93d058a660144bbf9640a7a1e79430fa96f6
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
 				baseCommand = new BaseCommand(this.remote);
@@ -36,7 +30,6 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 			},
 
 			'login from main button': function() {
-<<<<<<< HEAD
 				return baseCommand.login(customer);
 			},
 
@@ -57,32 +50,12 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 			},
 
 			'logout': function() {
-				return baseCommand.navLogout();
-			}
-=======
 				return homeCommand.loginFromHome(customer);
 			},
 
 			'logout first time': function() {
 				return baseCommand.mobileLogout();
 			}
-
-			// 'login from navigation bar': function() {
-			// 	return baseCommand.navLogin(customer);
-			// },
-
-			// 'logout again': function() {
-			// 	return baseCommand.navLogout();
-			// },
-
-			// 'login from cart in navigation bar': function() {
-			// 	return baseCommand.navLoginCart(customer);
-			// },
-
-			// 'logout last time': function() {
-			// 	return baseCommand.navLogout();
-			// }
->>>>>>> 033f93d058a660144bbf9640a7a1e79430fa96f6
 		};
 	});
 });

@@ -1,9 +1,9 @@
 define([
     'intern!object',
-    '../config',
-    '../utility/generator',
+    '../../config',
+    '../../utility/generator',
     'intern/chai!assert',
-    './customCommands/AllCommands'
+    '../customCommands/AllCommands'
 ],
 function (registerSuite, config, generator, assert, Command) {
     registerSuite(function(){

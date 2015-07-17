@@ -2,9 +2,9 @@ define([
     'intern!object',
     'intern/chai!assert',
     // 'intern/dojo/node!leadfoot/helpers/pollUntil',
-    '../utility/generator',
-    '../config',
-    './elements/input',
+    '../../utility/generator',
+    '../../config',
+    '../elements/input',
     // '../utility/functionalTestUtils',
     // '../../../node_modules/intern/node_modules/dojo/Promise'
 ],

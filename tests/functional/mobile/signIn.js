@@ -7,6 +7,7 @@ define([
 ],
 
 function (registerSuite, generator, config, BaseCommand, HomeCommand) {
+	
 	registerSuite (function() {
 		var customer;
 		var baseCommand;
@@ -29,28 +30,32 @@ function (registerSuite, generator, config, BaseCommand, HomeCommand) {
 			},
 
 			'login from main button': function() {
+				return baseCommand.login(customer);
+			},
+
+			'logout': function() {
+				return baseCommand.navLogout();
+			},
+
+			'login from navigation bar': function() {
+				return baseCommand.navLogin(customer);
+			},
+
+			'logout1': function() {
+				return baseCommand.navLogout();
+			},
+
+			'login from cart in navigation bar': function() {
+				return baseCommand.navLoginCart(customer);
+			},
+
+			'logout2': function() {
 				return homeCommand.loginFromHome(customer);
 			},
 
 			'logout first time': function() {
 				return baseCommand.mobileLogout();
 			}
-
-			// 'login from navigation bar': function() {
-			// 	return baseCommand.navLogin(customer);
-			// },
-
-			// 'logout again': function() {
-			// 	return baseCommand.navLogout();
-			// },
-
-			// 'login from cart in navigation bar': function() {
-			// 	return baseCommand.navLoginCart(customer);
-			// },
-
-			// 'logout last time': function() {
-			// 	return baseCommand.navLogout();
-			// }
 		};
 	});
 });

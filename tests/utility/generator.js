@@ -93,6 +93,21 @@ define([ '../../node_modules/chance/chance' ],
                 }
             ];
             return personList[index];
+        },
+        
+        'getGigyaLogin': function(service){
+            var logins = {
+                'facebook':{
+                    email: 'hopethisevenworks@aim.com',
+                    password: 'P@ssw0rd'
+                },
+                'googleplus':{
+                    email: 'awan@1800contacts.com',
+                    password: 'contactsdev'
+                }
+            }
+            return logins[service]
+               
         }
     };
 });

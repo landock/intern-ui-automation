@@ -42,7 +42,7 @@
         grunt.registerTask('test', [ 'run:selenium', 'intern', 'stop:selenium' ]);
         grunt.registerTask('mobile', [ 'run:selenium', 'intern:mobile', 'stop:selenium' ]);
         grunt.registerTask('selenium', [ 'shell:selenium']);
-        grunt.registerTask('default', ['selenium_start', 'intern', 'selenium_stop' ]);
+        grunt.registerTask('default', ['selenium_start', 'intern:someReleaseTarget', 'selenium_stop' ]);
         grunt.registerTask('sauce', ['intern']);
     };
 }());

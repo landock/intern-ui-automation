@@ -19,7 +19,7 @@ function (_Command, assert) {
                 .enterInput('#email-address-modal', customer.email)
                 .enterInput('#loginPassword', customer.password)
                 .findAndClick('#dwfrm_login_login')
-                .findById('#logged-in-state');
+                .findById('logged-in-state');
         });
     };
 
@@ -116,7 +116,6 @@ function (_Command, assert) {
             })
         });
      };
-
 
     return BaseCommand;
 });

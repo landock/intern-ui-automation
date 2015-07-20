@@ -31,6 +31,7 @@ function (registerSuite, config, Command) {
             
             'assert that 1 item is in the cart': function(){
                 return command
+                .sleep(2000) //wait for ajax to update value
                 .assertElementText('#btn-my-account > li.cart > p > a > span','1')
             }
         }

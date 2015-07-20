@@ -43,11 +43,10 @@ function (registerSuite, config, generator, assert, Command) {
             'submit form': function() {  
                 return command
                 .findAndClick('#dwfrm_login_login')
-                .end()
-                .getCurrentUrl()
-                .then(function(url){
-                    assert.include(url, 'cart');
-                });
+            },
+            'assert that user is logged in': function() {
+                return command
+                .findById('logged-in-state');
             }
         }
     });

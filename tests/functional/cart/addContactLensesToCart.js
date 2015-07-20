@@ -1,7 +1,6 @@
 define([
     'intern!object',
     '../../config',
-   // 'intern/chai!assert',
     '../customCommands/AllCommands'
 ],
 function (registerSuite, config, Command) {
@@ -25,11 +24,6 @@ function (registerSuite, config, Command) {
             'assert that 1 item is in the cart': function(){
                 return command
                 .assertElementText('#btn-my-account > li.cart > p > a > span','1')
-                /*.findByCssSelector('#btn-my-account > li.cart > p > a > span')
-                .getVisibleText()
-                .then(function(text){
-                    assert.include(text, '1')
-                })*/
             }
         }
     });

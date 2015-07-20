@@ -18,15 +18,15 @@ function (_Command) {
                 .enterInput('#email-address-modal', customer.email)
                 .enterInput('#loginPassword', customer.password)
                 .findAndClick('#dwfrm_login_login');
-                .findById('#logged-in-state');
+                // .findById('#logged-in-state');
         });
     };
 
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .findAndClick('a[title="Logout"]')
-            .findById('logged-out-state');
+            .findAndClick('a[title="Logout"]');
+            // .findById('logged-out-state');
         });
     };
 
@@ -102,6 +102,16 @@ function (_Command) {
                     inputs[i].clearValue();
                 }
             });
+        });
+     };
+
+     proto.removeDemandWareWidget = function() {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function() {
+                $('#__DW__SFToolkit').remove();
+            },
+            []);
         });
      };
 

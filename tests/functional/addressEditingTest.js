@@ -35,12 +35,16 @@ function (registerSuite, generator, config, AllCommands) {
                 return command.findAndClick('div.tab:nth-child(3) > a:nth-child(1)');
             },
 
-            'click address edit' : function() {
+            'click edit address' : function() {
                 return command.findAndClick('a[href*="Address-Edit"]');
             },
 
             'fill out address form' : function() {
                 return command.fillAddressForm(customer);
+            },
+
+            'logout' : function() {
+                return command.logoutFromHeader();
             }
         };
     });

@@ -10,20 +10,6 @@ function(BaseCommand){
     }
     
     proto.constructor = HeaderCommand;
-
-    /*replaced by navigateToUrl in baseCommand to allow
-    us to abstract config out of command objects  */
-
-   //   proto.goToAccount = function () {
-   //      return new this.constructor(this, function () {
-   //          return this.parent
-   //          .get(config.URL + '/home/index')
-   //          .findByCssSelector('a[title="My Account"]')
-			// .click()
-			// .end()
-			// .findByClassName('account-tabs');
-   //       });
-   //  };
     
     return HeaderCommand;
 });

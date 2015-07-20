@@ -6,7 +6,7 @@ define({
     defaultTimeout: 1200000,
     capabilities: {
         'chromeOptions': {
-            mobileEmulation: { "deviceName": "Google Nexus 5" }
+            mobileEmulation: { 'deviceName': 'Google Nexus 5' }
         }
         // 'selenium-version': '2.43.0'
     },
@@ -31,8 +31,8 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        //'tests/functional/signIn'
-        //'tests/functional/addressEditingTest'
+        // 'tests/functional/mobile/mobileSignInTest'
+        'tests/functional/mobile/mobileAddressEditingTest'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

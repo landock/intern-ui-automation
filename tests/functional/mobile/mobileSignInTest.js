@@ -33,33 +33,34 @@ function (registerSuite, generator, config, pollUntil, AllCommands, Promise) {
 
 			beforeEach : function() {
 				return command
-				.execute(function() {
-					$('#__DW__SFToolkit').remove();
-				},
-				[]);
+				.removeDemandWareWidget();
+				// .execute(function() {
+				// 	$('#__DW__SFToolkit').remove();
+				// },
+				// []);
 			},
 
-			// 'login from home button': function() {
-			// 	return command.loginFromHome(customer);
-			// },
+			'login from home button': function() {
+				return command.loginFromHome(customer);
+			},
 
-			// 'logout 1': function() {
-			// 	return command.mobileLogout();
-			// },
+			'logout 1': function() {
+				return command.mobileLogout();
+			},
 
 			'login from mobile menu' : function() {
 				return command.mobileLogin(customer);
 				// .sleep(25000);
-			},
-
-			'logout 2' : function() {
-				return command
-				.then(pollUntil(function () {
-					var element = document.getElementById('logged-in-state');
-					return element === undefined ? null : true;
-				}, [], 10000))
-				.mobileLogout();
 			}
+
+			// 'logout 2' : function() {
+			// 	return command
+			// 	.then(pollUntil(function () {
+			// 		var element = document.getElementById('logged-in-state');
+			// 		return element === undefined ? null : true;
+			// 	}, [], 10000))
+			// 	.mobileLogout();
+			// }
 		};
 	});
 });

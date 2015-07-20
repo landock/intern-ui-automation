@@ -1,8 +1,9 @@
 define([
-  'intern/dojo/node!leadfoot/Command'
+  'intern/dojo/node!leadfoot/Command',
+  'intern/chai!assert'
 ], 
 
-function (_Command) {
+function (_Command, assert) {
     var proto = BaseCommand.prototype = Object.create(_Command.prototype, {});
 
     function BaseCommand() {
@@ -17,7 +18,7 @@ function (_Command) {
                 .findAndClick('a[data-flyout-id="flyout-sign-in"]')
                 .enterInput('#email-address-modal', customer.email)
                 .enterInput('#loginPassword', customer.password)
-                .findAndClick('#dwfrm_login_login');
+                .findAndClick('#dwfrm_login_login')
                 .findById('#logged-in-state');
         });
     };
@@ -104,6 +105,18 @@ function (_Command) {
             });
         });
      };
+
+     proto.assertElementText = function(selector,text) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findByCssSelector(selector)
+            .getVisibleText()
+            .then(function(elem_text){
+                assert.include(elem_text, text)
+            })
+        });
+     };
+
 
     return BaseCommand;
 });

@@ -5,26 +5,23 @@ define([
 ],
 function (registerSuite, config, Command) {
     registerSuite(function(){
-        var customer;
         var command;
         return {
-            name: 'non-logged in customer can add contact lenses to cart',
+            name: 'new logged-in customer can logout',
             setup: function() {
+                //this is a follow-on test, should be run last in the accounts tests
                 command = new Command(this.remote);
                 return this.remote
-                .clearCookies()
+                //.clearCookies()
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
-                .get(config.URL + '/lens/acuvue-oasys-24')
+                //.get(config.URL + '/account');
             },
-            'fill out eye info': function(){
-                return command.fillInfo();
-            },
-            'assert that 1 item is in the cart': function(){
+            'log out using link in header': function(){
                 return command
-                .assertElementText('#btn-my-account > li.cart > p > a > span','1')
-            }
+                .logoutFromHeader();
+            },
         }
     });
 });

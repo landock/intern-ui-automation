@@ -43,7 +43,6 @@ function (registerSuite, config, assert, Command) {
                     return $('#dwfrm_cart_shipments_i0_items_i0_rightEyeQuantity_desktop').val()
                 })
                 .then(function(quantity){
-                    console.log(quantity)
                     assert.include(quantity, '2')
                 })
             },

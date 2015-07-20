@@ -1,10 +1,5 @@
 (function () {
     module.exports = function(grunt) {
-        function logToText(err, stdout,stderr, cb) {
-            //var seleniumLogStream = fs.createWriteStream('seleniumLog.log');
-            //stdout.pipe(seleniumLogStream);
-            cb();
-        }
         grunt.initConfig({
             run: {
                 selenium: {
@@ -13,36 +8,33 @@
                         wait:false,
                         cwd: 'lib'
                     }
+                },
+                selenium_stop: {
+                    exec: 'curl http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer'
                 }
             },
+
             intern:{
-                someReleaseTarget: {
+                dev: {
                     options: {
                         runType: 'runner',
                         config: 'tests/intern.js',
-                        reporters: ['Console']
-                        // reporters: ['Pretty']
+                        reporters: ['Runner']
                     }
                 },
                 mobile: {
                     options: {
                         runType: 'runner',
                         config: 'tests/mobile.js',
-                        reporters: ['Console']
-                        // reporters: ['Pretty']
+                        reporters: ['Runner']
                     }
                 }
             }
         });
-        grunt.loadNpmTasks('grunt-shell');
         grunt.loadNpmTasks('grunt-run');
         grunt.loadNpmTasks('intern');
-        grunt.loadNpmTasks('grunt-selenium-webdriver');
 
-        grunt.registerTask('test', [ 'run:selenium', 'intern', 'stop:selenium' ]);
-        grunt.registerTask('mobile', [ 'run:selenium', 'intern:mobile', 'stop:selenium' ]);
-        grunt.registerTask('selenium', [ 'shell:selenium']);
-        grunt.registerTask('default', ['selenium_start', 'intern:someReleaseTarget', 'selenium_stop' ]);
-        grunt.registerTask('sauce', ['intern']);
+        grunt.registerTask('default', [ 'run:selenium', 'intern:dev', 'run:selenium_stop' ]);
+        grunt.registerTask('mobile', [ 'run:selenium', 'intern:mobile', 'run:selenium_stop' ]);
     };
 }());

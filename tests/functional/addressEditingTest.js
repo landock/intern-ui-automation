@@ -40,7 +40,7 @@ function (registerSuite, generator, config, AllCommands) {
             },
 
             'fill out address form' : function() {
-                return command.fillAddressForm(customer);
+                return command.fillEditAddressForm(customer);
             },
 
             'logout' : function() {

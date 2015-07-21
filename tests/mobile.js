@@ -31,8 +31,8 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        // 'tests/functional/mobile/mobileSignInTest'
-        'tests/functional/mobile/mobileAddressEditingTest'
+        'tests/functional/mobile/mobileSignInTest'
+        // 'tests/functional/mobile/mobileAddressEditingTest'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

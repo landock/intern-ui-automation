@@ -1,58 +1,50 @@
 define([
     'intern!object',
-    'intern/chai!assert',
-    // 'intern/dojo/node!leadfoot/helpers/pollUntil',
     '../../utility/generator',
     '../../config',
-    '../elements/input',
-    // '../utility/functionalTestUtils',
-    // '../../../node_modules/intern/node_modules/dojo/Promise'
+    '../customCommands/AllCommands'
 ],
 
-function (registerSuite, assert, generator, config, Input) {
+function (registerSuite, generator, config, Command) {
 	registerSuite(function(){
 		var customer;
-		var input;
+		var command;
+
 		return {
 			name: 'Sign in from Home Page',
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
-				input = new Input(this.remote);
+				command = new Command(this.remote);
+
 				return this.remote
+				.clearCookies()
 				.setTimeout('script', 60000)
 				.setTimeout('page load', 60000)
 				.setFindTimeout(50000)
 				.get(config.URL);
 			},
 
-			'click in-line sign in button' : function() {
-				return this.remote
-				.findByCssSelector('a[data-inline-id="inline-sign-in"]')
-				.click();
+			'sign in from main button on homepage' : function() {
+				return command
+				.findAndClick('a[data-inline-id="inline-sign-in"]')
+				.enterInput('#email-address-modal', customer.email)
+				.enterInput('#loginPassword', customer.password)
+				.findAndClick('#dwfrm_login_login');
 			},
 
-			'fill in email field' : function() {
-				return input
-				.enterInput('#email-address-modal', customer.email);
+			'logout 1' : function() {
+				return command
+				.logoutFromHeader();
 			},
 
-			'fill in password field' : function() {
-				return input
-				.enterInput('#loginPassword', customer.password);
+			'sign in from header' : function() {
+				return command
+				.loginFromHeader(customer);
 			},
 
-			'submit login form' : function() {
-				// console.log(this);
-				return this.remote
-				.findById('dwfrm_login_login')
-				.click()
-				.end()
-				.findById('logged-in-state');
-				// .getVisibleText()
-				// .then(function(txt) {
-				// 	console.log(txt);
-				// 	assert.include(txt, 'Welcome back test', 'User has logged on successfully');
-				// });
+			'logout 2' : function() {
+				return command
+				.logoutFromHeader();
 			}
 		};
 	});

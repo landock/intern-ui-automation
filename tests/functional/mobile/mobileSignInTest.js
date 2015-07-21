@@ -2,19 +2,13 @@ define([
 	'intern!object',
 	'../../utility/generator',
 	'../../config',
-	'intern/dojo/node!leadfoot/helpers/pollUntil',
-	'../customCommands/AllCommands',
-	'intern/dojo/Promise'
+	'../customCommands/AllCommands'
 ],
 
-function (registerSuite, generator, config, pollUntil, AllCommands, Promise) {
+function (registerSuite, generator, config, AllCommands) {
 	registerSuite (function() {
 		var customer;
 		var command;
-
-		// var 'pollAccrossPageLoads' = function(timeout) {
-		// 	dfd = new Promise.Deferred();
-		// }
 
 		return {
 			name: 'Mobile Log In and Log Out',
@@ -34,10 +28,6 @@ function (registerSuite, generator, config, pollUntil, AllCommands, Promise) {
 			beforeEach : function() {
 				return command
 				.removeDemandWareWidget();
-				// .execute(function() {
-				// 	$('#__DW__SFToolkit').remove();
-				// },
-				// []);
 			},
 
 			'login from home button': function() {
@@ -49,18 +39,14 @@ function (registerSuite, generator, config, pollUntil, AllCommands, Promise) {
 			},
 
 			'login from mobile menu' : function() {
-				return command.mobileLogin(customer);
-				// .sleep(25000);
-			}
+				return command.mobileLogin(customer)
+				.waitForDeletedByCssSelector('#modal-sign-in');
+			},
 
-			// 'logout 2' : function() {
-			// 	return command
-			// 	.then(pollUntil(function () {
-			// 		var element = document.getElementById('logged-in-state');
-			// 		return element === undefined ? null : true;
-			// 	}, [], 10000))
-			// 	.mobileLogout();
-			// }
+			'logout 2' : function() {
+				return command
+				.mobileLogout();
+			}
 		};
 	});
 });

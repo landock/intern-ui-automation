@@ -11,22 +11,22 @@ define([ '../../node_modules/chance/chance' ],
 
     return{
         'getRandomCustomer': function() {
-                    return {
-                        first_name: 'Test',
-                        last_name: 'TestAcct',
-                        email: 'seleniumtest_'+ chance.hash({length:8})+'@1800contacts.com',
-                        shipping_address1: chance.address(),
-                        shipping_address2: chance.hash({length:3}),
-                        shipping_city: 'Salt Lake City',
-                        shipping_zip: '84111',
-                        shipping_phone: chance.phone(),
-                        shipping_state: 'UT',
-                        password: 'password',
-                        password_confirm: 'password',
-                        credit_card: chance.cc( randomCreditCardType ),
-                        doctor: 'Test',
-                        doctor_state: 'UT'
-                    };
+            return {
+                first_name: 'Test',
+                last_name: 'TestAcct',
+                email: 'seleniumtest_'+ chance.hash({length:8})+'@1800contacts.com',
+                shipping_address1: chance.address(),
+                shipping_address2: chance.hash({length:3}),
+                shipping_city: 'Salt Lake City',
+                shipping_zip: '84111',
+                shipping_phone: chance.phone(),
+                shipping_state: 'UT',
+                password: 'password',
+                password_confirm: 'password',
+                credit_card: chance.cc( randomCreditCardType ),
+                doctor: 'Test',
+                doctor_state: 'UT'
+            };
         },
 
         'getExistingCustomer': function(index){
@@ -105,9 +105,8 @@ define([ '../../node_modules/chance/chance' ],
                     email: 'awan@1800contacts.com',
                     password: 'contactsdev'
                 }
-            }
-            return logins[service]
-               
+            };
+            return logins[service];
         }
     };
 });

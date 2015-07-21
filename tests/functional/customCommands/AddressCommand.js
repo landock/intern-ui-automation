@@ -1,10 +1,8 @@
 define([
 	'./BaseCommand',
-	'intern/dojo/node!leadfoot/helpers/pollUntil',
-	'../../utility/pollUtil'
 ],
 
-function(BaseCommand, pollUntil, pollUtil) {
+function(BaseCommand) {
 
 	var proto = AddressCommand.prototype = Object.create(BaseCommand.prototype, {});
 
@@ -25,13 +23,25 @@ function(BaseCommand, pollUntil, pollUtil) {
 			.enterInput('#dwfrm_profile_address_phone', customer.shipping_phone)
 			.enterInput('#dwfrm_profile_address_firstname', customer.first_name)
 			.enterInput('#dwfrm_profile_address_lastname', customer.last_name)
-			.selectState(customer.shipping_state)
+			.selectState(customer.shipping_state);
+		});  
+	};
+
+	proto.fillEditAddressForm = function(customer) {
+		return new this.constructor(this, function() {
+			return this.parent
+			.fillAddressForm(customer)
 			.findAndClick('button[name="dwfrm_profile_address_edit"]')
-			// .then(pollUntil(function() {
-			// 	var modal = document.getElementById('edit-address-form');
-			// 	return modal === null ? true : null;
-			// }, [], 1000));
-			.then(pollUtil.pollUntilElementRemoved(this.parent, 'edit-address-form', 1000));
+			.waitForDeletedByCssSelector('#edit-address-form');
+		});
+	};
+
+	proto.fillAddNewAddressForm = function(customer) {
+		return new this.constructor(this, function() {
+			return this.parent
+			.fillAddressForm(customer)
+			.findAndClick('button[name="dwfrm_profile_address_create"]')
+			.waitForDeletedByCssSelector('#edit-address-form');
 		});
 	};
 

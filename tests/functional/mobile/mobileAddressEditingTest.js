@@ -51,7 +51,7 @@ function (registerSuite, generator, config, Command) {
 			},
 
 			'fill out address form' : function() {
-				return command.fillAddressForm(customer);
+				return command.fillEditAddressForm(customer);
 			},
 
 			'logout' : function() {

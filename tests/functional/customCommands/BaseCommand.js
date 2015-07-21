@@ -105,5 +105,15 @@ function (_Command) {
         });
      };
 
+     proto.removeDemandWareWidget = function() {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function() {
+                $('#__DW__SFToolkit').remove();
+            },
+            []);
+        });
+     };
+
     return BaseCommand;
 });

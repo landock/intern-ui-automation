@@ -1,8 +1,9 @@
 define([
-  'intern/dojo/node!leadfoot/Command'
+  'intern/dojo/node!leadfoot/Command',
+  'intern/chai!assert'
 ], 
 
-function (_Command) {
+function (_Command, assert) {
     var proto = BaseCommand.prototype = Object.create(_Command.prototype, {});
 
     function BaseCommand() {
@@ -52,12 +53,7 @@ function (_Command) {
         });
     };
 
-    proto.navigateToUrl = function(url) {
-        return new this.constructor(this, function() {
-            return this.parent
-            .get(url);
-        });
-    };
+    
 
      proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
@@ -102,6 +98,27 @@ function (_Command) {
                     inputs[i].clearValue();
                 }
             });
+        });
+     };
+    
+     proto.assertElementText = function(selector,text) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findByCssSelector(selector)
+            .getVisibleText()
+            .then(function(elem_text){
+                assert.include(elem_text, text)
+            })
+        });
+     };
+    
+     proto.removeDemandWareWidget = function() {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function() {
+                $('#__DW__SFToolkit').remove();
+            },
+            []);
         });
      };
 

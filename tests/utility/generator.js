@@ -1,112 +1,117 @@
 define([ '../../node_modules/chance/chance' ],
-    function(Chance){
-    var chance = new Chance();
-    var creditCardTypes = [
-        {type: 'Mastercard'},
-        {type: 'Visa'},
-        {type: 'American Express'},
-        {type: 'Discover Card'}
-    ];
-    var randomCreditCardType = chance.pick( creditCardTypes );
+       function(Chance){
+           var chance = new Chance();
+           var creditCardTypes = [
+               {type: 'Mastercard'},
+               {type: 'Visa'},
+               {type: 'American Express'},
+               {type: 'Discover Card'}
+           ];
 
-    return{
-        'getRandomCustomer': function() {
-            return {
-                first_name: 'Test',
-                last_name: 'TestAcct',
-                email: 'seleniumtest_'+ chance.hash({length:8})+'@1800contacts.com',
-                shipping_address1: chance.address(),
-                shipping_address2: chance.hash({length:3}),
-                shipping_city: 'Salt Lake City',
-                shipping_zip: '84111',
-                shipping_phone: chance.phone(),
-                shipping_state: 'UT',
-                password: 'password',
-                password_confirm: 'password',
-                credit_card: chance.cc( randomCreditCardType ),
-                doctor: 'Test',
-                doctor_state: 'UT'
-            };
-        },
+           var existingCustomers = [
+               {
+                   first_name: 'Test',
+                   last_name: 'TestAcct',
+                   email: 'measley-test@test.com',
+                   shipping_address1: '111 Techtock WY',
+                   shipping_address2: 'l33t',
+                   shipping_city: 'Silicon Valley',
+                   shipping_zip: '90210',
+                   shipping_phone: '(123) 456-7890',
+                   shipping_state: 'CA',
+                   password: '123456',
+                   credit_card: '4111111111111111',
+                   doctor: 'John Smith',
+                   doctor_state: 'UT'
+               },
+               {
+                   first_name: 'Test',
+                   last_name: 'TestAcct',
+                   email: 'seleniumtest_d6cd7f9e@1800contacts.com',
+                   shipping_address1: '111 Techtock WY',
+                   shipping_address2: 'l33t',
+                   shipping_city: 'Silicon Valley',
+                   shipping_zip: '90210',
+                   shipping_phone: '(123) 456-7890',
+                   shipping_state: 'CA',
+                   password: 'password',
+                   credit_card: '4111111111111111',
+                   doctor: 'John Smith',
+                   doctor_state: 'UT'
+               },
+               {
+                   first_name: 'Test',
+                   last_name: 'TestAcct',
+                   email: 'seleniumtest_7ebfde31@1800contacts.com',
+                   shipping_address1: '111 Techtock WY',
+                   shipping_address2: 'l33t',
+                   shipping_city: 'Silicon Valley',
+                   shipping_zip: '90210',
+                   shipping_phone: '(123) 456-7890',
+                   shipping_state: 'CA',
+                   password: 'password',
+                   credit_card: '4111111111111111',
+                   doctor: 'John Smith',
+                   doctor_state: 'UT'
+               },
+               {
+                   first_name: 'Test',
+                   last_name: 'TestAcct',
+                   email: 'seleniumtest_30019b7d@1800contacts.com',
+                   shipping_address1: '111 Techtock WY',
+                   shipping_address2: 'l33t',
+                   shipping_city: 'Silicon Valley',
+                   shipping_zip: '90210',
+                   shipping_phone: '(123) 456-7890',
+                   shipping_state: 'CA',
+                   password: 'password',
+                   credit_card: '4111111111111111',
+                   doctor: 'John Smith',
+                   doctor_state: 'UT'
+               }
+           ];
+           var randomCreditCardType = chance.pick( creditCardTypes );
 
-        'getExistingCustomer': function(index){
-            var personList = [
-                {
-                    first_name: 'Test',
-                    last_name: 'TestAcct',
-                    email: 'measley-test@test.com',
-                    shipping_address1: '111 Techtock WY',
-                    shipping_address2: 'l33t',
-                    shipping_city: 'Silicon Valley',
-                    shipping_zip: '90210',
-                    shipping_phone: '(123) 456-7890',
-                    shipping_state: 'CA',
-                    password: '123456',
-                    credit_card: '4111111111111111',
-                    doctor: 'John Smith',
-                    doctor_state: 'UT'
-                },
-                {
-                    first_name: 'Test',
-                    last_name: 'TestAcct',
-                    email: 'seleniumtest_d6cd7f9e@1800contacts.com',
-                    shipping_address1: '111 Techtock WY',
-                    shipping_address2: 'l33t',
-                    shipping_city: 'Silicon Valley',
-                    shipping_zip: '90210',
-                    shipping_phone: '(123) 456-7890',
-                    shipping_state: 'CA',
-                    password: 'password',
-                    credit_card: '4111111111111111',
-                    doctor: 'John Smith',
-                    doctor_state: 'UT'
-                },
-                {
-                    first_name: 'Test',
-                    last_name: 'TestAcct',
-                    email: 'seleniumtest_7ebfde31@1800contacts.com',
-                    shipping_address1: '111 Techtock WY',
-                    shipping_address2: 'l33t',
-                    shipping_city: 'Silicon Valley',
-                    shipping_zip: '90210',
-                    shipping_phone: '(123) 456-7890',
-                    shipping_state: 'CA',
-                    password: 'password',
-                    credit_card: '4111111111111111',
-                    doctor: 'John Smith',
-                    doctor_state: 'UT'
-                },
-                {
-                    first_name: 'Test',
-                    last_name: 'TestAcct',
-                    email: 'seleniumtest_30019b7d@1800contacts.com',
-                    shipping_address1: '111 Techtock WY',
-                    shipping_address2: 'l33t',
-                    shipping_city: 'Silicon Valley',
-                    shipping_zip: '90210',
-                    shipping_phone: '(123) 456-7890',
-                    shipping_state: 'CA',
-                    password: 'password',
-                    credit_card: '4111111111111111',
-                    doctor: 'John Smith',
-                    doctor_state: 'UT'
-                }
-            ];
-            return personList[index];
-        },
-        
-        'getGigyaLogin': function(service){
-            var logins = {
-                'facebook':{
-                    email: 'hopethisevenworks@aim.com',
-                    password: 'P@ssw0rd'
-                },
-                'googleplus':{
-                    email: 'awan@1800contacts.com',
-                    password: 'contactsdev'
-                }
-            };
-            return logins[service];
-        }
-    };
-});
+           return{
+               'getRandomCustomer': function() {
+                   return {
+                       first_name: 'Test',
+                       last_name: 'TestAcct',
+                       email: 'seleniumtest_'+ chance.hash({length:8})+'@1800contacts.com',
+                       shipping_address1: chance.address(),
+                       shipping_address2: chance.hash({length:3}),
+                       shipping_city: 'Salt Lake City',
+                       shipping_zip: '84111',
+                       shipping_phone: chance.phone(),
+                       shipping_state: 'UT',
+                       password: 'password',
+                       password_confirm: 'password',
+                       credit_card: chance.cc( randomCreditCardType ),
+                       doctor: 'Test',
+                       doctor_state: 'UT'
+                   };
+               },
+
+               'getExistingCustomer': function(index){
+                   return existingCustomers[index];
+               },
+
+               'getRandomExistingCustomer': function(index){
+                   return chance.pick( existingCustomers );
+               },
+
+               'getGigyaLogin': function(service){
+                   var logins = {
+                       'facebook':{
+                           email: 'exzikal_changwitz_1437165360@tfbnw.net',
+                           password: 'bjtz2jtbwp4'
+                       },
+                       'googleplus':{
+                           email: 'awan@1800contacts.com',
+                           password: 'contactsdev'
+                       }
+                   };
+                   return logins[service];
+               }
+           };
+       });

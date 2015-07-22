@@ -19,7 +19,7 @@ function (registerSuite, config, generator, assert, Command) {
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
-                .get(config.URL + '/lens/acuvue-oasys-24')
+                .get(config.URL + '/lens/acuvue-oasys-24');
             },
             'fill out eye info': function(){
                 return command.fillInfo();
@@ -42,12 +42,12 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'submit form': function() {  
                 return command
-                .findAndClick('#dwfrm_login_login')
+                .findAndClick('#dwfrm_login_login');
             },
             'assert that user is logged in': function() {
                 return command
                 .findById('logged-in-state');
             }
-        }
+        };
     });
 });

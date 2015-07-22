@@ -53,8 +53,6 @@ function (_Command, assert) {
         });
     };
 
-    
-
      proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
@@ -65,6 +63,8 @@ function (_Command, assert) {
         });
      };
 
+    //probably refactor
+    // this works for all desktop drop-downs and non power mobile drop-downs
     proto.setDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
@@ -77,8 +77,18 @@ function (_Command, assert) {
                         elem.val(value).change();
                     }
                 }, [id, value]);
-
          });
+    };
+    
+    // this works for all drop-downs except desktop power drop-downs.
+    proto.mobileSetPowerDropDown = function(id, value) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function(id, value) {
+                var elem = $(id);
+                elem.val(value).change();
+            }, [id, value]);
+        });
     };
     
     proto.findAndClick = function(id) {
@@ -107,21 +117,11 @@ function (_Command, assert) {
             .findByCssSelector(selector)
             .getVisibleText()
             .then(function(elem_text){
-                assert.include(elem_text, text)
-            })
+                assert.include(elem_text, text);
+            });
         });
      };
     
-     proto.removeDemandWareWidget = function() {
-        return new this.constructor(this, function() {
-            return this.parent
-            .execute(function() {
-                $('#__DW__SFToolkit').remove();
-            },
-            []);
-        });
-     };
-
      proto.removeDemandWareWidget = function() {
         return new this.constructor(this, function() {
             return this.parent

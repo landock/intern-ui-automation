@@ -19,15 +19,28 @@ function (_Command, assert) {
                 .enterInput('#email-address-modal', customer.email)
                 .enterInput('#loginPassword', customer.password)
                 .findAndClick('#dwfrm_login_login');
-                // .findById('#logged-in-state');
         });
     };
+    
+    proto.assertLoggedIn = function (customer) {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-in-state');
+        });
+    };
+
 
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
             .findAndClick('a[title="Logout"]');
-            // .findById('logged-out-state');
+        });
+    };
+    
+    proto.assertLoggedOut = function (customer) {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-out-state');
         });
     };
 
@@ -121,16 +134,6 @@ function (_Command, assert) {
             []);
         });
      };
-
-     proto.removeDemandWareWidget = function() {
-        return new this.constructor(this, function() {
-            return this.parent
-            .execute(function() {
-                $('#__DW__SFToolkit').remove();
-            },
-            []);
-        });
-     };
-
+    
     return BaseCommand;
 });

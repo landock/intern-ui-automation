@@ -12,7 +12,7 @@ function (registerSuite, config, generator, assert, Command) {
         return {
             name: 'customer can log in using Google Plus',
             setup: function() {
-                customer = generator.getGigyaLogin('googleplus');
+                customer = generator.getGigyaLogin();
                 command = new Command(this.remote);
                 return this.remote
                 .clearCookies()
@@ -45,13 +45,13 @@ function (registerSuite, config, generator, assert, Command) {
                     .end()
                     .findAndClick('#signIn')
                     .switchToWindow(handles[0])
-                    .findById('logged-in-state');
-                    //.sleep(3000)
+                    .findById('logged-in-state')
+                    .sleep(3000)
                     /*.end()
                     .findAndClick('#page-account > div > div.account-tabs.tabs-container.tabs-static > div.tab-nav.tab-nav-static > div > div:nth-child(2) > a')
                     */
-                    
-                });   
+
+                });
             }
         };
     });

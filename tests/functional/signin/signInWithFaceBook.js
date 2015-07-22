@@ -12,7 +12,7 @@ function (registerSuite, config, generator, assert, Command) {
         return {
             name: 'customer can log in using Facbook',
             setup: function() {
-                customer = generator.getGigyaLogin('facebook');
+                customer = generator.getGigyaLogin();
                 command = new Command(this.remote);
                 return this.remote
                 .clearCookies()
@@ -49,7 +49,7 @@ function (registerSuite, config, generator, assert, Command) {
                     .findAndClick('#page-account > div > div.account-tabs.tabs-container.tabs-static > div.tab-nav.tab-nav-static > div > div:nth-child(2) > a')
                     */
                 });
-                    
+
             },
         }
     });

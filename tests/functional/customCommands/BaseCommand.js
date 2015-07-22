@@ -22,12 +22,25 @@ function (_Command, assert) {
                 // .findById('#logged-in-state');
         });
     };
+    
+    proto.assertLoggedIn = function () {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-in-state');
+        });
+    };
 
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
             .findAndClick('a[title="Logout"]');
-            // .findById('logged-out-state');
+        });
+    };
+    
+    proto.assertLoggedOut = function () {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-out-state');
         });
     };
 
@@ -53,7 +66,7 @@ function (_Command, assert) {
         });
     };
 
-     proto.enterInput = function(id, text) {
+    proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
             .execute(function(id2, txt){
@@ -77,6 +90,7 @@ function (_Command, assert) {
                         elem.val(value).change();
                     }
                 }, [id, value]);
+
          });
     };
     
@@ -99,7 +113,7 @@ function (_Command, assert) {
         });
      };
 
-     proto.clearForm = function(formId) {
+    proto.clearForm = function(formId) {
         return new this.constructor(this, function() {
             return this.parent
             .findAllByCssSelector(formId + ' input[type="text"],' + formId + ' input[type="tel"]')

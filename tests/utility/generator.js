@@ -70,6 +70,9 @@ define([ '../../node_modules/chance/chance' ],
                    doctor_state: 'UT'
                }
            ];
+
+           var gigyaLoginInfo = { email: 'yissakhar.hampus@gmail.com', password: 'Ecommrocks' };
+
            var randomCreditCardType = chance.pick( creditCardTypes );
 
            return{
@@ -101,17 +104,7 @@ define([ '../../node_modules/chance/chance' ],
                },
 
                'getGigyaLogin': function(service){
-                   var logins = {
-                       'facebook':{
-                           email: 'exzikal_changwitz_1437165360@tfbnw.net',
-                           password: 'bjtz2jtbwp4'
-                       },
-                       'googleplus':{
-                           email: 'awan@1800contacts.com',
-                           password: 'contactsdev'
-                       }
-                   };
-                   return logins[service];
+                   return gigyaLoginInfo
                }
            };
        });

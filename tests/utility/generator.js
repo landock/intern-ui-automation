@@ -55,6 +55,21 @@ define([ '../../node_modules/chance/chance' ],
                    doctor_state: 'UT'
                },
                {
+                   first_name: 'Yissakhar',
+                   last_name: 'Hampus',
+                   email: 'yissakhar.hampus@gmail.com',
+                   shipping_address1: '2311 Anthony Avenue',
+                   shipping_address2: 'l33t',
+                   shipping_city: 'Rockwood',
+                   shipping_zip: '76873',
+                   shipping_phone: ' (325) 785-2492',
+                   shipping_state: 'TX',
+                   password: 'Ecommrocks',
+                   credit_card: '4111111111111111',
+                   doctor: 'Test',
+                   doctor_state: 'UT'
+               },
+               {
                    first_name: 'Test',
                    last_name: 'TestAcct',
                    email: 'seleniumtest_30019b7d@1800contacts.com',
@@ -104,7 +119,7 @@ define([ '../../node_modules/chance/chance' ],
                },
 
                'getGigyaLogin': function(service){
-                   return gigyaLoginInfo
+                   return gigyaLoginInfo;
                }
            };
        });

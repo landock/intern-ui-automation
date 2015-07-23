@@ -36,6 +36,7 @@ function (registerSuite, config, Command) {
                 .setDropdown('#dwfrm_cart_shipments_i0_items_i0_quantity_mobile', '2');
             },
 
+            // this seems icky
             'assert item quanity is not one': function() {
                 return command
                 .findByCssSelector('#dwfrm_cart_shipments_i0_items_i0_quantity_mobile > option[value="1"]')

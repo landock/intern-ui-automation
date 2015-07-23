@@ -38,7 +38,9 @@ define({
         // 'tests/functional/mobile/mobileAddContactLensesToCart',
         // 'tests/functional/mobile/mobileAddContactSolutionToCart'
         // 'tests/functional/mobile/mobileChangeItemQuantityInCart'
-        'tests/functional/mobile/mobileRemoveItemFromCart'
+        //'tests/functional/mobile/mobileRemoveItemFromCart'
+        'tests/functional/mobile/mobileCreateNewAccount',
+        'tests/functional/mobile/mobileChangePassword' // this test must run after mobileCreateAccount
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

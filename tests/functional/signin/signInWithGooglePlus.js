@@ -27,7 +27,8 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'click on Google Plus Sign In button': function(){
                 return command
-                .findAndClick('#inline-sign-in > div > div > div > div > div.row.col-8.sign-in-content > div > div > div.col.account-social > a.btn.btn-social-icon.btn-google');
+                .findAndClick('#inline-sign-in > div > div > div > div > div.row.col-8.sign-in-content > div > div > div.col.account-social > a.btn.btn-social-icon.btn-google')
+                .sleep(2000);
             },
             'switch focus to new window': function(){
                 return command
@@ -45,12 +46,7 @@ function (registerSuite, config, generator, assert, Command) {
                     .end()
                     .findAndClick('#signIn')
                     .switchToWindow(handles[0])
-                    .findById('logged-in-state')
-                    .sleep(3000)
-                    /*.end()
-                    .findAndClick('#page-account > div > div.account-tabs.tabs-container.tabs-static > div.tab-nav.tab-nav-static > div > div:nth-child(2) > a')
-                    */
-
+                    .findById('logged-in-state');
                 });
             }
         };

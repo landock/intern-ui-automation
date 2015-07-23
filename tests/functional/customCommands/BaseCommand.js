@@ -22,7 +22,7 @@ function (_Command, assert) {
         });
     };
     
-    proto.assertLoggedIn = function (customer) {
+    proto.assertLoggedIn = function () {
         return new this.constructor(this, function () {
             return this.parent
             .findById('logged-in-state');
@@ -37,7 +37,7 @@ function (_Command, assert) {
         });
     };
     
-    proto.assertLoggedOut = function (customer) {
+    proto.assertLoggedOut = function () {
         return new this.constructor(this, function () {
             return this.parent
             .findById('logged-out-state');

@@ -19,6 +19,7 @@ function (_Command, assert) {
                 .enterInput('#email-address-modal', customer.email)
                 .enterInput('#loginPassword', customer.password)
                 .findAndClick('#dwfrm_login_login');
+                // .findById('#logged-in-state');
         });
     };
     
@@ -28,7 +29,6 @@ function (_Command, assert) {
             .findById('logged-in-state');
         });
     };
-
 
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
@@ -66,9 +66,7 @@ function (_Command, assert) {
         });
     };
 
-    
-
-     proto.enterInput = function(id, text) {
+    proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
             .execute(function(id2, txt){
@@ -78,6 +76,8 @@ function (_Command, assert) {
         });
      };
 
+    //probably refactor
+    // this works for all desktop drop-downs and non power mobile drop-downs
     proto.setDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
@@ -94,6 +94,17 @@ function (_Command, assert) {
          });
     };
     
+    // this works for all drop-downs except desktop power drop-downs.
+    proto.mobileSetPowerDropDown = function(id, value) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function(id, value) {
+                var elem = $(id);
+                elem.val(value).change();
+            }, [id, value]);
+        });
+    };
+    
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
@@ -102,7 +113,7 @@ function (_Command, assert) {
         });
      };
 
-     proto.clearForm = function(formId) {
+    proto.clearForm = function(formId) {
         return new this.constructor(this, function() {
             return this.parent
             .findAllByCssSelector(formId + ' input[type="text"],' + formId + ' input[type="tel"]')
@@ -120,8 +131,8 @@ function (_Command, assert) {
             .findByCssSelector(selector)
             .getVisibleText()
             .then(function(elem_text){
-                assert.include(elem_text, text)
-            })
+                assert.include(elem_text, text);
+            });
         });
      };
     
@@ -134,6 +145,6 @@ function (_Command, assert) {
             []);
         });
      };
-    
+
     return BaseCommand;
 });

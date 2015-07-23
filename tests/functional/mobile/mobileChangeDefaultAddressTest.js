@@ -17,7 +17,7 @@ define([
 			var initialDefault;
 
 			return {
-				name: 'Change default address test',
+				name: 'mobile change default address test',
 
 				setup: function() {
 					customer = generator.getExistingCustomer(config.existingId);
@@ -31,22 +31,28 @@ define([
 					.get(config.URL);
 				},
 
-				'login': function() {
+				beforeEach : function() {
+					return command.removeDemandWareWidget();
+				},
+
+				'login' : function() {
 					return command.loginFromHome(customer);
 				},
 
-				'navigate to account page': function() {
-               		return command.findAndClick('a[title="My Account"]');
-            	},
+				'navigate to account page' : function() {
+					return command
+					.findAndClick('#icon-mobile-menu')
+					.findAndClick('a[title="My Account"]');
+				},
 
-            	'navigate to account page address tab': function() {
-                	return command.findAndClick('div.tab:nth-child(3) > a:nth-child(1)');
-           	 	},
+				'navigate to account page address tab' : function() {
+					return command
+					.findAndClick(
+					'#page-account > div > div.faux-box-over > div.account-tabs.tabs-container.tabs-static > div.tab-nav > div:nth-child(3) > a'
+					);
+				},
 
-           	 	// each address entry has a unique ID in each href url
-           	 	// probably should store and compare that
-           	 	// instead of the raw text of the address
-           	 	'store initial default': function() {
+				'store initial default': function() {
            	 		return command
            	 		.findByCssSelector('p[class="no-margin-bottom saved-address"]')
            	 		.getVisibleText()
@@ -56,14 +62,12 @@ define([
            	 		.end();
            	 	},
 
-           	 	// new address automatically becomes the default
            	 	'add a new address': function() {
            	 		return command
            	 		.findAndClick('a[title="Create New Address"]')
            	 		.fillAddNewAddressForm(customer);
            	 	},
 
-           	 	// set initial default address back to default
            	 	'set default address': function() {
            	 		return command
            	 		.findAndClick('div.col-3:nth-child(4) > div:nth-child(1) > p:nth-child(2) > a:nth-child(3)');
@@ -82,8 +86,8 @@ define([
 
            	 	'logout': function() {
            	 		return command
-           	 		.logoutFromHeader();
+           	 		.mobileLogout();
            	 	}
-			 };
+			};
 		});
 	});

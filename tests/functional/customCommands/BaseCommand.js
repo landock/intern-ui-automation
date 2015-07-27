@@ -1,7 +1,7 @@
 define([
-  'intern/dojo/node!leadfoot/Command',
-  'intern/chai!assert'
-], 
+    'intern/dojo/node!leadfoot/Command',
+    'intern/chai!assert'
+],
 
 function (_Command, assert) {
     var proto = BaseCommand.prototype = Object.create(_Command.prototype, {});
@@ -12,17 +12,37 @@ function (_Command, assert) {
 
     proto.constructor = BaseCommand;
 
+    proto.setAllTimeoutLengths = function(timeoutLength) {
+        return new this.constructor(this, function () {
+            var defaultTimeoutLength = timeoutLength || 60000;
+            var findTimeoutLength = ( defaultTimeoutLength - ( ( 10/100 ) * defaultTimeoutLength ) );
+            return this.parent
+            .setTimeout('script', defaultTimeoutLength)
+            .setTimeout('page load', defaultTimeoutLength)
+            .setFindTimeout(findTimeoutLength)
+            .clearCookies();
+        });
+    };
+
+    proto.configureNewSession = function() {
+        return new this.constructor(this, function () {
+            return this.parent
+            .setAllTimeoutLengths()
+            .clearCookies();
+        });
+    };
+
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
-                .findAndClick('a[data-flyout-id="flyout-sign-in"]')
-                .enterInput('#email-address-modal', customer.email)
-                .enterInput('#loginPassword', customer.password)
-                .findAndClick('#dwfrm_login_login');
-                // .findById('#logged-in-state');
+            .findAndClick('a[data-flyout-id="flyout-sign-in"]')
+            .enterInput('#email-address-modal', customer.email)
+            .enterInput('#loginPassword', customer.password)
+            .findAndClick('#dwfrm_login_login');
+            // .findById('#logged-in-state');
         });
     };
-    
+
     proto.assertLoggedIn = function () {
         return new this.constructor(this, function () {
             return this.parent
@@ -36,7 +56,7 @@ function (_Command, assert) {
             .findAndClick('a[title="Logout"]');
         });
     };
-    
+
     proto.assertLoggedOut = function () {
         return new this.constructor(this, function () {
             return this.parent
@@ -74,26 +94,26 @@ function (_Command, assert) {
             }, [id, text])
             .end();
         });
-     };
+    };
 
     //probably refactor
     // this works for all desktop drop-downs and non power mobile drop-downs
     proto.setDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
-                .execute(function(id, value){
-                    var elem = $(id);
-                    if(id.indexOf('Power') != -1){
-                        elem.parent().siblings().find('li a[data-value="'+value+'"]').click();
-                    }
-                    else{
-                        elem.val(value).change();
-                    }
-                }, [id, value]);
+            .execute(function(id, value){
+                var elem = $(id);
+                if(id.indexOf('Power') != -1){
+                    elem.parent().siblings().find('li a[data-value="'+value+'"]').click();
+                }
+                else{
+                    elem.val(value).change();
+                }
+            }, [id, value]);
 
-         });
+        });
     };
-    
+
     // this works for all drop-downs except desktop power drop-downs.
     proto.mobileSetPowerDropDown = function(id, value) {
         return new this.constructor(this, function() {
@@ -104,14 +124,14 @@ function (_Command, assert) {
             }, [id, value]);
         });
     };
-    
+
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
             .findDisplayedByCssSelector(id)
             .click();
         });
-     };
+    };
 
     proto.clearForm = function(formId) {
         return new this.constructor(this, function() {
@@ -123,9 +143,9 @@ function (_Command, assert) {
                 }
             });
         });
-     };
-    
-     proto.assertElementText = function(selector,text) {
+    };
+
+    proto.assertElementText = function(selector,text) {
         return new this.constructor(this, function() {
             return this.parent
             .findByCssSelector(selector)
@@ -134,9 +154,9 @@ function (_Command, assert) {
                 assert.include(elem_text, text);
             });
         });
-     };
-    
-     proto.removeDemandWareWidget = function() {
+    };
+
+    proto.removeDemandWareWidget = function() {
         return new this.constructor(this, function() {
             return this.parent
             .execute(function() {
@@ -144,7 +164,7 @@ function (_Command, assert) {
             },
             []);
         });
-     };
+    };
 
     return BaseCommand;
 });

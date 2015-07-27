@@ -1,125 +1,66 @@
-define('checkout', [ 'intern!object', 'intern/chai!assert', 'intern/dojo/node!leadfoot/helpers/pollUntil', './pages/home', './pages/product', './pages/cart', './elements/input', './pages/address', './pages/doctor', './pages/paymentInfo', '../utility/generator', '../config',
-        '../utility/functionalTestUtils'
-        ], function (registerSuite, assert, pollUntil, Home, Product, Cart, Input, Address, Doctor, PaymentInfo, generator, config, utils ) {
+define([
+    'intern!object',
+    '../utility/generator',
+    '../config',
+    'intern/chai!assert',
+    './customCommands/AllCommands'
+],
 
-            registerSuite(function(){
-                var homePage;
-                var productPage;
-                var cartPage;
-                var addressPage;
-                var doctorPage;
-                var paymentInfoPage;
-                var input;
-                var customer;
-                return {
-                    name: 'Create NI Order',
-                    setup: function(){
-                        homePage = new Home(this.remote);
-                        productPage = new Product(this.remote);
-                        cartPage = new Cart(this.remote);
-                        addressPage = new Address(this.remote);
-                        doctorPage = new Doctor(this.remote);
-                        paymentInfoPage = new PaymentInfo(this.remote);
-                        input = new Input(this.remote);
-                        customer = generator.getRandomCustomer();
-                        console.log(customer);
-                        return this.remote
-                            .get(config.URL + '/lens/acuvue-oasys-24')
-                            .clearCookies()
-                            .setFindTimeout(30000);
-                    },
-                    teardown: function() {
-                        return this.remote
-                            .get(config.URL);
-                    },
-                    'Set prescription info': {
-                        'set left eye power': function(){
-                            return productPage
-                                .enterPower('-0.50', "left");
-                        },
-                        'set right eye power': function(){
-                            return productPage
-                                .enterPower('-0.50', "right");
-                        },
-                        'enter BC for left eye': function(){
-                            return productPage
-                                .enterBCSelect("left", "8.4");
-                        },
-                        'enter BC for right eye': function(){
-                            return productPage
-                                .enterBCSelect("right", "8.8");
-                        },
-                        'enter boxes for left eye': function(){
-                            return productPage
-                                .enterBoxesSelect("left", "1");
-                        },
-                        'enter boxes for right eye': function(){
-                            return productPage
-                                .enterBoxesSelect("right", "1");
-                        },
-                        'enter input for first name': function(){
-                            return input
-                                .enterInput('#patient-first', customer.firstName);
-                        },
-                        'enter input for last name': function(){
-                            return input
-                                .enterInput('#patient-last', customer.lastName);
-                        },
-                        'continue to cart': function(){
-                            return productPage
-                                .continueSubmit();
-                        },
-                        'continue to address': function(){
-                            return cartPage
-                                .continue();
-                        },
-                        'check address': function(){
-                            return addressPage
-                                .checkAddress();
-                        }
+function (registerSuite, generator, config, assert, Command) {
+    registerSuite(function() {
+        var customer;
+        var command;
 
-                    },
-                    'fill out address shipping form': function(){
-                        return addressPage
-                            .fillShippingForm(customer);
-                    },
-                    'Fill out doctor info': {
-                        'continue to doctor': function(){
-                            return addressPage
-                                .continueToDoctor();
-                        },
-                        'enter doctor name': function(){
-                            return doctorPage
-                                .enterDoctor(customer.doctor);
-                        },
-                        'select doctor state': function(){
-                            return doctorPage
-                                .selectState(customer.doctor_state);
-                        },
-                        'continue to review': function(){
-                            return doctorPage
-                                .continueToReview();
-                        }
-                    },
-                    'Place order': {
-                        'enter cc': function(){
-                            return paymentInfoPage
-                                .inputCreditCard(customer.creditCard)
-                                .then(function(number) {
-                                    assert.equal(number, customer.creditCard, 'cc number input');
-                                }, function(err) {
-                                    throw err;
-                                });
-                        },
-                        'enter name for cc': function(){
-                            return paymentInfoPage
-                                .inputName(customer);
-                        },
-                        'place order': function(){
-                            return paymentInfoPage
-                                .placeOrder();
-                        }
-                    }
-                };
-            });
-        });
+        return {
+            name: 'Create NI Order',
+            setup: function(){
+                command = new Command(this.remote);
+                customer = generator.getRandomCustomer();
+                return command.configureNewSession()
+                .get(config.URL + '/lens/acuvue-oasys-24');
+            },
+            'Set prescription info':function() {
+                return command
+                .fillInfo()
+            },
+            'Continue to address page': function() {
+                return command
+                .waitForDeletedByCssSelector('.prod-details-specs')
+                .findAndClick('.btn-orange');
+
+            },
+            'fill out address shipping form': function(){
+                return command
+                .fillCartAddressForm(customer)
+                .findAndClick('.btn-orange');
+            },
+            'Fill out doctor info': function(){
+                return command
+                .enterInput('#dwfrm_doctor_doctorName', customer.doctor)
+                .setDropdown('#dwfrm_doctor_states_stateUS', customer.doctor_state)
+                .findAndClick('a[href="ajax-doctor-results.html"]')
+                .sleep(1000)
+                .findAndClick('.last a');
+            },
+            'Place order': function(){
+                return command
+                .findByCssSelector('#dwfrm_billing_paymentMethods_creditCard_number')
+                .type(customer.credit_card)
+                .end()
+                .findByCssSelector('#dwfrm_billing_paymentMethods_creditCard_owner' )
+                .type(customer.last_name)
+                .end()
+                //.enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.last_name)
+                //.sleep(3000)
+                //.enterInput('#dwfrm_billing_paymentMethds_creditCard_number', customer.credit_card)
+                .findAndClick('.btn-trigger-order');
+            },
+            'Did the order go through': function() {
+                return command
+                    .setFindTimeout(8000)
+                    .waitForDeletedByCssSelector('#dwfrm_billing_paymentMethods_creditCard_owner')
+                    .assertElementText('h2.thankyou-msg', 'Thank you for your order');
+            }
+        };
+    });
+});

@@ -112,7 +112,7 @@ define([ '../../node_modules/chance/chance' ],
 
            var randomCreditCardType = chance.pick( creditCardTypes );
 
-           return{
+           return {
                'getRandomCustomer': function() {
                    return {
                        first_name: 'Test',
@@ -136,7 +136,7 @@ define([ '../../node_modules/chance/chance' ],
                    return existingCustomers[index];
                },
 
-               'getRandomExistingCustomer': function(index){
+               'getRandomExistingCustomer': function(){
                    return chance.pick( existingCustomers );
                },
 

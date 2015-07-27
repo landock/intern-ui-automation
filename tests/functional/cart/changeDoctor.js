@@ -20,13 +20,13 @@ function (registerSuite, config, generator, assert, Command) {
                 //.clearCookies()
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                .setFindTimeout(50000);
                 //.get(config.URL)
             },
             'login from header' : function() {
                 return command
                 .loginFromHeader(customer)
-                .assertLoggedIn()
+                .assertLoggedIn();
             },
             'click continue to check out': function(){
                 return command
@@ -36,16 +36,16 @@ function (registerSuite, config, generator, assert, Command) {
                 return command
                 .enterInput('#dwfrm_doctor_doctorName', customer.doctor)
                 .setDropdown('#dwfrm_doctor_states_stateUS', customer.doctor_state)
-                .findAndClick('a.btn:nth-child(4)')                
+                .findAndClick('a.btn:nth-child(4)');
             },
             'select first doctor': function() {
                 return command
                 .sleep(1000)
-                .findAndClick(first_dr_button)
+                .findAndClick(first_dr_button);
             },
             'click on edit doctor link' : function(){
                 return command
-                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)')
+                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)');
             },
             'get name of current doctor' : function(){
                 return command
@@ -53,36 +53,36 @@ function (registerSuite, config, generator, assert, Command) {
                 .getVisibleText()
                 .then(function(dr_name){
                     prev_dr_name = dr_name.replace('Doctor Name:','').trim();
-                    console.log(prev_dr_name)
-                })
+                    console.log(prev_dr_name);
+                });
             },
             'click change doctor button': function(){
                 return command
-                .findAndClick('#find-different-doc')
+                .findAndClick('#find-different-doc');
             },
             'fill new doctor info' : function(){
                 var doc_name = prev_dr_name == 'smith' ? 'Johnson' : 'smith';
                 return command
                 .enterInput('#dwfrm_doctor_doctorName', doc_name)
                 .setDropdown('#dwfrm_doctor_states_stateUS', customer.doctor_state)
-                .findAndClick('a.btn:nth-child(4)')
+                .findAndClick('a.btn:nth-child(4)');
             },
             'select first doctor again': function() {
                 return command
                 .sleep(1000)
-                .findAndClick(first_dr_button)
+                .findAndClick(first_dr_button);
             },
             'assert that new doctor name is different than previous' : function(){
                 return command
                 .findByCssSelector('.review-doctor-name')
                 .getVisibleText()
                 .then(function(new_dr_name){
-                    new_dr_name = new_dr_name.replace(/Doctor:\s*/g,'').trim()
-                    console.log(new_dr_name)
-                    console.log(prev_dr_name)
-                    assert.notEqual(new_dr_name,prev_dr_name)
-                })
+                    new_dr_name = new_dr_name.replace(/Doctor:\s*/g,'').trim();
+                    console.log(new_dr_name);
+                    console.log(prev_dr_name);
+                    assert.notEqual(new_dr_name,prev_dr_name);
+                });
             }
-        }
+        };
     });
 });

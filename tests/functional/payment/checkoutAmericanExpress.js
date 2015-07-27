@@ -9,11 +9,14 @@ function (registerSuite, config, generator, assert, Command) {
     registerSuite(function(){
         var customer;
         var command;
+        var prev_dr_name;
+        var creditCard;
         return {
-            name: 'customer can log in from cart',
+            name: 'logged-in customer can pay with American Express during checkout',
             setup: function() {
-                customer = generator.getExistingCustomer(config.existingId);
                 command = new Command(this.remote);
+                customer = generator.getExistingCustomer(0);
+                creditCard = generator.getCreditCardNumber('AmericanExpress');
                 return this.remote
                 .clearCookies()
                 .setTimeout('script', 60000)
@@ -21,21 +24,15 @@ function (registerSuite, config, generator, assert, Command) {
                 .setFindTimeout(50000)
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
-            'fill out eye info': function(){
-                return command.fillInfo();
-            },
-            'click continue button from cart': function() {
+            'test card payment process' : function(){
                 return command
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
+                .testCardPayment(customer,creditCard)
             },
-            'sign in from cart' : function(){
+            'assert order success' : function(){
                 return command
-                .signInFromCart(customer)
-            },
-            'assert that user is logged in': function() {
-                return command
-                .findById('logged-in-state');
+                .findByClassName('thankyou-msg')
             }
-        };
+            
+        }
     });
 });

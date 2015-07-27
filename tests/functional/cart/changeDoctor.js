@@ -10,7 +10,6 @@ function (registerSuite, config, generator, assert, Command) {
         var customer;
         var command;
         var prev_dr_name;
-        var first_dr_button = 'div.search-result-page:nth-child(1) > div:nth-child(1) > div:nth-child(4) > p:nth-child(1) > a:nth-child(1)';
         return {
             name: 'logged-in customer can change doctor during checkout',
             setup: function() {
@@ -32,16 +31,9 @@ function (registerSuite, config, generator, assert, Command) {
                 return command
                 .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
-            'fill out doctor info form' : function(){
+            'fill out Dr info form' : function(){
                 return command
-                .enterInput('#dwfrm_doctor_doctorName', customer.doctor)
-                .setDropdown('#dwfrm_doctor_states_stateUS', customer.doctor_state)
-                .findAndClick('a.btn:nth-child(4)');
-            },
-            'select first doctor': function() {
-                return command
-                .sleep(1000)
-                .findAndClick(first_dr_button);
+                .fillDrInfo(customer)
             },
             'click on edit doctor link' : function(){
                 return command
@@ -54,7 +46,8 @@ function (registerSuite, config, generator, assert, Command) {
                 .then(function(dr_name){
                     prev_dr_name = dr_name.replace('Doctor Name:','').trim();
                     console.log(prev_dr_name);
-                });
+                })
+                .sleep(1000);
             },
             'click change doctor button': function(){
                 return command
@@ -70,7 +63,7 @@ function (registerSuite, config, generator, assert, Command) {
             'select first doctor again': function() {
                 return command
                 .sleep(1000)
-                .findAndClick(first_dr_button);
+                .findAndClick('div.search-result-page:nth-child(1) > div:nth-child(1) > div:nth-child(4) > p:nth-child(1) > a:nth-child(1)');
             },
             'assert that new doctor name is different than previous' : function(){
                 return command

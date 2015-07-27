@@ -46,7 +46,7 @@ function (registerSuite, config, generator, assert, Command) {
                     .end()
                     .findAndClick('button[type="submit"]')
                     .switchToWindow(handles[0])
-                    .findById('logged-in-state')
+                    .findById('logged-in-state');
                 });
             }
         };

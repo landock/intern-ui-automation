@@ -146,5 +146,16 @@ function (_Command, assert) {
         });
      };
 
+    proto.signInFromCart = function(customer) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findAndClick('a[data-modal-id="modal-sign-in"]')
+            .enterInput('#email-address-modal', customer.email)
+            .enterInput('#loginPassword', customer.password)
+            .findAndClick('#dwfrm_login_login')
+            });
+     };
+
+
     return BaseCommand;
 });

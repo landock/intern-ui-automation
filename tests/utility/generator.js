@@ -142,6 +142,10 @@ define([ '../../node_modules/chance/chance' ],
 
                'getGigyaLogin': function(service){
                    return gigyaLoginInfo;
+               },
+               
+               'getCreditCardNumber' : function(type){
+                   return  creditCardNumber[type];
                }
            };
        });

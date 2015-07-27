@@ -7,6 +7,13 @@ define([ '../../node_modules/chance/chance' ],
                {type: 'American Express'},
                {type: 'Discover Card'}
            ];
+    
+           var creditCardNumber = {
+                'MasterCard': '5154044313438948',
+                'Visa' : '4699461124460157',
+                'AmericanExpress' : '345595026987803',
+                'Discover' : '6011427987144259'
+           }
 
            var existingCustomers = [
                {

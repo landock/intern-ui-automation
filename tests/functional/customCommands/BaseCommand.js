@@ -102,23 +102,18 @@ function (_Command, assert, config) {
 
     //probably refactor
     // this works for all desktop drop-downs and non power mobile drop-downs
-    proto.setDropdown = function (id, value) {
+    proto.setDesktopPowerDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
             .execute(function(id, value){
                 var elem = $(id);
-                if(id.indexOf('Power') != -1){
-                    elem.parent().siblings().find('li a[data-value="'+value+'"]').click();
-                }
-                else{
-                    elem.val(value).change();
-                }
+                elem.parent().siblings().find('li a[data-value="'+value+'"]').click();
             }, [id, value]);
         });
     };
 
     // this works for all drop-downs except desktop power drop-downs.
-    proto.mobileSetPowerDropDown = function(id, value) {
+    proto.setDropdown = function(id, value) {
         return new this.constructor(this, function() {
             return this.parent
             .execute(function(id, value) {

@@ -35,6 +35,7 @@ function (_Command, assert) {
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
+            .sleep(1000)
             .findAndClick('a[data-flyout-id="flyout-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
@@ -53,6 +54,7 @@ function (_Command, assert) {
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000)
             .findAndClick('a[title="Logout"]');
         });
     };
@@ -173,6 +175,17 @@ function (_Command, assert) {
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
             .findAndClick('#dwfrm_login_login')
+            });
+     };
+    
+    proto.createNewAccount = function(customer) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findAndClick('label[for="new"]')
+            .enterInput('#email-address', customer.email)
+            .enterInput('#dwfrm_profile_login_password', customer.password)
+            .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
+            .findAndClick('button[name="dwfrm_profile_confirm"]')
             });
      };
 

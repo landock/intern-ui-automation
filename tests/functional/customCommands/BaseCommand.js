@@ -100,8 +100,6 @@ function (_Command, assert, config) {
         });
     };
 
-    //probably refactor
-    // this works for all desktop drop-downs and non power mobile drop-downs
     proto.setDesktopPowerDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
@@ -112,7 +110,6 @@ function (_Command, assert, config) {
         });
     };
 
-    // this works for all drop-downs except desktop power drop-downs.
     proto.setDropdown = function(id, value) {
         return new this.constructor(this, function() {
             return this.parent

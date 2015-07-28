@@ -1,9 +1,10 @@
 define([
     'intern/dojo/node!leadfoot/Command',
-    'intern/chai!assert'
+    'intern/chai!assert',
+    '../../config'
 ],
 
-function (_Command, assert) {
+function (_Command, assert, config) {
     var proto = BaseCommand.prototype = Object.create(_Command.prototype, {});
 
     function BaseCommand() {
@@ -19,8 +20,7 @@ function (_Command, assert) {
             return this.parent
             .setTimeout('script', defaultTimeoutLength)
             .setTimeout('page load', defaultTimeoutLength)
-            .setFindTimeout(findTimeoutLength)
-            .clearCookies();
+            .setFindTimeout(findTimeoutLength);
         });
     };
 
@@ -67,6 +67,7 @@ function (_Command, assert) {
     proto.mobileLogin = function(customer) {
         return new this.constructor(this, function () {
             return this.parent
+            .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('#btn-ajax-sign-in')
             .enterInput('#email-address-modal', customer.email)
@@ -80,6 +81,7 @@ function (_Command, assert) {
     proto.mobileLogout = function() {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
             // same as above except want to findById with #logged-out-state
@@ -110,7 +112,6 @@ function (_Command, assert) {
                     elem.val(value).change();
                 }
             }, [id, value]);
-
         });
     };
 
@@ -160,7 +161,7 @@ function (_Command, assert) {
         return new this.constructor(this, function() {
             return this.parent
             .execute(function() {
-                $('#__DW__SFToolkit').remove();
+                $('#__DW__SFToolkit').contents().find('#dw-sf-control-close-button').click();
             },
             []);
         });
@@ -172,10 +173,21 @@ function (_Command, assert) {
             .findAndClick('a[data-modal-id="modal-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
-            .findAndClick('#dwfrm_login_login')
-            });
+            .findAndClick('#dwfrm_login_login');
+        });
      };
 
+    proto.mobileGet = function(url) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .get(url)
+            .getCurrentUrl()
+            .then(function(url) {
+                if(url === config.URL + '/mobileinterstitial')
+                    return this.parent.findAndClick('div[class="no-thanks"]');
+            });
+        });
+    };
 
     return BaseCommand;
 });

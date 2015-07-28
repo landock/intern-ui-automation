@@ -18,14 +18,6 @@ function (registerSuite, config, Command) {
                 .get(config.URL + '/contact-lens-solution/opti-free-puremoist-drops');
             },
 
-            // 'click enter Rx manually button': function() {
-            //     return command
-            //     .findAndClick('#enterManuallyButton');
-            // },
-
-            // 'fill out eye info': function(){
-            //     return command.mobileFillInfo();
-            // },
             'click add to cart button': function() {
                 return command
                 .findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]');

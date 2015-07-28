@@ -1,29 +1,39 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/generator'
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, generator) {
     registerSuite(function(){
         var command;
         var email;
         var newPassword = 'anewpassword';
+        var customer = generator.getRandomCustomer();
+
         return {
             name: 'new logged-in customer can create a new account',
             setup: function() {
-                //this is a follow-on test, should be run after createNewAccount
                 command = new Command(this.remote);
-                return this.remote
-                //.clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
-                .get(config.URL + '/edit-profile');
+                return command
+                .configureNewSession(60000)
+                .mobileGet(config.URL + '/account')
+                .removeDemandWareWidget();
             },
 
-            beforeEach: function() {
+            'create new account' : function() {
                 return command
-                .removeDemandWareWidget();
+                .findAndClick('label[for="new"]')
+                .enterInput('#email-address', customer.email)
+                .enterInput('#dwfrm_profile_login_password', customer.password)
+                .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
+                .findAndClick('button[name="dwfrm_profile_confirm"]')
+                .assertLoggedIn();
+            },
+
+            'navigate to edit account page' : function() {
+                return command
+                .get(config.URL + '/edit-profile');
             },
 
             'get current email from text input': function() {

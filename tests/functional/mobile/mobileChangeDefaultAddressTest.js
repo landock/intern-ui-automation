@@ -24,19 +24,15 @@ define([
 					command = new Command(this.remote);
 
 					return command
-					.clearCookies()
-					.setTimeout('script', 60000)
-					.setTimeout('page load', 60000)
-					.setFindTimeout(50000)
-					.get(config.URL);
-				},
-
-				beforeEach : function() {
-					return command.removeDemandWareWidget();
+					.configureNewSession(60000)
+					.mobileGet(config.URL);
 				},
 
 				'login' : function() {
-					return command.loginFromHome(customer);
+					return command
+					.loginFromHome(customer)
+					.assertLoggedIn()
+					.removeDemandWareWidget();
 				},
 
 				'navigate to account page' : function() {

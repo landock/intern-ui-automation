@@ -32,6 +32,16 @@ function (_Command, assert, config) {
         });
     };
 
+    proto.configureNewMobileSession = function(timeout) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .setAllTimeoutLengths(timeout)
+            .clearCookies()
+            .mobileGet(config.URL + '/account')
+            .removeDemandWareWidget();
+        });
+    };
+
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
@@ -40,7 +50,6 @@ function (_Command, assert, config) {
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
             .findAndClick('#dwfrm_login_login');
-            // .findById('#logged-in-state');
         });
     };
 
@@ -186,7 +195,7 @@ function (_Command, assert, config) {
             .enterInput('#email-address', customer.email)
             .enterInput('#dwfrm_profile_login_password', customer.password)
             .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
-            .findAndClick('button[name="dwfrm_profile_confirm"]')
+            .findAndClick('button[name="dwfrm_profile_confirm"]');
             });
      };
 

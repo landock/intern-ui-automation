@@ -11,11 +11,9 @@ function (registerSuite, config, Command) {
             setup: function() {
                 command = new Command(this.remote);
                 return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
-                .get(config.URL + '/lens/acuvue-oasys-24');
+                .configureNewSession(60000)
+                .mobileGet(config.URL + '/lens/acuvue-oasys-24')
+                .removeDemandWareWidget();
             },
 
             'click enter Rx manually button': function() {

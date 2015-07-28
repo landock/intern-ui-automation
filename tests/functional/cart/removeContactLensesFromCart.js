@@ -1,27 +1,30 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    'intern/dojo/node!leadfoot/helpers/pollUntil',
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, pollUntil) {
     registerSuite(function(){
         var customer;
         var command;
         return {
             name: 'non-logged in customer can remove an item from the cart',
             setup: function() {
-                //this is a follow-on test, should be run after changeQuantityOfItem
                 command = new Command(this.remote);
-                return this.remote
-                //.clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24')
             },
             
             'fill out eye info': function(){ //adds another item to the cart
                 return command.fillInfo();
+            },
+            
+            'add another box of contact' : function(){
+                return command
+                .get(config.URL + '/lens/acuvue-oasys-24')
+                .fillInfo();
             },
             
             'click on the Remove link for the first item': function(){
@@ -31,7 +34,10 @@ function (registerSuite, config, Command) {
             
             'assert that 1 item is in the cart': function(){
                 return command
-                .sleep(2000) //wait for ajax to update value
+                .then(pollUntil(function(){
+                    var quantity = $('#btn-my-account > li.cart > p > a > span').text();
+                    return quantity.indexOf('1') != -1 ? true : null;
+                },[],60000,1000))
                 .assertElementText('#btn-my-account > li.cart > p > a > span','1')
             }
         }

@@ -15,11 +15,8 @@ function (registerSuite, generator, config, AllCommands) {
                 customer = generator.getExistingCustomer(config.existingId);
                 command = new AllCommands(this.remote);
 
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/account');
             },
 

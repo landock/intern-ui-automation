@@ -11,13 +11,13 @@ function(BaseCommand){
     
     proto.constructor = ProductCommand;
     
-    // should refactor these after setDropdown refactor in baseCommand
+    
     proto.fillInfo = function () {
         return new this.constructor(this, function () {
             return this.parent
                 .sleep(500) // Chrome needs a bit of time before click events will work
-                .setDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
-                .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
+                .setDesktopPowerDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
+                .setDesktopPowerDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
                 .setDropdown('#dwfrm_lensproduct_rightEye_baseCurve','8.8')
                 .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve','8.4')
                 .enterInput('#patient-first', 'Testy')
@@ -30,8 +30,8 @@ function(BaseCommand){
         return new this.constructor(this, function () {
             return this.parent
                 .sleep(2500) // Chrome needs a bit of time before click events will work
-                .mobileSetPowerDropDown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
-                .mobileSetPowerDropDown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
+                .setDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
+                .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
                 .setDropdown('#dwfrm_lensproduct_rightEye_baseCurve','8.8')
                 .setDropdown('#dwfrm_lensproduct_leftEye_baseCurve','8.4')
                 .enterInput('#patient-first', 'Testy')

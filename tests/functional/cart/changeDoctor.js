@@ -15,11 +15,8 @@ function (registerSuite, config, generator, assert, Command) {
             setup: function() {
                 command = new Command(this.remote);
                 customer = generator.getExistingCustomer(0);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
             'fill out eye info': function(){

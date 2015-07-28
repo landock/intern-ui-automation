@@ -15,17 +15,13 @@ function (registerSuite, config, generator, pollUntil, Command) {
             setup: function() {
                 customer = generator.getExistingCustomer(config.emailResetId);
                 command = new Command(this.remote);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/forgot-password');
             },
             'enter and submit reset request' : function() {
                 return command
                 .enterInput('#dwfrm_requestpassword_email', customer.email)
-                //.sleep(5000)
                 .findAndClick('button[name="dwfrm_requestpassword_send"]');
             },
             'go to mailinator inbox' : function(){
@@ -39,8 +35,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
                         $('li.row-fluid:nth-child(1) > a:nth-child(1) > div:nth-child(3)').text().indexOf('less');
                     return contains_less != -1 ? true : null;
                 },[],60000,1000))
-                //.findByPartialLinkText('1-800 CONTACTS | Password Reset')
-                //.click()
                 .execute(function(){
                     return $('#mailcontainer > li:nth-child(1) > a').attr('onclick')
                 })
@@ -53,7 +47,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
             },
             'click on password reset link in email' : function(){
                 return command
-                //.findByPartialLinkText('click here')
                 .execute(function(){
                     return $('#wrapper > table > tbody > tr:nth-child(2) > td > font > center > table > tbody > tr > td > font > p:nth-child(2) > font > a').attr('href')
                 })

@@ -24,10 +24,7 @@ define([
 					command = new Command(this.remote);
 
 					return command
-					.clearCookies()
-					.setTimeout('script', 60000)
-					.setTimeout('page load', 60000)
-					.setFindTimeout(50000)
+                    .configureNewSession(60000)
 					.get(config.URL);
 				},
 

@@ -1,9 +1,10 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    'intern/dojo/node!leadfoot/helpers/pollUntil',
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, pollUntil) {
     registerSuite(function(){
         var customer;
         var command;
@@ -20,6 +21,12 @@ function (registerSuite, config, Command) {
                 return command.fillInfo();
             },
             
+            'add another box of contact' : function(){
+                return command
+                .get(config.URL + '/lens/acuvue-oasys-24')
+                .fillInfo();
+            },
+            
             'click on the Remove link for the first item': function(){
                 return command
                 .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
@@ -27,7 +34,10 @@ function (registerSuite, config, Command) {
             
             'assert that 1 item is in the cart': function(){
                 return command
-                .sleep(2000) //wait for ajax to update value
+                .then(pollUntil(function(){
+                    var quantity = $('#btn-my-account > li.cart > p > a > span').text();
+                    return quantity.indexOf('1') != -1 ? true : null;
+                },[],60000,1000))
                 .assertElementText('#btn-my-account > li.cart > p > a > span','1')
             }
         }

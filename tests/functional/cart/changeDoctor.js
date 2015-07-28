@@ -16,20 +16,23 @@ function (registerSuite, config, generator, assert, Command) {
                 command = new Command(this.remote);
                 customer = generator.getExistingCustomer(0);
                 return this.remote
-                //.clearCookies()
+                .clearCookies()
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
-                .setFindTimeout(50000);
-                //.get(config.URL)
+                .setFindTimeout(50000)
+                .get(config.URL + '/lens/acuvue-oasys-24');
             },
-            'login from header' : function() {
-                return command
-                .loginFromHeader(customer)
-                .assertLoggedIn();
+            'fill out eye info': function(){
+                return command.fillInfo();
             },
             'click continue to check out': function(){
                 return command
                 .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
+            },
+            'login from cart' : function(){
+                return command
+                .signInFromCart(customer)
+                .assertLoggedIn()
             },
             'fill out Dr info form' : function(){
                 return command
@@ -37,17 +40,18 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'click on edit doctor link' : function(){
                 return command
-                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)');
+                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)')
             },
             'get name of current doctor' : function(){
                 return command
-                .findByCssSelector('div.row:nth-child(2) > div:nth-child(1) > p:nth-child(1)')
-                .getVisibleText()
+                .findByCssSelector('#find-different-doc')
+                .execute(function(){
+                    return $('div.row:nth-child(2) > div:nth-child(1) > p:nth-child(1)').text()
+                })
                 .then(function(dr_name){
                     prev_dr_name = dr_name.replace('Doctor Name:','').trim();
                     console.log(prev_dr_name);
                 })
-                .sleep(1000);
             },
             'click change doctor button': function(){
                 return command

@@ -2,39 +2,43 @@ define([
     'intern!object',
     '../../config',
     'intern/chai!assert',
+    'intern/dojo/node!leadfoot/helpers/pollUntil',
     '../customCommands/AllCommands'
 ],
-function (registerSuite, config, assert, Command) {
+function (registerSuite, config, assert, pollUntil, Command) {
     registerSuite(function(){
         var customer;
         var command;
         var priceElem = '#cart-items-form > div.cart-product-tiles > div > div:nth-child(2) > div.col.span-5.col-full-width-touch.product-item-details > div:nth-child(2) > div > div:nth-child(1) > div > div.row-eye-container.row-right-eye > div.row.grid-reverse.row-prescription-specs.align-right.hidden-phone > div > div:nth-child(1) > p';
-        var setPrice;
+        var prevPrice;
         return {
             name: 'non-logged in customer can edit quantity of item in cart',
             setup: function() {
-                //this is a follow-on test, should be run after addContactLensesToCart
                 command = new Command(this.remote);
                 return this.remote
-                //.clearCookies()
+                .clearCookies()
                 .setTimeout('script', 60000)
                 .setTimeout('page load', 60000)
                 .setFindTimeout(50000)
-                //.get(config.URL + '/lens/acuvue-oasys-24')
+                .get(config.URL + '/lens/acuvue-oasys-24')
+            },
+            'fill out eye info': function(){
+                return command.fillInfo();
             },
             
-            'change quantity of item': function(){
-                return command
-                .setDropdown('#dwfrm_cart_shipments_i0_items_i0_rightEyeQuantity_desktop','2')
-            },
             
             'get price of 1 box before quantity is changed': function(){
                  return command
                 .findByCssSelector(priceElem)
                 .getVisibleText()
                 .then(function(prev_price){
-                    setPrice = prev_price;
+                    prevPrice = prev_price;
                 })
+            },
+            
+            'change quantity of item': function(){
+                return command
+                .setDropdown('#dwfrm_cart_shipments_i0_items_i0_rightEyeQuantity_desktop','2')
             },
             
             'assert that 2 right eye boxes are in the cart': function(){
@@ -49,11 +53,14 @@ function (registerSuite, config, assert, Command) {
             
             'assert that price for changed quantity has increased': function(){
                 return command
-                .sleep(2000) //wait for ajax to update value
-                .findByCssSelector(priceElem)
-                .getVisibleText()
-                .then(function(updated_price){
-                    assert.notEqual(updated_price, setPrice);
+                .then(pollUntil(function(priceElem,prevPrice){
+                    var new_price = $(priceElem).text();
+                    return new_price != prevPrice ? new_price : null;
+                },[priceElem,prevPrice],60000,1000))
+                .then(function(new_price){
+                    console.log('new price: '+new_price)
+                    console.log('old price: '+prevPrice)
+                     assert.notEqual(new_price, prevPrice);
                 })
             }            
         }

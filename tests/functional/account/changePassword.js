@@ -15,12 +15,8 @@ function (registerSuite, config, Command, generator) {
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
-                //.get(config.URL + '/edit-profile');
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/account');
             },
             

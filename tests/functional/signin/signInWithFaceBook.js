@@ -14,11 +14,8 @@ function (registerSuite, config, generator, assert, Command) {
             setup: function() {
                 customer = generator.getGigyaLogin();
                 command = new Command(this.remote);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get('http://www.1800contacts.com/');
             },
             'click on Sign In button': function(){

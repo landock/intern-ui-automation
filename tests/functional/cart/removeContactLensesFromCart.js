@@ -10,13 +10,9 @@ function (registerSuite, config, Command) {
         return {
             name: 'non-logged in customer can remove an item from the cart',
             setup: function() {
-                //this is a follow-on test, should be run after changeQuantityOfItem
                 command = new Command(this.remote);
-                return this.remote
-                //.clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24')
             },
             

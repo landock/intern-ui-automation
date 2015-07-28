@@ -14,11 +14,8 @@ define([
 				setup: function() {
 					command = new Command(this.remote);
 
-					return this.remote
-					.clearCookies()
-					.setTimeout('script', 60000)
-					.setTimeout('page load', 60000)
-					.setFindTimeout(50000)
+					return command
+                    .configureNewSession(60000)
 					.get(config.URL + '/contact-lens-solution/systane-balance');
 				},
 

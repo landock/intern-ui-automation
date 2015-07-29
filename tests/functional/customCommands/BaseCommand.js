@@ -24,10 +24,10 @@ function (_Command, assert, config) {
         });
     };
 
-    proto.configureNewSession = function() {
+    proto.configureNewSession = function(timeout) {
         return new this.constructor(this, function () {
             return this.parent
-            .setAllTimeoutLengths()
+            .setAllTimeoutLengths(timeout)
             .clearCookies();
         });
     };
@@ -35,7 +35,7 @@ function (_Command, assert, config) {
     proto.configureNewMobileSession = function(timeout) {
         return new this.constructor(this, function() {
             return this.parent
-            .configureNewSession()
+            .configureNewSession(timeout)
             .mobileClearAppAdPage()
             .removeDemandWareWidget();
         });
@@ -44,7 +44,7 @@ function (_Command, assert, config) {
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
-            .sleep(1000)
+            // .sleep(1000)
             .findAndClick('a[data-flyout-id="flyout-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
@@ -62,7 +62,7 @@ function (_Command, assert, config) {
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .sleep(1000)
+            // .sleep(1000)
             .findAndClick('a[title="Logout"]');
         });
     };

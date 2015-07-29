@@ -18,29 +18,31 @@ function (registerSuite, generator, config, AllCommands) {
 				command = new AllCommands(this.remote);
 
 				return command
-				.configureNewSession(60000)
-				.mobileGet(config.URL);
-				// .removeDemandWareWidget();
+				.configureNewMobileSession(60000)
+				.get(config.URL);
 			},
 
 			'login from home button': function() {
 				return command.loginFromHome(customer)
-				.assertLoggedIn()
-				.removeDemandWareWidget();
+				.assertLoggedIn();
 			},
 
 			'logout 1': function() {
-				return command.mobileLogout();
+				return command
+				.mobileLogout()
+				.assertLoggedOut();
 			},
 
 			'login from mobile menu' : function() {
 				return command.mobileLogin(customer)
-				.waitForDeletedByCssSelector('#modal-sign-in');
+				.waitForDeletedByCssSelector('#modal-sign-in')
+				.assertLoggedIn();
 			},
 
 			'logout 2' : function() {
 				return command
-				.mobileLogout();
+				.mobileLogout()
+				.assertLoggedOut();
 			}
 		};
 	});

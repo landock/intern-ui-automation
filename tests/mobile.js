@@ -31,11 +31,11 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        //'tests/functional/mobile/mobileSignInTest'
-        // 'tests/functional/mobile/mobileAddressEditingTest'
-        // 'tests/functional/mobile/mobileChangeDefaultAddressTest'
-        'tests/functional/mobile/mobileSignInFromCart'
-        // 'tests/functional/mobile/mobileAddContactLensesToCart',
+        // 'tests/functional/mobile/mobileSignInTest' // OK
+        // 'tests/functional/mobile/mobileAddressEditingTest' // OK
+        // 'tests/functional/mobile/mobileChangeDefaultAddressTest' // OK
+        // 'tests/functional/mobile/mobileSignInFromCart' // OK
+        'tests/functional/mobile/mobileAddContactLensesToCart'
         // 'tests/functional/mobile/mobileAddContactSolutionToCart',
         // 'tests/functional/mobile/mobileChangeItemQuantityInCart',
         // 'tests/functional/mobile/mobileRemoveItemFromCart',

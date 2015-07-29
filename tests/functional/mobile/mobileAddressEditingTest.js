@@ -18,15 +18,14 @@ function (registerSuite, generator, config, Command) {
 				command = new Command(this.remote);
 
 				return command
-				.configureNewSession(60000)
-				.mobileGet(config.URL);
+				.configureNewMobileSession(60000)
+				.get(config.URL);
 			},
 
 			'login' : function() {
 				return command
 				.loginFromHome(customer)
-				.assertLoggedIn()
-				.removeDemandWareWidget();
+				.assertLoggedIn();
 			},
 
 			'navigate to account page' : function() {

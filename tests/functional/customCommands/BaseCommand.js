@@ -35,9 +35,8 @@ function (_Command, assert, config) {
     proto.configureNewMobileSession = function(timeout) {
         return new this.constructor(this, function() {
             return this.parent
-            .setAllTimeoutLengths(timeout)
-            .clearCookies()
-            .mobileGet(config.URL + '/account')
+            .configureNewSession()
+            .mobileClearAppAdPage()
             .removeDemandWareWidget();
         });
     };
@@ -78,7 +77,7 @@ function (_Command, assert, config) {
     proto.mobileLogin = function(customer) {
         return new this.constructor(this, function () {
             return this.parent
-            .sleep(1000) // because staleReferenceError
+            // .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('#btn-ajax-sign-in')
             .enterInput('#email-address-modal', customer.email)
@@ -92,7 +91,7 @@ function (_Command, assert, config) {
     proto.mobileLogout = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .sleep(1000) // because staleReferenceError
+            // .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
             // same as above except want to findById with #logged-out-state
@@ -132,6 +131,7 @@ function (_Command, assert, config) {
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000) // because staleElementReferenceException
             .findDisplayedByCssSelector(id)
             .click();
         });
@@ -191,15 +191,11 @@ function (_Command, assert, config) {
             });
      };
 
-    proto.mobileGet = function(url) {
+    proto.mobileClearAppAdPage = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .get(url)
-            .getCurrentUrl()
-            .then(function(url) {
-                if(url === config.URL + '/mobileinterstitial')
-                    return this.parent.findAndClick('div[class="no-thanks"]');
-            });
+            .get(config.URL + '/account')
+            .findAndClick('div[class="no-thanks"]');
         });
     };
 

@@ -16,7 +16,7 @@ function (registerSuite, config, generator, assert, Command) {
                 command = new Command(this.remote);
                 return command
                 .configureNewMobileSession(60000)
-                .mobileGet(config.URL + '/lens/acuvue-oasys-24');
+                .get(config.URL + '/lens/acuvue-oasys-24');
             },
 
             'click enter Rx manually button': function() {

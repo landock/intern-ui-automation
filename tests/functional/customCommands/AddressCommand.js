@@ -20,8 +20,8 @@ function(BaseCommand) {
             .enterInput('input[id$="city"]',  customer.shipping_city)
             .enterInput('input[id$="zip"]', customer.shipping_zip)
             .enterInput('input[id$="phone"]', customer.shipping_phone)
-            .enterInput('input[id$="firstname"]', customer.first_name)
-            .enterInput('input[id$="lastname"]', customer.last_name)
+            .enterInput('input[id$="firstname"],input[id$="firstName"]', customer.first_name)
+            .enterInput('input[id$="lastname"],input[id$="lastName"]', customer.last_name)
             .setDropdown('select[id$="state"]', customer.shipping_state);
         });
     };

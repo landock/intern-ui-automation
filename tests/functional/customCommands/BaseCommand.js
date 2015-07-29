@@ -94,6 +94,7 @@ function (_Command, assert, config) {
     proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
+            .findByCssSelector(id) //wait for element to exist before entering anything
             .execute(function(id2, txt){
                 $(id2).removeClass('placeholder').val(txt).trigger('change');
             }, [id, text])
@@ -146,7 +147,7 @@ function (_Command, assert, config) {
         return new this.constructor(this, function() {
             return this.parent
             .sleep(1000) // because staleElementReferenceException
-            .findByCssSelector(selector)
+            .findDisplayedByCssSelector(selector)
             .getVisibleText()
             .then(function(elem_text){
                 assert.include(elem_text, text);
@@ -174,6 +175,7 @@ function (_Command, assert, config) {
         });
      };
     
+    //must be run from /account
     proto.createNewAccount = function(customer) {
         return new this.constructor(this, function() {
             return this.parent

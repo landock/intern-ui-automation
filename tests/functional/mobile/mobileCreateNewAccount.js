@@ -14,9 +14,8 @@ function (registerSuite, config, Command, generator) {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
                 return command
-                .configureNewSession(60000)
-                .mobileGet(config.URL + '/account')
-                .removeDemandWareWidget();
+                .configureNewMobileSession(60000)
+                .get(config.URL + '/account');
             },
 
             'click on New Customer radio button': function(){

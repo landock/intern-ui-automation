@@ -44,7 +44,6 @@ function (_Command, assert, config) {
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
-            // .sleep(1000)
             .findAndClick('a[data-flyout-id="flyout-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
@@ -62,7 +61,6 @@ function (_Command, assert, config) {
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
-            // .sleep(1000)
             .findAndClick('a[title="Logout"]');
         });
     };
@@ -77,24 +75,19 @@ function (_Command, assert, config) {
     proto.mobileLogin = function(customer) {
         return new this.constructor(this, function () {
             return this.parent
-            // .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('#btn-ajax-sign-in')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
             .findAndClick('#dwfrm_login_login');
-            // would like to 'assert' success with findById like in loginFromHeader()
-            // #logged-in-state exists but seems to only be findable if the mobile menu is open
         });
     };
 
     proto.mobileLogout = function() {
         return new this.constructor(this, function() {
             return this.parent
-            // .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
-            // same as above except want to findById with #logged-out-state
         });
     };
 
@@ -152,6 +145,7 @@ function (_Command, assert, config) {
     proto.assertElementText = function(selector,text) {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000) // because staleElementReferenceException
             .findByCssSelector(selector)
             .getVisibleText()
             .then(function(elem_text){
@@ -188,14 +182,18 @@ function (_Command, assert, config) {
             .enterInput('#dwfrm_profile_login_password', customer.password)
             .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
             .findAndClick('button[name="dwfrm_profile_confirm"]');
-            });
+        });
      };
 
     proto.mobileClearAppAdPage = function() {
         return new this.constructor(this, function() {
             return this.parent
             .get(config.URL + '/account')
-            .findAndClick('div[class="no-thanks"]');
+            .getCurrentUrl()
+            .then(function(url) {
+                if(url === config.URL + '/mobileinterstitial')
+                    return this.parent.findAndClick('div[class="no-thanks"]');
+            });
         });
     };
 

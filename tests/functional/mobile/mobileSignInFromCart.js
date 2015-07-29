@@ -50,7 +50,7 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'assert that user is logged in': function() {
                 return command
-                .findById('logged-in-state');
+                .assertLoggedIn();  
             }
         };
     });

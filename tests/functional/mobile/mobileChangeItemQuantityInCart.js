@@ -10,10 +10,9 @@ function (registerSuite, config, Command) {
             name: 'mobile non-logged in customer can change item quantity in cart',
             setup: function() {
                 command = new Command(this.remote);
-                return this.remote
-                .configureNewSession(60000)
-                .mobileGet(config.URL + '/contact-lens-solution/opti-free-puremoist-drops')
-                .removeDemandWareWidget();
+                return command
+                .configureNewMobileSession(60000)
+                .get(config.URL + '/contact-lens-solution/opti-free-puremoist-drops');
             },
 
             'click add to cart button': function() {

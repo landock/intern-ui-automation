@@ -10,16 +10,14 @@ function (registerSuite, config, Command) {
             name: 'mobile non-logged in customer remove item from cart',
             setup: function() {
                 command = new Command(this.remote);
-                return this.remote
-                .configureNewSession(60000)
-                .mobileGet(config.URL + '/contact-lens-solution/opti-free-puremoist-drops')
-                .removeDemandWareWidget();
+                return command
+                .configureNewMobileSession(60000)
+                .get(config.URL + '/contact-lens-solution/opti-free-puremoist-drops');
             },
 
             'click add to cart button': function() {
                 return command
-                .findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]')
-                .removeDemandWareWidget();
+                .findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]');
             },
 
             'assert that 1 item is in the cart': function(){

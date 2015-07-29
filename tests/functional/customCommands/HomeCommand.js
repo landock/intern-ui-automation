@@ -17,8 +17,7 @@ function(BaseCommand){
             .findAndClick('a[data-inline-id="inline-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
-            .findAndClick('#dwfrm_login_login')
-            .findById('logged-in-state');
+            .findAndClick('#dwfrm_login_login');
         });
     };
     

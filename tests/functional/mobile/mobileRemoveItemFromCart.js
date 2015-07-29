@@ -10,11 +10,8 @@ function (registerSuite, config, Command) {
             name: 'mobile non-logged in customer remove item from cart',
             setup: function() {
                 command = new Command(this.remote);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewMobileSession(60000)
                 .get(config.URL + '/contact-lens-solution/opti-free-puremoist-drops');
             },
 

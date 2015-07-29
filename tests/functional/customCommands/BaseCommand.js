@@ -24,23 +24,30 @@ function (_Command, assert, config) {
         });
     };
 
-    proto.configureNewSession = function() {
+    proto.configureNewSession = function(timeout) {
         return new this.constructor(this, function () {
             return this.parent
-            .setAllTimeoutLengths()
+            .setAllTimeoutLengths(timeout)
             .clearCookies();
+        });
+    };
+
+    proto.configureNewMobileSession = function(timeout) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .configureNewSession(timeout)
+            .mobileClearAppAdPage()
+            .removeDemandWareWidget();
         });
     };
 
     proto.loginFromHeader = function (customer) {
         return new this.constructor(this, function () {
             return this.parent
-            .sleep(1000)
             .findAndClick('a[data-flyout-id="flyout-sign-in"]')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
             .findAndClick('#dwfrm_login_login');
-            // .findById('#logged-in-state');
         });
     };
 
@@ -54,7 +61,6 @@ function (_Command, assert, config) {
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .sleep(1000)
             .findAndClick('a[title="Logout"]');
         });
     };
@@ -69,24 +75,19 @@ function (_Command, assert, config) {
     proto.mobileLogin = function(customer) {
         return new this.constructor(this, function () {
             return this.parent
-            .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('#btn-ajax-sign-in')
             .enterInput('#email-address-modal', customer.email)
             .enterInput('#loginPassword', customer.password)
             .findAndClick('#dwfrm_login_login');
-            // would like to 'assert' success with findById like in loginFromHeader()
-            // #logged-in-state exists but seems to only be findable if the mobile menu is open
         });
     };
 
     proto.mobileLogout = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .sleep(1000) // because staleReferenceError
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
-            // same as above except want to findById with #logged-out-state
         });
     };
 
@@ -124,6 +125,7 @@ function (_Command, assert, config) {
     proto.findAndClick = function(id) {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000) // because staleElementReferenceException
             .findDisplayedByCssSelector(id)
             .click();
         });
@@ -144,6 +146,7 @@ function (_Command, assert, config) {
     proto.assertElementText = function(selector,text) {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000) // because staleElementReferenceException
             .findDisplayedByCssSelector(selector)
             .getVisibleText()
             .then(function(elem_text){
@@ -180,14 +183,14 @@ function (_Command, assert, config) {
             .enterInput('#email-address', customer.email)
             .enterInput('#dwfrm_profile_login_password', customer.password)
             .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
-            .findAndClick('button[name="dwfrm_profile_confirm"]')
-            });
+            .findAndClick('button[name="dwfrm_profile_confirm"]');
+        });
      };
 
-    proto.mobileGet = function(url) {
+    proto.mobileClearAppAdPage = function() {
         return new this.constructor(this, function() {
             return this.parent
-            .get(url)
+            .get(config.URL + '/account')
             .getCurrentUrl()
             .then(function(url) {
                 if(url === config.URL + '/mobileinterstitial')

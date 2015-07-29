@@ -24,19 +24,14 @@ define([
 					command = new Command(this.remote);
 
 					return command
-					.clearCookies()
-					.setTimeout('script', 60000)
-					.setTimeout('page load', 60000)
-					.setFindTimeout(50000)
+					.configureNewMobileSession(60000)
 					.get(config.URL);
 				},
 
-				beforeEach : function() {
-					return command.removeDemandWareWidget();
-				},
-
 				'login' : function() {
-					return command.loginFromHome(customer);
+					return command
+					.loginFromHome(customer)
+					.assertLoggedIn();
 				},
 
 				'navigate to account page' : function() {

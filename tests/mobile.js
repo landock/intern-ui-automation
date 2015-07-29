@@ -31,16 +31,16 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        // 'tests/functional/mobile/mobileSignInTest'
-        // 'tests/functional/mobile/mobileAddressEditingTest'
-        // 'tests/functional/mobile/mobileChangeDefaultAddressTest'
-        // 'tests/functional/mobile/mobileSignInFromCart'
-        // 'tests/functional/mobile/mobileAddContactLensesToCart',
-        // 'tests/functional/mobile/mobileAddContactSolutionToCart'
-        // 'tests/functional/mobile/mobileChangeItemQuantityInCart'
-        //'tests/functional/mobile/mobileRemoveItemFromCart'
-        // 'tests/functional/mobile/mobileCreateNewAccount',
-        'tests/functional/mobile/mobileChangePassword'
+        'tests/functional/mobile/mobileSignInTest', // OK
+        'tests/functional/mobile/mobileAddressEditingTest', // OK
+        'tests/functional/mobile/mobileChangeDefaultAddressTest', // OK
+        'tests/functional/mobile/mobileSignInFromCart', // OK
+        'tests/functional/mobile/mobileAddContactLensesToCart', // OK
+        'tests/functional/mobile/mobileAddContactSolutionToCart', // OK
+        'tests/functional/mobile/mobileChangeItemQuantityInCart', // OK
+        'tests/functional/mobile/mobileRemoveItemFromCart', // OK
+        'tests/functional/mobile/mobileCreateNewAccount', // OK
+        'tests/functional/mobile/mobileChangePassword' // OK
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

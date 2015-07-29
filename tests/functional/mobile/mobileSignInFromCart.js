@@ -14,11 +14,8 @@ function (registerSuite, config, generator, assert, Command) {
             setup: function() {
                 customer = generator.getExistingCustomer(config.existingId);
                 command = new Command(this.remote);
-                return this.remote
-                .clearCookies()
-                .setTimeout('script', 60000)
-                .setTimeout('page load', 60000)
-                .setFindTimeout(50000)
+                return command
+                .configureNewMobileSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
 
@@ -28,7 +25,8 @@ function (registerSuite, config, generator, assert, Command) {
             },
 
             'fill out eye info': function(){
-                return command.mobileFillInfo();
+                return command
+                .mobileFillInfo();
             },
             'click continue button from cart': function() {
                 return command
@@ -52,7 +50,7 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'assert that user is logged in': function() {
                 return command
-                .findById('logged-in-state');
+                .assertLoggedIn();  
             }
         };
     });

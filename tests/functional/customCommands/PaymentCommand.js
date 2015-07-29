@@ -11,6 +11,7 @@ function(BaseCommand){
     
     proto.constructor = PaymentCommand;
     
+    //must be run on /lens/acuvue-oasys-24
     proto.testCardPayment = function (customer, creditCardNo) {
         return new this.constructor(this, function () {
             return this.parent

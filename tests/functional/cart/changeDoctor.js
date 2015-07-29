@@ -14,7 +14,7 @@ function (registerSuite, config, generator, assert, Command) {
             name: 'logged-in customer can change doctor during checkout',
             setup: function() {
                 command = new Command(this.remote);
-                customer = generator.getExistingCustomer(0);
+                customer = generator.getExistingCustomer(config.existingId);
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24');

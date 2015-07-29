@@ -22,7 +22,19 @@ function(BaseCommand){
          });
     };
 
-    
+    proto.mobileFillDrInfo = function (customer) {
+        return new this.constructor(this, function () {
+            return this.parent
+            .enterInput('#dwfrm_doctor_doctorName', customer.doctor)
+            .setDropdown('#dwfrm_doctor_states_stateUS', customer.doctor_state)
+            .findAndClick('a.btn:nth-child(4)')
+            .sleep(1000) //Todo: use polluntil or something here
+            // .findByXpath('//*[@id="phone-search-doc"]/div[1]/a')
+            // .click()
+            // .end();
+            .findAndClick('#doc-results > div.search-result-page.active.visited > a:nth-child(1) > div.col.span-2.last');
+         });
+    };
 
     return DrCommand;
 });

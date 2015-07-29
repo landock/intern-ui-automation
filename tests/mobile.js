@@ -31,16 +31,20 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        'tests/functional/mobile/mobileSignInTest', // OK
-        'tests/functional/mobile/mobileAddressEditingTest', // OK
-        'tests/functional/mobile/mobileChangeDefaultAddressTest', // OK
-        'tests/functional/mobile/mobileSignInFromCart', // OK
-        'tests/functional/mobile/mobileAddContactLensesToCart', // OK
-        'tests/functional/mobile/mobileAddContactSolutionToCart', // OK
-        'tests/functional/mobile/mobileChangeItemQuantityInCart', // OK
-        'tests/functional/mobile/mobileRemoveItemFromCart', // OK
-        'tests/functional/mobile/mobileCreateNewAccount', // OK
-        'tests/functional/mobile/mobileChangePassword' // OK
+        // 'tests/functional/mobile/mobileSignInTest', // OK
+        // 'tests/functional/mobile/mobileAddressEditingTest', // OK
+        // 'tests/functional/mobile/mobileChangeDefaultAddressTest', // OK
+        // 'tests/functional/mobile/mobileSignInFromCart', // OK
+        // 'tests/functional/mobile/mobileAddContactLensesToCart', // OK
+        // 'tests/functional/mobile/mobileAddContactSolutionToCart', // OK
+        // 'tests/functional/mobile/mobileChangeItemQuantityInCart', // OK
+        // 'tests/functional/mobile/mobileRemoveItemFromCart', // OK
+        // 'tests/functional/mobile/mobileCreateNewAccount', // OK
+        // 'tests/functional/mobile/mobileChangePassword' // OK
+        'tests/functional/mobile/mobileCheckoutAmericanExpress',
+        'tests/functional/mobile/mobileCheckoutVisa',
+        'tests/functional/mobile/mobileCheckoutMasterCard',
+        'tests/functional/mobile/mobileCheckoutDiscover'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

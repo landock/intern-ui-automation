@@ -9,7 +9,6 @@ function (registerSuite, config, generator, assert, Command) {
     registerSuite(function(){
         var customer;
         var command;
-        var prev_dr_name;
         var creditCard;
         return {
             name: 'logged-in customer can pay with American Express during checkout',
@@ -23,13 +22,13 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'test card payment process' : function(){
                 return command
-                .testCardPayment(customer,creditCard)
+                .testCardPayment(customer,creditCard);
             },
             'assert order success' : function(){
                 return command
-                .findByClassName('thankyou-msg')
+                .findByClassName('thankyou-msg');
             }
             
-        }
+        };
     });
 });

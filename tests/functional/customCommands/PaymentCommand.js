@@ -27,5 +27,30 @@ function(BaseCommand){
          });
     };
 
+    proto.mobileTestCardPayment = function (customer, creditCardNo) {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findAndClick('#enterManuallyButton')
+            .mobileFillInfo()
+            .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+            .signInFromCart(customer)
+            .assertLoggedIn()
+            .mobileFillDrInfo(customer)
+            .setDropdown('#CreditCardChoose', 'newCreditCard')
+            .findByCssSelector('#dwfrm_billing_paymentMethods_creditCard_number')
+            .clearValue()
+            .end()
+            .enterInput('#dwfrm_billing_paymentMethods_creditCard_number', creditCardNo)
+            .sleep(3000)
+            .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year','2025')
+            .findByCssSelector('#dwfrm_billing_paymentMethods_creditCard_owner')
+            .clearValue()
+            .end()
+            .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.first_name +' '+customer.last_name)
+            .findAndClick('.submit-cc')
+            .waitForDeletedByClassName('modal-wrap');
+         });
+    };
+
     return PaymentCommand;
 });

@@ -46,7 +46,8 @@ define({
         // 'tests/functional/mobile/mobileCheckoutMasterCard',
         // 'tests/functional/mobile/mobileCheckoutDiscover'
         // 'tests/functional/mobile/mobileResetPasswordTest'
-        'tests/functional/mobile/mobileValidateOrderHistory'
+        //'tests/functional/mobile/mobileValidateOrderHistory'
+        'tests/functional/mobile/mobileAddRemoveCoupon'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

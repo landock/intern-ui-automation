@@ -41,10 +41,12 @@ define({
         // 'tests/functional/mobile/mobileRemoveItemFromCart', // OK
         // 'tests/functional/mobile/mobileCreateNewAccount', // OK
         // 'tests/functional/mobile/mobileChangePassword' // OK
-        'tests/functional/mobile/mobileCheckoutAmericanExpress',
-        'tests/functional/mobile/mobileCheckoutVisa',
-        'tests/functional/mobile/mobileCheckoutMasterCard',
-        'tests/functional/mobile/mobileCheckoutDiscover'
+        // 'tests/functional/mobile/mobileCheckoutAmericanExpress',
+        // 'tests/functional/mobile/mobileCheckoutVisa',
+        // 'tests/functional/mobile/mobileCheckoutMasterCard',
+        // 'tests/functional/mobile/mobileCheckoutDiscover'
+        // 'tests/functional/mobile/mobileResetPasswordTest'
+        'tests/functional/mobile/mobileValidateOrderHistory'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

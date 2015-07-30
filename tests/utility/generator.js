@@ -8,6 +8,30 @@ define([ '../../node_modules/chance/chance' ],
                {type: 'Discover Card'}
            ];
     
+           var couponCodes = {
+               'Anybody' : [
+                   'DEAL10', //$10 discount on orders over $100  
+                   'AGP25' //Amerigroup Associate Discount 25% discount for all users and orders  
+               ],
+               'NIOrders' : [
+                   '15OFFNI', //$15 off orders of $125 for NI
+                   '30SAVINGS', //$30 discount for NI orders over $150
+                   'RMN40', //$40 off $200 for New Customers
+                   'NEWHOME' //New customers save $20 on orders over $150
+               ],
+               'RIOrder' : [
+                   'SC6115FOT', //$45 off $200 on authorized products for new customers
+                   'SC6115TOOB', //$20 off $150 on authorized products for new customers
+                   'DGCOUP2015',//$20 off purchases of $120 or more
+                   'RMNREPEAT' //$20 off $200 on authorized products for Repeat Customers
+               ],
+               'Shipping' : [
+                   'TESTCOLLEGEUPP', //promo code to trigger roger's offer (two promos)  
+                   'FEXACT715', //abandonment catching free expedited shippin  
+                   'FEXQRN0715' //Free Expedited Shipping on UPP Products
+               ]
+           }
+    
            var creditCardNumber = {
                 'MasterCard': '5154044313438948',
                 'Visa' : '4699461124460157',
@@ -146,6 +170,10 @@ define([ '../../node_modules/chance/chance' ],
                
                'getCreditCardNumber' : function(type){
                    return  creditCardNumber[type];
+               },
+               
+               'getPromoCode' : function(type,code_index){
+                   return couponCodes[type][code_index];
                }
            };
        });

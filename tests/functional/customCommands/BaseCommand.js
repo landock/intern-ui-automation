@@ -206,21 +206,5 @@ function (_Command, assert, config) {
         });
     };
 
-    proto.mobilePayPalLogin = function(payPalInfo) {
-        return this.constructor(this, function() {
-            return this.parent
-            .then(function() {
-                console.log('got here?');
-            })
-            .sleep(5000)
-            .then(function() {
-                console.log('got here');
-            })
-            .enterInput('#email', payPalInfo.email)
-            .enterInput('#password', payPalInfo.password)
-            .findAndClick('#login');
-        });
-    };
-
     return BaseCommand;
 });

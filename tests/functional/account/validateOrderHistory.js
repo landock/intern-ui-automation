@@ -30,12 +30,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 .fillInfo()
                 .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
             },
-            'place contact lenses in cart and click continue' :function(){
-                return command
-                .get(config.URL + '/lens/acuvue-oasys-24')
-                .fillInfo()
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
-            },
             'fill out address info' :function(){
                 return command
                 .fillAddressForm(customer)

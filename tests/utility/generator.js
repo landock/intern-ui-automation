@@ -136,6 +136,8 @@ define([ '../../node_modules/chance/chance' ],
 
            var randomCreditCardType = chance.pick( creditCardTypes );
 
+           var payPalLoginInfo =  { email: 'josh@1800contacts.com', password: '12345678' };
+    
            return {
                'getRandomCustomer': function() {
                    return {
@@ -166,6 +168,10 @@ define([ '../../node_modules/chance/chance' ],
 
                'getGigyaLogin': function(service){
                    return gigyaLoginInfo;
+               },
+               
+               'getPayPalLogin': function(service){
+                   return payPalLoginInfo;
                },
                
                'getCreditCardNumber' : function(type){

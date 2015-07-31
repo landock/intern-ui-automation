@@ -38,6 +38,18 @@ function(BaseCommand){
          });
     };
 
+    proto.mobileFillBiofinityInfo = function() {
+        return new this.constructor(this, function () {
+            return this.parent
+            .sleep(2500)
+            .setDropdown('#dwfrm_lensproduct_rightEye_contactsPower','+1.25')
+            .setDropdown('#dwfrm_lensproduct_leftEye_contactsPower','-1.25')
+            .enterInput('#patient-first', 'Testy')
+            .enterInput('#patient-last', 'Test')
+            .findAndClick('div[ng-show="canShowAddToCartButtons()"]');
+        });
+    };
+
     proto.mobileFillInfo = function () {
         return new this.constructor(this, function () {
             return this.parent

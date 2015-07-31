@@ -8,7 +8,6 @@ define([
 ],
 function (registerSuite, config, assert, pollUntil, Command, generator) {
     registerSuite(function(){
-        var customer;
         var command;
         var prevPrice;
         var priceElem = '#summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1 > p > strong';
@@ -17,7 +16,7 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
             name: 'non-logged in customer can add a coupon code',
             setup: function() {
                 command = new Command(this.remote);
-                couponCode = generator.getPromoCode('Anybody',0)
+                couponCode = generator.getPromoCode('Anybody',0);
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/lens/biofinity');

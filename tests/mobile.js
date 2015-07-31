@@ -31,23 +31,24 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        // 'tests/functional/mobile/mobileSignInTest', // OK
-        // 'tests/functional/mobile/mobileAddressEditingTest', // OK
-        // 'tests/functional/mobile/mobileChangeDefaultAddressTest', // OK
-        // 'tests/functional/mobile/mobileSignInFromCart', // OK
-        // 'tests/functional/mobile/mobileAddContactLensesToCart', // OK
-        // 'tests/functional/mobile/mobileAddContactSolutionToCart', // OK
-        // 'tests/functional/mobile/mobileChangeItemQuantityInCart', // OK
-        // 'tests/functional/mobile/mobileRemoveItemFromCart', // OK
-        // 'tests/functional/mobile/mobileCreateNewAccount', // OK
-        // 'tests/functional/mobile/mobileChangePassword' // OK
-        // 'tests/functional/mobile/mobileCheckoutAmericanExpress',
-        // 'tests/functional/mobile/mobileCheckoutVisa',
+        // 'tests/functional/mobile/mobileSignInTest',
+        // 'tests/functional/mobile/mobileAddressEditingTest',
+        // 'tests/functional/mobile/mobileChangeDefaultAddressTest',
+        // 'tests/functional/mobile/mobileSignInFromCart',
+        // 'tests/functional/mobile/mobileAddContactLensesToCart',
+        // 'tests/functional/mobile/mobileAddContactSolutionToCart',
+        // 'tests/functional/mobile/mobileChangeItemQuantityInCart',
+        // 'tests/functional/mobile/mobileRemoveItemFromCart',
+        // 'tests/functional/mobile/mobileCreateNewAccount',
+        // 'tests/functional/mobile/mobileChangePassword',
+        'tests/functional/mobile/mobileCheckoutAmericanExpress',
+        'tests/functional/mobile/mobileCheckoutVisa',
         // 'tests/functional/mobile/mobileCheckoutMasterCard',
-        // 'tests/functional/mobile/mobileCheckoutDiscover'
-        // 'tests/functional/mobile/mobileResetPasswordTest'
-        //'tests/functional/mobile/mobileValidateOrderHistory'
-        'tests/functional/mobile/mobileAddRemoveCoupon'
+        // 'tests/functional/mobile/mobileCheckoutDiscover',
+        // 'tests/functional/mobile/mobileResetPasswordTest',
+        // 'tests/functional/mobile/mobileValidateOrderHistory',
+        // 'tests/functional/mobile/mobileAddRemoveCoupon',
+        'tests/functional/mobile/mobileCheckoutPayPal'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

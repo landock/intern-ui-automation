@@ -47,10 +47,6 @@ function (registerSuite, generator, config, Command) {
 
 			'fill out address form' : function() {
 				return command.fillEditAddressForm(customer);
-			},
-
-			'logout' : function() {
-				return command.mobileLogout();
 			}
 		};
 	});

@@ -43,10 +43,9 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
             'select PayPal as payment method' : function(){
                 return command
                 .fillDrInfo(customer)
-                .findDisplayedByCssSelector('.paypal label') //wait before firing off .execute
+                .clickOnRadioButton('.paypal label')
                 //findAndClick doesn't work here due to custom radio button implementation
                 .execute(function(){
-                    $('.paypal label').click();
                     $('#ContactsPayPal')[0].click();
                 })
             },

@@ -94,7 +94,7 @@ function (_Command, assert, config) {
     proto.enterInput = function(id, text) {
         return new this.constructor(this, function() {
             return this.parent
-            .findByCssSelector(id) //wait for element to exist before entering anything
+            .findDisplayedByCssSelector(id) //wait for element to exist before entering anything
             .execute(function(id2, txt){
                 $(id2).removeClass('placeholder').val(txt).trigger('change');
             }, [id, text])
@@ -196,6 +196,18 @@ function (_Command, assert, config) {
                 if(url === config.URL + '/mobileinterstitial')
                     return this.parent.findAndClick('div[class="no-thanks"]');
             });
+        });
+    };
+    
+    //allows custom stylized radio buttons to be clicked in a way compatible with all browsers
+    proto.clickOnRadioButton = function(label_id) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findDisplayedByCssSelector(label_id)
+            .execute(function(label_id){
+                $(label_id).click();
+                //$('#ContactsPayPal')[0].click();
+            },[label_id])
         });
     };
 

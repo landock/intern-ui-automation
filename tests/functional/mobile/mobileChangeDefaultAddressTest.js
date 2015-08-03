@@ -2,16 +2,18 @@ define([
 	'intern!object',
 	'../../utility/generator',
 	'../../config',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'intern/chai!assert'
 	],
 
 	/*
 		This test assumes there is only one address listed.
 	*/
 
-	function (registerSuite, generator, config, Command) {
+	function (registerSuite, generator, config, Command, assert) {
 		registerSuite(function() {
 			var customer;
+			var anotherRandomCustomer;
 			var command;
 
 			var initialDefault;
@@ -20,17 +22,18 @@ define([
 				name: 'mobile change default address test',
 
 				setup: function() {
-					customer = generator.getExistingCustomer(config.existingId);
+					customer = generator.getRandomCustomer();
+					anotherRandomCustomer = generator.getRandomCustomer();
 					command = new Command(this.remote);
 
 					return command
 					.configureNewMobileSession(60000)
-					.get(config.URL);
+					.get(config.URL + '/account');
 				},
 
-				'login' : function() {
+				'create new account' : function() {
 					return command
-					.loginFromHome(customer)
+					.createNewAccount(customer)
 					.assertLoggedIn();
 				},
 
@@ -47,6 +50,12 @@ define([
 					);
 				},
 
+				'create a new address': function() {
+           	 		return command
+           	 		.findAndClick('a[title="Create New Address"]')
+           	 		.fillAddNewAddressForm(customer);
+           	 	},
+
 				'store initial default': function() {
            	 		return command
            	 		.findByCssSelector('p[class="no-margin-bottom saved-address"]')
@@ -60,7 +69,7 @@ define([
            	 	'add a new address': function() {
            	 		return command
            	 		.findAndClick('a[title="Create New Address"]')
-           	 		.fillAddNewAddressForm(customer);
+           	 		.fillAddNewAddressForm(anotherRandomCustomer);
            	 	},
 
            	 	'set default address': function() {
@@ -68,21 +77,14 @@ define([
            	 		.findAndClick('div.col-3:nth-child(4) > div:nth-child(1) > p:nth-child(2) > a:nth-child(3)');
            	 	},
 
-           	 	'assert initial default is current default': function() {
-           	 		return command
-           	 		.assertElementText('p[class="no-margin-bottom saved-address"]', initialDefault);
-           	 	},
-
-           	 	'delete created address': function() {
-           	 		return command
-           	 		.findAndClick('div.col-3:nth-child(4) > div:nth-child(1) > p:nth-child(2) > a:nth-child(2)')
-           	 		.refresh();
-           	 	},
-
-           	 	'logout': function() {
-           	 		return command
-           	 		.mobileLogout();
-           	 	}
+           	 	'assert address changed' : function() {
+					return command
+					.findByCssSelector('p[class="no-margin-bottom saved-address"]')
+					.getVisibleText()
+					.then(function(txt) {
+						assert.equal(txt, initialDefault);
+					});
+				}
 			};
 		});
 	});

@@ -31,24 +31,27 @@ define({
     suites: null,
     
     functionalSuites: [ 
-        // 'tests/functional/mobile/mobileSignInTest',
-        // 'tests/functional/mobile/mobileAddressEditingTest',
-        // 'tests/functional/mobile/mobileChangeDefaultAddressTest',
-        // 'tests/functional/mobile/mobileSignInFromCart',
-        // 'tests/functional/mobile/mobileAddContactLensesToCart',
-        // 'tests/functional/mobile/mobileAddContactSolutionToCart',
-        // 'tests/functional/mobile/mobileChangeItemQuantityInCart',
-        // 'tests/functional/mobile/mobileRemoveItemFromCart',
-        // 'tests/functional/mobile/mobileCreateNewAccount',
-        // 'tests/functional/mobile/mobileChangePassword',
+        'tests/functional/mobile/mobileAddContactLensesToCart',
+        'tests/functional/mobile/mobileAddContactSolutionToCart',
+        'tests/functional/mobile/mobileAddRemoveCoupon',
+        'tests/functional/mobile/mobileAddressEditingTest', // check logic
+        'tests/functional/mobile/mobileChangeDefaultAddressTest', // check logic AND staleElementReference Exception here
+        'tests/functional/mobile/mobileChangeItemQuantityInCart',
+        'tests/functional/mobile/mobileChangePassword',
         'tests/functional/mobile/mobileCheckoutAmericanExpress',
-        'tests/functional/mobile/mobileCheckoutVisa',
-        // 'tests/functional/mobile/mobileCheckoutMasterCard',
-        // 'tests/functional/mobile/mobileCheckoutDiscover',
-        // 'tests/functional/mobile/mobileResetPasswordTest',
-        // 'tests/functional/mobile/mobileValidateOrderHistory',
-        // 'tests/functional/mobile/mobileAddRemoveCoupon',
-        'tests/functional/mobile/mobileCheckoutPayPal'
+        // 'tests/functional/mobile/mobileCheckoutDiscover', // failing for reasons unknown
+        'tests/functional/mobile/mobileCheckoutMasterCard',
+        // 'tests/functional/mobile/mobileCheckoutPayPal', // needs redesign to make concurrency work (does paypal mind the concurrency?)
+        // 'tests/functional/mobile/mobileCheckoutVisa' // failing for reasons unknown
+        'tests/functional/mobile/mobileCreateNewAccount',
+
+        // 'tests/functional/mobile/mobileRe-Order' // not even done :/
+
+        'tests/functional/mobile/mobileRemoveItemFromCart',
+        // 'tests/functional/mobile/mobileResetPasswordTest', // needs redesign for concurrency
+        'tests/functional/mobile/mobileSignInFromCart',
+        'tests/functional/mobile/mobileSignInTest',
+        'tests/functional/mobile/mobileValidateOrderHistory'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

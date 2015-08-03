@@ -12,7 +12,7 @@ function (registerSuite, config, Command, generator) {
         var customer = generator.getRandomCustomer();
 
         return {
-            name: 'new logged-in customer can create a new account',
+            name: 'new logged-in customer can change password',
             setup: function() {
                 command = new Command(this.remote);
                 return command
@@ -22,12 +22,7 @@ function (registerSuite, config, Command, generator) {
 
             'create new account' : function() {
                 return command
-                .findAndClick('label[for="new"]')
-                .enterInput('#email-address', customer.email)
-                .enterInput('#dwfrm_profile_login_password', customer.password)
-                .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
-                .findAndClick('button[name="dwfrm_profile_confirm"]')
-                .assertLoggedIn();
+                .createNewAccount(customer);
             },
 
             'navigate to edit account page' : function() {

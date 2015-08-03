@@ -18,15 +18,37 @@ define([
 
 				setup: function() {
 					command = new Command(this.remote);
-	                customer = generator.getExistingCustomer(config.existingId);
-	                creditCard = generator.getCreditCardNumber('AmericanExpress');
+	                customer = generator.getRandomCustomer();
+	                creditCard = generator.getCreditCardNumber('amex');
 	                return command
 	                .configureNewMobileSession(60000)
-	                .get(config.URL + '/lens/acuvue-oasys-24');
+	                .get(config.URL + '/account');
 				},
+
+				'create new account' : function() {
+					return command
+					.createNewAccount(customer)
+					.assertLoggedIn();
+				},
+
+				'add address' : function() {
+					return command
+					.get(config.URL + '/account')
+					.findAndClick(
+						'#page-account > div > div.faux-box-over > div.account-tabs.tabs-container.tabs-static > div.tab-nav > div:nth-child(3) > a'
+					)
+					.findAndClick('a[title="Create New Address"]')
+           	 		.fillAddNewAddressForm(customer);
+				},
+
+				// create new account
+				// add address
+				// buy something
+				// verify order number
 
 				'place order' : function() {
 					return command
+					.get(config.URL + '/lens/acuvue-oasys-24')
 					.mobileTestCardPayment(customer, creditCard);
 				},
 

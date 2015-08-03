@@ -13,11 +13,9 @@ function (registerSuite, config, generator, assert, pollUntil,Command) {
 		var totalBeforeCoupon;
 		var couponCode;
 		var priceSelector = '#summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1 > p > strong';
-							// #summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1 > p > strong
-							// #summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1 > p
-							//#summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1.last > p > strong
+
 		return {
-			name : 'mobile test add and remove coupon',
+			name : 'mobile non logged-in customer can add and remove coupon',
 
 			setup : function() {
 				command = new Command(this.remote);

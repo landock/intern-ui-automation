@@ -31,13 +31,6 @@ define([ '../../node_modules/chance/chance' ],
                    'FEXQRN0715' //Free Expedited Shipping on UPP Products
                ]
            }
-    
-           var creditCardNumber = {
-                'MasterCard': '5154044313438948',
-                'Visa' : '4699461124460157',
-                'AmericanExpress' : '345595026987803',
-                'Discover' : '6011427987144259'
-           }
 
            var existingCustomers = [
                {
@@ -175,7 +168,7 @@ define([ '../../node_modules/chance/chance' ],
                },
                
                'getCreditCardNumber' : function(type){
-                   return  creditCardNumber[type];
+                   return  chance.cc({'type':type});
                },
                
                'getPromoCode' : function(type,code_index){

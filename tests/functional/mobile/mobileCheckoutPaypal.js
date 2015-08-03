@@ -31,16 +31,6 @@ define([
 					.mobileFillBiofinityInfo();
 				},
 
-				// 'click checkout with paypal' : function() {
-				// 	return command
-				// 	.findAndClick('#ContactsPayPal');
-				// },
-
-				// 'loginToPayPal' : function() {
-				// 	return command
-				// 	.mobilePayPalLogin(payPalInfo);
-				// },
-
 				'click continue' : function() {
 					return command
 					.findAndClick('button[name="dwfrm_cart_checkoutCart"]');

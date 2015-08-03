@@ -2,51 +2,72 @@ define([
 	'intern!object',
 	'../../utility/generator',
 	'../../config',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'intern/chai!assert'
 ],
 
-function (registerSuite, generator, config, Command) {
+function (registerSuite, generator, config, Command, assert) {
 	registerSuite(function() {
 		var customer;
 		var command;
+		var anotherRandomCustomer; //for editing address
+		var addressText;
 
 		return {
 			name: 'mobile address editing test',
 
 			setup : function() {
-				customer = generator.getExistingCustomer(config.existingId);
+				customer = generator.getRandomCustomer();
+				anotherRandomCustomer = generator.getRandomCustomer();
 				command = new Command(this.remote);
 
 				return command
 				.configureNewMobileSession(60000)
-				.get(config.URL);
+				.get(config.URL + '/account');
 			},
 
-			'login' : function() {
+			'create new account' : function() {
 				return command
-				.loginFromHome(customer)
+				.createNewAccount(customer)
 				.assertLoggedIn();
-			},
-
-			'navigate to account page' : function() {
-				return command
-				.findAndClick('#icon-mobile-menu')
-				.findAndClick('a[title="My Account"]');
 			},
 
 			'navigate to account page address tab' : function() {
 				return command
+				.get(config.URL + '/account')
 				.findAndClick(
 					'#page-account > div > div.faux-box-over > div.account-tabs.tabs-container.tabs-static > div.tab-nav > div:nth-child(3) > a'
 				);
 			},
 
-			'click edit address' : function() {
-				return command.findAndClick('a[href*="Address-Edit"]');
+			'add new address' : function() {
+				return command
+				.findAndClick('a[title="Create New Address"]')
+       	 		.fillAddNewAddressForm(customer);
 			},
 
-			'fill out address form' : function() {
-				return command.fillEditAddressForm(customer);
+			'store address text' : function() {
+				return command
+				.findByCssSelector('p[class="no-margin-bottom saved-address"]')
+				.getVisibleText()
+				.then(function(txt) {
+					addressText = txt;
+				});
+			},
+
+			'edit address' : function() {
+				return command
+				.findAndClick('a[href*="Address-Edit"]')
+				.fillEditAddressForm(anotherRandomCustomer);
+			},
+
+			'assert address changed' : function() {
+				return command
+				.findByCssSelector('p[class="no-margin-bottom saved-address"]')
+				.getVisibleText()
+				.then(function(txt) {
+					assert.notEqual(txt, addressText);
+				});
 			}
 		};
 	});

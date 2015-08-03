@@ -199,8 +199,8 @@ function (_Command, assert, config) {
         });
     };
     
-    //allows custom stylized radio buttons to be clicked in a way compatible with all browsers
-    proto.clickOnRadioButton = function(label_id) {
+    //allows custom stylized radio buttons and checkboxes to be clicked in a way compatible with all browsers
+    proto.clickOnStylizedFormElement = function(label_id) {
         return new this.constructor(this, function() {
             return this.parent
             .findDisplayedByCssSelector(label_id)

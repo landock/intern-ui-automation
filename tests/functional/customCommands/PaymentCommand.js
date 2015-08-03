@@ -21,7 +21,7 @@ function(BaseCommand){
             .assertLoggedIn()
             .fillDrInfo(customer)
             //click on Credit Card radio in case PayPal is selected
-            .clickOnRadioButton('.payment-method label[for="review-credit-card"]')
+            .clickOnStylizedFormElement('.payment-method label[for="review-credit-card"]')
             .setDropdown('#CreditCardChoose','newCreditCard')
             .enterInput('#dwfrm_billing_paymentMethods_creditCard_number',creditCardNo)
             .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year','2025')

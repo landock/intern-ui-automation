@@ -57,7 +57,7 @@ define([
 				},
 
 				'click paypal radio button' : function() {
-					return command //div.row.paypal > label > span > span:nth-child(1) > img
+					return command
 					.findAndClick('div[class="row paypal"] > label > span > span > img');
 				},
 

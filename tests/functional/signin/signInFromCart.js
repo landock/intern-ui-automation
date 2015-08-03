@@ -10,7 +10,7 @@ function (registerSuite, config, generator, assert, Command) {
         var customer;
         var command;
         return {
-            name: 'customer can log in from cart',
+            name: 'existing customer can log in from cart',
             setup: function() {
                 customer = generator.getExistingCustomer(config.existingId);
                 command = new Command(this.remote);

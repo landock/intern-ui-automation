@@ -10,7 +10,7 @@ function (registerSuite, config, generator, assert, Command) {
         var customer;
         var command;
         return {
-            name: 'customer can log in using Facbook',
+            name: 'existing customer can log in using Facbook',
             setup: function() {
                 customer = generator.getGigyaLogin();
                 command = new Command(this.remote);

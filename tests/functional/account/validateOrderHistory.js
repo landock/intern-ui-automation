@@ -11,7 +11,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
         var creditCard;
         var command;
         return {
-            name: 'customer can view order history',
+            name: 'new customer can view order history',
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);

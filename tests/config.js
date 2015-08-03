@@ -4,7 +4,6 @@ define({
      // URL:"https://development-ecom2-1800contacts.demandware.net/s/1800contacts",
    URL:"https://staging-ecom2-1800contacts.demandware.net/s/1800contacts",
     existingId: 0,
-    emailResetId: 5,
     checkoutProduct: 0,
     absPicPath:"C:\\Users\\measley\\intern-ui-automation\\1800contacts-logo.jpg"
 });

@@ -11,7 +11,7 @@ function (registerSuite, generator, config, Command) {
 		var command;
 
 		return {
-			name: 'Sign in from Home Page',
+			name: 'existing customer can sign in from Home Page',
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
 				command = new Command(this.remote);

@@ -107,7 +107,7 @@ define([ '../../node_modules/chance/chance' ],
                    credit_card: '4111111111111111',
                    doctor: 'John Smith',
                    doctor_state: 'UT'
-               },
+               }/*,
                {
                    first_name: 'EmailReset',
                    last_name: 'Test',
@@ -122,7 +122,7 @@ define([ '../../node_modules/chance/chance' ],
                    credit_card: '',
                    doctor: '',
                    doctor_state: ''
-               }
+               }*/
            ];
 
            var gigyaLoginInfo = { email: 'yissakhar.hampus@gmail.com', password: 'Ecommrocks' };
@@ -146,9 +146,15 @@ define([ '../../node_modules/chance/chance' ],
                        password: 'password',
                        password_confirm: 'password',
                        credit_card: chance.cc( randomCreditCardType ),
-                       doctor: 'Test',
+                       doctor: 'smith',
                        doctor_state: 'UT'
                    };
+               },
+               
+               'getRandomMailinatorCustomer': function() {
+                   var random_customer = this.getRandomCustomer();
+                   random_customer['email'] = 'seleniumtest_'+ chance.hash({length:8})+'@mailinator.com';
+                   return random_customer;
                },
 
                'getExistingCustomer': function(index){

@@ -1,8 +1,9 @@
 define([
-    './BaseCommand'
+    './BaseCommand',
+    '../../config'
 ],
 
-function(BaseCommand){
+function(BaseCommand,config){
     var proto = PaymentCommand.prototype = Object.create(BaseCommand.prototype, {});
     
     function PaymentCommand() {
@@ -11,17 +12,20 @@ function(BaseCommand){
     
     proto.constructor = PaymentCommand;
     
-    //must be run on /lens/acuvue-oasys-24
+    //must be run on /account
     proto.testCardPayment = function (customer, creditCardNo) {
         return new this.constructor(this, function () {
             return this.parent
+            .createNewAccount(customer)
+            .assertLoggedIn()
+            .get(config.URL + '/lens/acuvue-oasys-24')
             .fillInfo()
             .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
-            .signInFromCart(customer)
-            .assertLoggedIn()
+            .fillAddressForm(customer)
+            .findAndClick('button[name="dwfrm_billing_save"]')
             .fillDrInfo(customer)
             //click on Credit Card radio in case PayPal is selected
-            .clickOnRadioButton('.payment-method label[for="review-credit-card"]')
+            .clickOnStylizedFormElement('.payment-method label[for="review-credit-card"]')
             .setDropdown('#CreditCardChoose','newCreditCard')
             .enterInput('#dwfrm_billing_paymentMethods_creditCard_number',creditCardNo)
             .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year','2025')

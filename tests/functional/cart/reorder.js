@@ -11,7 +11,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
         var creditCard;
         var command;
         return {
-            name: 'new customer can view order history',
+            name: 'new logged in customer can reorder',
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
@@ -38,24 +38,30 @@ function (registerSuite, config, generator, pollUntil, Command) {
             'complete placing order' : function(){
                 return command
                 .fillDrInfo(customer)
-                .enterInput('#dwfrm_billing_paymentMethods_creditCard_number',creditCard)
-                .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year','2025')
-                .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.first_name +' '+customer.last_name)
+                .enterInput('#dwfrm_billing_paymentMethods_creditCard_number', creditCard)
+                .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year', '2025')
+                .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.first_name + ' ' + customer.last_name)
                 .findAndClick('.submit-cc')
                 .waitForDeletedByClassName('modal-wrap');
             },
-            'go to Order History' : function(){
+            'select order to reorder and continue' : function(){
                 return command
-                .get(config.URL+'/order-history')       
+                .get(config.URL + '/account')
+                .clickOnStylizedFormElement('#dwfrm_dashboarditems > div.patient-orders > div > div.row.account-user-content > div > div.row.recent-pres-header > div > label')
+                .findAndClick('#btn-reorder-rx')
             },
-            'click on view details' : function(){
+            'click continue' : function(){
                 return command
-                .findAndClick('.arrow-down-before, .summary-detail-toggler ,.ajax-order-history ,.ajax-success')
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
             },
-            'assert that contacts are in previous order' : function(){
+            'click place my order' : function(){
                 return command
-                .assertElementText('#order-history-container > div.order-item-container.active > div.order-item-details > div.row.col-9.products.margin-top-small > div.col.span-6.col-full-width-mobile > p > strong','Acuvue Oasys 24pk')
-            }
+                .findAndClick('.submit-cc')
+            },
+            'assert order success' : function(){
+                return command
+                .findByClassName('thankyou-msg')
+            },
         }
     });
 });

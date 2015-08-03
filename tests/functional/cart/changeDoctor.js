@@ -11,25 +11,29 @@ function (registerSuite, config, generator, assert, Command) {
         var command;
         var prev_dr_name;
         return {
-            name: 'logged-in customer can change doctor during checkout',
+            name: 'new logged-in customer can change doctor during checkout',
             setup: function() {
                 command = new Command(this.remote);
-                customer = generator.getExistingCustomer(config.existingId);
+                customer = generator.getRandomCustomer();
                 return command
                 .configureNewSession(60000)
-                .get(config.URL + '/lens/acuvue-oasys-24');
+                //.get(config.URL + '/lens/acuvue-oasys-24');
+                .get(config.URL + '/account');
             },
-            'fill out eye info': function(){
-                return command.fillInfo();
-            },
-            'click continue to check out': function(){
+            'create new account': function(){
                 return command
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
+                .createNewAccount(customer);
             },
-            'login from cart' : function(){
+            'place contact lenses in cart and click continue' :function(){
                 return command
-                .signInFromCart(customer)
-                .assertLoggedIn()
+                .get(config.URL + '/lens/acuvue-oasys-24')
+                .fillInfo()
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+            },
+            'fill out address info' :function(){
+                return command
+                .fillAddressForm(customer)
+                .findAndClick('button[name="dwfrm_billing_save"]')
             },
             'fill out Dr info form' : function(){
                 return command

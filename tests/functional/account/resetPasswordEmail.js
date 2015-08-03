@@ -9,24 +9,31 @@ function (registerSuite, config, generator, pollUntil, Command) {
     registerSuite(function(){
         var customer
         var command;
-         var newPassword = 'anewpassword';
+        var newPassword = 'anewpassword';
+        var email_name;
         return {
-            name: 'existing test customer can reset password',
+            name: 'new test customer can reset password',
             setup: function() {
-                customer = generator.getExistingCustomer(config.emailResetId);
+                customer = generator.getRandomMailinatorCustomer();
+                email_name = customer['email'].split('@')[0]
                 command = new Command(this.remote);
                 return command
                 .configureNewSession(60000)
-                .get(config.URL + '/forgot-password');
+                .get(config.URL + '/account');
+            },
+            'create new test customer' : function(){
+                return command
+                .createNewAccount(customer)
             },
             'enter and submit reset request' : function() {
                 return command
+                .get(config.URL + '/forgot-password')
                 .enterInput('#dwfrm_requestpassword_email', customer.email)
                 .findAndClick('button[name="dwfrm_requestpassword_send"]');
             },
             'go to mailinator inbox' : function(){
                 return command
-                .get('http://mailinator.com/inbox.jsp?to=1800contacts_email_reset_test')
+                .get('http://mailinator.com/inbox.jsp?to=' + email_name)
             },
             'get ID of new email when it arrives' : function(){
                 return command
@@ -57,7 +64,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             },
             'enter new password and submit' : function(){
                 return command
-                .sleep(5000)
+                //.sleep(5000)
                 .getCurrentUrl()
                 .then(function(url){
                     console.log(url)

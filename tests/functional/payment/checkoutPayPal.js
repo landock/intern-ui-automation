@@ -12,7 +12,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
         var command;
         var paypal;
         return {
-            name: 'logged-in customer can pay with PayPal during checkout',
+            name: 'new logged-in customer can pay with PayPal during checkout',
             setup: function() {
                 command = new Command(this.remote);
                 customer = generator.getRandomCustomer();
@@ -43,7 +43,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
             'select PayPal as payment method' : function(){
                 return command
                 .fillDrInfo(customer)
-                .clickOnRadioButton('.paypal label')
+                .clickOnStylizedFormElement('.paypal label')
                 //findAndClick doesn't work here due to custom radio button implementation
                 .execute(function(){
                     $('#ContactsPayPal')[0].click();
@@ -61,6 +61,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 .type(paypal.password)
                 .end()
                 .findAndClick('#submitLogin')
+                .sleep(1000) //give time for fade up animation to finish so it doesn't cover button
                 .findAndClick('#continue')
                 .findAndClick('.submit-cc')
                 .waitForDeletedByClassName('modal-wrap');

@@ -40,6 +40,7 @@ function(BaseCommand){
             .signInFromCart(customer)
             .assertLoggedIn()
             .mobileFillDrInfo(customer)
+            .findAndClick('#order-information > div.row.col-5.review-top.borders-full > div.col.span-2.last > div > div:nth-child(1) > div > div > div > div > div.row.col-12')
             .setDropdown('#CreditCardChoose', 'newCreditCard')
             .findByCssSelector('#dwfrm_billing_paymentMethods_creditCard_number')
             .clearValue()

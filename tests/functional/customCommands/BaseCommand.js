@@ -211,5 +211,12 @@ function (_Command, assert, config) {
         });
     };
 
+    proto.assertOrderSuccess = function() {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findByClassName('thankyou-msg');
+        });
+    };
+
     return BaseCommand;
 });

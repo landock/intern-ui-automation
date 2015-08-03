@@ -153,7 +153,7 @@ define([ '../../node_modules/chance/chance' ],
                        password: 'password',
                        password_confirm: 'password',
                        credit_card: chance.cc( randomCreditCardType ),
-                       doctor: 'Test',
+                       doctor: 'smith',
                        doctor_state: 'UT'
                    };
                },

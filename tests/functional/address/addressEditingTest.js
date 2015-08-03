@@ -1,8 +1,8 @@
 define([
     'intern!object',
-    '../utility/generator',
-    '../config',
-    './customCommands/AllCommands'
+    '../../utility/generator',
+    '../../config',
+    '../customCommands/AllCommands'
 ],
 function (registerSuite, generator, config, AllCommands) {
     registerSuite(function(){

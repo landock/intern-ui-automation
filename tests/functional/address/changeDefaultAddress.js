@@ -5,10 +5,6 @@ define([
 	'../customCommands/AllCommands'
 	],
 
-	/*
-		This test assumes there is only one address listed.
-	*/
-
 	function (registerSuite, generator, config, Command) {
 		registerSuite(function() {
 			var customer;
@@ -17,20 +13,23 @@ define([
 			var initialDefault;
 
 			return {
-				name: 'Change default address test',
+				name: 'New logged in customer can change default address test',
 
 				setup: function() {
-					customer = generator.getExistingCustomer(config.existingId);
+					customer = generator.getRandomCustomer();
+                    anotherRandomCustomer = generator.getRandomCustomer();
 					command = new Command(this.remote);
 
 					return command
                     .configureNewSession(60000)
-					.get(config.URL);
+					.get(config.URL + '/account');
 				},
-
-				'login': function() {
-					return command.loginFromHome(customer);
-				},
+                
+                'create a new customer' : function() {
+                    return command
+				    .createNewAccount(customer)
+				    .assertLoggedIn();
+                },
 
 				'navigate to account page': function() {
                		return command.findAndClick('a[title="My Account"]');
@@ -39,10 +38,13 @@ define([
             	'navigate to account page address tab': function() {
                 	return command.findAndClick('div.tab:nth-child(3) > a:nth-child(1)');
            	 	},
+                
+                'add new address' : function() {
+                    return command
+                    .findAndClick('a[href*="Address-Add"]')
+                    .fillAddNewAddressForm(customer);
+                },
 
-           	 	// each address entry has a unique ID in each href url
-           	 	// probably should store and compare that
-           	 	// instead of the raw text of the address
            	 	'store initial default': function() {
            	 		return command
            	 		.findByCssSelector('p[class="no-margin-bottom saved-address"]')
@@ -52,12 +54,12 @@ define([
            	 		})
            	 		.end();
            	 	},
-
-           	 	// new address automatically becomes the default
+                
+                //this becomes the new default address
            	 	'add a new address': function() {
            	 		return command
            	 		.findAndClick('a[title="Create New Address"]')
-           	 		.fillAddNewAddressForm(customer);
+           	 		.fillAddNewAddressForm(anotherRandomCustomer);
            	 	},
 
            	 	// set initial default address back to default
@@ -70,17 +72,6 @@ define([
            	 		return command
            	 		.assertElementText('p[class="no-margin-bottom saved-address"]', initialDefault);
            	 	},
-
-           	 	'delete created address': function() {
-           	 		return command
-           	 		.findAndClick('div.col-3:nth-child(4) > div:nth-child(1) > p:nth-child(2) > a:nth-child(2)')
-           	 		.refresh();
-           	 	},
-
-           	 	'logout': function() {
-           	 		return command
-           	 		.logoutFromHeader();
-           	 	}
 			 };
 		});
 	});

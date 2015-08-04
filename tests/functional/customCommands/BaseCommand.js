@@ -96,9 +96,9 @@ function (_Command, assert, config) {
             return this.parent
             .findDisplayedByCssSelector(id) //wait for element to exist before entering anything
             .execute(function(id2, txt){
-                $(id2).removeClass('placeholder').val(txt).trigger('change');
+                $(id2).removeClass('placeholder').val(txt).trigger('change')
             }, [id, text])
-            .end();
+            .end()
         });
     };
 

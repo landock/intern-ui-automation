@@ -107,22 +107,7 @@ define([ '../../node_modules/chance/chance' ],
                    credit_card: '4111111111111111',
                    doctor: 'John Smith',
                    doctor_state: 'UT'
-               }/*,
-               {
-                   first_name: 'EmailReset',
-                   last_name: 'Test',
-                   email: '1800contacts_email_reset_test@mailinator.com',
-                   shipping_address1: '',
-                   shipping_address2: '',
-                   shipping_city: '',
-                   shipping_zip: '',
-                   shipping_phone: '',
-                   shipping_state: '',
-                   password: '', //this changes everytime the resetEmail test is run
-                   credit_card: '',
-                   doctor: '',
-                   doctor_state: ''
-               }*/
+               }
            ];
 
            var gigyaLoginInfo = { email: 'yissakhar.hampus@gmail.com', password: 'Ecommrocks' };

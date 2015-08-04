@@ -18,21 +18,28 @@ define([
 
 				setup: function() {
 					command = new Command(this.remote);
-	                customer = generator.getExistingCustomer(config.emailResetId);
+	                customer = generator.getRandomMailinatorCustomer();
 	                return command
 	                .configureNewMobileSession(60000)
-	                .get(config.URL + '/forgot-password');
+	                .get(config.URL + '/account');
+				},
+
+				'create new account' : function() {
+					return command
+					.createNewAccount(customer)
+					.assertLoggedIn();
 				},
 
 				'enter and submit reset request' : function() {
 	                return command
+	                .get(config.URL + '/forgot-password')
 	                .enterInput('#dwfrm_requestpassword_email', customer.email)
 	                .findAndClick('button[name="dwfrm_requestpassword_send"]');
             	},
 
             	'go to mailinator inbox' : function(){
 	                return command
-	                .get('http://mailinator.com/inbox.jsp?to=1800contacts_email_reset_test');
+	                .get('http://mailinator.com/inbox.jsp?to=' + customer.email.replace('@mailinator.com', ''));
             	},
 
 	            'get ID of new email when it arrives' : function(){
@@ -46,7 +53,6 @@ define([
 	                    return $('#mailcontainer > li:nth-child(1) > a').attr('onclick');
 	                })
 	                .then(function(attr){
-	                    // console.log(attr);
 	                    var msg_id = attr.match(/showmail\('(.*)'\)/)[1];
 	                    return command
 	                    .get('https://mailinator.com/rendermail.jsp?msgid='+ msg_id);
@@ -68,9 +74,6 @@ define([
 	                return command
 	                .sleep(5000)
 	                .getCurrentUrl()
-	                // .then(function(url){
-	                //     console.log(url);
-	                // })
 	                .enterInput('#dwfrm_resetpassword_password',newPassword)
 	                .enterInput('#dwfrm_resetpassword_passwordconfirm',newPassword)
 	                .findAndClick('button[name="dwfrm_resetpassword_send"]');

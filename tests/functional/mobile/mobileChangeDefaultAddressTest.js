@@ -79,6 +79,7 @@ define([
 
            	 	'assert address changed' : function() {
 					return command
+					.sleep(1000) // because staleElementReference Exception
 					.findByCssSelector('p[class="no-margin-bottom saved-address"]')
 					.getVisibleText()
 					.then(function(txt) {

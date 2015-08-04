@@ -71,6 +71,11 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
             'assert order success' : function(){
                 return command
                 .findByClassName('thankyou-msg')
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
             }
         }
     });

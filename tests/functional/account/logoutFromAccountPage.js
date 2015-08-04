@@ -32,7 +32,7 @@ function (registerSuite, config, Command, generator) {
             'assert logout' : function(){
                 return command
                 .assertLoggedOut()
-            },
+            }
         }
     });
 });

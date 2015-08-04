@@ -45,6 +45,11 @@ function (registerSuite, config, generator, assert, Command) {
                     .switchToWindow(handles[0])
                     .findById('logged-in-state');
                 });
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
             }
         };
     });

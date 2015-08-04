@@ -81,6 +81,11 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 return command
                 .loginFromHeader({'email':customer.email,'password':newPassword})
                 .assertLoggedIn()
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
             }
         }
     });

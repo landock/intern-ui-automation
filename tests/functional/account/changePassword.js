@@ -63,6 +63,11 @@ function (registerSuite, config, Command, generator) {
                 return command
                 .assertLoggedIn()
             },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
+            }
         }
     });
 });

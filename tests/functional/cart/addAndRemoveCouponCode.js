@@ -71,7 +71,7 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
                     var prev_price_float = parseInt(prevPrice.substr(1));
                     assert(new_price_float && prev_price_float && new_price_float == prev_price_float, 'new price is not the same as old price');
                 });
-            }          
+            }
         };
     });
 });

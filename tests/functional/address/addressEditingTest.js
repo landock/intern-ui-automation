@@ -66,7 +66,12 @@ function (registerSuite, generator, config, AllCommands, assert) {
 				.then(function(txt) {
 					assert.notEqual(txt, addressText);
 				});
-			}
+			},
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
+            }
         };
     });
 });

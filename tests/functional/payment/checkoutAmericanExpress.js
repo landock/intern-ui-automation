@@ -28,8 +28,12 @@ function (registerSuite, config, generator, assert, Command) {
             'assert order success' : function(){
                 return command
                 .findByClassName('thankyou-msg');
-            }
-            
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
+            }            
         };
     });
 });

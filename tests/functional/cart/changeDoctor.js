@@ -80,6 +80,11 @@ function (registerSuite, config, generator, assert, Command) {
                     console.log(prev_dr_name);
                     assert.notEqual(new_dr_name,prev_dr_name);
                 });
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
             }
         };
     });

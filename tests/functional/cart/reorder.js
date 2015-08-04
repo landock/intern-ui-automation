@@ -62,6 +62,11 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 return command
                 .findByClassName('thankyou-msg')
             },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
+            }
         }
     });
 });

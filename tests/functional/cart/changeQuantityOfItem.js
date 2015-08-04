@@ -59,7 +59,7 @@ function (registerSuite, config, assert, pollUntil, Command) {
                     console.log('old price: '+prevPrice)
                      assert.notEqual(new_price, prevPrice);
                 })
-            }            
+            }
         }
     });
 });

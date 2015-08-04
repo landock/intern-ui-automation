@@ -45,6 +45,11 @@ function (registerSuite, config, generator, assert, Command) {
                 });
 
             },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
+            }
         };
     });
 });

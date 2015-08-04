@@ -72,6 +72,11 @@ define([
            	 		return command
            	 		.assertElementText('p[class="no-margin-bottom saved-address"]', initialDefault);
            	 	},
+                'logout' : function(){
+                    return command
+                    .logoutFromHeader()
+                    .assertLoggedOut()
+                }
 			 };
 		});
 	});

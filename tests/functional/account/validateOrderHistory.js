@@ -55,6 +55,11 @@ function (registerSuite, config, generator, pollUntil, Command) {
             'assert that contacts are in previous order' : function(){
                 return command
                 .assertElementText('#order-history-container > div.order-item-container.active > div.order-item-details > div.row.col-9.products.margin-top-small > div.col.span-6.col-full-width-mobile > p > strong','Acuvue Oasys 24pk')
+            },
+            'logout' : function(){
+                return command
+                .logoutFromHeader()
+                .assertLoggedOut()
             }
         }
     });

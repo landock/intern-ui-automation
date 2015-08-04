@@ -102,6 +102,16 @@ function (_Command, assert, config) {
         });
     };
 
+    proto.enterInputWithoutJQuery = function(id, text) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .execute(function(id, text) {
+                document.getElementById(id).value = text;
+            }, [id, text])
+            .end();
+        });
+    };
+
     proto.setDesktopPowerDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent

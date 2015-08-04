@@ -15,7 +15,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
-                creditCard = generator.getCreditCardNumber('MasterCard');
+                creditCard = generator.getCreditCardNumber('mc');
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/account');

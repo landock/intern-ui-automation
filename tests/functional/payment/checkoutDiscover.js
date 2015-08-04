@@ -15,7 +15,7 @@ function (registerSuite, config, generator, assert, Command) {
             setup: function() {
                 command = new Command(this.remote);
                 customer = generator.getRandomCustomer();
-                creditCard = generator.getCreditCardNumber('Discover');
+                creditCard = generator.getCreditCardNumber('discover');
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/account');

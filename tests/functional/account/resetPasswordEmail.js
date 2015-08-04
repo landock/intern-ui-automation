@@ -64,7 +64,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
             },
             'enter new password and submit' : function(){
                 return command
-                //.sleep(5000)
                 .getCurrentUrl()
                 .then(function(url){
                     console.log(url)

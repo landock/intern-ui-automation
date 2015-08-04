@@ -6,10 +6,6 @@ define([
 	'intern/chai!assert'
 	],
 
-	/*
-		This test assumes there is only one address listed.
-	*/
-
 	function (registerSuite, generator, config, Command, assert) {
 		registerSuite(function() {
 			var customer;
@@ -79,11 +75,7 @@ define([
 
            	 	'assert address changed' : function() {
 					return command
-					.findByCssSelector('p[class="no-margin-bottom saved-address"]')
-					.getVisibleText()
-					.then(function(txt) {
-						assert.equal(txt, initialDefault);
-					});
+                    .assertElementText('p[class="no-margin-bottom saved-address"]', initialDefault);
 				}
 			};
 		});

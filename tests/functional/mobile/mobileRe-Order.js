@@ -24,14 +24,6 @@ define([
 					.get(config.URL + '/account');		
 				},
 
-				// create new account
-				// add address
-				// buy something (credit card test command)
-				// go to dashboard
-				// select order
-				// click re-order
-				// complete re-order transaction
-
 				'create new account' : function() {
 					return command
 					.createNewAccount(customer)

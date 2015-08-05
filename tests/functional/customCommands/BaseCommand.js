@@ -51,24 +51,10 @@ function (_Command, assert, config) {
         });
     };
 
-    proto.assertLoggedIn = function () {
-        return new this.constructor(this, function () {
-            return this.parent
-            .findById('logged-in-state');
-        });
-    };
-
     proto.logoutFromHeader = function() {
         return new this.constructor(this, function() {
             return this.parent
             .findAndClick('a[title="Logout"]');
-        });
-    };
-
-    proto.assertLoggedOut = function () {
-        return new this.constructor(this, function () {
-            return this.parent
-            .findById('logged-out-state');
         });
     };
 
@@ -88,6 +74,30 @@ function (_Command, assert, config) {
             return this.parent
             .findAndClick('#icon-mobile-menu')
             .findAndClick('a[title="Logout"]');
+        });
+    };
+
+    proto.signInFromCart = function(customer) {
+        return new this.constructor(this, function() {
+            return this.parent
+            .findAndClick('a[data-modal-id="modal-sign-in"]')
+            .enterInput('#email-address-modal', customer.email)
+            .enterInput('#loginPassword', customer.password)
+            .findAndClick('#dwfrm_login_login');
+        });
+     };
+
+    proto.assertLoggedIn = function () {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-in-state');
+        });
+    };
+
+    proto.assertLoggedOut = function () {
+        return new this.constructor(this, function () {
+            return this.parent
+            .findById('logged-out-state');
         });
     };
 
@@ -174,16 +184,6 @@ function (_Command, assert, config) {
             []);
         });
     };
-
-    proto.signInFromCart = function(customer) {
-        return new this.constructor(this, function() {
-            return this.parent
-            .findAndClick('a[data-modal-id="modal-sign-in"]')
-            .enterInput('#email-address-modal', customer.email)
-            .enterInput('#loginPassword', customer.password)
-            .findAndClick('#dwfrm_login_login');
-        });
-     };
     
     //must be run from /account
     proto.createNewAccount = function(customer) {
@@ -216,7 +216,6 @@ function (_Command, assert, config) {
             .findDisplayedByCssSelector(label_id)
             .execute(function(label_id){
                 $(label_id).click();
-                //$('#ContactsPayPal')[0].click();
             },[label_id])
         });
     };

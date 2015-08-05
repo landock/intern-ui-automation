@@ -46,7 +46,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
                     return $('#mailcontainer > li:nth-child(1) > a').attr('onclick')
                 })
                 .then(function(attr){
-                    console.log(attr)
                     var msg_id = attr.match(/showmail\('(.*)'\)/)[1];
                     return command
                     .get('https://mailinator.com/rendermail.jsp?msgid='+msg_id)
@@ -64,12 +63,8 @@ function (registerSuite, config, generator, pollUntil, Command) {
             },
             'enter new password and submit' : function(){
                 return command
-                .getCurrentUrl()
-                .then(function(url){
-                    console.log(url)
-                })
-                .enterInput('#dwfrm_resetpassword_password',newPassword)
-                .enterInput('#dwfrm_resetpassword_passwordconfirm',newPassword)
+                .enterInput('#dwfrm_resetpassword_password', newPassword)
+                .enterInput('#dwfrm_resetpassword_passwordconfirm', newPassword)
                 .findAndClick('button[name="dwfrm_resetpassword_send"]')
             },
             'logout' : function(){
@@ -82,7 +77,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 .loginFromHeader({'email':customer.email,'password':newPassword})
                 .assertLoggedIn()
             },
-            'logout' : function(){
+            'logout again' : function(){
                 return command
                 .logoutFromHeader()
                 .assertLoggedOut()

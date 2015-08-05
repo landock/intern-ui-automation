@@ -26,22 +26,26 @@ function (registerSuite, generator, config, Command) {
 				.findAndClick('a[data-inline-id="inline-sign-in"]')
 				.enterInput('#email-address-modal', customer.email)
 				.enterInput('#loginPassword', customer.password)
-				.findAndClick('#dwfrm_login_login');
+				.findAndClick('#dwfrm_login_login')
+                .assertLoggedIn();
 			},
 
 			'logout 1' : function() {
 				return command
-				.logoutFromHeader();
+				.logoutFromHeader()
+                .assertLoggedOut();
 			},
 
 			'sign in from header' : function() {
 				return command
-				.loginFromHeader(customer);
+				.loginFromHeader(customer)
+                .assertLoggedIn();
 			},
 
 			'logout 2' : function() {
 				return command
-				.logoutFromHeader();
+				.logoutFromHeader()
+                .assertLoggedOut();
 			}
 		};
 	});

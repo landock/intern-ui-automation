@@ -55,10 +55,13 @@ function (registerSuite, config, assert, pollUntil, Command) {
                     return new_price != prevPrice ? new_price : null;
                 },[priceElem,prevPrice],60000,1000))
                 .then(function(new_price){
-                    console.log('new price: '+new_price)
-                    console.log('old price: '+prevPrice)
                      assert.notEqual(new_price, prevPrice);
                 })
+            },
+            
+            'click on the Remove link for the first item': function(){
+                return command
+                .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
             }
         }
     });

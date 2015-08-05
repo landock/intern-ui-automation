@@ -6,4 +6,4 @@ selenium.*
 docs/_build
 
 # for docs
-docs/*.html
+docs/build

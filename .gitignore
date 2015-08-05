@@ -4,3 +4,6 @@ selenium.*
 *.log
 *.orig
 docs/_build
+
+# for docs
+docs/*.html

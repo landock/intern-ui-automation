@@ -41,11 +41,6 @@ define([
            	 		.fillAddNewAddressForm(customer);
 				},
 
-				// create new account
-				// add address
-				// buy something
-				// verify order number
-
 				'place order' : function() {
 					return command
 					.get(config.URL + '/lens/acuvue-oasys-24')
@@ -57,7 +52,6 @@ define([
 					.findByCssSelector('p[class="no-phone-link"]')
 					.getVisibleText()
 					.then(function(txt){
-						console.log(txt);
 						orderNumber = txt;
 					});
 				},
@@ -70,6 +64,7 @@ define([
 
 				'validate order number' : function() {
 					return command
+					.sleep(1000)
 					.findByCssSelector('p[class="no-phone-link"]')
 					.getVisibleText()
 					.then(function(txt) {

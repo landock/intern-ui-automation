@@ -31,13 +31,13 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 return command
                 .get(config.URL + '/lens/acuvue-oasys-24')
                 .fillInfo()
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
             
             'fill out address info' :function(){
                 return command
                 .fillAddressForm(customer)
-                .findAndClick('button[name="dwfrm_billing_save"]')
+                .findAndClick('button[name="dwfrm_billing_save"]');
             },
             
             'select PayPal as payment method' : function(){
@@ -47,7 +47,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 //findAndClick doesn't work here due to custom radio button implementation
                 .execute(function(){
                     $('#ContactsPayPal')[0].click();
-                })
+                });
             },
             
             //TODO: use method in Base once it's added
@@ -61,7 +61,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 .type(paypal.password)
                 .end()
                 .findAndClick('#submitLogin')
-                .sleep(1000) //give time for fade up animation to finish so it doesn't cover button
+                .sleep(2500) //give time for fade up animation to finish so it doesn't cover button
                 .findAndClick('#continue')
                 .findAndClick('.submit-cc')
                 .waitForDeletedByClassName('modal-wrap');
@@ -70,13 +70,13 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
             //TODO: use method in Base once it's added
             'assert order success' : function(){
                 return command
-                .findByClassName('thankyou-msg')
+                .findByClassName('thankyou-msg');
             },
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
-        }
+        };
     });
 });

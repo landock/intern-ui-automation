@@ -37,14 +37,8 @@ function (registerSuite, config, generator, assert, Command) {
             },
             'enter and submit Facebook info' : function() {
                 return command
-                //.enterInputWithoutJQuery('email', customer.email)
-                //.enterInputWithoutJQuery('pass', customer.password)
-                .findById('email')
-                .type(customer.email)
-                .end()
-                .findById('pass')
-                .type(customer.password)
-                .end()
+                .enterInputWithoutJQuery('email', customer.email)
+                .enterInputWithoutJQuery('pass', customer.password)
                 .findAndClick('#u_0_2');
             },
             'switch back to main window' : function() {
@@ -53,13 +47,14 @@ function (registerSuite, config, generator, assert, Command) {
                 .then(function(handles){
                     return command
                     .switchToWindow(handles[0])
-                    .findById('logged-in-state');
+                    // .sleep(3000)
+                    .assertLoggedIn();
                 });
             },
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
         };
     });

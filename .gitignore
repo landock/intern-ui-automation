@@ -3,7 +3,6 @@ node_modules
 selenium.*
 *.log
 *.orig
-docs/_build
 
 # for docs
 docs/build

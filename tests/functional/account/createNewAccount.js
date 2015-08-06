@@ -30,8 +30,8 @@ function (registerSuite, config, Command, generator) {
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
-        }
+        };
     });
 });

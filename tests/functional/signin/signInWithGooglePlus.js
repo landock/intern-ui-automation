@@ -32,24 +32,35 @@ function (registerSuite, config, generator, assert, Command) {
                 .getAllWindowHandles()
                 .then(function(handles){
                     return command
-                    .switchToWindow(handles[1])
-                    .findById('Email')
-                    .type(customer.email)
-                    .end()
-                    .findAndClick('#next')
-                    .end()
-                    .findById('Passwd')
-                    .type(customer.password)
-                    .end()
-                    .findAndClick('#signIn')
-                    .switchToWindow(handles[0])
-                    .findById('logged-in-state');
+                    .switchToWindow(handles[1]);
                 });
             },
+
+            'enter and submit google info' : function() {
+                return command
+                .sleep(1000)
+                .enterInputWithoutJQuery('Email', customer.email)
+                .findAndClick('#next')
+                .findById('Passwd')
+                .type(customer.password)
+                .end()
+                .findAndClick('#signIn');
+            },
+
+            'switch back to main window' : function() {
+                return command
+                .getAllWindowHandles()
+                .then(function(handles) {
+                    return command
+                    .switchToWindow(handles[0])
+                    .assertLoggedIn();
+                });
+            },
+
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
         };
     });

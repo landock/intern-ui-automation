@@ -106,9 +106,9 @@ function (_Command, assert, config) {
             return this.parent
             .findDisplayedByCssSelector(id) //wait for element to exist before entering anything
             .execute(function(id2, txt){
-                $(id2).removeClass('placeholder').val(txt).trigger('change')
+                $(id2).removeClass('placeholder').val(txt).trigger('change');
             }, [id, text])
-            .end()
+            .end();
         });
     };
 
@@ -125,6 +125,7 @@ function (_Command, assert, config) {
     proto.setDesktopPowerDropdown = function (id, value) {
         return new this.constructor(this, function () {
             return this.parent
+            .sleep(1000)
             .execute(function(id, value){
                 var elem = $(id);
                 elem.parent().siblings().find('li a[data-value="'+value+'"]').click();
@@ -135,6 +136,7 @@ function (_Command, assert, config) {
     proto.setDropdown = function(id, value) {
         return new this.constructor(this, function() {
             return this.parent
+            .sleep(1000)
             .execute(function(id, value) {
                 var elem = $(id);
                 elem.val(value).change();
@@ -190,6 +192,9 @@ function (_Command, assert, config) {
         return new this.constructor(this, function() {
             return this.parent
             .findAndClick('label[for="new"]')
+            .execute(function() { // we have to 'click' twice because IE
+                $('#new').click();
+            })
             .enterInput('#email-address', customer.email)
             .enterInput('#dwfrm_profile_login_password', customer.password)
             .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm)
@@ -216,7 +221,7 @@ function (_Command, assert, config) {
             .findDisplayedByCssSelector(label_id)
             .execute(function(label_id){
                 $(label_id).click();
-            },[label_id])
+            },[label_id]);
         });
     };
 

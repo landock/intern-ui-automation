@@ -27,7 +27,11 @@ define([
 				'assert that 1 item is in the cart': function() {
 					return command
 					.assertElementText('#btn-my-account > li.cart > p > a > span','1');
-				}
+				},
+                'click on the Remove link for the first item': function(){
+                    return command
+                    .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
+                }
 			};
 		});
 	});

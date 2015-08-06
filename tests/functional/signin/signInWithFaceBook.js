@@ -10,7 +10,7 @@ function (registerSuite, config, generator, assert, Command) {
         var customer;
         var command;
         return {
-            name: 'existing customer can log in using Facbook',
+            name: 'existing customer can log in using Facebook',
             setup: function() {
                 customer = generator.getGigyaLogin();
                 command = new Command(this.remote);
@@ -32,18 +32,29 @@ function (registerSuite, config, generator, assert, Command) {
                 .getAllWindowHandles()
                 .then(function(handles){
                     return command
-                    .switchToWindow(handles[1])
-                    .findById('email')
-                    .type(customer.email)
-                    .end()
-                    .findById('pass')
-                    .type(customer.password)
-                    .end()
-                    .findAndClick('#u_0_2')
+                    .switchToWindow(handles[1]);
+                });
+            },
+            'enter and submit Facebook info' : function() {
+                return command
+                //.enterInputWithoutJQuery('email', customer.email)
+                //.enterInputWithoutJQuery('pass', customer.password)
+                .findById('email')
+                .type(customer.email)
+                .end()
+                .findById('pass')
+                .type(customer.password)
+                .end()
+                .findAndClick('#u_0_2');
+            },
+            'switch back to main window' : function() {
+                return command
+                .getAllWindowHandles()
+                .then(function(handles){
+                    return command
                     .switchToWindow(handles[0])
                     .findById('logged-in-state');
                 });
-
             },
             'logout' : function(){
                 return command

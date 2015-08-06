@@ -51,7 +51,6 @@ function (registerSuite, config, generator, assert, Command) {
                 })
                 .then(function(dr_name){
                     prev_dr_name = dr_name.replace('Doctor Name:','').trim();
-                    console.log(prev_dr_name);
                 })
             },
             'click change doctor button': function(){
@@ -76,8 +75,6 @@ function (registerSuite, config, generator, assert, Command) {
                 .getVisibleText()
                 .then(function(new_dr_name){
                     new_dr_name = new_dr_name.replace(/Doctor:\s*/g,'').trim();
-                    console.log(new_dr_name);
-                    console.log(prev_dr_name);
                     assert.notEqual(new_dr_name,prev_dr_name);
                 });
             },

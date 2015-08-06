@@ -15,7 +15,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
-                creditCard = generator.getCreditCardNumber('mc');
+                creditCard = generator.getCreditCardNumber('amex');
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/account');
@@ -40,9 +40,13 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 .fillDrInfo(customer)
                 .enterInput('#dwfrm_billing_paymentMethods_creditCard_number',creditCard)
                 .setDropdown('#dwfrm_billing_paymentMethods_creditCard_year','2025')
-                .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.first_name +' '+customer.last_name)
+                .enterInput('#dwfrm_billing_paymentMethods_creditCard_owner', customer.first_name + ' ' + customer.last_name)
                 .findAndClick('.submit-cc')
                 .waitForDeletedByClassName('modal-wrap');
+            },
+            'assert order success' : function(){
+                return command
+                .findByClassName('thankyou-msg');
             },
             'go to Order History' : function(){
                 return command

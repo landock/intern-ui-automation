@@ -71,6 +71,10 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
                     var prev_price_float = parseInt(prevPrice.substr(1));
                     assert(new_price_float && prev_price_float && new_price_float == prev_price_float, 'new price is not the same as old price');
                 });
+            },
+            'click on the Remove link for the first item': function(){
+                return command
+                .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
             }
         };
     });

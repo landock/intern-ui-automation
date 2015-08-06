@@ -37,8 +37,13 @@ function (registerSuite, config, Command, pollUntil) {
                 .then(pollUntil(function(){
                     var quantity = $('#btn-my-account > li.cart > p > a > span').text();
                     return quantity.indexOf('1') != -1 ? true : null;
-                },[],60000,1000))
+                }, [], 60000, 1000))
                 .assertElementText('#btn-my-account > li.cart > p > a > span','1')
+            },
+            
+            'Remove first item again': function(){
+                return command
+                .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
             }
         }
     });

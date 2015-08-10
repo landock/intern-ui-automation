@@ -7,6 +7,13 @@ define([ '../../node_modules/chance/chance' ],
                {type: 'American Express'},
                {type: 'Discover Card'}
            ];
+
+           var cardNumbers = {
+              'visa' : '4012000077777777',
+              'mc' : '5424180279791765',
+              'amex' : chance.cc({'type':'amex'}),
+              'discover' : '6011000990139424'
+           };
     
            var couponCodes = {
                'Anybody' : [
@@ -30,8 +37,7 @@ define([ '../../node_modules/chance/chance' ],
                    'FEXACT715', //abandonment catching free expedited shippin  
                    'FEXQRN0715' //Free Expedited Shipping on UPP Products
                ]
-           }
-
+           };
            var existingCustomers = [
                {
                    first_name: 'Test',
@@ -159,7 +165,8 @@ define([ '../../node_modules/chance/chance' ],
                },
                
                'getCreditCardNumber' : function(type){
-                   return  chance.cc({'type':type});
+                   // return  chance.cc({'type':type});
+                   return cardNumbers[type];
                },
                
                'getPromoCode' : function(type,code_index){

@@ -7,7 +7,7 @@ define([
 ],
 function (registerSuite, config, generator, pollUntil, Command) {
     registerSuite(function(){
-        var customer
+        var customer;
         var creditCard;
         var command;
         return {
@@ -15,7 +15,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
-                creditCard = generator.getCreditCardNumber('mc');
+                creditCard = generator.getCreditCardNumber('amex');
                 return command
                 .configureNewSession(60000)
                 .get(config.URL + '/account');
@@ -28,12 +28,12 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 return command
                 .get(config.URL + '/lens/acuvue-oasys-24')
                 .fillInfo()
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
             'fill out address info' :function(){
                 return command
                 .fillAddressForm(customer)
-                .findAndClick('button[name="dwfrm_billing_save"]')
+                .findAndClick('button[name="dwfrm_billing_save"]');
             },
             'complete placing order' : function(){
                 return command
@@ -48,25 +48,25 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 return command
                 .get(config.URL + '/account')
                 .clickOnStylizedFormElement('#dwfrm_dashboarditems > div.patient-orders > div > div.row.account-user-content > div > div.row.recent-pres-header > div > label')
-                .findAndClick('#btn-reorder-rx')
+                .findAndClick('#btn-reorder-rx');
             },
             'click continue' : function(){
                 return command
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
             'click place my order' : function(){
                 return command
-                .findAndClick('.submit-cc')
+                .findAndClick('.submit-cc');
             },
             'assert order success' : function(){
                 return command
-                .findByClassName('thankyou-msg')
+                .findByClassName('thankyou-msg');
             },
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
-        }
+        };
     });
 });

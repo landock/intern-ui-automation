@@ -11,7 +11,7 @@ function(BaseCommand){
     
     proto.constructor = ProductCommand;
     
-    //works on /lens/acuvue-oasys-24 - will not work wioth other lenses with different options
+    //works on /lens/acuvue-oasys-24 - will not work with other lenses with different options
     proto.fillInfo = function () {
         return new this.constructor(this, function () {
             return this.parent

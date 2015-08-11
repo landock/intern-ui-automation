@@ -159,7 +159,7 @@ define([ '../../node_modules/chance/chance' ],
                },
                
                'getCreditCardNumber' : function(type){
-                   return  chance.cc({'type':type});
+                   return chance.cc({'type':type});
                },
                
                'getPromoCode' : function(type,code_index){

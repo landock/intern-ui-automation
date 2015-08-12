@@ -25,7 +25,7 @@ function (registerSuite, config, Command, generator) {
             
             'assert that new user is logged in': function() {
                 return command
-                .findById('logged-in-state');
+                .assertLoggedIn();
             },
             'logout' : function(){
                 return command

@@ -38,6 +38,7 @@ define([ '../../node_modules/chance/chance' ],
                    'FEXQRN0715' //Free Expedited Shipping on UPP Products
                ]
            };
+
            var existingCustomers = [
                {
                    first_name: 'Test',

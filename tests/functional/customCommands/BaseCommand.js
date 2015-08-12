@@ -19,7 +19,7 @@ function (_Command, assert, config) {
             var findTimeoutLength = ( defaultTimeoutLength - ( ( 10/100 ) * defaultTimeoutLength ) );
             return this.parent
             .setTimeout('script', defaultTimeoutLength)
-            .setTimeout('page load', defaultTimeoutLength)
+//            .setTimeout('page load', defaultTimeoutLength)
             .setFindTimeout(findTimeoutLength);
         });
     };
@@ -28,7 +28,7 @@ function (_Command, assert, config) {
         return new this.constructor(this, function () {
             return this.parent
             .setAllTimeoutLengths(timeout)
-            .clearCookies();
+//            .clearCookies();
         });
     };
 

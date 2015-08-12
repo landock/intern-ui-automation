@@ -7,7 +7,7 @@ define([
 ],
 function (registerSuite, config, generator, pollUntil, Command) {
     registerSuite(function(){
-        var customer
+        var customer;
         var command;
         var newPassword = 'anewpassword';
         var email_name;
@@ -15,7 +15,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             name: 'new test customer can reset password',
             setup: function() {
                 customer = generator.getRandomMailinatorCustomer();
-                email_name = customer['email'].split('@')[0]
+                email_name = customer['email'].split('@')[0];
                 command = new Command(this.remote);
                 return command
                 .configureNewSession(60000)
@@ -24,6 +24,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             'create new test customer' : function(){
                 return command
                 .createNewAccount(customer)
+                .assertLoggedIn();
             },
             'enter and submit reset request' : function() {
                 return command
@@ -33,7 +34,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
             },
             'go to mailinator inbox' : function(){
                 return command
-                .get('http://mailinator.com/inbox.jsp?to=' + email_name)
+                .get('http://mailinator.com/inbox.jsp?to=' + email_name);
             },
             'get ID of new email when it arrives' : function(){
                 return command
@@ -43,34 +44,34 @@ function (registerSuite, config, generator, pollUntil, Command) {
                     return contains_less != -1 ? true : null;
                 },[],60000,1000))
                 .execute(function(){
-                    return $('#mailcontainer > li:nth-child(1) > a').attr('onclick')
+                    return $('#mailcontainer > li:nth-child(1) > a').attr('onclick');
                 })
                 .then(function(attr){
                     var msg_id = attr.match(/showmail\('(.*)'\)/)[1];
                     return command
-                    .get('https://mailinator.com/rendermail.jsp?msgid='+msg_id)
-                })
+                    .get('https://mailinator.com/rendermail.jsp?msgid='+msg_id);
+                });
             },
             'click on password reset link in email' : function(){
                 return command
                 .execute(function(){
-                    return $('#wrapper > table > tbody > tr:nth-child(2) > td > font > center > table > tbody > tr > td > font > p:nth-child(2) > font > a').attr('href')
+                    return $('#wrapper > table > tbody > tr:nth-child(2) > td > font > center > table > tbody > tr > td > font > p:nth-child(2) > font > a').attr('href');
                 })
                 .then(function(link){
                     return command
-                    .get(link)
-                })
+                    .get(link);
+                });
             },
             'enter new password and submit' : function(){
                 return command
                 .enterInput('#dwfrm_resetpassword_password', newPassword)
                 .enterInput('#dwfrm_resetpassword_passwordconfirm', newPassword)
-                .findAndClick('button[name="dwfrm_resetpassword_send"]')
+                .findAndClick('button[name="dwfrm_resetpassword_send"]');
             },
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             },
             'assert that new password works' : function(){
                 return command
@@ -82,6 +83,6 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 .logoutFromHeader()
                 .assertLoggedOut()
             }
-        }
+        };
     });
 });

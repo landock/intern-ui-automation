@@ -36,6 +36,6 @@
 
         grunt.registerTask('default', [ 'run:selenium', 'intern:dev', 'run:selenium_stop' ]);
         grunt.registerTask('mobile', [ 'run:selenium', 'intern:mobile', 'run:selenium_stop' ]);
-        grunt.registerTask('sauce', [ 'intern:dev' ]);
+        grunt.registerTask('sauce', [ 'intern:dev', 'intern:mobile' ]);
     };
 }());

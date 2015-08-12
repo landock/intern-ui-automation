@@ -13,7 +13,7 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
         var priceElem = '#summary > div.row.pricing-info > div > div:nth-child(1) > div.col.span-1 > p > strong';
         var couponCode;
         return {
-            name: 'non-logged in customer can add a coupon code',
+            name: 'non-logged in customer can add and remove a coupon code',
             setup: function() {
                 command = new Command(this.remote);
                 couponCode = generator.getPromoCode('Anybody',0);

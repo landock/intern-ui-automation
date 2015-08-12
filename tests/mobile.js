@@ -14,12 +14,12 @@ define({
     environments: [ { browserName: 'chrome'} ],
 
     maxConcurrency: Infinity,
-    tunnel: 'NullTunnel',
-    //tunnel: 'SauceLabsTunnel',
+    // tunnel: 'NullTunnel',
+    tunnel: 'SauceLabsTunnel',
 
     tunnelOptions:{
-        //username: 'awan',
-        //accessKey: '8a05a809-6b01-4bc6-80f0-83d934a78ea9'
+        username: 'awan',
+        accessKey: '8a05a809-6b01-4bc6-80f0-83d934a78ea9'
     },
 
     // Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
@@ -43,13 +43,13 @@ define({
         // 'tests/functional/mobile/mobileCheckoutMasterCard',
         // 'tests/functional/mobile/mobileCheckoutPayPal',
         // 'tests/functional/mobile/mobileCheckoutVisa', // failing for reasons unknown
-        // 'tests/functional/mobile/mobileCreateNewAccount',
+        'tests/functional/mobile/mobileCreateNewAccount',
         // 'tests/functional/mobile/mobileRe-Order',
         // 'tests/functional/mobile/mobileRemoveItemFromCart',
         // 'tests/functional/mobile/mobileResetPasswordTest',
         // 'tests/functional/mobile/mobileSignInFromCart',
         // 'tests/functional/mobile/mobileSignInTest',
-        'tests/functional/mobile/mobileValidateOrderHistory'
+        // 'tests/functional/mobile/mobileValidateOrderHistory'
     ],
 
     excludeInstrumentation: /^(?:tests|node_modules)\//

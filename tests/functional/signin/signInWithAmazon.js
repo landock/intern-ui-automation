@@ -15,7 +15,7 @@ function (registerSuite, config, generator, assert, Command) {
                 customer = generator.getGigyaLogin();
                 command = new Command(this.remote);
                 return command
-                .configureNewSession(60000)
+                .configureNewSession(35000)
                 .get('http://www.1800contacts.com/');
             },
             'click on Sign In button': function(){

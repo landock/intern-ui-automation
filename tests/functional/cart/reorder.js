@@ -17,7 +17,7 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 command = new Command(this.remote);
                 creditCard = generator.getCreditCardNumber('amex');
                 return command
-                .configureNewSession(60000)
+                .configureNewSession()
                 .get(config.URL + '/account');
             },
             'create new account': function(){

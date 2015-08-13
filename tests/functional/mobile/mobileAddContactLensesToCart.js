@@ -11,7 +11,7 @@ function (registerSuite, config, Command) {
             setup: function() {
                 command = new Command(this.remote);
                 return command
-                .configureNewMobileSession(60000)
+                .configureNewMobileSession()
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
 

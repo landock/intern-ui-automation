@@ -15,7 +15,7 @@ function (registerSuite, config, assert, pollUntil, Command) {
             setup: function() {
                 command = new Command(this.remote);
                 return command
-                .configureNewSession(60000)
+                .configureNewSession()
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
             'fill out eye info': function(){

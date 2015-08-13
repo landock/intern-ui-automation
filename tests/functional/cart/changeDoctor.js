@@ -16,7 +16,7 @@ function (registerSuite, config, generator, assert, Command) {
                 command = new Command(this.remote);
                 customer = generator.getRandomCustomer();
                 return command
-                .configureNewSession(60000)
+                .configureNewSession()
                 //.get(config.URL + '/lens/acuvue-oasys-24');
                 .get(config.URL + '/account');
             },

@@ -28,30 +28,30 @@ function (registerSuite, config, generator, assert, Command) {
                 return command
                 .get(config.URL + '/lens/acuvue-oasys-24')
                 .fillInfo()
-                .findAndClick('button[name="dwfrm_cart_checkoutCart"]')
+                .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },
             'fill out address info' :function(){
                 return command
                 .fillAddressForm(customer)
-                .findAndClick('button[name="dwfrm_billing_save"]')
+                .findAndClick('button[name="dwfrm_billing_save"]');
             },
             'fill out Dr info form' : function(){
                 return command
-                .fillDrInfo(customer)
+                .fillDrInfo(customer);
             },
             'click on edit doctor link' : function(){
                 return command
-                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)')
+                .findAndClick('.col-9 > div:nth-child(3) > p:nth-child(1) > a:nth-child(1)');
             },
             'get name of current doctor' : function(){
                 return command
                 .findByCssSelector('#find-different-doc')
                 .execute(function(){
-                    return $('div.row:nth-child(2) > div:nth-child(1) > p:nth-child(1)').text()
+                    return $('div.row:nth-child(2) > div:nth-child(1) > p:nth-child(1)').text();
                 })
                 .then(function(dr_name){
                     prev_dr_name = dr_name.replace('Doctor Name:','').trim();
-                })
+                });
             },
             'click change doctor button': function(){
                 return command
@@ -81,7 +81,7 @@ function (registerSuite, config, generator, assert, Command) {
             'logout' : function(){
                 return command
                 .logoutFromHeader()
-                .assertLoggedOut()
+                .assertLoggedOut();
             }
         };
     });

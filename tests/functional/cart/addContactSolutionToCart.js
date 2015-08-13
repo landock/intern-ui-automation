@@ -30,7 +30,7 @@ define([
 				},
                 'click on the Remove link for the first item': function(){
                     return command
-                    .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]')
+                    .findAndClick('button[name="dwfrm_cart_shipments_i0_items_i0_deleteProduct"]');
                 }
 			};
 		});

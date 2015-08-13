@@ -17,7 +17,7 @@ function (registerSuite, config, generator, assert, Command) {
                 customer = generator.getRandomCustomer();
                 creditCard = generator.getCreditCardNumber('mc');
                 return command
-                .configureNewSession(60000)
+                .configureNewSession(45000)
                 .get(config.URL + '/account');
             },
             

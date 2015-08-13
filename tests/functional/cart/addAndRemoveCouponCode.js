@@ -18,7 +18,7 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
                 command = new Command(this.remote);
                 couponCode = generator.getPromoCode('Anybody',0);
                 return command
-                .configureNewSession(60000)
+                .configureNewSession()
                 .get(config.URL + '/lens/biofinity');
             },
             

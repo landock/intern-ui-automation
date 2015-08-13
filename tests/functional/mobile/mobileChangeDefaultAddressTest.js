@@ -23,7 +23,7 @@ define([
 					command = new Command(this.remote);
 
 					return command
-					.configureNewMobileSession(60000)
+					.configureNewMobileSession()
 					.get(config.URL + '/account');
 				},
 

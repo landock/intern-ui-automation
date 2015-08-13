@@ -21,7 +21,7 @@ define([
 	                customer = generator.getRandomCustomer();
 	                creditCard = generator.getCreditCardNumber('amex');
 	                return command
-	                .configureNewMobileSession(60000)
+	                .configureNewMobileSession()
 	                .get(config.URL + '/account');
 				},
 

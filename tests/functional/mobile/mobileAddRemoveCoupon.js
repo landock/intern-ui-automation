@@ -22,7 +22,7 @@ function (registerSuite, config, generator, assert, pollUntil,Command) {
 				couponCode = generator.getPromoCode('Anybody', 0);
 
 				return command
-				.configureNewMobileSession(35000)
+				.configureNewMobileSession()
 				.get(config.URL + '/lens/biofinity');
 			},
 

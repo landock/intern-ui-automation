@@ -21,7 +21,7 @@ define([
 	                creditCard = generator.getCreditCardNumber('amex');
 
 	                return command
-	                .configureNewMobileSession(60000)
+	                .configureNewMobileSession(45000)
 	                .get(config.URL + '/account');
 				},
 

@@ -21,7 +21,7 @@ define([
 					command = new Command(this.remote);
 
 					return command
-                    .configureNewSession(60000)
+                    .configureNewSession()
 					.get(config.URL + '/account');
 				},
                 

@@ -18,7 +18,7 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 customer = generator.getRandomCustomer();
                 paypal = generator.getPayPalLogin();
                 return command
-                .configureNewSession(60000)
+                .configureNewSession(45000)
                 .get(config.URL + '/account');
             },
             

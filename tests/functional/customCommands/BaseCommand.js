@@ -15,7 +15,7 @@ function (_Command, assert, config) {
 
     proto.setAllTimeoutLengths = function(timeoutLength) {
         return new this.constructor(this, function () {
-            var defaultTimeoutLength = timeoutLength || 60000;
+            var defaultTimeoutLength = timeoutLength || 30000;
             var findTimeoutLength = ( defaultTimeoutLength - ( ( 10/100 ) * defaultTimeoutLength ) );
             return this.parent
             .setTimeout('script', defaultTimeoutLength)

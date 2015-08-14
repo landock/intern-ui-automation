@@ -11,7 +11,7 @@ function (registerSuite, config, Command, generator) {
         var newPassword = 'anewpassword';
         var customer;
         return {
-            name: 'new logged-in customer can create a new account',
+            name: 'new logged-in customer can change password',
             setup: function() {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);

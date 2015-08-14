@@ -17,7 +17,7 @@ function (registerSuite, generator, config, AllCommands, assert) {
                 anotherRandomCustomer = generator.getRandomCustomer();
                 command = new AllCommands(this.remote);
                 return command
-                .configureNewSession(60000)
+                .configureNewSession()
                 .get(config.URL + '/account');
             },
             

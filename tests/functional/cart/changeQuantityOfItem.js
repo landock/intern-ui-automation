@@ -3,9 +3,10 @@ define([
     '../../config',
     'intern/chai!assert',
     'intern/dojo/node!leadfoot/helpers/pollUntil',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, assert, pollUntil, Command) {
+function (registerSuite, config, assert, pollUntil, Command, skip) {
     registerSuite(function(){
         var command;
         var priceElem = '#cart-items-form > div.cart-product-tiles > div > div:nth-child(2) > div.col.span-5.col-full-width-touch.product-item-details > div:nth-child(2) > div > div:nth-child(1) > div > div.row-eye-container.row-right-eye > div.row.grid-reverse.row-prescription-specs.align-right.hidden-phone > div > div:nth-child(1) > p';
@@ -18,6 +19,11 @@ function (registerSuite, config, assert, pollUntil, Command) {
                 .configureNewSession()
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
+
+            beforeEach : function() {
+                skip(this);
+            },
+
             'fill out eye info': function(){
                 return command.fillInfo();
             },

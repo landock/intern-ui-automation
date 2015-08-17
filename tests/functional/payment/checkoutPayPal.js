@@ -4,9 +4,10 @@ define([
     '../../utility/generator',
     'intern/chai!assert',
     'intern/dojo/node!leadfoot/helpers/pollUntil',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, assert, pollUntil, Command) {
+function (registerSuite, config, generator, assert, pollUntil, Command, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -20,6 +21,10 @@ function (registerSuite, config, generator, assert, pollUntil, Command) {
                 return command
                 .configureNewSession(45000)
                 .get(config.URL + '/account');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
             
             'create new account': function(){

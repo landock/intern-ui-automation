@@ -3,9 +3,10 @@ define([
     '../../config',
     '../../utility/generator',
     'intern/chai!assert',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, assert, Command) {
+function (registerSuite, config, generator, assert, Command, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -19,6 +20,10 @@ function (registerSuite, config, generator, assert, Command) {
                 return command
                 .configureNewSession(45000)
                 .get(config.URL + '/account');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
             
             'test card payment process' : function(){

@@ -2,10 +2,12 @@ define([
     'intern!object',
     '../../config',
     '../customCommands/AllCommands',
-    '../../utility/generator'
+    '../../utility/generator',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command, generator) {
+function (registerSuite, config, Command, generator, skip) {
     registerSuite(function(){
+        var thisthis = this;
         var command;
         var email;
         var newPassword = 'anewpassword';
@@ -16,17 +18,22 @@ function (registerSuite, config, Command, generator) {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
                 return command
-                .configureNewSession(60000)
+                .configureNewSession(10000)
                 .get(config.URL + '/account');
+            },
+
+            beforeEach: function() {
+                skip(this);
             },
             
             'create new account': function(){
                 return command
+                .findAndClick('asdfasdf')
                 .createNewAccount(customer);
             },
             'assert that new user is logged in': function() {
                 return command
-                .assertLoggedIn()
+                .assertLoggedIn();
             },
             
             'go to edit profile page' : function(){

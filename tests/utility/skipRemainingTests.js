@@ -7,7 +7,7 @@ define(function() {
         var skipRemainingTests = false;
         suite.tests.forEach(function(test, index, arr) {
             if(skipRemainingTests) {
-                test.skipped = 'one fails all fail';
+                test.skip("Fast Fail");
                 return;
             }
             if(test.error){

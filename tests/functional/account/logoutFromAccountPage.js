@@ -2,9 +2,10 @@ define([
     'intern!object',
     '../../config',
     '../customCommands/AllCommands',
-    '../../utility/generator'
+    '../../utility/generator',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command, generator) {
+function (registerSuite, config, Command, generator, skip) {
     registerSuite(function(){
         var command;
         var customer;
@@ -17,6 +18,11 @@ function (registerSuite, config, Command, generator) {
                 .configureNewSession(60000)
                 .get(config.URL + '/account');
             },
+
+            beforeEach:function() {
+                skip(this);
+            },
+
             'login using header' : function(){
                 return command
                 .loginFromHeader(customer)

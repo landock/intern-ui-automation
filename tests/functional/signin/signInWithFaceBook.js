@@ -3,9 +3,10 @@ define([
     '../../config',
     '../../utility/generator',
     'intern/chai!assert',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, assert, Command) {
+function (registerSuite, config, generator, assert, Command, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -18,6 +19,11 @@ function (registerSuite, config, generator, assert, Command) {
                 .configureNewSession(35000)
                 .get('http://www.1800contacts.com/');
             },
+
+            beforeEach : function() {
+                skip(this)
+            },
+
             'click on Sign In button': function(){
                 return command
                 .findAndClick('a[data-inline-id="inline-sign-in"]');

@@ -2,10 +2,11 @@ define([
     'intern!object',
     '../../utility/generator',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
 
-function (registerSuite, generator, config, Command) {
+function (registerSuite, generator, config, Command, skip) {
 	registerSuite(function(){
 		var customer;
 		var command;
@@ -19,6 +20,10 @@ function (registerSuite, generator, config, Command) {
 				return command
                 .configureNewSession(60000)
 				.get(config.URL);
+			},
+
+			beforeEach: function() {
+				skip(this);
 			},
 
 			'sign in from main button on homepage' : function() {

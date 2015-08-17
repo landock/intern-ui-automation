@@ -3,9 +3,10 @@ define([
     '../../utility/generator',
     '../../config',
     '../customCommands/AllCommands',
-    'intern/chai!assert'
+    'intern/chai!assert',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, generator, config, AllCommands, assert) {
+function (registerSuite, generator, config, AllCommands, assert, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -19,6 +20,10 @@ function (registerSuite, generator, config, AllCommands, assert) {
                 return command
                 .configureNewSession()
                 .get(config.URL + '/account');
+            },
+
+            beforeEach: function() {
+                skip(this);
             },
             
             'create a new customer' : function() {

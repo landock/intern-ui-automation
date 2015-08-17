@@ -3,9 +3,10 @@ define([
     '../../config',
     '../../utility/generator',
     'intern/dojo/node!leadfoot/helpers/pollUntil',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, pollUntil, Command) {
+function (registerSuite, config, generator, pollUntil, Command, skip) {
     registerSuite(function(){
         var customer
         var creditCard;
@@ -20,6 +21,11 @@ function (registerSuite, config, generator, pollUntil, Command) {
                 .configureNewSession()
                 .get(config.URL + '/account');
             },
+
+            beforeEach: function() {
+                skip(this);
+            },
+
             'create new account': function(){
                 return command
                 .createNewAccount(customer);

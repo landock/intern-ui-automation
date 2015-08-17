@@ -4,9 +4,10 @@ define([
     'intern/chai!assert',
     'intern/dojo/node!leadfoot/helpers/pollUntil',
     '../customCommands/AllCommands',
-    '../../utility/generator'
+    '../../utility/generator',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, assert, pollUntil, Command, generator) {
+function (registerSuite, config, assert, pollUntil, Command, generator, skip) {
     registerSuite(function(){
         var command;
         var prevPrice;
@@ -21,6 +22,11 @@ function (registerSuite, config, assert, pollUntil, Command, generator) {
                 .configureNewSession()
                 .get(config.URL + '/lens/biofinity');
             },
+
+            beforeEach: function() {
+                skip(this);
+            },
+
             
             'fill out lens info': function(){
                 return command.fillBiofinityInfo();

@@ -1,9 +1,10 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, skip) {
     registerSuite(function(){
         var command;
         return {
@@ -14,6 +15,11 @@ function (registerSuite, config, Command) {
                 .configureNewSession()
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
+
+            beforeEach: function() {
+                skip(this);
+            },
+
             'fill out eye info': function(){
                 return command.fillInfo();
             },

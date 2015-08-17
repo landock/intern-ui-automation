@@ -7,7 +7,6 @@ define([
 ],
 function (registerSuite, config, Command, generator, skip) {
     registerSuite(function(){
-        var thisthis = this;
         var command;
         var email;
         var newPassword = 'anewpassword';

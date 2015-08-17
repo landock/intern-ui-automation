@@ -3,9 +3,10 @@ define([
     '../../config',
     '../../utility/generator',
     'intern/chai!assert',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, assert, Command) {
+function (registerSuite, config, generator, assert, Command, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -20,6 +21,11 @@ function (registerSuite, config, generator, assert, Command) {
                 //.get(config.URL + '/lens/acuvue-oasys-24');
                 .get(config.URL + '/account');
             },
+
+            beforeEach: function() {
+                skip(this);
+            },
+
             'create new account': function(){
                 return command
                 .createNewAccount(customer);

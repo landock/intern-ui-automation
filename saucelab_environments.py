@@ -1,16 +1,8 @@
-environments = [
-    { "browserName": 'chrome', "version": '43.0', "platform": 'Windows 8.1' },
-    { "browserName": 'internet explorer', "version": '8', "platform": 'Windows XP' },
-    { "browserName": 'internet explorer', "version": '10', "platform": 'Windows 8' },
-    { "browserName": 'internet explorer', "version": '11', "platform": 'Windows 8.1' } ,
-    { "browserName": 'internet explorer', "version": '9', "platform": 'Windows 7' },
-    { "browserName": 'firefox', "version": '38.0', "platform": 'Windows 8.1' },
-    { "browserName": 'firefox', "version": '38.0', "platform": 'OS X 10.10' },
-    { "browserName": 'chrome', "version": '43.0', "platform": 'OS X 10.10' },
-    { "browserName": 'safari', "version": '8', "platform": 'OS X 10.10' }
-]
+ENVIRONMENT_COUNT = 8 
+MAX_VMS = 50
+MAX_TUNNELS = 30
 
-tests = [
+TESTS = [
 
     "tests/functional/cart/addContactSolutionToCart",
     "tests/functional/account/resetPasswordEmail",

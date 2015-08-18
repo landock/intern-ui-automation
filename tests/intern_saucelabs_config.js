@@ -2,9 +2,9 @@
 define([ 'intern' ], function (intern) {
 	var cmdArgs = intern.args;
 	var increment = parseInt(cmdArgs.increment);
-    var browserName = cmdArgs.browserName;
-    var version = cmdArgs.version;
-    var platform = cmdArgs.platform;
+    //var browserName = cmdArgs.browserName;
+    //var version = cmdArgs.version;
+    //var platform = cmdArgs.platform;
 	var portNum = 4444;
 	var proxyPortNum = 9000;
 	
@@ -19,7 +19,15 @@ define([ 'intern' ], function (intern) {
 		},
 		
 		environments: [
-            { 'browserName': browserName, 'version': version, 'platform': platform },
+            //{ 'browserName': browserName, 'version': version, 'platform': platform },
+            //{ browserName: 'internet explorer', version: '8', platform: 'Windows XP' },
+            { browserName: 'internet explorer', version: '10', platform: 'Windows 8' },
+            { browserName: 'internet explorer', version: '11', platform: 'Windows 8.1' } ,
+            { browserName: 'internet explorer', version: '9', platform: 'Windows 7' },
+            { browserName: 'firefox', version: '38.0', platform: ['Windows 8.1', 'OS X 10.10'] },
+            { browserName: 'chrome', version: '43.0', platform: ['Windows 8.1', 'OS X 10.10' ] },
+            { browserName: 'safari', version: '8', platform: 'OS X 10.10' }
+            // { browserName: 'safari', version: '7', platform: 'OS X 10.9' },
     	],
 		
 		maxconcurrency: Infinity,

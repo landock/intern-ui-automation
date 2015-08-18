@@ -17,7 +17,7 @@ function (registerSuite, config, Command, generator, skip) {
                 customer = generator.getRandomCustomer();
                 command = new Command(this.remote);
                 return command
-                .configureNewSession(10000)
+                .configureNewSession(60000)
                 .get(config.URL + '/account');
             },
 

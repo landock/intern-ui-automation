@@ -7,7 +7,7 @@ import math
 class SauceRunner:
     
     def __init__(self):
-        self.running_batch_count=0
+        self.batch_id=0
         self.inc_lock = Lock()
 
     def get_batch_cmd(self):
@@ -31,27 +31,55 @@ class SauceRunner:
             test_list = (TESTS[start_slice: end_slice])
             for test in test_list:
                 cmd += ' functionalSuites="{}"'.format(test)
+            #cmd = 'python stdout_test.py ' + str(x)
             yield cmd 
+
+    def __get_output(self,p,batch_id):
+        #stdout = []
+        f=open('dumps/dump_'+str(batch_id),'wb')
+        while True:
+            line = p.stdout.readline()
+            #stdout.append(line)
+            #print(line)
+            if line != b'':
+                pretty=line.decode('UTF-8','replace')
+                print(pretty,'print to id:',batch_id)
+                f.write(bytes(pretty,'UTF-8'))
+            if p.poll() != None:
+                f.close()
+                #with self.inc_lock:
+                    #self.batch_id-=1
+                break
+            #if line == '' and p.poll() != None:
+                #break
+        #return ''.join(stdout)
 
     def __launch_test(self,cmd):
         print('running cmd', cmd)
-        p=subprocess.Popen(cmd,shell=True,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
-        print(p.communicate())
-        print('cmd done',cmd)
-        with self.inc_lock:
-            self.running_batch_count-=1
+        p=subprocess.Popen(cmd,shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False)
+        #self.__get_output(p)
+        Thread(target=self.__get_output,args=(p,self.batch_id)).start()
+        #print(p.communicate())
+        
+        #print('cmd done',cmd)
+        #with self.inc_lock:
+            #self.batch_id-=1
         
     def run_tests(self):
             cmds = self.get_batch_cmd()
             next_cmd = next(cmds,False) 
             while next_cmd:
-                if self.running_batch_count < MAX_VMS:
+                if self.batch_id < MAX_VMS:
                     with self.inc_lock:
-                        self.running_batch_count+=ENVIRONMENT_COUNT
-                    Thread(target=self.__launch_test,args=(next_cmd,)).start()
+                        self.batch_id+=1
+                    #Thread(target=self.__launch_test,args=(next_cmd,)).start()
+                    self.__launch_test(next_cmd)
                     next_cmd=next(cmds,False)
+                    time.sleep(4)
                 else:
                     time.sleep(1) 
+
+            print('batch count:',self.batch_id)
 
 if __name__ == "__main__":
     SR=SauceRunner()

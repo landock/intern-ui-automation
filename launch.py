@@ -42,7 +42,7 @@ class SauceRunner:
             #stdout.append(line)
             #print(line)
             if line != b'':
-                pretty=line.decode('UTF-8','replace')
+                pretty=line.decode('UTF-8','ignore')
                 print(pretty,'print to id:',batch_id)
                 f.write(bytes(pretty,'UTF-8'))
             if p.poll() != None:

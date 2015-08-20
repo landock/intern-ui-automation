@@ -1,0 +1,19 @@
+TO DO:
+    -Parse logs:
+        -Per browser and OS
+            -Success Count
+            -Failure Count
+            -Failure Details
+                -Suite and Sub-suite
+        -Readable Output (asciidoc or jinja html)
+        -Serialize results for potential further processing
+    -Mobile
+        -Add fail fast to tests
+        -Make dynamic mobile config
+        -Add to batches
+    -Test Cases
+        -Check suites and sub-suite descriptions for accuracy
+    -Cleanup Saucelabs Tunnels
+
+STRETCH:
+    -MTM integration

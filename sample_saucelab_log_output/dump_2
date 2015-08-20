@@ -1,0 +1,1029 @@
+[0mListening on 0.0.0.0:9001
+4.3, build 1285 bd6579aUsing no proxy for connecting to Sauce Labs REST API.20 Aug 14:09:20 -**********************************************************A newer version of Sauce Connect (build 1759) is available!Download it here:https://saucelabs.com/downloads/sc-4.3.11-win32.zip**********************************************************20 Aug 14:09:21 -Started scproxy on port 32604.Starting secure remote tunnel VM...Secure remote tunnel VM provisioned.Tunnel ID: 144dde3b4c1f4a23854bf3d0af204b17Secure remote tunnel VM is now: bootingSecure remote tunnel VM is now: runningRemote tunnel host is: maki76171.miso.saucelabs.comUsing no proxy for connecting to tunnel VM.Starting Selenium listener...Establishing secure TLS connection to tunnel...Selenium listener started on port 50001.Sauce Connect is up, you may start your tests.Connection established.ReadyTunnel started
+‣ Created session safari 8 on OS X 10.10 (bbb262d70c734748b5e2caed43d83f56)
+‣ Created session chrome 43.0 on Windows 8.1 (19224999200f4022832e6280359dce77)
+‣ Created session firefox 38.0 on OS X 10.10 (5c0add945027461db4e2556ce2f8dc16)
+‣ Created session chrome 43.0 on OS X 10.10 (f9c6160a086b4e5493710307faf8a3f1)
+‣ Created session internet explorer 11 on Windows 8.1 (6df7a578a22244ae80a44d56cc3567c3)
+‣ Created session firefox 38.0 on Windows 8.1 (9e0bb692b0c34c21adb35ece8d3ee692)
+‣ Created session internet explorer 10 on Windows 8 (1618a622d42047b5952b73b449c94d77)
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can create a new account - create new account[37m (16.393s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can create a new account - assert that new user is logged in[37m (0.62s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can create a new account - create new account[37m (19.392s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can create a new account - logout[37m (16.861s)[0m
+‣ Created session internet explorer 9 on Windows 7 (e9f5240ac9e343cfa695aa494f54fa83)
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can create a new account - create new account[37m (19.361s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can create a new account - create new account[37m (39.129s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can create a new account - assert that new user is logged in[37m (6.605s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can create a new account - assert that new user is logged in[37m (7.547s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can create a new account - create new account[37m (41.054s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can create a new account - assert that new user is logged in[37m (0.859s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can create a new account - assert that new user is logged in[37m (43.389s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can create a new account - logout[37m (18.184s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can create a new account - create new account[37m (17.635s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can create a new account - logout[37m (15.186s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can create a new account - logout[37m (17.821s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - create new account[37m (55.371s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can create a new account - create new account[37m (45.667s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can create a new account - logout[37m (46.752s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can create a new account - assert that new user is logged in[37m (1.39s)[0m
+[38;5;9m× internet explorer 9 on Windows 7 - non-logged in customer can create a new account - assert that new user is logged in[37m (27.519s)
+[31mNoSuchElement: [POST http://(redacted)@localhost:50001/wd/hub/session/e9f5240ac9e343cfa695aa494f54fa83/element / {"using":"id","value":"logged-in-state"}] Unable to find element with id == logged-in-state (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 27.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.34.40', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:39864/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX7ef46fa4
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.find  <node_modules\intern\node_modules\leadfoot\Session.js:1055:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:42:36>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.find  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findById]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:24:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:93:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.assertLoggedIn  <tests\functional\customCommands\BaseCommand.js:91:16>
+  at Test.assert that new user is logged in [as test]  <tests\functional\account\createNewAccount.js:33:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - non-logged in customer can create a new account FAILED
+[object Object][0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can create a new account - create new account[37m (44.765s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can create a new account - assert that new user is logged in[37m (0.165s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new customer can view order history - create new account[37m (5.691s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - create new account[37m (12.593s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can create a new account - logout[37m (19.093s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - new customer can view order history - create new account[37m (27.649s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can create a new account - logout[37m (23.148s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - new customer can view order history - create new account[37m (13.815s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - place contact lenses in cart and click continue[37m (50.225s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - place contact lenses in cart and click continue[37m (36.869s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - new customer can view order history - create new account[37m (17.142s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new customer can view order history - create new account[37m (25.751s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new customer can view order history - place contact lenses in cart and click continue[37m (53.175s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - new customer can view order history - place contact lenses in cart and click continue[37m (40.332s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - fill out address info[37m (31.349s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - new customer can view order history - create new account[37m (27.89s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new customer can view order history - fill out address info[37m (17.289s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - fill out address info[37m (31.609s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - new customer can view order history - fill out address info[37m (21.301s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - new customer can view order history - place contact lenses in cart and click continue[37m (51.391s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - new customer can view order history - fill out address info[37m (13.01s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new customer can view order history - place contact lenses in cart and click continue[37m (48.017s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - complete placing order[37m (36.223s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - assert order success[37m (0.792s)[0m
+[38;5;9m× internet explorer 10 on Windows 8 - new customer can view order history - place contact lenses in cart and click continue[37m (54.686s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\account\validateOrderHistory.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new customer can view order history FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - go to Order History[37m (9.15s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new customer can view order history - click on view details[37m (1.684s)[0m
+[38;5;9m× internet explorer 9 on Windows 7 - new customer can view order history - complete placing order[37m (27.871s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:107:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInput  <tests\functional\customCommands\BaseCommand.js:105:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\DrCommand.js:17:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.fillDrInfo  <tests\functional\customCommands\DrCommand.js:15:16>
+  at Test.complete placing order [as test]  <tests\functional\account\validateOrderHistory.js:46:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new customer can view order history FAILED
+[object Object][0m
+[38;5;9m× safari 8 on OS X 10.10 - new customer can view order history - complete placing order[37m (61.803s)
+[31mTimeout: An operation did not complete before its timeout expired.
+  at always  <node_modules\intern\node_modules\leadfoot\lib\waitForDeleted.js:21:20>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as waitForDeleted]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.prototype.(anonymous function) [as waitForDeletedByClassName]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:32:16>
+  at Test.complete placing order [as test]  <tests\functional\account\validateOrderHistory.js:51:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>[0m
+[41mSuite safari 8 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[38;5;9m× chrome 43.0 on Windows 8.1 - new customer can view order history - assert that contacts are in previous order[37m (28.43s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:172:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.assertElementText  <tests\functional\customCommands\BaseCommand.js:169:16>
+  at Test.assert that contacts are in previous order [as test]  <tests\functional\account\validateOrderHistory.js:67:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[38;5;9m× internet explorer 11 on Windows 8.1 - new customer can view order history - complete placing order[37m (98.607s)
+[31mTimeout: An operation did not complete before its timeout expired.
+  at always  <node_modules\intern\node_modules\leadfoot\lib\waitForDeleted.js:21:20>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as waitForDeleted]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.prototype.(anonymous function) [as waitForDeletedByClassName]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:32:16>
+  at Test.complete placing order [as test]  <tests\functional\account\validateOrderHistory.js:51:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>[0m
+[41mSuite internet explorer 11 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - complete placing order[37m (132.102s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - assert order success[37m (0.165s)[0m
+[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (81.57s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× firefox 38.0 on OS X 10.10 - new customer can view order history - place contact lenses in cart and click continue[37m (169.409s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\account\validateOrderHistory.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[38;5;9m× chrome 43.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (42.231s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 9 on Windows 7 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (41.862s)
+[31mUnknownError: [POST http://(redacted)@localhost:50001/wd/hub/session/e9f5240ac9e343cfa695aa494f54fa83/elements / {"using":"css selector","value":"label[for=\"new\"]"}] Finding elements with css selector == label[for="new"]returned an unexpected error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 40.16 seconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.34.40', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:39864/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX7ef46fa4
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.findAll  <node_modules\intern\node_modules\leadfoot\Session.js:1076:15>
+  at poll  <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:14:18>
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:50:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - go to Order History[37m (124.873s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new customer can view order history - click on view details[37m (7.434s)[0m
+[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (53.369s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (81.696s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for internet explorer 10 on Windows 8[0m
+[38;5;9minternet explorer 10 on Windows 8: 11/18 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new customer can view order history - fill out address info[37m (267.126s)[0m
+[38;5;9m× chrome 43.0 on OS X 10.10 - new customer can view order history - assert that contacts are in previous order[37m (32.557s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:172:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.assertElementText  <tests\functional\customCommands\BaseCommand.js:169:16>
+  at Test.assert that contacts are in previous order [as test]  <tests\functional\account\validateOrderHistory.js:67:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on OS X 10.10 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with Discover during checkout FAILED
+JavaScriptError: [POST http://(redacted)@localhost:50001/wd/hub/session/e9f5240ac9e343cfa695aa494f54fa83/execute / {"script":"return (function getCoverageData(coverageVariable) {\n\t\tvar coverageData = (function () { return this; })()[coverageVariable];\n\t\treturn coverageData && JSON.stringify(coverageData);\n\t}).apply(this, arguments);","args":["__internCoverage"]}] JavaScript error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 24 milliseconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.34.40', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:39864/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX7ef46fa4
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.execute  <node_modules\intern\node_modules\leadfoot\Session.js:583:15>
+  at ProxiedSession.lang.mixin.get  <node_modules\intern\lib\ProxiedSession.js:81:17>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as get]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at Suite.setup  <tests\functional\payment\checkoutDiscover.js:22:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+No unit test coverage for internet explorer 9 on Windows 7[0m
+[38;5;9minternet explorer 9 on Windows 7: 11/18 tests failed[0m
+
+[38;5;9m× chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (41.669s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for chrome 43.0 on Windows 8.1[0m
+[38;5;9mchrome 43.0 on Windows 8.1: 5/18 tests failed[0m
+
+[38;5;9m× firefox 38.0 on Windows 8.1 - new customer can view order history - complete placing order[37m (52.351s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:107:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInput  <tests\functional\customCommands\BaseCommand.js:105:16>
+  at Test.complete placing order [as test]  <tests\functional\account\validateOrderHistory.js:47:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new customer can view order history FAILED
+[object Object][0m
+[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (53.752s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 11 on Windows 8.1 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (81.428s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (48.239s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for safari 8 on OS X 10.10[0m
+[38;5;9msafari 8 on OS X 10.10: 9/18 tests failed[0m
+
+[38;5;9m× chrome 43.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (48.997s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on OS X 10.10 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (53.462s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for firefox 38.0 on OS X 10.10[0m
+[38;5;9mfirefox 38.0 on OS X 10.10: 11/18 tests failed[0m
+
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout - test card payment process[37m (43.519s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutAmericanExpress.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with American Express during checkout FAILED
+[object Object][0m
+[38;5;9m× chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (48.262s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for chrome 43.0 on OS X 10.10[0m
+[38;5;9mchrome 43.0 on OS X 10.10: 5/18 tests failed[0m
+
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (45.107s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutDiscover.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Discover during checkout FAILED
+[object Object][0m
+No unit test coverage for firefox 38.0 on Windows 8.1[0m
+[38;5;9mfirefox 38.0 on Windows 8.1: 9/18 tests failed[0m
+
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new logged-in customer can pay with Discover during checkout - test card payment process[37m (426.643s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new logged-in customer can pay with Discover during checkout - assert order success[37m (11.642s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new logged-in customer can pay with Discover during checkout - logout[37m (24.027s)[0m
+No unit test coverage for internet explorer 11 on Windows 8.1[0m
+[38;5;9minternet explorer 11 on Windows 8.1: 7/18 tests failed[0m
+
+
+[1m[41mTOTAL: tested 8 platforms, 68/144 tests failed (23 skipped)[0m

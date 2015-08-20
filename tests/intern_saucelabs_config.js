@@ -5,7 +5,7 @@ define([ 'intern' ], function (intern) {
     //var browserName = cmdArgs.browserName;
     //var version = cmdArgs.version;
     //var platform = cmdArgs.platform;
-	var portNum = 4444;
+	var portNum = 50000;//4444;
 	var proxyPortNum = 9000;
 	
 	

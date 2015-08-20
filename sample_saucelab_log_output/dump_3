@@ -1,0 +1,1072 @@
+[0mListening on 0.0.0.0:9002
+Using no proxyfor connecting to Sauce Labs REST API.20 Aug 14:09**********************************************************A newer version of Sauce Connect (build 1759) is available!Download it here:https://saucelabs.com/downloads/sc-4.3.11-win32.zip**********************************************************Started scproxy on port 32611.Starting secure remote tunnel VM...Secure remote tunnel VM provisioned.Tunnel ID: 3564575caf004769840ec2d150226feaSecure remote tunnel VM is now: bootingSecure remote tunnel VM is now: runningRemote tunnel host is: maki77050.miso.saucelabs.comUsing no proxy for connecting to tunnel VM.20 Aug 14:09:46- Starting Selenium listener...Establishing secure TLS connection to tunnel...Selenium listener started on port 50002.Sauce Connect is up, you may start your tests.Connection established.ReadyTunnel started
+‣ Created session safari 8 on OS X 10.10 (3c2675d66585430392f2d3cd47c7cd2d)
+‣ Created session chrome 43.0 on Windows 8.1 (2c9b4d1d6de74e84b7a1e0bfd6b2d31c)
+‣ Created session chrome 43.0 on OS X 10.10 (6b2345f3769244fabe276a67e62a047f)
+‣ Created session firefox 38.0 on Windows 8.1 (d93bcbe5729b4c9dbacfbc9c70573493)
+‣ Created session firefox 38.0 on OS X 10.10 (22b585637f9443b18a8b4b74ddd9cb23)
+‣ Created session internet explorer 10 on Windows 8 (de4e0981d6344f98b9d36b55d6197336)
+Disconnected - you are now offline.Connection established.‣ Created session internet explorer 11 on Windows 8.1 (41ccb820c9174392a3d0b3122e7b754d)
+Disconnected - you are now offline.Connection established.Disconnected - you are now offline.‣ Created session internet explorer 9 on Windows 7 (3a9ad3ea3a534e1b81ca3dbd426d996a)
+Connection established.Disconnected - you are now offline.Connection established.Disconnected -you are now offline.20 Aug 14:12:16 -Connection established.Disconnected - you are now offline.Connection established.[38;5;9m× internet explorer 9 on Windows 7 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (7.642s)
+[31mJavaScriptError: [POST http://(redacted)@localhost:50002/wd/hub/session/3a9ad3ea3a534e1b81ca3dbd426d996a/execute / {"script":"return (function () { // we have to 'click' twice because IE\r\n                $('#new').click();\r\n            }).apply(this, arguments);","args":[]}] JavaScript error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.33.45', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:29372/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX80d007f8
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.execute  <node_modules\intern\node_modules\leadfoot\Session.js:583:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as execute]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:195:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutMastercard.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+Disconnected - you are now offline.Connection established.[38;5;9m× internet explorer 9 on Windows 7 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (46.856s)
+[31mElementNotVisible: An element command could not be completed because the element is not visible on the page.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:107:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInput  <tests\functional\customCommands\BaseCommand.js:105:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:199:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (171.43s)
+[31mElementNotVisible: An element command could not be completed because the element is not visible on the page.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:107:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInput  <tests\functional\customCommands\BaseCommand.js:105:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\ProductCommand.js:23:18>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.fillInfo  <tests\functional\customCommands\ProductCommand.js:16:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:22:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutMastercard.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (196.442s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout - assert order success[37m (0.269s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout - logout[37m (9.268s)[0m
+[38;5;9m× internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout - create new account[37m (48.751s)
+[31mElementNotVisible: An element command could not be completed because the element is not visible on the page.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:107:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInput  <tests\functional\customCommands\BaseCommand.js:105:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:199:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - existing customer can log in using Facebook - click on Sign In button[37m (8.151s)[0m
+[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (82.451s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (8.044s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - existing customer can log in using Facebook - switch focus to new window[37m (3.006s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (317.308s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - existing customer can log in using Facebook - enter and submit Facebook info[37m (8.287s)[0m
+[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (329.415s)
+[31mTimeout: An operation did not complete before its timeout expired.
+  at always  <node_modules\intern\node_modules\leadfoot\lib\waitForDeleted.js:21:20>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as waitForDeleted]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.prototype.(anonymous function) [as waitForDeletedByClassName]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:32:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:34:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutMastercard.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout FAILED
+Error: [POST http://(redacted)@localhost:50002/wd/hub/session/41ccb820c9174392a3d0b3122e7b754d/url] socket hang up
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.get  <node_modules\intern\node_modules\leadfoot\Session.js:523:15>
+  at <node_modules\intern\lib\ProxiedSession.js:86:25>
+  at getFinalValue  <node_modules\intern\node_modules\dojo\Promise.ts:462:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:478:10>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as get]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at Suite.setup  <tests\functional\payment\checkoutMastercard.js:22:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+you are now offline.Connection established.[38;5;9m× chrome 43.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout - assert order success[37m (40.651s)
+[31mNoSuchElement: [POST http://(redacted)@localhost:50002/wd/hub/session/2c9b4d1d6de74e84b7a1e0bfd6b2d31c/element / {"using":"class name","value":"thankyou-msg"}] no such element
+  (Session info: chrome=43.0.2357.65)
+  (Driver info: chromedriver=2.15.322448 (52179c1b310fec1797c81ea9a20326839860b7d3),platform=Windows NT 6.3 x86_64)
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.find  <node_modules\intern\node_modules\leadfoot\Session.js:1055:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:42:36>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.find  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findByClassName]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:24:16>
+  at Test.assert order success [as test]  <tests\functional\payment\checkoutMastercard.js:35:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+Disconnected - youare now offline.Connection established.Disconnected - youare now offline.[38;5;9m× internet explorer 9 on Windows 7 - existing customer can log in using Facebook - switch back to main window[37m (72.698s)
+[31mNoSuchElement: [POST http://(redacted)@localhost:50002/wd/hub/session/3a9ad3ea3a534e1b81ca3dbd426d996a/element / {"using":"id","value":"logged-in-state"}] Unable to find element with id == logged-in-state (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 31.22 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.33.45', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:29372/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX80d007f8
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.find  <node_modules\intern\node_modules\leadfoot\Session.js:1055:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:42:36>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.find  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findById]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:24:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:93:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.assertLoggedIn  <tests\functional\customCommands\BaseCommand.js:91:16>
+  at AllCommands.<anonymous>  <tests\functional\signin\signInWithFacebook.js:57:22>
+  at runCallback  <node_modules\intern\node_modules\leadfoot\Command.js:526:31>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:543:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.Command.then  <node_modules\intern\node_modules\leadfoot\Command.js:542:10>
+  at Test.switch back to main window [as test]  <tests\functional\signin\signInWithFacebook.js:53:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - existing customer can log in using Facebook FAILED
+[object Object][0m
+No unit test coverage for internet explorer 9 on Windows 7[0m
+[38;5;9minternet explorer 9 on Windows 7: 11/19 tests failed[0m
+
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (370.843s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:221:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.clickOnStylizedFormElement  <tests\functional\customCommands\BaseCommand.js:219:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:28:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutMastercard.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+Connection established.you are now offline.Connection established.Discoyou are now offline.[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout - test card payment process[37m (386.972s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:221:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.clickOnStylizedFormElement  <tests\functional\customCommands\BaseCommand.js:219:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:28:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutMastercard.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with MasterCard during checkout FAILED
+[object Object][0m
+Connection established.[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout - create new account[37m (88.784s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+Disconnectyou are now offline.20 Aug 14:19:03 -Connection established.[38;5;10m✓ internet explorer 10 on Windows 8 - existing customer can log in using Facebook - click on Sign In button[37m (3.215s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (6.107s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - existing customer can log in using Facebook - switch focus to new window[37m (1.022s)[0m
+[38;5;9m× chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (41.64s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - existing customer can log in using Facebook - enter and submit Facebook info[37m (4.769s)[0m
+[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (48.369s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (43.073s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 10 on Windows 8 - existing customer can log in using Facebook - switch back to main window[37m (79.379s)
+[31mNoSuchElement: [POST http://(redacted)@localhost:50002/wd/hub/session/de4e0981d6344f98b9d36b55d6197336/element / {"using":"id","value":"logged-in-state"}] Unable to find element with id == logged-in-state (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 31.22 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'WIN-HLEK05V71GA', ip: '172.20.49.18', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=10, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=about:blank, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX7006a178
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.find  <node_modules\intern\node_modules\leadfoot\Session.js:1055:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:42:36>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.find  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findById]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:24:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:93:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.assertLoggedIn  <tests\functional\customCommands\BaseCommand.js:91:16>
+  at AllCommands.<anonymous>  <tests\functional\signin\signInWithFacebook.js:57:22>
+  at runCallback  <node_modules\intern\node_modules\leadfoot\Command.js:526:31>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:543:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.Command.then  <node_modules\intern\node_modules\leadfoot\Command.js:542:10>
+  at Test.switch back to main window [as test]  <tests\functional\signin\signInWithFacebook.js:53:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - existing customer can log in using Facebook FAILED
+[object Object][0m
+No unit test coverage for internet explorer 10 on Windows 8[0m
+[38;5;9minternet explorer 10 on Windows 8: 11/19 tests failed[0m
+
+Disconnected - you are now offline.Connection established.[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can pay with Visa during checkout FAILED
+Error: [POST http://(redacted)@localhost:50002/wd/hub/session/41ccb820c9174392a3d0b3122e7b754d/timeouts] socket hang up
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.setTimeout  <node_modules\intern\node_modules\leadfoot\Session.js:440:22>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as setTimeout]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:21:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.setAllTimeoutLengths  <tests\functional\customCommands\BaseCommand.js:17:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:30:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.configureNewSession  <tests\functional\customCommands\BaseCommand.js:28:16>
+  at Suite.setup  <tests\functional\payment\checkoutVisa.js:21:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+UnknownError: [POST http://(redacted)@localhost:50002/wd/hub/session/41ccb820c9174392a3d0b3122e7b754d/timeouts / {"type":"script","ms":45000}] Due to a previous error, this job has already finished. You can learn more at https://saucelabs.com/jobs/41ccb820c9174392a3d0b3122e7b754d
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.setTimeout  <node_modules\intern\node_modules\leadfoot\Session.js:440:22>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as setTimeout]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:21:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.setAllTimeoutLengths  <tests\functional\customCommands\BaseCommand.js:17:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:30:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.configureNewSession  <tests\functional\customCommands\BaseCommand.js:28:16>
+  at Suite.setup  <tests\functional\payment\checkoutPayPal.js:22:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+[41mSuite internet explorer 11 on Windows 8.1 - existing customer can log in using Facebook FAILED
+UnknownError: [POST http://(redacted)@localhost:50002/wd/hub/session/41ccb820c9174392a3d0b3122e7b754d/timeouts / {"type":"script","ms":35000}] Due to a previous error, this job has already finished. You can learn more at https://saucelabs.com/jobs/41ccb820c9174392a3d0b3122e7b754d
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.setTimeout  <node_modules\intern\node_modules\leadfoot\Session.js:440:22>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as setTimeout]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:21:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.setAllTimeoutLengths  <tests\functional\customCommands\BaseCommand.js:17:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:30:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.configureNewSession  <tests\functional\customCommands\BaseCommand.js:28:16>
+  at Suite.setup  <tests\functional\signin\signInWithFacebook.js:19:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+No unit test coverage for internet explorer 11 on Windows 8.1[0m
+[38;5;9minternet explorer 11 on Windows 8.1: 19/19 tests failed[0m
+
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout - create new account[37m (42.073s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[38;5;9m× chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout - create new account[37m (45.799s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite chrome 43.0 on Windows 8.1 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+Disconneyou are now offline.[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - create new account[37m (52.485s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (133.362s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\PaymentCommand.js:19:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.testCardPayment  <tests\functional\customCommands\PaymentCommand.js:17:16>
+  at Test.test card payment process [as test]  <tests\functional\payment\checkoutVisa.js:31:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout FAILED
+[object Object][0m
+Connection established.Disconnected - youare now offline.Connection established.Disconnectedyou are now offline.Connection established.[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - click on Sign In button[37m (30.803s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - existing customer can log in using Facebook - click on Sign In button[37m (4.511s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (7.27s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - existing customer can log in using Facebook - switch focus to new window[37m (0.426s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (21.174s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - switch focus to new window[37m (0.169s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - click on Sign In button[37m (7.319s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - enter and submit Facebook info[37m (7.945s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - switch back to main window[37m (4.821s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (12.687s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - switch focus to new window[37m (7.084s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - existing customer can log in using Facebook - logout[37m (14.517s)[0m
+No unit test coverage for chrome 43.0 on Windows 8.1[0m
+[38;5;9mchrome 43.0 on Windows 8.1: 9/19 tests failed[0m
+
+[38;5;9m× safari 8 on OS X 10.10 - existing customer can log in using Facebook - enter and submit Facebook info[37m (35.201s)
+[31mScriptTimeout: [POST http://(redacted)@localhost:50002/wd/hub/session/3c2675d66585430392f2d3cd47c7cd2d/execute / {"script":"return (function (id, text) {\r\n                document.getElementById(id).value = text;\r\n            }).apply(this, arguments);","args":["email","yissakhar.hampus@gmail.com"]}] Timed out awaiting response to command "executeScript" after 30003 ms (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.02 seconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'itako44218.prod.miso', ip: '172.20.44.218', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.4', java.version: '1.7.0_75'
+Session ID: null
+Driver info: org.openqa.selenium.safari.SafariDriver
+Capabilities [{platform=MAC, cssSelectorsEnabled=true, javascriptEnabled=true, secureSsl=true, browserName=safari, takesScreenshot=true, version=8.0.7}]
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.execute  <node_modules\intern\node_modules\leadfoot\Session.js:583:15>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as execute]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:118:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.enterInputWithoutJQuery  <tests\functional\customCommands\BaseCommand.js:116:16>
+  at Test.enter and submit Facebook info [as test]  <tests\functional\signin\signInWithFacebook.js:46:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - existing customer can log in using Facebook FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - existing customer can log in using Facebook FAILED
+[object Object][0m
+No unit test coverage for safari 8 on OS X 10.10[0m
+[38;5;9msafari 8 on OS X 10.10: 12/19 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - enter and submit Facebook info[37m (7.991s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - switch back to main window[37m (6.333s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - existing customer can log in using Facebook - logout[37m (8.616s)[0m
+No unit test coverage for firefox 38.0 on Windows 8.1[0m
+[38;5;9mfirefox 38.0 on Windows 8.1: 10/19 tests failed[0m
+
+[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - create new account[37m (54.478s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:194:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.createNewAccount  <tests\functional\customCommands\BaseCommand.js:192:16>
+  at Test.create new account [as test]  <tests\functional\payment\checkoutPayPal.js:32:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout FAILED
+[object Object][0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - click on Sign In button[37m (11.669s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (6.46s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - switch focus to new window[37m (1.616s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - enter and submit Facebook info[37m (4.936s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - switch back to main window[37m (13.655s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - existing customer can log in using Facebook - logout[37m (17.271s)[0m
+No unit test coverage for firefox 38.0 on OS X 10.10[0m
+[38;5;9mfirefox 38.0 on OS X 10.10: 10/19 tests failed[0m
+
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout - test card payment process[37m (649.964s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout - assert order success[37m (0.5s)[0m
+Disconnected - you are now offline.Connection established.[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with Visa during checkout - logout[37m (42.089s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - create new account[37m (27.431s)[0m
+Discyou are now offline.Connectionestablished.Disyou are now offline.Connection established.[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - place contact lenses in cart and click continue[37m (112.749s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - fill out address info[37m (18.618s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - select PayPal as payment method[37m (31.368s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - complete PayPal Payment process[37m (42.925s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - assert order success[37m (0.536s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can pay with PayPal during checkout - logout[37m (7.17s)[0m
+you are now offline.Connection established.[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - click on Sign In button[37m (11.162s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - click on FaceBook Sign In button[37m (4.362s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - switch focus to new window[37m (0.459s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - enter and submit Facebook info[37m (6.795s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - switch back to main window[37m (4.639s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - existing customer can log in using Facebook - logout[37m (5.496s)[0m
+No unit test coverage for chrome 43.0 on OS X 10.10[0m
+[38;5;10mchrome 43.0 on OS X 10.10: 0/19 tests failed[0m
+
+
+[1m[41mTOTAL: tested 8 platforms, 82/152 tests failed (21 skipped)[0m

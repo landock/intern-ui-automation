@@ -1,0 +1,538 @@
+[0mListening on 0.0.0.0:9004
+5 bd6579aUsing no proxy for connecting to Sauce Labs REST API.**********************************************************A newer version of Sauce Connect (build 1759) is available!Download it here:https://saucelabs.com/downloads/sc-4.3.11-win32.zip**********************************************************Started scproxy on port 32631.20 AugStarting secure remote tunnel VM...Secure remote tunnel VM provisioned.Tunnel ID: d8f5929531974057aefd40ca7aca9962Secure remote tunnel VM is now: bootingSecure remote tunnel VM is now: runningRemote tunnel host is: maki78103.miso.saucelabs.comUsing no proxy for connecting to tunnel VM.Starting Selenium listener...Establishing secure TLS connection to tunnel...Selenium listener started on port 50004.Sauce Connect is up, you may start your tests.Connection established.ReadyTunnel started
+‣ Created session safari 8 on OS X 10.10 (a3a2d8c4366e4c3a995b3828886bef56)
+‣ Created session chrome 43.0 on OS X 10.10 (96ba6dd037bc4fefa9d069e4518d465d)
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (11.498s)[0m
+‣ Created session firefox 38.0 on OS X 10.10 (b089c077c6df474fa9eaa0d097bd86e5)
+‣ Created session internet explorer 11 on Windows 8.1 (994b53691c5f49db921e579784ed92ad)
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - get total price[37m (5.763s)[0m
+‣ Created session firefox 38.0 on Windows 8.1 (6b8a12da144b45c4b5fb49dfcbd902e5)
+‣ Created session chrome 43.0 on Windows 8.1 (e08b1495f714478988657c75aad462b7)
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - add coupon code[37m (10.663s)[0m
+‣ Created session internet explorer 10 on Windows 8 (88724f7b3d2b4c109c9910f85425131f)
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (2.243s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - remove coupon[37m (1.568s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (2.008s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (3.12s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (16.201s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - get total price[37m (0.845s)[0m
+‣ Created session internet explorer 9 on Windows 7 (80bf59c4994342088369f6fe7634cfe5)
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (16.599s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (19.107s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - get total price[37m (0.548s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - get total price[37m (10.888s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - add coupon code[37m (9.669s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (1.814s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - remove coupon[37m (2.084s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (1.092s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - add coupon code[37m (26.485s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (1.598s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (2.962s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (15.206s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - add coupon code[37m (10.699s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - remove coupon[37m (3.012s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (46.469s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (2.822s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (5.142s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (2.366s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (7.779s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - remove coupon[37m (1.759s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (26.174s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - get total price[37m (1.115s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (2.309s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (4.267s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - add coupon code[37m (4.128s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (1.919s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (3.873s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - remove coupon[37m (12.312s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (59.493s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (3.191s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - get total price[37m (2.668s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (2.818s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - get total price[37m (32.555s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout - create new account[37m (11.263s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - add coupon code[37m (5.172s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (10.346s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - remove coupon[37m (4.139s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (27.543s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - add coupon code[37m (18.685s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - fill out lens info[37m (25.897s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (2.987s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (1.362s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (31.347s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - remove coupon[37m (1.687s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (2.166s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (8.477s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (3.274s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - get total price[37m (5.875s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (6.695s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (3.508s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (1.932s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (2.073s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - add coupon code[37m (7.422s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - assert that total price has decreased[37m (0.766s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - remove coupon[37m (3.567s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - assert that total price has increased back to old price[37m (2.271s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add and remove a coupon code - click on the Remove link for the first item[37m (3.025s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (37.245s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (2.056s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (7.473s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - create new account[37m (14.164s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout - create new account[37m (43.237s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (25.449s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (1.613s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - create new account[37m (18.647s)[0m
+[38;5;9m× safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (86.236s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\cart\changeDoctor.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite safari 8 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (24.285s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (31.136s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (11.144s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (3.872s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (8.351s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (2.879s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (7.238s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - fill out eye info[37m (31.833s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (41.108s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - assert that 1 item is in the cart[37m (9.415s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (16.66s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can add contact lenses to cart - click on the Remove link for the first item[37m (1.882s)[0m
+[38;5;10m✓ internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout - create new account[37m (12.196s)[0m
+[38;5;10m✓ internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout - create new account[37m (7.747s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (44.534s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (8.015s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (1.37s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (0.656s)[0m
+[38;5;10m✓ safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (0.386s)[0m
+[38;5;9m× safari 8 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (2.233s)
+[31mStaleElementReference: [GET http://(redacted)@localhost:50004/wd/hub/session/a3a2d8c4366e4c3a995b3828886bef56/element/28/displayed] Element is no longer attached to the DOM (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 542 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'itako35100.prod.miso', ip: '172.20.35.100', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.4', java.version: '1.7.0_75'
+Session ID: null
+Driver info: org.openqa.selenium.safari.SafariDriver
+Capabilities [{platform=MAC, cssSelectorsEnabled=true, javascriptEnabled=true, secureSsl=true, browserName=safari, takesScreenshot=true, version=8.0.7}]
+  at ProxiedSession._get  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at Element._get  <node_modules\intern\node_modules\leadfoot\Element.js:23:31>
+  at Element.isDisplayed  <node_modules\intern\node_modules\leadfoot\Element.js:364:15>
+  at checkElement  <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:21:24>
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:32:30>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.click on the Remove link for the first item [as test]  <tests\functional\cart\changeQuantityOfItem.js:68:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+No unit test coverage for safari 8 on OS X 10.10[0m
+[38;5;9msafari 8 on OS X 10.10: 10/27 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - create new account[37m (79.183s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - fill out address info[37m (109.86s)[0m
+[38;5;9m× internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (169.976s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\cart\changeDoctor.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 11 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (128.337s)
+[31mUnknownError: [POST http://(redacted)@localhost:50004/wd/hub/session/88724f7b3d2b4c109c9910f85425131f/elements / {"using":"css selector","value":"button[name=\"dwfrm_cart_checkoutCart\"]"}] Finding elements with css selector == button[name="dwfrm_cart_checkoutCart"]returned an unexpected error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 27.28 seconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'WIN-HLEK05V71GA', ip: '172.20.44.154', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=10, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=about:blank, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXe8cf6305
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.findAll  <node_modules\intern\node_modules\leadfoot\Session.js:1076:15>
+  at poll  <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:14:18>
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:50:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\cart\changeDoctor.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 10 on Windows 8 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;9m× internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (127.529s)
+[31mUnknownError: [POST http://(redacted)@localhost:50004/wd/hub/session/80bf59c4994342088369f6fe7634cfe5/elements / {"using":"css selector","value":"button[name=\"dwfrm_cart_checkoutCart\"]"}] Finding elements with css selector == button[name="dwfrm_cart_checkoutCart"]returned an unexpected error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 27.08 seconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.43.98', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:1371/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX910d8fd5
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.findAll  <node_modules\intern\node_modules\leadfoot\Session.js:1076:15>
+  at poll  <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:14:18>
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:50:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.place contact lenses in cart and click continue [as test]  <tests\functional\cart\changeDoctor.js:37:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite internet explorer 9 on Windows 7 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - fill out address info[37m (208.953s)[0m
+[41mSuite internet explorer 10 on Windows 8 - non-logged in customer can edit quantity of item in cart FAILED
+JavaScriptError: [POST http://(redacted)@localhost:50004/wd/hub/session/88724f7b3d2b4c109c9910f85425131f/execute / {"script":"return (function getCoverageData(coverageVariable) {\n\t\tvar coverageData = (function () { return this; })()[coverageVariable];\n\t\treturn coverageData && JSON.stringify(coverageData);\n\t}).apply(this, arguments);","args":["__internCoverage"]}] JavaScript error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'WIN-HLEK05V71GA', ip: '172.20.44.154', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=10, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=about:blank, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXe8cf6305
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.execute  <node_modules\intern\node_modules\leadfoot\Session.js:583:15>
+  at ProxiedSession.lang.mixin.get  <node_modules\intern\lib\ProxiedSession.js:81:17>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as get]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at Suite.setup  <tests\functional\cart\changeQuantityOfItem.js:20:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+No unit test coverage for internet explorer 10 on Windows 8[0m
+[38;5;9minternet explorer 10 on Windows 8: 15/27 tests failed[0m
+
+[41mSuite internet explorer 9 on Windows 7 - non-logged in customer can edit quantity of item in cart FAILED
+JavaScriptError: [POST http://(redacted)@localhost:50004/wd/hub/session/80bf59c4994342088369f6fe7634cfe5/execute / {"script":"return (function getCoverageData(coverageVariable) {\n\t\tvar coverageData = (function () { return this; })()[coverageVariable];\n\t\treturn coverageData && JSON.stringify(coverageData);\n\t}).apply(this, arguments);","args":["__internCoverage"]}] JavaScript error (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 34 milliseconds
+Build info: version: '2.40.0', revision: 'fbe29a9', time: '2014-02-19 20:54:28'
+System info: host: 'Sauce-Win7', ip: '172.20.43.98', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=9, platform=WINDOWS, proxy={proxyAutoconfigUrl=http://127.0.0.1:19876/pac.js, proxyType=pac}, nativeEvents=true, ie.ensureCleanSession=true, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:1371/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXX910d8fd5
+  at ProxiedSession._post  <node_modules\intern\node_modules\leadfoot\Session.js:59:30>
+  at ProxiedSession.Session.execute  <node_modules\intern\node_modules\leadfoot\Session.js:583:15>
+  at ProxiedSession.lang.mixin.get  <node_modules\intern\lib\ProxiedSession.js:81:17>
+  at AllCommands.<anonymous>  <node_modules\intern\node_modules\leadfoot\Command.js:635:19>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.target.(anonymous function) [as get]  <node_modules\intern\node_modules\leadfoot\Command.js:610:11>
+  at Suite.setup  <tests\functional\cart\changeQuantityOfItem.js:20:18>
+  at Suite.target.(anonymous function).dispatcher [as setup]  <node_modules\intern\node_modules\dojo\aspect.ts:106:28>
+  at <node_modules\intern\lib\Suite.js:351:33>
+  at new Promise  <node_modules\intern\node_modules\dojo\Promise.ts:411:3>
+  at setup  <node_modules\intern\lib\Suite.js:350:12>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>[0m
+No unit test coverage for internet explorer 9 on Windows 7[0m
+[38;5;9minternet explorer 9 on Windows 7: 15/27 tests failed[0m
+
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - fill out Dr info form[37m (177.902s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - create new account[37m (230.372s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (168.114s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (0.442s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - click on edit doctor link[37m (131.056s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - get name of current doctor[37m (0.358s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (1.859s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (0.621s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (0.408s)[0m
+[38;5;10m✓ internet explorer 11 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (2.272s)[0m
+No unit test coverage for internet explorer 11 on Windows 8.1[0m
+[38;5;9minternet explorer 11 on Windows 8.1: 9/27 tests failed[0m
+
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - click change doctor button[37m (7.458s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - fill out Dr info form[37m (208.532s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - fill new doctor info[37m (36.968s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (397.806s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - click on edit doctor link[37m (78.237s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - get name of current doctor[37m (1.02s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - click change doctor button[37m (2.27s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - fill new doctor info[37m (7.304s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - select first doctor again[37m (82.676s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - assert that new doctor name is different than previous[37m (0.373s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - place contact lenses in cart and click continue[37m (261.075s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - fill out address info[37m (91.141s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - select first doctor again[37m (87.245s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - assert that new doctor name is different than previous[37m (0.617s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - logout[37m (59.847s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - fill out Dr info form[37m (23.406s)[0m
+[38;5;9m× firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout - click on edit doctor link[37m (28.129s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.click on edit doctor link [as test]  <tests\functional\cart\changeDoctor.js:50:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on Windows 8.1 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - logout[37m (47.555s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - fill out address info[37m (84.876s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (43.601s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (0.222s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (1.417s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (0.322s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (9.523s)[0m
+[38;5;10m✓ chrome 43.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (1.868s)[0m
+No unit test coverage for chrome 43.0 on Windows 8.1[0m
+[38;5;10mchrome 43.0 on Windows 8.1: 0/27 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - fill out Dr info form[37m (25.163s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (38.314s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (1.327s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (1.4s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (0.282s)[0m
+[38;5;9m× firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout - click on edit doctor link[37m (32.559s)
+[31mNoSuchElement: An element could not be located on the page using the given search parameters.
+  at <node_modules\intern\node_modules\leadfoot\lib\findDisplayed.js:37:21>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.findDisplayed  <node_modules\intern\node_modules\leadfoot\Command.js:23:10>
+  at AllCommands.prototype.(anonymous function) [as findDisplayedByCssSelector]  <node_modules\intern\node_modules\leadfoot\lib\strategies.js:28:16>
+  at AllCommands.<anonymous>  <tests\functional\customCommands\BaseCommand.js:151:14>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>
+  at new AllCommands  <tests\functional\customCommands\AllCommands.js:23:18>
+  at AllCommands.proto.findAndClick  <tests\functional\customCommands\BaseCommand.js:148:16>
+  at Test.click on edit doctor link [as test]  <tests\functional\cart\changeDoctor.js:50:18>
+  at <node_modules\intern\lib\Test.js:211:24>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:393:15>
+  at runCallbacks  <node_modules\intern\node_modules\dojo\Promise.ts:11:11>
+  at <node_modules\intern\node_modules\dojo\Promise.ts:317:4>
+  at run  <node_modules\intern\node_modules\dojo\Promise.ts:237:7>
+  at <node_modules\intern\node_modules\dojo\nextTick.ts:44:3>
+  at process._tickCallback  <node.js:355:11>[0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[41mSuite firefox 38.0 on OS X 10.10 - new logged-in customer can change doctor during checkout FAILED
+[object Object][0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (8.466s)[0m
+[38;5;10m✓ chrome 43.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (1.786s)[0m
+No unit test coverage for chrome 43.0 on OS X 10.10[0m
+[38;5;10mchrome 43.0 on OS X 10.10: 0/27 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (58.918s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (6.868s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (6.746s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (5.407s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (0.51s)[0m
+[38;5;10m✓ firefox 38.0 on Windows 8.1 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (2.13s)[0m
+No unit test coverage for firefox 38.0 on Windows 8.1[0m
+[38;5;9mfirefox 38.0 on Windows 8.1: 6/27 tests failed[0m
+
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - fill out eye info[37m (53.923s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - get price of 1 box before quantity is changed[37m (4.781s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - change quantity of item[37m (1.375s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that 2 right eye boxes are in the cart[37m (0.506s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - assert that price for changed quantity has increased[37m (0.392s)[0m
+[38;5;10m✓ firefox 38.0 on OS X 10.10 - non-logged in customer can edit quantity of item in cart - click on the Remove link for the first item[37m (1.841s)[0m
+No unit test coverage for firefox 38.0 on OS X 10.10[0m
+[38;5;9mfirefox 38.0 on OS X 10.10: 6/27 tests failed[0m
+
+
+[1m[41mTOTAL: tested 8 platforms, 61/216 tests failed (6 skipped)[0m

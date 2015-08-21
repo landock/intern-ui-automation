@@ -2,9 +2,10 @@ define([
     'intern!object',
     '../../config',
     '../customCommands/AllCommands',
-    '../../utility/generator'
+    '../../utility/generator',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command, generator) {
+function (registerSuite, config, Command, generator, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -16,6 +17,10 @@ function (registerSuite, config, Command, generator) {
                 return command
                 .configureNewMobileSession()
                 .get(config.URL + '/account');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
 
             // 'click on New Customer radio button': function(){

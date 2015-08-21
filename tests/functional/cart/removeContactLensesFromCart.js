@@ -3,8 +3,9 @@ define([
     '../../config',
     '../customCommands/AllCommands',
     'intern/dojo/node!leadfoot/helpers/pollUntil',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command, pollUntil) {
+function (registerSuite, config, Command, pollUntil, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -15,6 +16,10 @@ function (registerSuite, config, Command, pollUntil) {
                 return command
                 .configureNewSession()
                 .get(config.URL + '/lens/acuvue-oasys-24')
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
             
             'fill out eye info': function(){ //adds another item to the cart

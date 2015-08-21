@@ -3,10 +3,11 @@ define([
 	'../../utility/generator',
 	'../../config',
 	'../customCommands/AllCommands',
-	'intern/chai!assert'
+	'intern/chai!assert',
+	'../../utility/skipRemainingTests'
 ],
 
-function (registerSuite, generator, config, Command, assert) {
+function (registerSuite, generator, config, Command, assert, skip) {
 	registerSuite(function() {
 		var customer;
 		var command;
@@ -24,6 +25,10 @@ function (registerSuite, generator, config, Command, assert) {
 				return command
 				.configureNewMobileSession()
 				.get(config.URL + '/account');
+			},
+
+			beforeEach : function() {
+				skip(this);
 			},
 
 			'create new account' : function() {

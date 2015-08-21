@@ -2,10 +2,11 @@ define([
 	'intern!object',
 	'../../config',
 	'../../utility/generator',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'../../utility/skipRemainingTests'
 	],
 
-	function (registerSuite, config, generator, Command) {
+	function (registerSuite, config, generator, Command, skip) {
 		registerSuite(function() {
 			var command;
 			var customer;
@@ -22,6 +23,10 @@ define([
 					return command
 					.configureNewMobileSession()
 					.get(config.URL + '/account');		
+				},
+
+				beforeEach : function() {
+					skip(this);
 				},
 
 				'create new account' : function() {

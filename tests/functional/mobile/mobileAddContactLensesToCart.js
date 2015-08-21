@@ -1,9 +1,10 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, skip) {
     registerSuite(function(){
         var command;
         return {
@@ -13,6 +14,10 @@ function (registerSuite, config, Command) {
                 return command
                 .configureNewMobileSession()
                 .get(config.URL + '/lens/acuvue-oasys-24');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
 
             'click enter Rx manually button': function() {

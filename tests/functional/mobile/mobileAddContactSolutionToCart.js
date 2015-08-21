@@ -1,9 +1,10 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, skip) {
     registerSuite(function(){
         var command;
         return {
@@ -13,6 +14,10 @@ function (registerSuite, config, Command) {
                 return command
                 .configureNewMobileSession()
                 .get(config.URL + '/contact-lens-solution/opti-free-puremoist-drops');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
 
             'click add to cart button': function() {

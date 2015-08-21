@@ -1,8 +1,10 @@
 import subprocess
 import time
 from saucelab_environments import ENVIRONMENT_COUNT, MAX_VMS, TESTS
+import threading
 from threading import Thread, Lock
 import math
+import requests
 
 class SauceRunner:
     
@@ -79,6 +81,16 @@ class SauceRunner:
                     time.sleep(1) 
 
             print('batch count:',self.batch_id)
+            while threading.active_count() > 1:
+                time.sleep(3)
+            self.delete_tunnels()
+			
+    def delete_tunnels(self):
+        username = "awan"
+        access_key = "8a05a809-6b01-4bc6-80f0-83d934a78ea9"
+        tunnel_ids = requests.get("https://saucelabs.com/rest/v1/awan/tunnels", auth = (username, access_key)).json()
+        for tunnel in tunnel_ids:
+            requests.delete("https://saucelabs.com/rest/v1/awan/tunnels/" + tunnel, auth = (username, access_key))
 
 if __name__ == "__main__":
     SR=SauceRunner()

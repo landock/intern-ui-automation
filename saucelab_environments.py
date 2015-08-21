@@ -29,3 +29,25 @@ TESTS = [
     "tests/functional/address/addressEditingTest",
     "tests/functional/address/changeDefaultAddress",
 ]
+
+MOBILE_TESTS = [
+    'tests/functional/mobile/mobileAddContactLensesToCart',
+    'tests/functional/mobile/mobileAddContactSolutionToCart',
+    'tests/functional/mobile/mobileAddRemoveCoupon',
+    'tests/functional/mobile/mobileAddressEditingTest',
+    'tests/functional/mobile/mobileChangeDefaultAddressTest', 
+    'tests/functional/mobile/mobileChangeItemQuantityInCart',
+    'tests/functional/mobile/mobileChangePassword',
+    'tests/functional/mobile/mobileCheckoutAmericanExpress',
+    'tests/functional/mobile/mobileCheckoutDiscover',
+    'tests/functional/mobile/mobileCheckoutMasterCard',
+    'tests/functional/mobile/mobileCheckoutPayPal',
+    'tests/functional/mobile/mobileCheckoutVisa',
+    'tests/functional/mobile/mobileCreateNewAccount',
+    'tests/functional/mobile/mobileRe-Order',
+    'tests/functional/mobile/mobileRemoveItemFromCart',
+    'tests/functional/mobile/mobileResetPasswordTest',
+    'tests/functional/mobile/mobileSignInFromCart',
+    'tests/functional/mobile/mobileSignInTest',
+    'tests/functional/mobile/mobileValidateOrderHistory'
+]

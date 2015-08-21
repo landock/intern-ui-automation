@@ -2,16 +2,17 @@ define([
 	'intern!object',
 	'../../utility/generator',
 	'../../config',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'../../utility/skipRemainingTests'
 ],
 
-function (registerSuite, generator, config, AllCommands) {
+function (registerSuite, generator, config, AllCommands, skip) {
 	registerSuite (function() {
 		var customer;
 		var command;
 
 		return {
-			name: 'Mobile Log In and Log Out',
+			name: 'mobile login and logout',
 
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);
@@ -20,6 +21,10 @@ function (registerSuite, generator, config, AllCommands) {
 				return command
 				.configureNewMobileSession(60000)
 				.get(config.URL);
+			},
+
+			beforeEach : function() {
+				skip(this);
 			},
 
 			'login from home button': function() {

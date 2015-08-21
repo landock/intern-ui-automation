@@ -13,7 +13,7 @@ function (registerSuite, config, generator, pollUntil, Command, skip) {
         var newPassword = 'anewpassword';
         var email_name;
         return {
-            name: 'new test customer can reset password',
+            name: 'new customer can reset password',
             setup: function() {
                 customer = generator.getRandomMailinatorCustomer();
                 email_name = customer['email'].split('@')[0];
@@ -32,9 +32,14 @@ function (registerSuite, config, generator, pollUntil, Command, skip) {
                 .createNewAccount(customer)
                 .assertLoggedIn();
             },
+
+            'navigate to forget password page' : function() {
+                return command
+                .get(config.URL + '/forgot-password');
+            },
+
             'enter and submit reset request' : function() {
                 return command
-                .get(config.URL + '/forgot-password')
                 .enterInput('#dwfrm_requestpassword_email', customer.email)
                 .findAndClick('button[name="dwfrm_requestpassword_send"]');
             },
@@ -42,7 +47,7 @@ function (registerSuite, config, generator, pollUntil, Command, skip) {
                 return command
                 .get('http://mailinator.com/inbox.jsp?to=' + email_name);
             },
-            'get ID of new email when it arrives' : function(){
+            'open reset email on arrival' : function(){
                 return command
                 .then(pollUntil( function(){
                     var contains_less = 
@@ -79,7 +84,7 @@ function (registerSuite, config, generator, pollUntil, Command, skip) {
                 .logoutFromHeader()
                 .assertLoggedOut();
             },
-            'assert that new password works' : function(){
+            'login and assert that new password works' : function(){
                 return command
                 .loginFromHeader({'email':customer.email,'password':newPassword})
                 .assertLoggedIn()

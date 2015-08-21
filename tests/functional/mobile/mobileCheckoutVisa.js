@@ -3,17 +3,18 @@ define([
 	'../../config',
 	'../../utility/generator',
 	'intern/chai!assert',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'../../utility/skipRemainingTests'
 	],
 
-	function (registerSuite, config, generator, assert, Command) {
+	function (registerSuite, config, generator, assert, Command, skip) {
 		registerSuite(function() {
 			var customer;
 			var command;
 			var creditCard;
 
 			return {
-				name: 'mobile logged-in customer can pay with Visa during checkout on mobile device',
+				name: 'mobile logged-in customer can pay with Visa during checkout',
 
 				setup: function() {
 					command = new Command(this.remote);
@@ -23,6 +24,10 @@ define([
 	                return command
 	                .configureNewMobileSession(45000)
 	                .get(config.URL + '/account');
+				},
+
+				beforeEach : function() {
+					skip(this);
 				},
 
 				'create new account' : function() {
@@ -41,13 +46,13 @@ define([
            	 		.fillAddNewAddressForm(customer);
 				},
 
-				'mobile - test card payment process' : function() {
+				'test card payment process' : function() {
 					return command
 					.get(config.URL + '/lens/acuvue-oasys-24')
 					.mobileTestCardPayment(customer, creditCard);
 				},
 
-				'assert that the order was a success' : function() {
+				'assert order success' : function() {
 					return command
 					.findByClassName('thankyou-msg');
 				}

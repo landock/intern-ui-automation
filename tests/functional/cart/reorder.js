@@ -56,7 +56,7 @@ function (registerSuite, config, generator, pollUntil, Command, skip) {
                 .clickOnStylizedFormElement('#dwfrm_dashboarditems > div.patient-orders > div > div.row.account-user-content > div > div.row.recent-pres-header > div > label')
                 .findAndClick('#btn-reorder-rx');
             },
-            'click continue' : function(){
+            'continue to checkout' : function(){
                 return command
                 .findAndClick('button[name="dwfrm_cart_checkoutCart"]');
             },

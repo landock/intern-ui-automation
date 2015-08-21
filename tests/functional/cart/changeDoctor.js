@@ -18,7 +18,6 @@ function (registerSuite, config, generator, assert, Command, skip) {
                 customer = generator.getRandomCustomer();
                 return command
                 .configureNewSession()
-                //.get(config.URL + '/lens/acuvue-oasys-24');
                 .get(config.URL + '/account');
             },
 

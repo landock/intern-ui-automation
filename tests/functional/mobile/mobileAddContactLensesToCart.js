@@ -1,9 +1,10 @@
 define([
     'intern!object',
     '../../config',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command) {
+function (registerSuite, config, Command, skip) {
     registerSuite(function(){
         var command;
         return {
@@ -15,6 +16,10 @@ function (registerSuite, config, Command) {
                 .get(config.URL + '/lens/acuvue-oasys-24');
             },
 
+            beforeEach : function() {
+                skip(this);
+            },
+
             'click enter Rx manually button': function() {
                 return command
                 .findAndClick('#enterManuallyButton');
@@ -24,7 +29,7 @@ function (registerSuite, config, Command) {
                 return command.mobileFillInfo();
             },
 
-            'assert that 1 item is in the cart': function(){
+            'assert that one item is in the cart': function(){
                 return command
                 .assertElementText('span[class="num-items-cart"]','1');
             }

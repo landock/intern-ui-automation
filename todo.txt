@@ -8,12 +8,12 @@ TO DO:
         -Readable Output (asciidoc or jinja html)
         -Serialize results for potential further processing
     -Mobile
-        -Add fail fast to tests
+        -Add fail fast to tests * DONE *
         -Make dynamic mobile config
         -Add to batches
     -Test Cases
-        -Check suites and sub-suite descriptions for accuracy
-    -Cleanup Saucelabs Tunnels
+        -Check suites and sub-suite descriptions for accuracy * DONE *
+    -Cleanup Saucelabs Tunnels * DONE *
 
 STRETCH:
     -MTM integration

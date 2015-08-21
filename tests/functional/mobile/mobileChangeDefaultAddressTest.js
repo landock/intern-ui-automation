@@ -16,7 +16,7 @@ define([
 			var initialDefault;
 
 			return {
-				name: 'mobile change default address test',
+				name: 'mobile new logged in customer can change default address',
 
 				setup: function() {
 					customer = generator.getRandomCustomer();

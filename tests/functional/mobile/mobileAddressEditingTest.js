@@ -15,7 +15,7 @@ function (registerSuite, generator, config, Command, assert, skip) {
 		var addressText;
 
 		return {
-			name: 'mobile address editing test',
+			name: 'mobile new logged-in customer can edit address',
 
 			setup : function() {
 				customer = generator.getRandomCustomer();

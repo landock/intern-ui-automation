@@ -23,23 +23,6 @@ function (registerSuite, config, Command, generator, skip) {
                 skip(this);
             },
 
-            // 'click on New Customer radio button': function(){
-            //     return command
-            //     .findAndClick('label[for="new"]');
-            // },
-            
-            // 'fill in customer info': function() {
-            //     return command
-            //     .enterInput('#email-address', customer.email)
-            //     .enterInput('#dwfrm_profile_login_password', customer.password)
-            //     .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm);
-            // },
-            
-            // 'click sign in': function() {
-            //     return command
-            //     .findAndClick('button[name="dwfrm_profile_confirm"]');
-            // },
-
             'create new account' : function() {
                 return command
                 .createNewAccount(customer);

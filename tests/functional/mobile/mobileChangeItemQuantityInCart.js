@@ -25,13 +25,13 @@ function (registerSuite, config, Command, skip) {
                 .findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]');
             },
 
-            'increase item quantity by 1': function(){
+            'increase item quantity by one': function(){
                 return command
                 .setDropdown('#dwfrm_cart_shipments_i0_items_i0_quantity_mobile', '2');
             },
 
             // this seems icky
-            'assert item quanity is not one': function() {
+            'assert there is more than one item in cart': function() {
                 return command
                 .findByCssSelector('#dwfrm_cart_shipments_i0_items_i0_quantity_mobile > option[value="1"]')
                 .isSelected()

@@ -10,7 +10,7 @@ function (registerSuite, config, Command, generator, skip) {
         var command;
         var customer;
         return {
-            name: 'new logged-in customer can logout',
+            name: 'logged-in customer can login and logout from header',
             setup: function() {
                 command = new Command(this.remote);
                 customer = generator.getExistingCustomer(0);
@@ -23,7 +23,7 @@ function (registerSuite, config, Command, generator, skip) {
                 skip(this);
             },
 
-            'login using header' : function(){
+            'login from header' : function(){
                 return command
                 .loginFromHeader(customer)
             },
@@ -31,7 +31,7 @@ function (registerSuite, config, Command, generator, skip) {
                 return command
                 .assertLoggedIn()
             },
-            'log out using link in header': function(){
+            'log out from header': function(){
                 return command
                 .logoutFromHeader();
             },

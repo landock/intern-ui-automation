@@ -69,7 +69,7 @@ define([
 					.findAndClick('a[class="btn btn-trigger-order submit-pp btn-orange hidden-paypal-return"]');
 				},
 
-				'login and continue paypal' : function() {
+				'login to paypal and continue' : function() {
 					return command
 					.sleep(2500) // wait for paypal login form to load
 					.enterInputWithoutJQuery('email', payPalInfo.email)

@@ -12,7 +12,7 @@ function (registerSuite, generator, config, AllCommands, skip) {
 		var command;
 
 		return {
-			name: 'Mobile Log In and Log Out',
+			name: 'mobile login and logout',
 
 			setup: function() {
 				customer = generator.getExistingCustomer(config.existingId);

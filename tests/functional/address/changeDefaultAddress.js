@@ -14,7 +14,7 @@ define([
 			var initialDefault;
 
 			return {
-				name: 'New logged in customer can change default address test',
+				name: 'new logged in customer can change default address',
 
 				setup: function() {
 					customer = generator.getRandomCustomer();
@@ -31,10 +31,10 @@ define([
                 },
 
                 
-                'create a new customer' : function() {
+                'create a new account' : function() {
                     return command
-                            .createNewAccount(customer)
-                            .assertLoggedIn();
+                    .createNewAccount(customer)
+                    .assertLoggedIn();
                 },
 
 				'navigate to account page': function() {

@@ -29,7 +29,7 @@ function (registerSuite, config, Command, skip) {
                 return command.mobileFillInfo();
             },
 
-            'assert that 1 item is in the cart': function(){
+            'assert that one item is in the cart': function(){
                 return command
                 .assertElementText('span[class="num-items-cart"]','1');
             }

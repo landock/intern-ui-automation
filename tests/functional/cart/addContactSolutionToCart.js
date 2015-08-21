@@ -10,7 +10,7 @@ define([
 			var command;
 
 			return {
-				name: 'desktop non-logged in customer add solution to cart',
+				name: 'non-logged in customer can add contact solution to cart',
 
 				setup: function() {
 					command = new Command(this.remote);
@@ -29,7 +29,7 @@ define([
 					.findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]');
 				},
 
-				'assert that 1 item is in the cart': function() {
+				'assert that one item is in the cart': function() {
 					return command
 					.assertElementText('#btn-my-account > li.cart > p > a > span','1');
 				},

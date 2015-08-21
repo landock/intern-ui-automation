@@ -14,7 +14,7 @@ define([
 			var creditCard;
 
 			return {
-				name: 'mobile logged-in customer can pay with Discover during checkout on mobile device',
+				name: 'mobile logged-in customer can pay with Discover during checkout',
 
 				setup: function() {
 					command = new Command(this.remote);
@@ -46,13 +46,13 @@ define([
            	 		.fillAddNewAddressForm(customer);
 				},
 
-				'mobile - test card payment process' : function() {
+				'test card payment process' : function() {
 					return command
 					.get(config.URL + '/lens/acuvue-oasys-24')
 					.mobileTestCardPayment(customer, creditCard);
 				},
 
-				'assert that the order was a success' : function() {
+				'assert order success' : function() {
 					return command
 					.findByClassName('thankyou-msg');
 				}

@@ -25,7 +25,7 @@ function (registerSuite, config, Command, skip) {
                 .findAndClick('a[class="btn btn-orange btn-add-cart align-center full-width"]');
             },
 
-            'assert that 1 item is in the cart': function(){
+            'assert that one item is in the cart': function(){
                 return command
                 .assertElementText('span[class="num-items-cart"]','1');
             },

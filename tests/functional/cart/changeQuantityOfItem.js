@@ -28,7 +28,7 @@ function (registerSuite, config, assert, pollUntil, Command, skip) {
                 return command.fillInfo();
             },
             
-            'get price of 1 box before quantity is changed': function(){
+            'get price of one box before quantity is changed': function(){
                  return command
                 .findByCssSelector(priceElem)
                 .getVisibleText()
@@ -42,7 +42,7 @@ function (registerSuite, config, assert, pollUntil, Command, skip) {
                 .setDropdown('#dwfrm_cart_shipments_i0_items_i0_rightEyeQuantity_desktop','2');
             },
             
-            'assert that 2 right eye boxes are in the cart': function(){
+            'assert that two right eye boxes are in the cart': function(){
                 return command
                 .execute(function(){
                     return $('#dwfrm_cart_shipments_i0_items_i0_rightEyeQuantity_desktop').val();

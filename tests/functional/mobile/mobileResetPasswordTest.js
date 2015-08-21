@@ -4,17 +4,18 @@ define([
 	'../../utility/generator',
 	'intern/chai!assert',
 	'intern/dojo/node!leadfoot/helpers/pollUntil',
-	'../customCommands/AllCommands'
+	'../customCommands/AllCommands',
+	'../../utility/skipRemainingTests'
 	],
 
-	function (registerSuite, config, generator, assert, pollUntil, Command) {
+	function (registerSuite, config, generator, assert, pollUntil, Command, skip) {
 		registerSuite(function() {
 			var customer;
 			var command;
 			var newPassword = 'newPassword';
 
 			return {
-				name: 'mobile reset password through email',
+				name: 'mobile new customer can reset password',
 
 				setup: function() {
 					command = new Command(this.remote);
@@ -22,6 +23,10 @@ define([
 	                return command
 	                .configureNewMobileSession(60000)
 	                .get(config.URL + '/account');
+				},
+
+				beforeEach : function() {
+					skip(this);
 				},
 
 				'create new account' : function() {
@@ -42,7 +47,7 @@ define([
 	                .get('http://mailinator.com/inbox.jsp?to=' + customer.email.replace('@mailinator.com', ''));
             	},
 
-	            'get ID of new email when it arrives' : function(){
+	            'open reset email on arrival' : function(){
 	                return command
 	                .then(pollUntil( function(){
 	                    var contains_less = 

@@ -2,9 +2,10 @@ define([
     'intern!object',
     '../../config',
     '../customCommands/AllCommands',
-    '../../utility/generator'
+    '../../utility/generator',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, Command, generator) {
+function (registerSuite, config, Command, generator, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -18,22 +19,9 @@ function (registerSuite, config, Command, generator) {
                 .get(config.URL + '/account');
             },
 
-            // 'click on New Customer radio button': function(){
-            //     return command
-            //     .findAndClick('label[for="new"]');
-            // },
-            
-            // 'fill in customer info': function() {
-            //     return command
-            //     .enterInput('#email-address', customer.email)
-            //     .enterInput('#dwfrm_profile_login_password', customer.password)
-            //     .enterInput('#dwfrm_profile_login_passwordconfirm', customer.password_confirm);
-            // },
-            
-            // 'click sign in': function() {
-            //     return command
-            //     .findAndClick('button[name="dwfrm_profile_confirm"]');
-            // },
+            beforeEach : function() {
+                skip(this);
+            },
 
             'create new account' : function() {
                 return command

@@ -35,7 +35,7 @@ function (registerSuite, config, Command, generator, skip) {
                 .assertLoggedIn();
             },
             
-            'go to edit profile page' : function(){
+            'naviagte to edit profile page' : function(){
                 return command
                 .get(config.URL + '/edit-profile');
             },
@@ -57,7 +57,7 @@ function (registerSuite, config, Command, generator, skip) {
                 return command
                 .findAndClick('button[name="dwfrm_profile_confirm"]');
             },
-            'log out using link in header': function(){
+            'log out from header': function(){
                 return command
                 .logoutFromHeader();
             },

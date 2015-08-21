@@ -12,7 +12,7 @@ function (registerSuite, generator, config, AllCommands, assert, skip) {
         var command;
         var addressText;
         return {
-            name: 'New logged-in customer can edit Address',
+            name: 'new logged-in customer can edit address',
             setup: function(){
                 customer = generator.getRandomCustomer();
                 anotherRandomCustomer = generator.getRandomCustomer();
@@ -26,7 +26,7 @@ function (registerSuite, generator, config, AllCommands, assert, skip) {
                 skip(this);
             },
             
-            'create a new customer' : function() {
+            'create a new account' : function() {
                 return command
 				.createNewAccount(customer)
 				.assertLoggedIn();

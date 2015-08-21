@@ -3,9 +3,10 @@ define([
     '../../config',
     '../../utility/generator',
     'intern/chai!assert',
-    '../customCommands/AllCommands'
+    '../customCommands/AllCommands',
+    '../../utility/skipRemainingTests'
 ],
-function (registerSuite, config, generator, assert, Command) {
+function (registerSuite, config, generator, assert, Command, skip) {
     registerSuite(function(){
         var customer;
         var command;
@@ -17,6 +18,10 @@ function (registerSuite, config, generator, assert, Command) {
                 return command
                 .configureNewMobileSession(60000)
                 .get(config.URL + '/lens/acuvue-oasys-24');
+            },
+
+            beforeEach : function() {
+                skip(this);
             },
 
             'click enter Rx manually button': function() {

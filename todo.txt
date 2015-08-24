@@ -17,3 +17,5 @@ TO DO:
 
 STRETCH:
     -MTM integration
+    -Make launch.py use API to determine actual VM count rather than just relying on own internal counter
+    -Make launch.py tunnel-aware (checks for active tunnels as well as vms before trynig to launch more batches

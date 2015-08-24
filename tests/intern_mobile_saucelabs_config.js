@@ -7,7 +7,7 @@ define([ 'intern' ], function (intern) {
 
     return {
         
-        proxyPort: proxyPortNum + increment;
+        proxyPort: proxyPortNum + increment,
         proxyUrl: 'http://localhost:9000/',
         defaultTimeout: 1200000,
         capabilities: {
@@ -15,7 +15,7 @@ define([ 'intern' ], function (intern) {
         },
 
         environments: [ 
-            { browserName: 'android', version: '4.3', deviceName:'Samsung Galaxy S4 Emulator', platform: 'Linux' }
+            { browserName: 'android', version: '4.3', deviceName:'Samsung Galaxy S4 Emulator', platform: 'Linux' },
             { browserName: 'iphone', version: '8.2', deviceName:'iPhone Simulator', platform: 'OS X 10.10' }
         ],
 
@@ -26,7 +26,7 @@ define([ 'intern' ], function (intern) {
         tunnelOptions:{
             username: 'awan',
             accessKey: '8a05a809-6b01-4bc6-80f0-83d934a78ea9',
-            port = portNum + increment
+            port: portNum + increment
         },
 
         suites: null,

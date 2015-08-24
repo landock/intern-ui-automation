@@ -6,7 +6,7 @@ TESTS = [
 
     "tests/functional/cart/addContactSolutionToCart",
     "tests/functional/account/resetPasswordEmail",
-    "tests/functional/account/logoutFromAccountPage",
+    "tests/functional/account/loginAndLogoutFromHeader",
     "tests/functional/account/changePassword",
     "tests/functional/account/createNewAccount",
     "tests/functional/account/validateOrderHistory",

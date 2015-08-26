@@ -1,4 +1,3 @@
-
 import subprocess
 import time
 from saucelab_environments import ENVIRONMENT_COUNT, MOBILE_ENVIRONMENT_COUNT, MAX_VMS, TESTS, MOBILE_TESTS

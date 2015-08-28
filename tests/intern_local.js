@@ -11,7 +11,7 @@ define([ 'intern' ], function (intern) {
 		
 		environments: [
         { browserName: 'firefox'},
-        { browserName: 'internet explorer'}
+        { browserName: 'internet explorer'},
         { browserName: 'chrome'}
 
     	],

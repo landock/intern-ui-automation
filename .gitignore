@@ -8,3 +8,6 @@ selenium.*
 docs/build
 __pycache__
 *.pyc
+
+# for auto-generated report .html
+saucelabs/report.html

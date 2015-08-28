@@ -1,38 +1,42 @@
 import subprocess
 import time
-from config import ENVIRONMENT_COUNT, MOBILE_ENVIRONMENT_COUNT, MAX_VMS, TESTS, MOBILE_TESTS
+from config import *
 import threading
 from threading import Thread, Lock
 import requests
 import sys
 from selenium_log_parser import SeleniumLogParser
+import re
+import os
 
 class SauceRunner:
     
-    def __init__(self):
+    def __init__(self,environment):
         self.batch_id=0
         self.active_vm_count = 0
         self.inc_lock = Lock()
         self.parser = SeleniumLogParser()
+        self.environment = environment
 
-    def __get_batch_cmd(self,isDesktop):
-        tests = TESTS if isDesktop else MOBILE_TESTS
+    def __get_batch_cmd(self):
+        tests = TESTS if self.environment['isDesktop'] else MOBILE_TESTS
         num_tests = len(tests)
-        #print('num_tests',num_tests)
-        vms_per_batch = ENVIRONMENT_COUNT if isDesktop else MOBILE_ENVIRONMENT_COUNT
-        #print('vms_per_batch',vms_per_batch)
-        max_num_concurrent_batches = MAX_VMS // vms_per_batch
-        #print('max_num_concurrent_batches',max_num_concurrent_batches)
         
-        num_test_per_batch = num_tests // max_num_concurrent_batches
+        if self.environment['isLocal']:
+            max_num_concurrent_batches = 1
+            num_test_per_batch = num_tests
+        else:
+            vms_per_batch = self.environment['environment_count']
+            max_num_concurrent_batches = MAX_VMS // vms_per_batch
+        
+            num_test_per_batch = num_tests // max_num_concurrent_batches
 
-        if num_test_per_batch == 0: 
-            num_test_per_batch = 1
-            max_num_concurrent_batches = num_tests 
+            if num_test_per_batch == 0: 
+                num_test_per_batch = 1
+                max_num_concurrent_batches = num_tests 
 
         for x in range(max_num_concurrent_batches):
-            config = 'tests/intern_saucelabs_config' if isDesktop else 'tests/intern_mobile_saucelabs_config'
-            cmd = 'node node_modules/intern/bin/intern-runner.js config="{}" increment="{}"'.format(config,self.batch_id)
+            cmd = 'node node_modules/intern/bin/intern-runner.js config="{}" increment="{}"'.format(self.environment['config'],self.batch_id)
             start_slice = x * num_test_per_batch
             end_slice = start_slice + (num_test_per_batch if x < max_num_concurrent_batches-1 else num_tests)
             
@@ -42,37 +46,46 @@ class SauceRunner:
             yield cmd 
 
     def __get_output(self,p,batch_id,vms_required):
-        #stdout = []
-        f=open('dumps/dump_'+str(batch_id),'wb')
-        while True:
+
+        filename = 'dumps/dump_'+str(batch_id)
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        f=open(filename,'wb')
+
+        log_end = re.compile(b'TOTAL: tested \d+ platforms, .* tests failed')
+        collect_log = True
+        while collect_log:
             line = p.stdout.readline()
             if line != b'':
-                #utf=line.decode('UTF-8','ignore')
-                #f.write(bytes(pretty,'UTF-8'))
                 f.write(line)
                 self.parser.append_log_data_to_memory('dump_'+str(batch_id),line)
-            if p.poll() != None:
+                m_end = log_end.search(line)
+                collect_log = m_end is None
+
+            if not collect_log:
                 f.close()
                 with self.inc_lock:
                     self.active_vm_count -= vms_required
-                    #pass
-                break
-           
+                if p.poll() == None:
+                    p.terminate()
 
     def __launch_test(self,cmd,vms_required):
         print('running cmd', cmd)
         p=subprocess.Popen(cmd,shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False,cwd='../')
-        #p=subprocess.Popen('python stdout_test.py',shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False)
+        #p=subprocess.Popen('python stdout_test.py'+str(self.batch_id),shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False)
         Thread(target=self.__get_output,args=(p,self.batch_id,vms_required)).start()
 
 
-    def __wait_for_available_VMs(self,isDesktop):
-        #cmds = cmd_generator()
+    def __wait_for_available_VMs(self):
         
-        cmd_generator = self.__get_batch_cmd(isDesktop)
-        vms_per_batch = ENVIRONMENT_COUNT if isDesktop else MOBILE_ENVIRONMENT_COUNT
+        cmd_generator = self.__get_batch_cmd()
+        vms_per_batch = self.environment['environment_count']
 
         next_cmd = next(cmd_generator,False) 
+
+        if self.environment['isLocal']:
+            selcmd = "java -jar selenium-server-standalone-2.46.0.jar -log selenium.log"
+            p=subprocess.Popen(selcmd,shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False,cwd='../lib')
+
         while next_cmd:
             if self.active_vm_count + vms_per_batch <= MAX_VMS:
                 with self.inc_lock:
@@ -81,7 +94,7 @@ class SauceRunner:
                     self.active_vm_count += vms_per_batch
                 self.__launch_test(next_cmd,vms_per_batch)
                 next_cmd=next(cmd_generator,False)
-                time.sleep(4)
+                time.sleep(10)
             else:
                 time.sleep(1) 
 
@@ -89,21 +102,20 @@ class SauceRunner:
             print('active vm count:',self.active_vm_count)
 
         
-    def run_tests(self,runDesktop=True,runMobile=True):
-            #Desktop = True
-            #Mobile = False
-            if runDesktop:
-                self.__wait_for_available_VMs(True)
-
-            if runMobile:
-                self.__wait_for_available_VMs(False)
+    def run_tests(self):
+            self.__wait_for_available_VMs()
 
             while threading.active_count() > 1:
                 print('active vm count',self.active_vm_count)
                 print('threading count',threading.active_count())
                 time.sleep(3)
             self.parser.generate_report()
-            #self.__delete_tunnels()
+
+            if self.environment['isLocal']:
+                selcmd = "curl http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer"
+                p=subprocess.Popen(selcmd,shell=True,stderr=subprocess.STDOUT,stdout=subprocess.PIPE,universal_newlines=False)
+            else:
+               self.__delete_tunnels()
 
     def __delete_tunnels(self):
         username = "awan"
@@ -113,15 +125,25 @@ class SauceRunner:
             requests.delete("https://saucelabs.com/rest/v1/awan/tunnels/" + tunnel, auth = (username, access_key))
 
 if __name__ == "__main__":
-    SR=SauceRunner()
 
-    runMobile = runDesktop = True
-    arg = sys.argv[1] if len(sys.argv)>1 else None
-    if arg:
-        if arg.upper() == "MOBILE":
-            runDesktop = False
-        elif arg.upper() == "DESKTOP":
-            runMobile = False
+    local_or_saucelabs = sys.argv[1] if len(sys.argv)>2 else None
+    desktop_or_local = sys.argv[2] if len(sys.argv)>2 else None
+    
+    environment = None
+    if local_or_saucelabs and desktop_or_local:
+        if local_or_saucelabs.upper() == "SAUCELABS":
+            if desktop_or_local.upper() == "DESKTOP":
+                environment = ENVIRONMENTS["saucelabs_desktop"]
+            elif desktop_or_local.upper() == "MOBILE":
+                environment = ENVIRONMENTS["saucelabs_mobile"]
+        elif local_or_saucelabs.upper() == "LOCAL":
+            if desktop_or_local.upper() == "DESKTOP":
+                environment = ENVIRONMENTS["local_desktop"]
+            elif desktop_or_local.upper() == "MOBILE":
+                environment = ENVIRONMENTS["local_mobile"]
 
-    print(runDesktop,runMobile)
-    SR.run_tests(runDesktop,runMobile)
+    if environment:
+        SR=SauceRunner(environment)
+        SR.run_tests()
+    else:
+        print("Please specify one of the following:\n\nSAUCELABS DESKTOP\nSAUCELABS MOBILE\nLOCAL DESKTOP\nLOCAL MOBILE") 

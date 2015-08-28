@@ -18,31 +18,72 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+
+    <style type="text/css">
+        span.label-plain{
+            color:black;
+        }
+        span.descrip_label{
+            display:inline-block;
+            margin:5px 0;
+            cursor:pointer;
+        }
+        ul.collapsible{
+            display:none;
+        }
+        span b{
+            color:#cccccc;
+        }
+        ul{
+            list-style:none;
+        }
+        span.platforms{
+            font-size: 14px;
+        }
+        span.browsers{
+            font-size: 16px;
+        }
+        span.suites{
+            font-size: 12px;
+        }
+        div.header{
+            background-image:url('https://media.1800contacts.com/is/image/1800Contacts/sitewide_2014logo_forblue_image?fmt=png-alpha&wid=300');
+            background-color:#222a7e;
+            background-repeat:no-repeat;
+            width:100%;
+            padding:10px;
+            margin-bottom:20px;
+            text-align:center;
+            color:white;
+            font-weight:bold;
+            font-size:20px;
+        }
+    </style>
+    </head>
   <body>
+    <div class="header">
+        Automated Front End Test Results ({{timestamp}})
+    </div>
+
+
+
     {% block body %}
         {% for browser,platforms in results.items() %}
             <ul>
             <li>
-            {{browser}}
-            {% for platform,suites in platforms.items() %}   
-                <ul>
+            <span class="label descrip_label {{"label-success" if platforms.success_count==platforms.total else "label-danger"}} browsers">{{browser}} <b>({{platforms.success_count}} of {{platforms.total}} Passed)</b></span>
+            {% for platform,suites in platforms['platforms'].items() %}   
+                <ul class="collapsible">
                 <li>
-                {{platform}}
-                 {% for suite,tests in suites.items() %}          
-                    <ul>
+                <span class="label descrip_label {{"label-success" if suites.success_count==suites.total else "label-danger"}} platforms">{{platform}} <b>({{suites.success_count}} of {{suites.total}} Passed)</b></span>
+                 {% for suite in suites['suites'] %}          
+                    <ul class="collapsible">
                         <li>
-                        {{suite}}
-                        {% if not tests.success%}
-                            FAILED
-                        {% endif %}
-                        <ul>
-                        {% for test in tests.tests %}          
+                        <span class="label descrip_label {{"label-success" if suite[1].success else "label-danger"}} suites">{{suite[0]}}</span>
+                        <ul class="collapsible">
+                        {% for test in suite[1].tests %}          
                            <li>
-                            {{test.test}} ({{test.time}}ms)
-                            {% if not test.passed%}
-                                FAILED
-                            {% endif %}
+                            <span class="label {{"label-danger" if not test.passed else "label-plain"}}">{{test.test}} ({{test.time}}ms)</span>
                            </li>
                         {% endfor %}
                         </ul>
@@ -56,12 +97,26 @@
             </ul>
         {% endfor %}
     {% endblock %}
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--<script src="templates/bootstrap-3.3.5-dist/js/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!--<script src="templates/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('ul li').on('click',function(event){
+                event.stopPropagation()
+                var isVisible = $(this).children('ul').is(':visible');
+                if (!isVisible){
+                    $(this).children('ul').show();
+                }
+                else{
+                    $(this).children('ul').hide();
+                }
+            });
+        })
+    </script>
+
   </body>
 </html>

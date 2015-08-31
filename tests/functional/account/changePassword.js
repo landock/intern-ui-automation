@@ -27,7 +27,6 @@ function (registerSuite, config, Command, generator, skip) {
             
             'create new account': function(){
                 return command
-                .findAndClick('asdfasdf')
                 .createNewAccount(customer);
             },
             'assert that new user is logged in': function() {

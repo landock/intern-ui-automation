@@ -6,12 +6,16 @@ import datetime
 
 class SeleniumLogParser:
     def __init__(self):
-        self.__log_stream_data={}
+        self.__log_stream_data=[]
         self.__log_line_items = []
     
-    def append_log_data_to_memory(self,batch_name,append_data):
-        log_data = self.__log_stream_data.setdefault(batch_name,io.BytesIO())
-        log_data.write(append_data)
+    def append_log_data_to_memory(self,batch_id,append_data):
+        list_id = batch_id - 1
+        if len(self.__log_stream_data)-1 < list_id:
+            self.__log_stream_data.append(io.BytesIO())
+        self.__log_stream_data[list_id].write(append_data)
+        #log_data = self.__log_stream_data.setdefault(batch_name,io.BytesIO())
+        #log_data.write(append_data)
 
     def __parse_dumpdata(self,stream):
         def get_line_dict(matcher,passed):
@@ -45,11 +49,14 @@ class SeleniumLogParser:
 
     def __parse_all(self,dump_path):
         if dump_path:
+            #TODO: glob all files rather than hardcoding 6
             for x in range(6):
                 self.__parse_dumpdata(open(dump_path+'/dump_'+str(x+1),'rb'))
         else:
-            for k,v in self.__log_stream_data.items():
-                self.__parse_dumpdata(v)
+            #for k,v in self.__log_stream_data.items():
+                #self.__parse_dumpdata(v)
+            for stream in self.__log_stream_data:
+                self.__parse_dumpdata(stream)
 
 
     def __get_report_data_by_browser(self,dump_path):

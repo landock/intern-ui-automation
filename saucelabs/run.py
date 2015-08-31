@@ -57,7 +57,8 @@ class SauceRunner:
             line = p.stdout.readline()
             if line != b'':
                 f.write(line)
-                self.parser.append_log_data_to_memory('dump_'+str(batch_id),line)
+                #self.parser.append_log_data_to_memory('dump_'+str(batch_id),line)
+                self.parser.append_log_data_to_memory(batch_id,line)
                 m_end = log_end.search(line)
                 collect_log = m_end is None
 
@@ -94,7 +95,8 @@ class SauceRunner:
                     self.active_vm_count += vms_per_batch
                 self.__launch_test(next_cmd,vms_per_batch)
                 next_cmd=next(cmd_generator,False)
-                time.sleep(10)
+                time.sleep(60)
+
             else:
                 time.sleep(1) 
 

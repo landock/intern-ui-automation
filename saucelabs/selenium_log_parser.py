@@ -14,8 +14,6 @@ class SeleniumLogParser:
         if len(self.__log_stream_data)-1 < list_id:
             self.__log_stream_data.append(io.BytesIO())
         self.__log_stream_data[list_id].write(append_data)
-        #log_data = self.__log_stream_data.setdefault(batch_name,io.BytesIO())
-        #log_data.write(append_data)
 
     def __parse_dumpdata(self,stream):
         def get_line_dict(matcher,passed):

@@ -28,7 +28,7 @@
             margin:5px 0;
             cursor:pointer;
         }
-        ul.collapsible{
+        ul.collapsed{
             display:none;
         }
         span b{
@@ -73,14 +73,14 @@
             <li>
             <span class="label descrip_label {{"label-success" if platforms.success_count==platforms.total else "label-danger"}} browsers">{{browser}} <b>({{platforms.success_count}} of {{platforms.total}} Passed)</b></span>
             {% for platform,suites in platforms['platforms'].items() %}   
-                <ul class="collapsible">
+                <ul>
                 <li>
                 <span class="label descrip_label {{"label-success" if suites.success_count==suites.total else "label-danger"}} platforms">{{platform}} <b>({{suites.success_count}} of {{suites.total}} Passed)</b></span>
                  {% for suite in suites['suites'] %}          
-                    <ul class="collapsible">
+                    <ul class="collapsed">
                         <li>
                         <span class="label descrip_label {{"label-success" if suite[1].success else "label-danger"}} suites">{{suite[0]}}</span>
-                        <ul class="collapsible">
+                        <ul class="collapsed">
                         {% for test in suite[1].tests %}          
                            <li>
                             <span class="label {{"label-danger" if not test.passed else "label-plain"}}">{{test.test}} ({{test.time}}ms)</span>
@@ -105,14 +105,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            $('ul li').on('click',function(event){
+            $('ul li span.label').on('click',function(event){
                 event.stopPropagation()
-                var isVisible = $(this).children('ul').is(':visible');
+                var isVisible = $(this).parent().children('ul').is(':visible');
                 if (!isVisible){
-                    $(this).children('ul').show();
+                    $(this).parent().children('ul').show();
                 }
                 else{
-                    $(this).children('ul').hide();
+                    $(this).parent().children('ul').hide();
                 }
             });
         })
